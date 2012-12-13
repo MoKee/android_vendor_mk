@@ -1,11 +1,11 @@
 # Inherit common CM stuff
-$(call inherit-product, vendor/mokee/config/common.mk)
+$(call inherit-product, vendor/mk/config/common.mk)
 
 # Bring in all audio files
 include frameworks/base/data/sounds/NewAudio.mk
 
 # Include CM audio files
-include vendor/mokee/config/mk_audio.mk
+include vendor/mk/config/mk_audio.mk
 
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -19,5 +19,5 @@ PRODUCT_COPY_FILES += \
 
 ifeq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
     PRODUCT_COPY_FILES += \
-        vendor/mokee/prebuilt/common/bootanimation/800.zip:system/media/bootanimation.zip
+        vendor/mk/prebuilt/common/bootanimation/800.zip:system/media/bootanimation.zip
 endif

@@ -4,7 +4,7 @@
 # cyanogen
 #
 
-. $ANDROID_BUILD_TOP/vendor/mokee/tools/functions
+. $ANDROID_BUILD_TOP/vendor/mk/tools/functions
 
 OUT_TARGET_HOST=`uname -a | grep Darwin`
 if [ -z "$OUT_TARGET_HOST" ]
@@ -30,7 +30,7 @@ if [ ! -f "$OTAPACKAGE" ]; then
 	exit 1
 fi
 
-OPTICHARGER=$ANDROID_BUILD_TOP/vendor/mokee/tools/opticharger
+OPTICHARGER=$ANDROID_BUILD_TOP/vendor/mk/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 
