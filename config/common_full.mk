@@ -11,7 +11,7 @@ include frameworks/base/data/sounds/AudioPackageNewWave.mk
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
 # Include CM audio files
-include vendor/mk/config/mokee_audio.mk
+include vendor/mk/config/mk_audio.mk
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
