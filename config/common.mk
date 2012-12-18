@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= cyanogenmod
+PRODUCT_BRAND ?= mokee
 
 # To deal with CM9 specifications
 # TODO: remove once all devices have been switched
@@ -98,9 +98,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/modelid_cfg.sh:system/bin/modelid_cfg.sh
 
-PRODUCT_COPY_FILES +=  \
-    vendor/mk/proprietary/Term.apk:system/app/Term.apk \
-    vendor/mk/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
+#PRODUCT_COPY_FILES +=  \
+#    vendor/mk/proprietary/Term.apk:system/app/Term.apk \
+#    vendor/mk/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
@@ -212,7 +212,7 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.cm.version=$(CM_VERSION) \
+  ro.mk.version=$(CM_VERSION) \
   ro.modversion=$(CM_VERSION)
 
 
