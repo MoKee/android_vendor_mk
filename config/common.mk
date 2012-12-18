@@ -133,10 +133,10 @@ PRODUCT_PACKAGES += \
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
-    VideoEditor \
-    VoiceDialer \
     SoundRecorder \
     Basic
+#   VideoEditor \
+#   VoiceDialer \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
