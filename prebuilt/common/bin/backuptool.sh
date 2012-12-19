@@ -22,7 +22,7 @@ restore_addon_d() {
 
 # Proceed only if /system is the expected major version
 check_prereq() {
-if ( ! grep -q "^ro.cm.version=$V.*" /system/build.prop ); then
+if ( ! grep -q "^ro.mk.version=$V.*" /system/build.prop ); then
   echo "Not backing up files from incompatible version."
   exit 127
 fi
