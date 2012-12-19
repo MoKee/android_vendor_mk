@@ -1,0 +1,5 @@
+#!/bin/sh
+# Determine what to name the new signed package
+MODVERSION=`sed -n -e'/ro\.mk\.version/s/^.*=//p' $REPACK/ota/system/build.prop`
+OUTFILE=$OUT/mk-$MODVERSION.zip
+echo -e $CL_CYN"MODVERSION: $MODVERSION"$CL_RST
