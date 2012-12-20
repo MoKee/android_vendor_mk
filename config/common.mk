@@ -206,9 +206,9 @@ else
 endif
 
 ifdef CM_RELEASE
-    CM_VERSION := MK$(PRODUCT_VERSION_MAJOR)-$(CM_BUILD)-$(shell date +%y%m%d)-$(CM_EXTRAVERSION)
+    CM_VERSION := MK$(PRODUCT_VERSION_MAJOR)-$(CM_BUILD)-$(shell date +%y%m%d)-RELEASE
 else
-    CM_VERSION := MK$(PRODUCT_VERSION_MAJOR)-$(CM_BUILD)-$(shell date +%Y%m%d%H%M)-$(CM_EXTRAVERSION)
+    CM_VERSION := MK$(PRODUCT_VERSION_MAJOR)-$(CM_BUILD)-$(shell date +%Y%m%d%H%M)-EXPERIMENTAL
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
