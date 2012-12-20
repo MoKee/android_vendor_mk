@@ -89,6 +89,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.local.rc:root/init.cm.rc
 
+# MoKee-specific init file
+PRODUCT_COPY_FILES += \
+    vendor/mk/prebuilt/common/app/BaiduInputIME.apk:system/app/BaiduInputIME.apk
+
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/compcache:system/bin/compcache \
