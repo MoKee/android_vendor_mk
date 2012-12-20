@@ -106,6 +106,21 @@ printf "Cleaning up..."
 rm -rf $REPACK
 echo
 
+# Create Release and Experimental folder
+[ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD
+[ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Release ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Release
+[ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Experimental ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Experimental
+
+if [ "$MK_RELEASE" = "true" ]; then
+	cp $OUTFILE $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Release
+	echo ""
+	echo "Zip files copied to Release folder"
+else
+	cp $OUTFILE $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Experimental
+	echo ""
+	echo "Zip files copied to Experimental folder"
+fi
+
 # Create a md5 checksum image of the repacked package
 (
 img=`basename $OUTFILE`

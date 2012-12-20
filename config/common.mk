@@ -46,7 +46,7 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 
-ifdef CM_NIGHTLY
+ifdef MK_NIGHTLY
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.rommanager.developerid=cyanogenmodnightly
 else
@@ -186,33 +186,36 @@ PRODUCT_VERSION_MINOR = 0
 PRODUCT_VERSION_MAINTENANCE = 0
 
 # Set MK_BUILDTYPE
-ifdef CM_NIGHTLY
+# Set Default
+MK_BUILDTYPE := EXPERIMENTAL
+
+ifdef MK_NIGHTLY
     MK_BUILDTYPE := NIGHTLY
 endif
-ifdef CM_EXPERIMENTAL
+ifdef MK_EXPERIMENTAL
     MK_BUILDTYPE := EXPERIMENTAL
 endif
-ifdef CM_RELEASE
+ifdef MK_RELEASE
     MK_BUILDTYPE := RELEASE
 endif
 
 ifdef MK_BUILDTYPE
-    ifdef CM_EXTRAVERSION
+    ifdef MK_EXTRAVERSION
         # Force build type to EXPERIMENTAL
         MK_BUILDTYPE := EXPERIMENTAL
-        # Add leading dash to CM_EXTRAVERSION
-        CM_EXTRAVERSION := -$(CM_EXTRAVERSION)
+        # Add leading dash to MK_EXTRAVERSION
+        MK_EXTRAVERSION := -$(MK_EXTRAVERSION)
     endif
 else
     # If MK_BUILDTYPE is not defined, set to UNOFFICIAL
     MK_BUILDTYPE := UNOFFICIAL
-    CM_EXTRAVERSION :=
+    MK_EXTRAVERSION :=
 endif
 
-ifdef CM_RELEASE
+ifdef MK_RELEASE
     CM_VERSION := MK$(PRODUCT_VERSION_MAJOR)-$(CM_BUILD)-$(shell date +%y%m%d)-RELEASE
 else
-    CM_VERSION := MK$(PRODUCT_VERSION_MAJOR)-$(CM_BUILD)-$(shell date +%Y%m%d%H%M)-EXPERIMENTAL
+    CM_VERSION := MK$(PRODUCT_VERSION_MAJOR)-$(CM_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
