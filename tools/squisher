@@ -107,6 +107,7 @@ rm -rf $REPACK
 echo
 
 # Create Release and Experimental folder
+[ ! -d $ANDROID_BUILD_TOP/out/device ] && mkdir $ANDROID_BUILD_TOP/out/device
 [ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD
 [ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Release ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Release
 [ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Experimental ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Experimental
