@@ -130,7 +130,6 @@ include vendor/mk/config/themes_common.mk
 PRODUCT_PACKAGES += \
     Camera \
     Development \
-    LatinIME \
     SpareParts \
     Superuser \
     su
