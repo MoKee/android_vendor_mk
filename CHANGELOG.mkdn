@@ -1,7 +1,7 @@
 MoKee OpenSource
 ===============
 
-Visit http://review.cyanogenmod.com for our Gerrit instance and full changelogs.
+Visit http://review.mfunz.com for our Gerrit instance and full changelogs.
 
 Visit http://bbs.mfunz.com for talk about MoKee OpenSource
 
