@@ -1,11 +1,9 @@
-CyanogenMod
+MoKee OpenSource
 ===============
 
-Visit http://github.com/CyanogenMod for full changelogs and git access.
+Visit http://review.cyanogenmod.com for our Gerrit instance and full changelogs.
 
-Visit http://review.cyanogenmod.com for our Gerrit instance.
-
-Follow http://twitter.com/cmsrc for commit-by-commit updates.
+Visit http://bbs.mfunz.com for talk about MoKee OpenSource
 
 CHANGELOG (notable new features)
 ---------
