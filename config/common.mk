@@ -72,9 +72,16 @@ PRODUCT_COPY_FILES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
+<<<<<<< HEAD
     vendor/mk/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/mk/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/mk/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh
+=======
+    vendor/cm/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/cm/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/cm/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
+    vendor/cm/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+>>>>>>> ee35e66f6c5cd7251ffb8e2bbc1fedc44f7eb69c
 
 # init.d support
 PRODUCT_COPY_FILES += \
@@ -102,9 +109,30 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/modelid_cfg.sh:system/bin/modelid_cfg.sh
 
+<<<<<<< HEAD
 #PRODUCT_COPY_FILES +=  \
 #    vendor/mk/proprietary/Term.apk:system/app/Term.apk \
 #    vendor/mk/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
+=======
+PRODUCT_COPY_FILES += \
+    vendor/cm/proprietary/Term.apk:system/app/Term.apk
+
+# Copy JNI libarary of Term
+ifeq ($(TARGET_ARCH),arm)
+PRODUCT_COPY_FILES +=  \
+    vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
+endif
+
+ifeq ($(TARGET_ARCH),mips)
+PRODUCT_COPY_FILES +=  \
+    vendor/cm/proprietary/lib/mips/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
+endif
+
+ifeq ($(TARGET_ARCH),x86)
+PRODUCT_COPY_FILES +=  \
+    vendor/cm/proprietary/lib/x86/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
+endif
+>>>>>>> ee35e66f6c5cd7251ffb8e2bbc1fedc44f7eb69c
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
@@ -180,9 +208,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
+<<<<<<< HEAD
 PRODUCT_VERSION_MAJOR = 41
 PRODUCT_VERSION_MINOR = 0
 PRODUCT_VERSION_MAINTENANCE = 0
+=======
+PRODUCT_VERSION_MAJOR = 10
+PRODUCT_VERSION_MINOR = 1
+PRODUCT_VERSION_MAINTENANCE = 0-RC0
+>>>>>>> ee35e66f6c5cd7251ffb8e2bbc1fedc44f7eb69c
 
 # Set MK_BUILDTYPE
 # Set Default
@@ -214,7 +248,15 @@ endif
 ifdef MK_RELEASE
     CM_VERSION := MK$(PRODUCT_VERSION_MAJOR)-$(CM_BUILD)-$(shell date +%y%m%d)-RELEASE
 else
+<<<<<<< HEAD
     CM_VERSION := MK$(PRODUCT_VERSION_MAJOR)-$(CM_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
+=======
+    ifeq ($(PRODUCT_VERSION_MINOR),0)
+        CM_VERSION := $(PRODUCT_VERSION_MAJOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)-$(CM_BUILD)$(CM_EXTRAVERSION)
+    else
+        CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)-$(CM_BUILD)$(CM_EXTRAVERSION)
+    endif
+>>>>>>> ee35e66f6c5cd7251ffb8e2bbc1fedc44f7eb69c
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \

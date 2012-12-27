@@ -4,9 +4,16 @@
 #
 L="log -p i -t cm"
 
+<<<<<<< HEAD
 $L "Welcome to Android `getprop ro.build.version.release` / MoKee-`getprop ro.mk.version`";
 $L "                                                _ ";
 $L " __ __ _ ___  _ _  __  ___  __ _ _  _  _  __  __))";
 $L "((_ \\(/'((_( ((\\( ((_)((_( (('((\\( ((\`1( ((_)((_( ";
 $L "     ))                 _))";
 $L " ";
+=======
+$L "____ _   _ ____ _  _ ____ ____ ____ _  _ _  _ ____ ___";
+$L "|     \\_/  |__| |\\ | |  | | __ |___ |\\ | |\\/| |  | |  \\";
+$L "|___   |   |  | | \\| |__| |__] |___ | \\| |  | |__| |__/";
+$L "Welcome to Android `getprop ro.build.version.release` / CyanogenMod-`getprop ro.cm.version`";
+>>>>>>> ee35e66f6c5cd7251ffb8e2bbc1fedc44f7eb69c

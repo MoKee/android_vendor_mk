@@ -15,6 +15,9 @@ on post-fs-data
     export_rc /data/system/storage.rc
 
 on boot
+    # Run sysinit
+    start sysinit
+
     chown system system /sys/block/mmcblk0/queue/scheduler
     chmod 0664 /sys/block/mmcblk0/queue/scheduler
 
@@ -41,4 +44,9 @@ service compcache /system/bin/handle_compcache
     class main
     user root
     group root
+    oneshot
+
+# sysinit (/system/etc/init.d)
+service sysinit /system/bin/sysinit
+    user root
     oneshot

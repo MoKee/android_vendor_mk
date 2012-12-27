@@ -30,6 +30,7 @@ if [ ! -f "$OTAPACKAGE" ]; then
 	exit 1
 fi
 
+<<<<<<< HEAD
 OPTICHARGER=$ANDROID_BUILD_TOP/vendor/mk/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
@@ -89,22 +90,14 @@ rm -rf $REPACK/ota/recovery
 # Determine what to name the new signed package
 MODVERSION=`sed -n -e'/ro\.mk\.version/s/^.*=//p' $REPACK/ota/system/build.prop`
 OUTFILE=$OUT/$MODVERSION.zip
+=======
+# Determine what to name the new package
+MODVERSION=`sed -n -e'/ro\.cm\.version/s/^.*=//p' $OUT/system/build.prop`
+>>>>>>> ee35e66f6c5cd7251ffb8e2bbc1fedc44f7eb69c
 echo -e $CL_CYN"MODVERSION: $MODVERSION"$CL_RST
+OUTFILE=$OUT/cm-$MODVERSION.zip
 
-# Pack it up and sign
-printf "Zipping package..."
-( cd $REPACK/ota; zip $QUIET -r $REPACK/update.zip . )
-echo
-printf "Signing package..."
-SECURITYDIR=$ANDROID_BUILD_TOP/build/target/product/security
-java -Xmx1024m \
-	-jar $OUT/../../../host/$OUT_TARGET_HOST/framework/signapk.jar \
-	-w $SECURITYDIR/testkey.x509.pem $SECURITYDIR/testkey.pk8 \
-	$REPACK/update.zip $OUTFILE
-echo
-printf "Cleaning up..."
-rm -rf $REPACK
-echo
+ln -f $OTAPACKAGE $OUTFILE
 
 # Create Release and Experimental folder
 [ ! -d $ANDROID_BUILD_TOP/out/device ] && mkdir $ANDROID_BUILD_TOP/out/device
@@ -129,7 +122,7 @@ cd `dirname $OUTFILE`
 $MD5 $img >$img.md5sum
 echo
 echo -e $CL_GRN"Package complete: $OUTFILE"$CL_RST
-cat $img.md5sum
+echo -e $CL_GRN"md5: $(cat $img.md5sum | awk '{ print $1 }')"$CL_RST
 echo
 )
 
