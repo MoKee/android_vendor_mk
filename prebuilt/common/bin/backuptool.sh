@@ -22,13 +22,8 @@ restore_addon_d() {
 
 # Proceed only if /system is the expected major and minor version
 check_prereq() {
-<<<<<<< HEAD
 if ( ! grep -q "^ro.mk.version=$V.*" /system/build.prop ); then
-  echo "Not backing up files from incompatible version."
-=======
-if ( ! grep -q "^ro.cm.version=$V.*" /system/build.prop ); then
   echo "Not backing up files from incompatible version: $V"
->>>>>>> ee35e66f6c5cd7251ffb8e2bbc1fedc44f7eb69c
   exit 127
 fi
 }
