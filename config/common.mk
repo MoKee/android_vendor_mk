@@ -162,7 +162,8 @@ PRODUCT_PACKAGES += \
     libcyanogen-dsp \
     audio_effects.conf \
     Apollo \
-    CMFileManager
+    CMFileManager \
+    LockClock
 
 # Extra tools in CM
 PRODUCT_PACKAGES += \
