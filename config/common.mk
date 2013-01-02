@@ -91,13 +91,6 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/compcache:system/bin/compcache \
     vendor/mk/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
-# Nam configuration script
-PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/bin/modelid_cfg.sh:system/bin/modelid_cfg.sh
-
-#PRODUCT_COPY_FILES +=  \
-#    vendor/mk/proprietary/Term.apk:system/app/Term.apk
-#    vendor/mk/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/mk/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
