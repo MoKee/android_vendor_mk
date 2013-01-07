@@ -233,8 +233,8 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
+  ro.mk.support=bbs.mfunz.com \
   ro.mk.version=$(CM_VERSION) \
   ro.modversion=$(CM_VERSION)
-
 
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
