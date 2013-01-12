@@ -115,7 +115,6 @@ include vendor/mk/config/themes_common.mk
 PRODUCT_PACKAGES += \
     Camera \
     Development \
-    SpareParts \
     Superuser \
     su
 
