@@ -38,17 +38,32 @@ OUTFILE=$OUT/$MODVERSION.zip
 ln -f $OTAPACKAGE $OUTFILE
 
 # Create Release and Experimental folder
-[ ! -d $ANDROID_BUILD_TOP/out/device ] && mkdir $ANDROID_BUILD_TOP/out/device
-[ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD
-[ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Release ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Release
-[ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Experimental ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Experimental
+
+# To prevent OUT_DIR has been specified
+ORIDIR=`pwd`
+cd $OUT
+
+# now our path is like this:../out/target/product/model
+cd ../../..
+
+# now we at /out
+CURDIR=`pwd`
+
+# save current dir and go back
+cd $ORIDIR
+
+# go back to work
+[ ! -d $CURDIR/device ] && mkdir $CURDIR/device
+[ ! -d $CURDIR/device/$CM_BUILD ] && mkdir $CURDIR/device/$CM_BUILD
+[ ! -d $CURDIR/device/$CM_BUILD/Release ] && mkdir $CURDIR/device/$CM_BUILD/Release
+[ ! -d $CURDIR/device/$CM_BUILD/Experimental ] && mkdir $CURDIR/device/$CM_BUILD/Experimental
 
 if [ "$MK_RELEASE" = "true" ]; then
-	cp $OUTFILE $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Release
+	cp $OUTFILE $CURDIR/device/$CM_BUILD/Release
 	echo ""
 	echo "Zip files copied to Release folder"
 else
-	cp $OUTFILE $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Experimental
+	cp $OUTFILE $CURDIR/device/$CM_BUILD/Experimental
 	echo ""
 	echo "Zip files copied to Experimental folder"
 fi
