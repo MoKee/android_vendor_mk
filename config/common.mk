@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= cyanogenmod
+PRODUCT_BRAND ?= mokee
 
 # To deal with CM9 specifications
 # TODO: remove once all devices have been switched
@@ -26,7 +26,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
   fi )
 
 # get a sorted list of the sizes
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/cm/prebuilt/common/bootanimation))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/mk/prebuilt/common/bootanimation))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 # find the appropriate size and set
@@ -43,15 +43,7 @@ endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
 
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
-endif
-
-ifdef CM_NIGHTLY
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmodnightly
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmod
+    vendor/mk/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
@@ -68,42 +60,41 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Copy over the changelog to the device
 PRODUCT_COPY_FILES += \
-    vendor/cm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
+    vendor/mk/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/cm/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/cm/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
-    vendor/cm/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+    vendor/mk/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/mk/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/mk/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
+    vendor/mk/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/mk/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/mk/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/mk/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # CM-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.local.rc:root/init.cm.rc
+    vendor/mk/prebuilt/common/etc/init.local.rc:root/init.cm.rc
+
+# MoKee-specific init file
+PRODUCT_COPY_FILES += \
+    vendor/mk/prebuilt/common/app/BaiduInputIME.apk:system/app/BaiduInputIME.apk
 
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/bin/compcache:system/bin/compcache \
-    vendor/cm/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
-
-# Terminal Emulator
-PRODUCT_COPY_FILES +=  \
-    vendor/cm/proprietary/Term.apk:system/app/Term.apk \
-    vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
+    vendor/mk/prebuilt/common/bin/compcache:system/bin/compcache \
+    vendor/mk/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/cm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/cm/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/mk/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/mk/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -115,27 +106,24 @@ PRODUCT_COPY_FILES += \
 
 # This is CM!
 PRODUCT_COPY_FILES += \
-    vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
+    vendor/mk/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/mkshrc:system/etc/mkshrc
+    vendor/mk/prebuilt/common/etc/mkshrc:system/etc/mkshrc
 
 # T-Mobile theme engine
-include vendor/cm/config/themes_common.mk
+include vendor/mk/config/themes_common.mk
 
 # Required CM packages
 PRODUCT_PACKAGES += \
     Camera \
     Development \
-    LatinIME \
     Superuser \
     su
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
-    VideoEditor \
-    VoiceDialer \
     SoundRecorder \
     Basic
 
@@ -145,9 +133,7 @@ PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf \
-    CMWallpapers \
     Apollo \
-    CMUpdater \
     CMFileManager \
     LockClock
 
@@ -164,6 +150,10 @@ PRODUCT_PACKAGES += \
     powertop \
     lsof
 
+# Custom MoKee packages
+PRODUCT_PACKAGES += \
+    Notepad
+
 # Openssh
 PRODUCT_PACKAGES += \
     scp \
@@ -178,50 +168,49 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rsync
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
-PRODUCT_VERSION_MAJOR = 10
+PRODUCT_VERSION_MAJOR = 42
 PRODUCT_VERSION_MINOR = 1
-PRODUCT_VERSION_MAINTENANCE = 0-RC0
+PRODUCT_VERSION_MAINTENANCE = 0
 
-# Set CM_BUILDTYPE
-ifdef CM_NIGHTLY
-    CM_BUILDTYPE := NIGHTLY
+# Set MK_BUILDTYPE
+# Set Default
+MK_BUILDTYPE := EXPERIMENTAL
+
+ifdef MK_NIGHTLY
+    MK_BUILDTYPE := NIGHTLY
 endif
-ifdef CM_EXPERIMENTAL
-    CM_BUILDTYPE := EXPERIMENTAL
+ifdef MK_EXPERIMENTAL
+    MK_BUILDTYPE := EXPERIMENTAL
 endif
-ifdef CM_RELEASE
-    CM_BUILDTYPE := RELEASE
+ifdef MK_RELEASE
+    MK_BUILDTYPE := RELEASE
 endif
 
-ifdef CM_BUILDTYPE
-    ifdef CM_EXTRAVERSION
+ifdef MK_BUILDTYPE
+    ifdef MK_EXTRAVERSION
         # Force build type to EXPERIMENTAL
-        CM_BUILDTYPE := EXPERIMENTAL
-        # Add leading dash to CM_EXTRAVERSION
-        CM_EXTRAVERSION := -$(CM_EXTRAVERSION)
+        MK_BUILDTYPE := EXPERIMENTAL
+        # Add leading dash to MK_EXTRAVERSION
+        MK_EXTRAVERSION := -$(MK_EXTRAVERSION)
     endif
 else
-    # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := UNOFFICIAL
-    CM_EXTRAVERSION :=
+    # If MK_BUILDTYPE is not defined, set to UNOFFICIAL
+    MK_BUILDTYPE := UNOFFICIAL
+    MK_EXTRAVERSION :=
 endif
 
-ifdef CM_RELEASE
-    CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(CM_BUILD)
+ifdef MK_RELEASE
+    CM_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(CM_BUILD)-$(shell date +%y%m%d)-RELEASE
 else
-    ifeq ($(PRODUCT_VERSION_MINOR),0)
-        CM_VERSION := $(PRODUCT_VERSION_MAJOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)-$(CM_BUILD)$(CM_EXTRAVERSION)
-    else
-        CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)-$(CM_BUILD)$(CM_EXTRAVERSION)
-    endif
+    CM_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(CM_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.cm.version=$(CM_VERSION) \
+  ro.mk.support=bbs.mfunz.com \
+  ro.mk.version=$(CM_VERSION) \
   ro.modversion=$(CM_VERSION)
-
 
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
