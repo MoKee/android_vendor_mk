@@ -4,7 +4,7 @@
 # cyanogen
 #
 
-. $ANDROID_BUILD_TOP/vendor/cm/tools/functions
+. $ANDROID_BUILD_TOP/vendor/mk/tools/functions
 
 OUT_TARGET_HOST=`uname -a | grep Darwin`
 if [ -z "$OUT_TARGET_HOST" ]
@@ -31,11 +31,27 @@ if [ ! -f "$OTAPACKAGE" ]; then
 fi
 
 # Determine what to name the new package
-MODVERSION=`sed -n -e'/ro\.cm\.version/s/^.*=//p' $OUT/system/build.prop`
+MODVERSION=`sed -n -e'/ro\.mk\.version/s/^.*=//p' $OUT/system/build.prop`
 echo -e $CL_CYN"MODVERSION: $MODVERSION"$CL_RST
-OUTFILE=$OUT/cm-$MODVERSION.zip
+OUTFILE=$OUT/$MODVERSION.zip
 
 ln -f $OTAPACKAGE $OUTFILE
+
+# Create Release and Experimental folder
+[ ! -d $ANDROID_BUILD_TOP/out/device ] && mkdir $ANDROID_BUILD_TOP/out/device
+[ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD
+[ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Release ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Release
+[ ! -d $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Experimental ] && mkdir $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Experimental
+
+if [ "$MK_RELEASE" = "true" ]; then
+	cp $OUTFILE $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Release
+	echo ""
+	echo "Zip files copied to Release folder"
+else
+	cp $OUTFILE $ANDROID_BUILD_TOP/out/device/$CM_BUILD/Experimental
+	echo ""
+	echo "Zip files copied to Experimental folder"
+fi
 
 # Create a md5 checksum image of the repacked package
 (

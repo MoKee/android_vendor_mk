@@ -11,6 +11,8 @@
   <spnOverride numeric="46001" spn="中国联通" />
   <spnOverride numeric="46002" spn="中国移动" />
   <spnOverride numeric="46003" spn="中国电信" />
+  <spnOverride numeric="46005" spn="中国电信" />
+  <spnOverride numeric="46006" spn="中国联通" />
   <spnOverride numeric="46007" spn="中国移动" />
   <!-- Taiwan -->
   <spnOverride numeric="46601" spn="遠傳電信" />
