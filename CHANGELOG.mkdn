@@ -8,7 +8,7 @@ Visit http://bbs.mfunz.com for talk about MoKee OpenSource
 CHANGELOG (notable new features)
 ---------
 
-### 42.1.0
+### 42.2.0
 * Common: Android 4.2.1 (Google)
 * Common: cLock Lockscreen and Homescreen Widget
 * Common: Theme Engine Support
