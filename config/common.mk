@@ -87,7 +87,8 @@ PRODUCT_COPY_FILES += \
 
 # MoKee-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/app/BaiduInputIME.apk:system/app/BaiduInputIME.apk
+    vendor/mk/prebuilt/common/app/BaiduInputIME.apk:system/app/BaiduInputIME.apk \
+    vendor/mk/prebuilt/common/app/MoKeeMarket.apk:system/app/MoKeeMarket.apk
 
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
