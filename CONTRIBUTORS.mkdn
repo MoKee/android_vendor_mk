@@ -29,6 +29,7 @@ Maintainers (CyanogenMod 10):
 * __Samsung Galaxy Note II LTE (GT-N7105 / SGH-I317 / SGH-T889):__ codeworkx, madmack
 * __Samsung Galaxy Note II LTE (SCH-I605 / SPH-L900):__ sbrissen
 * __Samsung Galaxy Note 10.1 (GT-N80XX):__ Entropy512, Espenfjo
+* __Samsung Galaxy R (GT-I9103):__ Adam77Root, Epsylon3
 * __Samsung Galaxy S Blaze 4G (SGH-T769):__ UberPinguin
 * __Samsung Galaxy S (GT-I9000):__ pawitp
 * __Samsung Galaxy S (GT-I9000B):__ helvio88
@@ -37,6 +38,7 @@ Maintainers (CyanogenMod 10):
 * __Samsung Galaxy S II (intl) (GT-I9100G):__ codeworkx
 * __Samsung Galaxy S III (AT&T) (SGH-I747):__ cyanogen, Unhelpful
 * __Samsung Galaxy S III (intl) (GT-I9300):__ xplodwild, codeworkx
+* __Samsung Galaxy S III LTE (GT-I9305):__ mcampbellsmith, codeworkx
 * __Samsung Galaxy S III (Sprint) (SPH-L710):__ mkasick, noobnl (Team Epic)
 * __Samsung Galaxy S III (T-Mobile) (SGH-T999):__ cyanogen
 * __Samsung Galaxy S III (US Cellular) (SCH-R530):__ noobnl
