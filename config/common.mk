@@ -161,6 +161,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Notepad
 
+# Mokee PhoneLoc
+PRODUCT_COPY_FILES +=  \
+    vendor/mk/prebuilt/common/media/mokee-phoneloc.dat:system/media/mokee-phoneloc.dat
+
 # Openssh
 PRODUCT_PACKAGES += \
     scp \
