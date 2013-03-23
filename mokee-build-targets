@@ -1,5 +1,7 @@
 mk_mako-userdebug
 mk_p970-userdebug
-mk_maguro-userdebug
-mk_edison-userdebug
 mk_toro-userdebug
+mk_maguro-userdebug
+mk_spyder-userdebug
+mk_umts_spyder-userdebug
+mk_edison-userdebug
