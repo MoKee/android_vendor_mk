@@ -5,6 +5,8 @@ Visit http://review.mfunz.com for our Gerrit instance and full changelogs.
 
 Visit http://bbs.mfunz.com for talk about MoKee OpenSource
 
+Visit http://www.mfunz.com for our home page
+
 CHANGELOG (notable new features)
 ---------
 
