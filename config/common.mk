@@ -167,7 +167,8 @@ PRODUCT_PACKAGES += \
 
 # Custom MoKee packages
 PRODUCT_PACKAGES += \
-    Notepad
+    Notepad \
+    PermissionManager
 
 # Mokee PhoneLoc
 PRODUCT_COPY_FILES +=  \
