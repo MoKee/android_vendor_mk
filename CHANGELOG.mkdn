@@ -32,7 +32,7 @@ CHANGELOG (notable new features)
 * Status Bar: Show Notification Counts
 * Status Bar: Signal Status Customization
 * Status Bar: Set Date and Time as buttons (with longpress actions)
-* Trebuchet: Launcher Updates
+* MoKeeLauncher: Launcher Updates
 * Lockscreen: Slider Shortcuts
 * Lockscreen: Maximize Widgets on Wake
 
