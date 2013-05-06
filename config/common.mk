@@ -68,7 +68,7 @@ endif
 
 # Copy over the changelog to the device
 PRODUCT_COPY_FILES += \
-    vendor/mk/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
+    vendor/mk/CHANGELOG.mkdn:system/etc/CHANGELOG-MK.txt
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -224,14 +224,14 @@ else
 endif
 
 ifdef MK_RELEASE
-    CM_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(CM_BUILD)-$(shell date +%y%m%d)-RELEASE
+    MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%y%m%d)-RELEASE
 else
-    CM_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(CM_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
+    MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.mk.support=bbs.mfunz.com \
-  ro.mk.version=$(CM_VERSION) \
-  ro.modversion=$(CM_VERSION)
+  ro.mk.version=$(MK_VERSION) \
+  ro.modversion=$(MK_VERSION)
 
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
