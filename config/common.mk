@@ -96,7 +96,8 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/app/MoKeeMarket.apk:system/app/MoKeeMarket.apk \
     vendor/mk/prebuilt/common/lib/libkpencore.so:system/lib/libkpencore.so \
     vendor/mk/prebuilt/common/lib/librabjni-1.so:system/lib/librabjni-1.so \
-    vendor/mk/prebuilt/common/lib/libshare_v2.so:system/lib/libshare_v2.so
+    vendor/mk/prebuilt/common/lib/libshare_v2.so:system/lib/libshare_v2.so \
+    vendor/mk/prebuilt/common/lib/libpush-socket.so:system/lib/libpush-socket.so
 
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
