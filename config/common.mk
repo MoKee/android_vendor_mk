@@ -167,6 +167,7 @@ PRODUCT_PACKAGES += \
 
 # Custom MoKee packages
 PRODUCT_PACKAGES += \
+    Halo \
     MoKeeLauncher \
     Notepad \
     PermissionManager
