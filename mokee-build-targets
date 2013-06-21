@@ -2,7 +2,6 @@ mk_mako-userdebug
 mk_p880-userdebug
 mk_p970-userdebug
 mk_p990-userdebug
-mk_toro-userdebug
 mk_maguro-userdebug
 mk_spyder-userdebug
 mk_umts_spyder-userdebug
@@ -15,6 +14,7 @@ mk_galaxysmtd-userdebug
 mk_lu6200-userdebug
 mk_olympus-userdebug
 mk_i9305-userdebug
+mk_toro-userdebug
 mk_toroplus-userdebug
 mk_villec2-userdebug
 mk_viva-userdebug
