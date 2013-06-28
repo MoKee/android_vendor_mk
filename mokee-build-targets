@@ -12,6 +12,8 @@ mk_i9300-userdebug
 mk_n7100-userdebug
 mk_galaxysmtd-userdebug
 mk_lu6200-userdebug
+mk_m7ul-userdebug
+mk_m7tmo-userdebug
 mk_olympus-userdebug
 mk_i9305-userdebug
 mk_toro-userdebug
