@@ -217,6 +217,8 @@ ifdef MK_BUILDTYPE
     ifdef MK_EXTRAVERSION
         # Force build type to EXPERIMENTAL
         MK_BUILDTYPE := EXPERIMENTAL
+        # Remove leading dash from MK_EXTRAVERSION
+        MK_EXTRAVERSION := $(shell echo $(MK_EXTRAVERSION) | sed 's/-//')
         # Add leading dash to MK_EXTRAVERSION
         MK_EXTRAVERSION := -$(MK_EXTRAVERSION)
     endif
