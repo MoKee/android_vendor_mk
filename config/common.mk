@@ -93,12 +93,14 @@ PRODUCT_COPY_FILES += \
 
 # MoKee-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/app/BaiduInputIME.apk:system/app/BaiduInputIME.apk \
+    vendor/mk/prebuilt/common/app/GooglePinYin.apk:system/app/GooglePinYin.apk \
     vendor/mk/prebuilt/common/app/MoKeeMarket.apk:system/app/MoKeeMarket.apk \
     vendor/mk/prebuilt/common/app/GameCenter.apk:system/app/GameCenter.apk \
-    vendor/mk/prebuilt/common/lib/libkpencore.so:system/lib/libkpencore.so \
-    vendor/mk/prebuilt/common/lib/librabjni-1.so:system/lib/librabjni-1.so \
-    vendor/mk/prebuilt/common/lib/libshare_v2.so:system/lib/libshare_v2.so \
+    vendor/mk/prebuilt/common/lib/libgnustl_shared.so:system/lib/libgnustl_shared.so \
+    vendor/mk/prebuilt/common/lib/libjni_delight.so:system/lib/libjni_delight.so \
+    vendor/mk/prebuilt/common/lib/libjni_googlepinyinime_5.so:system/lib/libjni_googlepinyinime_5.so \
+    vendor/mk/prebuilt/common/lib/libjni_googlepinyinime_latinime_5.so:system/lib/libjni_googlepinyinime_latinime_5.so \
+    vendor/mk/prebuilt/common/lib/libjni_hmm_shared_engine.so:system/lib/libjni_hmm_shared_engine.so \
     vendor/mk/prebuilt/common/lib/libpush-socket.so:system/lib/libpush-socket.so
 
 # Compcache/Zram support
