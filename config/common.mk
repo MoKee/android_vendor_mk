@@ -75,7 +75,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/mk/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/mk/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
+    vendor/mk/prebuilt/common/bin/50-mk.sh:system/addon.d/50-mk.sh \
     vendor/mk/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 # init.d support
