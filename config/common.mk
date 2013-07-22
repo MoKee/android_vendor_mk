@@ -145,7 +145,6 @@ PRODUCT_PACKAGES += \
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
-    Babel \
     VoicePlus \
     SoundRecorder \
     Basic
