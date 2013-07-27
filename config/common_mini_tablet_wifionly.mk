@@ -1,10 +1,10 @@
-# Inherit common CM stuff
+# Inherit common MK stuff
 $(call inherit-product, vendor/mk/config/common.mk)
 
 # Bring in all audio files
 include frameworks/base/data/sounds/NewAudio.mk
 
-# Include CM audio files
+# Include MK audio files
 include vendor/mk/config/mk_audio.mk
 
 # Default ringtone

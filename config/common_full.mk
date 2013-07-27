@@ -1,4 +1,4 @@
-#Inherit common CM stuff
+#Inherit common MK stuff
 $(call inherit-product, vendor/mk/config/common.mk)
 
 # Bring in all audio files
@@ -10,7 +10,7 @@ include frameworks/base/data/sounds/AudioPackageNewWave.mk
 # Bring in all video files
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
-# Include CM audio files
+# Include MK audio files
 include vendor/mk/config/mk_audio.mk
 
 # Optional CM packages
