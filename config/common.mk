@@ -136,14 +136,14 @@ PRODUCT_COPY_FILES += \
 # T-Mobile theme engine
 include vendor/mk/config/themes_common.mk
 
-# Required CM packages
+# Required MK packages
 PRODUCT_PACKAGES += \
-    Focal \
+    Camera \
     Development \
     Superuser \
     su
 
-# Optional CM packages
+# Optional MK packages
 PRODUCT_PACKAGES += \
     VoicePlus \
     SoundRecorder \
@@ -161,7 +161,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
 
-# Extra tools in CM
+# Extra tools in MK
 PRODUCT_PACKAGES += \
     openvpn \
     e2fsck \
