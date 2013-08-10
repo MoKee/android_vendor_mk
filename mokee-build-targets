@@ -29,6 +29,8 @@ mk_front-userdebug
 mk_jordanplus-userdebug
 mk_p3100-userdebug
 mk_p3110-userdebug
+mk_p5100-userdebug
+mk_p5110-userdebug
 mk_tilapia-userdebug
 mk_grouper-userdebug
 mk_wingray-userdebug
