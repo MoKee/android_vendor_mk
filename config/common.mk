@@ -152,7 +152,7 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     Basic
 
-# Custom CM packages
+# Custom MK packages
 PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
@@ -161,10 +161,10 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     LockClock
 
-# CM Hardware Abstraction Framework
+# MK Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
-    org.cyanogenmod.hardware \
-    org.cyanogenmod.hardware.xml
+    org.mokee.hardware \
+    org.mokee.hardware.xml
 
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
