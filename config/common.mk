@@ -212,6 +212,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rsync
 
+# easy way to extend to add more packages
+-include vendor/extra/product.mk
+
 PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
