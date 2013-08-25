@@ -13,7 +13,7 @@ $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 # Include MK audio files
 include vendor/mk/config/mk_audio.mk
 
-# Optional CM packages
+# Optional MK packages
 PRODUCT_PACKAGES += \
     HoloSpiralWallpaper \
     MagicSmokeWallpapers \
@@ -22,5 +22,4 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     VisualizationWallpapers \
-    PhaseBeam \
-    VideoEditor
+    PhaseBeam
