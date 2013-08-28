@@ -2,7 +2,7 @@
 
 
 ## If these activities are installed, get rid of them. We don't want updates
-## coming in from outside CM
+## coming in from outside MK
 
 exec 2>/dev/null
 pm disable com.google.android.gsf/com.google.android.gsf.update.SystemUpdateActivity
