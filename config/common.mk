@@ -107,6 +107,10 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/lib/libjni_hmm_shared_engine.so:system/lib/libjni_hmm_shared_engine.so \
     vendor/mk/prebuilt/common/lib/libpush-socket.so:system/lib/libpush-socket.so
 
+# block stock OTAs
+PRODUCT_COPY_FILES += \
+    vendor/mk/prebuilt/common/bin/otablock:system/bin/otablock
+
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/compcache:system/bin/compcache \
