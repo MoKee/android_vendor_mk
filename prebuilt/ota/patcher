@@ -15,7 +15,19 @@
 # limitations under the License.
 #
 
+# ui_print by Chainfire
+OUTFD=$(/sbin/ps | /sbin/grep -v "grep" | /sbin/grep -o -E "update_binary(.*)" | /sbin/cut -d " " -f 3);
+ui_print() {
+  if [ $OUTFD != "" ]; then
+echo "ui_print ${1} " 1>&$OUTFD;
+    echo "ui_print " 1>&$OUTFD;
+  else
+echo "${1}";
+  fi;
+}
+
 # Commerce patch
+ui_print "Patching $1"
 /tmp/xdelta3 -D -R -d -s $1 $2 $3
 
 # Only replace file if patching succeeds 
