@@ -19,11 +19,17 @@
 if /sbin/busybox test -e /dev/block/bml7 ; then
 	# We're running on a bml device
 	/tmp/flash_image boot /tmp/boot.img
+	exit 0
 elif /sbin/busybox test `/sbin/busybox cat /sys/class/mtd/mtd2/size` != "$MTD_SIZE" || \
     /sbin/busybox test `/sbin/busybox cat /sys/class/mtd/mtd2/name` != "datadata" ; then
 	# We're running on a mtd (old) device
 	/tmp/bml_over_mtd.sh boot 72 reservoir 2004 /tmp/boot.img
+	exit 0
 elif /tmp/busybox test -e /dev/block/mtdblock0 ; then
 	# We're running on a mtd (current) device
 	/tmp/bml_over_mtd.sh boot 72 reservoir 2004 /tmp/boot.img
+	exit 0
+else
+	# Something weird is going on
+	exit 1
 fi
