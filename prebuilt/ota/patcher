@@ -16,14 +16,14 @@
 #
 
 # ui_print by Chainfire
-OUTFD=$(/sbin/ps | /sbin/grep -v "grep" | /sbin/grep -o -E "update_binary(.*)" | /sbin/cut -d " " -f 3);
+OUTFD=$(/sbin/ps | /sbin/grep -v "grep" | /sbin/grep -o -E "update_binary(.*)" | /sbin/cut -d " " -f 3)
 ui_print(){
-if [ $OUTFD != "" ]; then
-	echo "ui_print ${1} " 1>&$OUTFD;
-	echo "ui_print " 1>&$OUTFD;
+if [ $OUTFD != "" ];then
+	echo "ui_print ${1} " 1>&$OUTFD
+	echo "ui_print " 1>&$OUTFD
 else
-	echo "${1}";
-fi;
+	echo "${1}"
+fi
 }
 
 # Commerce patch
