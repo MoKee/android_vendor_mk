@@ -36,6 +36,7 @@ if [ "$1" == "$CUR_VER" ];then
 else
 	ui_print "Versions mismatch..."
 	ui_print "Aborting..."
+	/sbin/rm /tmp/verifier
 	/sbin/umount /system
 	exit 1
 fi
