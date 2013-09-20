@@ -143,7 +143,9 @@ include vendor/mk/config/themes_common.mk
 PRODUCT_PACKAGES += \
     Camera \
     Development \
+    LatinIME \
     Superuser \
+    BluetoothExt \
     su
 
 # Optional MK packages
@@ -192,8 +194,7 @@ PRODUCT_PACKAGES += \
     Halo \
     MoKeeHelper \
     MoKeeLauncher \
-    Notepad \
-    PermissionManager
+    Notepad
 
 # Mokee PhoneLoc
 PRODUCT_COPY_FILES +=  \
