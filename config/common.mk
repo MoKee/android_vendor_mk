@@ -143,7 +143,6 @@ include vendor/mk/config/themes_common.mk
 PRODUCT_PACKAGES += \
     Camera \
     Development \
-    LatinIME \
     Superuser \
     BluetoothExt \
     su
