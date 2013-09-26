@@ -103,7 +103,7 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk \
     vendor/mk/prebuilt/common/app/MoKeeMarket.apk:system/app/MoKeeMarket.apk \
     vendor/mk/prebuilt/common/app/GameCenter.apk:system/app/GameCenter.apk \
-    vendor/mk/prebuilt/common/lib/libbdpush_V1_0.so:system/lib/libbdpush_V1_0.so \
+    vendor/mk/prebuilt/common/lib/libpush-socket.so:system/lib/libpush-socket.so \
     vendor/mk/prebuilt/common/lib/libmsc-v6.so:system/lib/libmsc-v6.so \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v5.so:system/lib/libsmartaiwrite-jni-v5.so \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v6.so:system/lib/libsmartaiwrite-jni-v6.so \
