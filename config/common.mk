@@ -101,6 +101,7 @@ PRODUCT_COPY_FILES += \
 # MoKee-specific init file
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk \
+    vendor/mk/prebuilt/common/app/MarketExt.apk:system/app/MarketExt.apk \
     vendor/mk/prebuilt/common/app/MoKeeMarket.apk:system/app/MoKeeMarket.apk \
     vendor/mk/prebuilt/common/app/GameCenter.apk:system/app/GameCenter.apk \
     vendor/mk/prebuilt/common/lib/libpush-socket.so:system/lib/libpush-socket.so \
