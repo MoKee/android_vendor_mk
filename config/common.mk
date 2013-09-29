@@ -97,15 +97,16 @@ PRODUCT_COPY_FILES += \
 
 # MoKee-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/app/GooglePinYin.apk:system/app/GooglePinYin.apk \
+    vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk \
+    vendor/mk/prebuilt/common/app/MarketExt.apk:system/app/MarketExt.apk \
     vendor/mk/prebuilt/common/app/MoKeeMarket.apk:system/app/MoKeeMarket.apk \
-    vendor/mk/prebuilt/common/app/GameCenter.apk:system/app/GameCenter.apk \
-    vendor/mk/prebuilt/common/lib/libgnustl_shared.so:system/lib/libgnustl_shared.so \
-    vendor/mk/prebuilt/common/lib/libjni_delight.so:system/lib/libjni_delight.so \
-    vendor/mk/prebuilt/common/lib/libjni_googlepinyinime_5.so:system/lib/libjni_googlepinyinime_5.so \
-    vendor/mk/prebuilt/common/lib/libjni_googlepinyinime_latinime_5.so:system/lib/libjni_googlepinyinime_latinime_5.so \
-    vendor/mk/prebuilt/common/lib/libjni_hmm_shared_engine.so:system/lib/libjni_hmm_shared_engine.so \
-    vendor/mk/prebuilt/common/lib/libpush-socket.so:system/lib/libpush-socket.so
+    vendor/mk/prebuilt/common/lib/libpush-socket.so:system/lib/libpush-socket.so \
+    vendor/mk/prebuilt/common/lib/libmsc-v7.so:system/lib/libmsc-v7.so \
+    vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v5.so:system/lib/libsmartaiwrite-jni-v5.so \
+    vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v6.so:system/lib/libsmartaiwrite-jni-v6.so \
+    vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v7.so:system/lib/libsmartaiwrite-jni-v7.so \
+    vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v8.so:system/lib/libsmartaiwrite-jni-v8.so \
+    vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so
 
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
@@ -143,13 +144,13 @@ PRODUCT_PACKAGES += \
     Superuser \
     su
 
-# Optional CM packages
+# Optional MK packages
 PRODUCT_PACKAGES += \
     VoicePlus \
     SoundRecorder \
     Basic
 
-# Custom CM packages
+# Custom MK packages
 PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
@@ -161,7 +162,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
 
-# Extra tools in CM
+# Extra tools in MK
 PRODUCT_PACKAGES += \
     openvpn \
     e2fsck \
