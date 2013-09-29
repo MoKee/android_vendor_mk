@@ -4,6 +4,8 @@ CyanogenMod
 Maintainers (CyanogenMod 10.1):
 -----------------------------
 * __Acer A700:__ pawitp
+* __Amazon Kindle Fire 1st Edition:__ Hashcode
+* __Amazon Kindle Fire 2nd Edition:__ Hashcode
 * __Asus EeePad Transformer (TF101):__ Bumble-Bee, EnJens
 * __Asus EeePad Transformer Prime (TF201):__ Bumble-Bee, EnJens
 * __Asus EeePad Transformer Pad TF300T:__ xplodwild
@@ -47,6 +49,7 @@ Maintainers (CyanogenMod 10.1):
 * __Samsung Galaxy S II (AT&T) (SGH-I777):__ Entropy512
 * __Samsung Galaxy S II (intl) (GT-I9100):__ codeworkx, Espenfjo
 * __Samsung Galaxy S II (intl) (GT-I9100G):__ codeworkx
+* __Samsung Galaxy S II Epic 4G Touch (SPH-D710):__ dastin1015, Epic CM
 * __Samsung Galaxy S III (AT&T) (SGH-I747):__ cyanogen
 * __Samsung Galaxy S III (Cricket) (SCH-R530):__ noobnl
 * __Samsung Galaxy S III (intl) (GT-I9300):__ xplodwild, codeworkx
@@ -62,6 +65,8 @@ Maintainers (CyanogenMod 10.1):
 * __Samsung Galaxy S IV (T-Mobile) (SGH-M919):__ cyanogen
 * __Samsung Galaxy S IV (US Cellular) (SCH-R540):__ noobnl
 * __Samsung Galaxy S IV (Verizon) (SCH-I545):__ invisiblek
+* __Samsung Galaxy S IV Mini (Intl LTE) (GT-I9195):__arco
+* __Samsung Galaxy S IV Mini (Intl 3G) (GT-I9190):__arco
 * __Samsung Galaxy Tab 7" (GSM):__ cdesai, humberos
 * __Samsung Galaxy Tab 7" (CDMA):__ jt1134
 * __Samsung Galaxy Tab 2 7" (GT-P31xx):__ codeworkx
