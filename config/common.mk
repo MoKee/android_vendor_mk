@@ -267,5 +267,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.mk.version=$(MK_VERSION) \
   ro.modversion=$(MK_VERSION)
 
+# OMH Support
+ADDITIONAL_BUILD_PROPERTIES += \
+    persist.omh.enabled=true
+
 -include vendor/mk/sepolicy/sepolicy.mk
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
