@@ -198,6 +198,7 @@ PRODUCT_PACKAGES += \
     Halo \
     MoKeeHelper \
     MoKeeLauncher \
+    MoKeeSetupWizard \
     Notepad
 
 # Mokee PhoneLoc
