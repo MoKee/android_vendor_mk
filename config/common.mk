@@ -62,8 +62,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=1 \
-    persist.sys.root_access=1
+    ro.build.selinux=1
 
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -150,11 +149,8 @@ include vendor/mk/config/themes_common.mk
 
 # Required MK packages
 PRODUCT_PACKAGES += \
-    Camera \
     Development \
-    Superuser \
-    BluetoothExt \
-    su
+    BluetoothExt
 
 # Optional MK packages
 PRODUCT_PACKAGES += \
@@ -195,7 +191,14 @@ PRODUCT_PACKAGES += \
     fsck.exfat \
     mkfs.exfat \
     ntfsfix \
-    ntfs-3g
+    ntfs-3g \
+    gdbserver \
+    micro_bench \
+    oprofiled \
+    procmem \
+    procrank \
+    sqlite3 \
+    strace
 
 # Custom MoKee packages
 PRODUCT_PACKAGES += \
@@ -222,6 +225,22 @@ PRODUCT_PACKAGES += \
 # rsync
 PRODUCT_PACKAGES += \
     rsync
+
+# These packages are excluded from user builds
+ifneq ($(TARGET_BUILD_VARIANT),user)
+
+PRODUCT_PACKAGES += \
+    Superuser \
+    su
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=1
+else
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=0
+
+endif
 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
