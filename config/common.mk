@@ -105,7 +105,6 @@ PRODUCT_COPY_FILES += \
 
 # MoKee-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/app/GoogleIME.apk:system/app/GoogleIME.apk \
     vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk \
     vendor/mk/prebuilt/common/app/MarketExt.apk:system/app/MarketExt.apk \
     vendor/mk/prebuilt/common/app/MoKeeMarket.apk:system/app/MoKeeMarket.apk \
@@ -115,8 +114,7 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v6.so:system/lib/libsmartaiwrite-jni-v6.so \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v7.so:system/lib/libsmartaiwrite-jni-v7.so \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v8.so:system/lib/libsmartaiwrite-jni-v8.so \
-    vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so \
-    vendor/mk/prebuilt/common/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so
+    vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so
 
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
