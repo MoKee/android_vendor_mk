@@ -11,6 +11,20 @@ Visit http://www.mfunz.com for our home page.
 
 CHANGELOG (notable new features)
 ---------
+### 43.1.0
+* Common: MoKee Center
+* Common: MoKee MoKeeSetupWizard
+* Common: Animation Controls
+* Common: Statusbar Quick Peek
+* Common: Gesture in lockscreen
+* Common: Auto-Hide Status Bar
+* Common: ListView animation
+* Common: Privacy Guard
+* Common: Dialer blacklists
+* Common: Wake-on-Home
+* Common: QuickSettings camera
+* Common: Profile improvements
+* Various small bugfixes, global and device-specific
 
 ### 43.0.0
 * Common: Android 4.3 (Google)
