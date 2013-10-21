@@ -116,6 +116,14 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v8.so:system/lib/libsmartaiwrite-jni-v8.so \
     vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so
 
+# Google IME
+ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
+PRODUCT_COPY_FILES += \
+    vendor/mk/prebuilt/common/app/GoogleIME.apk:system/app/GoogleIME.apk \
+    vendor/mk/prebuilt/common/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so
+endif
+
+
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/compcache:system/bin/compcache \
