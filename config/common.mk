@@ -141,10 +141,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml
 
-# Don't export PS1 in /system/etc/mkshrc.
-PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/etc/mkshrc:system/etc/mkshrc
-
 # T-Mobile theme engine
 include vendor/mk/config/themes_common.mk
 
