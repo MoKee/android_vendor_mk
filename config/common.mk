@@ -1,6 +1,5 @@
 PRODUCT_BRAND ?= mokee
 
--include vendor/cm-priv/keys.mk
 SUPERUSER_EMBEDDED := true
 SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
@@ -291,4 +290,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.modversion=$(MK_VERSION)
 
 -include vendor/mk/sepolicy/sepolicy.mk
+
+-include vendor/cm-priv/keys/keys.mk
+
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
