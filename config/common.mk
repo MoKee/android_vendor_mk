@@ -1,5 +1,10 @@
 PRODUCT_BRAND ?= mokee
 
+# Odex support for official releases 
+ifdef MK_RELEASE
+WITH_DEXPREOPT := true
+endif
+
 SUPERUSER_EMBEDDED := true
 SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
