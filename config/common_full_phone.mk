@@ -15,15 +15,4 @@ ifeq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
         vendor/mk/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
 endif
 
-# World APN list
-PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
-
-# World SPN overrides list
-PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/etc/spn-conf.xml:system/etc/spn-conf.xml
-
-# SIM Toolkit
-PRODUCT_PACKAGES += \
-    Stk
-
+$(call inherit-product, vendor/mk/config/telephony.mk)
