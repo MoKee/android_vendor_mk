@@ -19,6 +19,7 @@ CHANGELOG (notable new features)
 * Common: Gesture in lockscreen
 * Common: Auto-Hide Status Bar
 * Common: ListView animation
+* Common: Active Display
 * Common: Privacy Guard
 * Common: Dialer blacklists
 * Common: Wake-on-Home
