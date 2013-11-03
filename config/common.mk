@@ -101,7 +101,7 @@ PRODUCT_COPY_FILES += \
 
 # CM-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/etc/init.local.rc:root/init.cm.rc
+    vendor/mk/prebuilt/common/etc/init.local.rc:root/init.mk.rc
 
 # MoKee-specific init file
 PRODUCT_COPY_FILES += \
