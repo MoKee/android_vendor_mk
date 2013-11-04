@@ -99,7 +99,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
-# CM-specific init file
+# MK-specific init file
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.local.rc:root/init.mk.rc
 
