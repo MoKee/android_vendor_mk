@@ -1,4 +1,4 @@
-# CyanogenMod Extras
+# MoKee OpenSource Extras
 import /init.superuser.rc
 
 on init
