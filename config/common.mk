@@ -161,6 +161,7 @@ PRODUCT_PACKAGES += \
 
 # Custom MK packages
 PRODUCT_PACKAGES += \
+    Launcher3 \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf \
@@ -249,8 +250,8 @@ endif
 PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
-PRODUCT_VERSION_MAJOR = 43
-PRODUCT_VERSION_MINOR = 1
+PRODUCT_VERSION_MAJOR = 44
+PRODUCT_VERSION_MINOR = 0
 PRODUCT_VERSION_MAINTENANCE = 0
 
 # Set MK_BUILDTYPE
@@ -293,8 +294,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.mk.support=bbs.mfunz.com \
   ro.mk.version=$(MK_VERSION) \
   ro.modversion=$(MK_VERSION)
-
--include vendor/mk/sepolicy/sepolicy.mk
 
 -include vendor/cm-priv/keys/keys.mk
 
