@@ -1521,6 +1521,9 @@
   <apn carrier="Movistar UY" mcc="748" mnc="07" apn="apnumt.movistar.com.uy" user="movistar" password="movistar" type="default,supl" />
   <apn carrier="Claro UY" mcc="748" mnc="10" apn="gprs.claro.com.uy" user="ctigpr" password="ctigpr999" type="default,supl" />
   <apn carrier="Claro UY MMS" mcc="748" mnc="10" apn="mms.ctimovil.com.uy" user="ctimms" password="ctimms999" mmsc="http://mms.ctimovil.com.uy" mmsproxy="170.051.255.240" mmsport="9201" type="mms" />
+  <apn carrier="Movistar PA" apn="internet.movistar.pa" user="movistarpa" password="movistarpa" type="default,supl"/>
+  <apn carrier="Claro PA" apn="web.claro.com.pa" user="CLAROWEB" pass="CLAROWEB" type="default,supl" />
+  <apn carrier="Digicel PA" apn="web.digicelpanama.com" type="default,supl"/>
   <apn carrier="中国电信WAP设置" mcc="460" mnc="03" apn="ctwap" user="ctwap@mycdma.cn" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsc="http://mmsc.vnet.mobi" authtype="3" type="default,mms" spn="中国电信" />
   <apn carrier="中国电信NET设置" mcc="460" mnc="03" apn="ctnet" user="ctnet@mycdma.cn" password="vnet.mobi" authtype="3" type="default,dun" spn="中国电信" />
   <apn carrier="中国电信WAP设置" mcc="460" mnc="12" apn="ctwap" user="ctwap@mycdma.cn" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsc="http://mmsc.vnet.mobi" authtype="3" type="default,mms" spn="中国电信" />
