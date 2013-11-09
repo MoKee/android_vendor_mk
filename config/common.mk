@@ -204,7 +204,6 @@ PRODUCT_PACKAGES += \
 
 # Custom MoKee packages
 PRODUCT_PACKAGES += \
-    Halo \
     MoKeeHelper \
     MoKeeLauncher \
     MoKeeSetupWizard \
