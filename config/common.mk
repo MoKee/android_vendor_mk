@@ -157,7 +157,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     VoicePlus \
     SoundRecorder \
-    Basic
+    Basic \
+    libemoji
 
 # Custom MK packages
 PRODUCT_PACKAGES += \
