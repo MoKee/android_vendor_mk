@@ -28,6 +28,7 @@ mk_p3110-userdebug
 mk_p5100-userdebug
 mk_p5110-userdebug
 mk_p880-userdebug
+mk_p930-userdebug
 mk_spyder-userdebug
 mk_targa-userdebug
 mk_toro-userdebug
