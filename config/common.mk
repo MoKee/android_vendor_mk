@@ -258,18 +258,17 @@ PRODUCT_VERSION_MINOR = 0
 PRODUCT_VERSION_MAINTENANCE = 0
 
 # Set MK_BUILDTYPE
-ifeq ($(shell hostname),mokee)
+ifneq ($(filter mokee mokee-0x02 buildbot,$(shell hostname)),)
 MK_BUILDTYPE := EXPERIMENTAL
-endif
-
-ifdef MK_NIGHTLY
-    MK_BUILDTYPE := NIGHTLY
-endif
-ifdef MK_EXPERIMENTAL
-    MK_BUILDTYPE := EXPERIMENTAL
-endif
-ifdef MK_RELEASE
-    MK_BUILDTYPE := RELEASE
+    ifdef MK_NIGHTLY
+        MK_BUILDTYPE := NIGHTLY
+    endif
+    ifdef MK_EXPERIMENTAL
+        MK_BUILDTYPE := EXPERIMENTAL
+    endif
+    ifdef MK_RELEASE
+        MK_BUILDTYPE := RELEASE
+    endif
 endif
 
 ifdef MK_BUILDTYPE
@@ -287,7 +286,7 @@ else
     MK_EXTRAVERSION :=
 endif
 
-ifdef MK_RELEASE
+ifeq ($(MK_BUILDTYPE), RELEASE)
     MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%y%m%d)-RELEASE
 else
     MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
