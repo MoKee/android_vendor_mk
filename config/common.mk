@@ -153,6 +153,12 @@ PRODUCT_PACKAGES += \
     libemoji
 
 # Custom MK packages
+    #MoKeeLauncher \
+
+# MoKee PhoneLoc Database
+PRODUCT_COPY_FILES +=  \
+    vendor/mk/prebuilt/common/media/mokee-phoneloc.dat:system/media/mokee-phoneloc.dat
+
 PRODUCT_PACKAGES += \
     Launcher3 \
     DSPManager \
@@ -160,7 +166,10 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     Apollo \
     CMFileManager \
-    LockClock
+    LockClock \
+    MoKeeHelper \
+    MoKeeSetupWizard \
+    Notepad
 
 # MK Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -193,17 +202,6 @@ PRODUCT_PACKAGES += \
     sqlite3 \
     strace
 
-# Custom MoKee packages
-PRODUCT_PACKAGES += \
-    MoKeeHelper \
-    MoKeeLauncher \
-    MoKeeSetupWizard \
-    Notepad
-
-# Mokee PhoneLoc
-PRODUCT_COPY_FILES +=  \
-    vendor/mk/prebuilt/common/media/mokee-phoneloc.dat:system/media/mokee-phoneloc.dat
-
 # Openssh
 PRODUCT_PACKAGES += \
     scp \
@@ -230,6 +228,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=1
 else
+
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
