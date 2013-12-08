@@ -11,6 +11,13 @@ Visit http://www.mfunz.com for our home page.
 
 CHANGELOG (notable new features)
 ---------
+
+### 44.1.0
+* Common: Android 4.4.1 (Google)
+
+### 44.0.0
+* Common: Android 4.4.0 (Google)
+
 ### 43.1.0
 * Common: MoKee Center
 * Common: MoKee MoKeeSetupWizard
