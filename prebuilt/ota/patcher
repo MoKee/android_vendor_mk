@@ -34,7 +34,7 @@ ui_print "Patching $1"
 # Only replace file if patching succeeds 
 if [ -f $3 ];then
 	/sbin/rm $1
-	/sbin/rm $2
 	/sbin/mv $3 $1
 fi
+/sbin/rm $2
 
