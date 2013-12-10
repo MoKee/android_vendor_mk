@@ -173,7 +173,8 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     Apollo \
     CMFileManager \
-    LockClock
+    LockClock \
+    WhisperPush
 
 # MK Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
