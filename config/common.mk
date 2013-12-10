@@ -172,7 +172,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     MoKeeHelper \
     MoKeeSetupWizard \
-    Notepad
+    Notepad \
+    WhisperPush
 
 # MK Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
