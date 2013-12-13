@@ -1,7 +1,7 @@
 MoKee OpenSource
 ===============
 
-Visit http://github.com/MoKee for full changelogs and git access.
+Visit http://github.com/MoKee for full source and git access.
 
 Visit http://review.mfunz.com for our Gerrit instance.
 
