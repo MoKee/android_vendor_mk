@@ -172,7 +172,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     MoKeeHelper \
     MoKeeSetupWizard \
-    Notepad
+    Notepad \
+    xdelta3
 
 # MK Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -249,8 +250,6 @@ PRODUCT_VERSION_MAINTENANCE = 0
 
 # Set MK_BUILDTYPE
 ifneq ($(filter mokee mokee-0x02 buildbot,$(shell hostname)),)
-PRODUCT_PACKAGES += \
-    xdelta3
 
 MK_BUILDTYPE := EXPERIMENTAL
     ifdef MK_NIGHTLY
