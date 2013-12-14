@@ -249,6 +249,9 @@ PRODUCT_VERSION_MAINTENANCE = 0
 
 # Set MK_BUILDTYPE
 ifneq ($(filter mokee mokee-0x02 buildbot,$(shell hostname)),)
+PRODUCT_PACKAGES += \
+    xdelta3
+
 MK_BUILDTYPE := EXPERIMENTAL
     ifdef MK_NIGHTLY
         MK_BUILDTYPE := NIGHTLY
