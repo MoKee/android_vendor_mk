@@ -29,7 +29,11 @@ fi
 
 # Commerce patch
 ui_print "Patching $1"
-/tmp/xdelta3 -D -R -d -s $1 $2 $3
+if [ -f /system/bin/xdelta3 ];then
+	/system/bin/xdelta3 -D -R -d -s $1 $2 $3
+else
+	/tmp/xdelta3 -D -R -d -s $1 $2 $3
+fi
 
 # Only replace file if patching succeeds 
 if [ -f $3 ];then
