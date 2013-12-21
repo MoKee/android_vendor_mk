@@ -171,6 +171,7 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     LockClock \
     MoKeeHelper \
+    MoKeeScreenRecorder \
     MoKeeSetupWizard \
     Notepad \
     xdelta3
