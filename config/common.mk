@@ -166,6 +166,7 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     DSPManager \
     libcyanogen-dsp \
+    libscreenrecorder \
     audio_effects.conf \
     Apollo \
     CMFileManager \
