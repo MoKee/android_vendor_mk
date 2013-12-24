@@ -14,4 +14,5 @@ BOARD_SEPOLICY_UNION += \
     installd.te \
     seapp_contexts \
     vold.te \
+    xdelta3.te \
     mac_permissions.xml

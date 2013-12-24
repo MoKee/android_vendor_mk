@@ -6,3 +6,5 @@
 /sys/devices/system/cpu.*/cpufreq(/.*)? --  u:object_r:sysfs_writable:s0
 /sys/block/mmcblk0/queue/scheduler  --    u:object_r:sysfs_writable:s0
 
+# MoKee OTA Permission
+/system/bin/xdelta3 u:object_r:xdelta3_exec:s0

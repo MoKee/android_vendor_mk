@@ -1,0 +1,7 @@
+type xdelta3, domain;
+permissive xdelta3;
+type xdelta3_exec, file_type;
+domain_auto_trans(shell, xdelta3_exec, xdelta3)
+
+# xdelta3 is unconfined.
+unconfined_domain(xdelta3)
