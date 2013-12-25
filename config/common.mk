@@ -99,7 +99,6 @@ PRODUCT_COPY_FILES += \
 
 # MoKee prebuilts
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/ota/patcher:system/bin/patcher \
     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
     vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk \
     vendor/mk/prebuilt/common/app/MoKeeForum.apk:system/app/MoKeeForum.apk \
@@ -175,8 +174,7 @@ PRODUCT_PACKAGES += \
     MoKeeHelper \
     MoKeeScreenRecorder \
     MoKeeSetupWizard \
-    Notepad \
-    xdelta3
+    Notepad
 
 # MK Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
