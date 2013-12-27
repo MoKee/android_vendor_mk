@@ -157,6 +157,12 @@ PRODUCT_PACKAGES += \
 
 # Custom MK packages
     #MoKeeLauncher \
+# IR packages
+PRODUCT_PACKAGES += \
+    consumerir.piranha
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml
 
 # MoKee PhoneLoc Database
 PRODUCT_COPY_FILES +=  \
