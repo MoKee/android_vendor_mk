@@ -118,11 +118,6 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so
 endif
 
-# Compcache/Zram support
-PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/bin/compcache:system/bin/compcache \
-    vendor/mk/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
-
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/mk/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
