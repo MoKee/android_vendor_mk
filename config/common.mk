@@ -176,9 +176,6 @@ PRODUCT_PACKAGES += \
     org.mokee.hardware \
     org.mokee.hardware.xml
 
-PRODUCT_PACKAGES += \
-    CellBroadcastReceiver
-
 # Extra tools in MK
 PRODUCT_PACKAGES += \
     openvpn \
