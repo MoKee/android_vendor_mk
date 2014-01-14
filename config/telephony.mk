@@ -8,7 +8,7 @@ PRODUCT_COPY_FILES += \
 
 # Selective SPN list for operator number who has the problem. 
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+    vendor/mk/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
 
 # Telephony packages
