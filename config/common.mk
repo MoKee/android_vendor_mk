@@ -146,7 +146,6 @@ PRODUCT_PACKAGES += \
 # Optional MK packages
 PRODUCT_PACKAGES += \
     VoicePlus \
-    SoundRecorder \
     Basic \
     libemoji
 
@@ -183,7 +182,6 @@ PRODUCT_PACKAGES += \
     mke2fs \
     tune2fs \
     bash \
-    vim \
     nano \
     htop \
     powertop \
