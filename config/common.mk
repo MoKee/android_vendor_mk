@@ -177,6 +177,7 @@ PRODUCT_PACKAGES += \
 
 # Extra tools in MK
 PRODUCT_PACKAGES += \
+    libsepol \
     openvpn \
     e2fsck \
     mke2fs \
@@ -232,7 +233,6 @@ endif
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
 PRODUCT_VERSION_MAJOR = 44
