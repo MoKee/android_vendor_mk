@@ -153,20 +153,15 @@ PRODUCT_PACKAGES += \
     Basic \
     libemoji
 
-<<<<<<< HEAD
 # Custom MK packages
-    #MoKeeLauncher \
 
 # MoKee PhoneLoc Database
 PRODUCT_COPY_FILES +=  \
     vendor/mk/prebuilt/common/media/mokee-phoneloc.dat:system/media/mokee-phoneloc.dat
 
-=======
-# Custom CM packages
->>>>>>> 67e80038e27f2ac226778de73625ddedd2366a26
 PRODUCT_PACKAGES += \
     Launcher3 \
-    Trebuchet \
+    MoKeeLauncher \
     DSPManager \
     libcyanogen-dsp \
     libscreenrecorder \
