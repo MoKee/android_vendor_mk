@@ -244,7 +244,7 @@ PRODUCT_VERSION_MINOR = 2
 PRODUCT_VERSION_MAINTENANCE = 0
 
 # Set MK_BUILDTYPE
-ifneq ($(filter mokee buildbot,$(shell hostname)),)
+ifneq ($(filter mokee mokee-0x02,$(shell hostname)),)
 
 MK_BUILDTYPE := EXPERIMENTAL
     ifdef MK_NIGHTLY
