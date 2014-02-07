@@ -23,6 +23,9 @@ mk_i9100g-userdebug
 mk_i9300-userdebug
 mk_i9305-userdebug
 mk_i9500-userdebug
+mk_lt013g-userdebug
+mk_lt01lte-userdebug
+mk_lt01wifi-userdebug
 mk_lu6200-userdebug
 mk_m7att-userdebug
 mk_m7spr-userdebug
