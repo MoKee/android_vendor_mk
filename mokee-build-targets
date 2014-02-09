@@ -13,9 +13,11 @@ mk_e970-userdebug
 mk_e975-userdebug
 mk_e980-userdebug
 mk_edison-userdebug
+mk_falcon-userdebug
 mk_find5-userdebug
 mk_flo-userdebug
 mk_galaxysmtd-userdebug
+mk_ghost-userdebug
 mk_grouper-userdebug
 mk_hammerhead-userdebug
 mk_hltexx-userdebug
