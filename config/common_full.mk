@@ -18,6 +18,7 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     VisualizationWallpapers \
     PhotoTable \
+    PerformanceControl \
     SoundRecorder
 
 
