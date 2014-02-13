@@ -13,15 +13,21 @@ CHANGELOG (notable new features)
 ---------
 
 ### 44.2.0
-* Common: Android 4.4.2 (Google)
-
-### 44.1.0
-* Common: Android 4.4.1 (Google)
-
-### 44.0.0
-* Common: Android 4.4.0 (Google)
+* Common: Android 4.4 (Google)
+* Common: KitKat White UI Theme
+* Common: Power Saver Manager
+* Common: Multi-Window
+* Common: Screen Recorder
+* Common: Recent Application Lock
+* Dialer: Speed Dial
+* Dialer: IP Dial
+* Dialer: Smart T9 Dial
+* Dialer: Direct Dial
+* Mms: Direct Dial
+* OTA: OTA Updater
 
 ### 43.1.0
+* Common: Android 4.3 (Google)
 * Common: MoKee Center
 * Common: MoKee MoKeeSetupWizard
 * Common: Animation Controls
@@ -31,14 +37,13 @@ CHANGELOG (notable new features)
 * Common: ListView animation
 * Common: Active Display
 * Common: Privacy Guard
+* Common: Halo
+* Common: PIE
 * Common: Dialer blacklists
 * Common: Wake-on-Home
 * Common: QuickSettings camera
 * Common: Profile improvements
 * Various small bugfixes, global and device-specific
-
-### 43.0.0
-* Common: Android 4.3 (Google)
 
 ### 42.2.0
 * Common: Android 4.2.2 (Google)
@@ -53,6 +58,7 @@ CHANGELOG (notable new features)
 * Common: DSP Manager
 * Common: Volume Rocker Wake
 * Common: Performance Settings (I/O Scheduler, CPU Governor, etc)
+* Calendar: Lunar date
 * Quick Settings: Panel Customization
 * Quick Settings: Toggle QS panel with horizontal swipe
 * Quick Settings: Split QS actionable area
@@ -65,6 +71,7 @@ CHANGELOG (notable new features)
 * MoKeeLauncher: Launcher Updates
 * Lockscreen: Slider Shortcuts
 * Lockscreen: Maximize Widgets on Wake
+* Apollo: Sleep Mode
 
 ### 41.2.0
 * Common: Android 4.1.2 (Google)
