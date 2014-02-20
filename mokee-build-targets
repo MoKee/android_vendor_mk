@@ -21,10 +21,9 @@ mk_galaxysmtd-userdebug
 mk_ghost-userdebug
 mk_grouper-userdebug
 mk_hammerhead-userdebug
-mk_hltexx-userdebug
+mk_hlte-userdebug
 mk_honami-userdebug
-mk_jfltespr-userdebug
-mk_jfltexx-userdebug
+mk_jflte-userdebug
 mk_i9100-userdebug
 mk_i9100g-userdebug
 mk_i9300-userdebug
