@@ -30,10 +30,8 @@ mk_lt013g-userdebug
 mk_lt01lte-userdebug
 mk_lt01wifi-userdebug
 mk_lu6200-userdebug
-mk_m7att-userdebug
+mk_m7-userdebug
 mk_m7spr-userdebug
-mk_m7tmo-userdebug
-mk_m7ul-userdebug
 mk_m7vzw-userdebug
 mk_maguro-userdebug
 mk_mako-userdebug
