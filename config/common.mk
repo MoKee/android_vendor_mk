@@ -175,8 +175,7 @@ PRODUCT_PACKAGES += \
     LockClock \
     MoKeeHelper \
     MoKeeScreenRecorder \
-    MoKeeSetupWizard \
-    Notepad
+    MoKeeSetupWizard
 
 # MK Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
