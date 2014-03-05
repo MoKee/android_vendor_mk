@@ -107,6 +107,7 @@ PRODUCT_COPY_FILES += \
 # MoKee prebuilts
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
+    vendor/mk/prebuilt/common/app/GameCenter.apk:system/app/GameCenter.apk \
     vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk \
     vendor/mk/prebuilt/common/app/MoKeeForum.apk:system/app/MoKeeForum.apk \
     vendor/mk/prebuilt/common/app/MarketExt.apk:system/app/MarketExt.apk \
