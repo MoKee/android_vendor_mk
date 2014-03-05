@@ -1,9 +1,8 @@
 # Inherit common MK stuff
 $(call inherit-product, vendor/mk/config/common_full.mk)
 
-# Default ringtone
+# Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Orion.ogg \
     ro.config.notification_sound=Alya.ogg \
     ro.config.alarm_alert=Alarm_Buzzer.ogg
 
