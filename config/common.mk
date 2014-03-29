@@ -105,11 +105,18 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
     vendor/mk/prebuilt/common/etc/init.d/88preinstall:system/etc/init.d/88preinstall \
     vendor/mk/prebuilt/common/app/GameCenter.apk:system/app/GameCenter.apk \
+    vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk \
     vendor/mk/prebuilt/common/app/MoKeeForum.apk:system/app/MoKeeForum.apk \
     vendor/mk/prebuilt/common/app/MarketExt.apk:system/app/MarketExt.apk \
     vendor/mk/prebuilt/common/app/MoKeeMarket.apk:system/app/MoKeeMarket.apk \
     vendor/mk/prebuilt/common/lib/libbdpush_V1_0.so:system/lib/libbdpush_V1_0.so \
-    vendor/mk/prebuilt/third/app/com.iflytek.inputmethod.apk:system/third-app/com.iflytek.inputmethod.apk
+    vendor/mk/prebuilt/common/lib/libmsc-v7.so:system/lib/libmsc-v7.so \
+    vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v7.so:system/lib/libsmartaiwrite-jni-v7.so \
+    vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v8.so:system/lib/libsmartaiwrite-jni-v8.so \
+    vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v9.so:system/lib/libsmartaiwrite-jni-v9.so \
+    vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so
+
+#    vendor/mk/prebuilt/third/app/com.iflytek.inputmethod.apk:system/third-app/com.iflytek.inputmethod.apk
 
 # Google IME
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
