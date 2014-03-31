@@ -24,12 +24,12 @@ mk_grouper-userdebug
 mk_hammerhead-userdebug
 mk_hlte-userdebug
 mk_honami-userdebug
-mk_jflte-userdebug
 mk_i9100-userdebug
 mk_i9100g-userdebug
 mk_i9300-userdebug
 mk_i9305-userdebug
 mk_i9500-userdebug
+mk_jflte-userdebug
 mk_lt013g-userdebug
 mk_lt01lte-userdebug
 mk_lt01wifi-userdebug
@@ -39,13 +39,11 @@ mk_m7spr-userdebug
 mk_m7vzw-userdebug
 mk_maguro-userdebug
 mk_mako-userdebug
-mk_mb886-userdebug
 mk_moto_msm8960-userdebug
 mk_moto_msm8960dt-userdebug
 mk_n1-userdebug
 mk_n7000-userdebug
 mk_n7100-userdebug
-mk_t0lte-userdebug
 mk_odin-userdebug
 mk_p3100-userdebug
 mk_p3110-userdebug
@@ -57,7 +55,8 @@ mk_sc03e-userdebug
 mk_serrano3gxx-userdebug
 mk_serranoltexx-userdebug
 mk_spyder-userdebug
-mk_su640-userdebug
+mk_t0lte-userdebug
+mk_targa-userdebug
 mk_tilapia-userdebug
 mk_togari-userdebug
 mk_toro-userdebug
