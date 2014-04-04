@@ -28,7 +28,7 @@ fi
 
 while true; do
 	status=`getprop sys.boot_completed`
-	if [ $status -eq 1 ]; then
+	if [ "$status" -eq 1 ]; then
 		break
 	else
 		sleep 10
