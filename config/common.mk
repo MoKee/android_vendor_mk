@@ -115,9 +115,8 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v8.so:system/lib/libsmartaiwrite-jni-v8.so \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v9.so:system/lib/libsmartaiwrite-jni-v9.so \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v10.so:system/lib/libsmartaiwrite-jni-v10.so \
-    vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so
-
-#    vendor/mk/prebuilt/third/app/com.iflytek.inputmethod.apk:system/third-app/com.iflytek.inputmethod.apk
+    vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so \
+    vendor/mk/prebuilt/third/app/com.oupeng.browser.apk:system/third-app/com.oupeng.browser.apk
 
 # Google IME
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
