@@ -48,6 +48,7 @@ mk_moto_msm8960dt-userdebug
 mk_n1-userdebug
 mk_n7000-userdebug
 mk_n7100-userdebug
+mk_nx403a-userdebug
 mk_odin-userdebug
 mk_p3100-userdebug
 mk_p3110-userdebug
