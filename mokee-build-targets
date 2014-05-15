@@ -24,6 +24,7 @@ mk_flo-userdebug
 mk_galaxysmtd-userdebug
 mk_grouper-userdebug
 mk_hammerhead-userdebug
+mk_hikari-userdebug
 mk_hlte-userdebug
 mk_honami-userdebug
 mk_hummingbird-userdebug
@@ -50,6 +51,7 @@ mk_moto_msm8960dt-userdebug
 mk_n1-userdebug
 mk_n7000-userdebug
 mk_n7100-userdebug
+mk_nozomi-userdebug
 mk_nx403a-userdebug
 mk_odin-userdebug
 mk_otter-userdebug
