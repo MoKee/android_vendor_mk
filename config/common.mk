@@ -248,7 +248,6 @@ PRODUCT_VERSION_MAINTENANCE = 0
 # Set MK_BUILDTYPE
 ifneq ($(filter mokee mokee-0x02 buildserver,$(shell hostname)),)
 
-MK_BUILDTYPE := EXPERIMENTAL
     ifdef MK_NIGHTLY
         MK_BUILDTYPE := NIGHTLY
     endif
