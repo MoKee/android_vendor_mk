@@ -109,7 +109,7 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/app/MoKeeForum.apk:system/app/MoKeeForum.apk \
     vendor/mk/prebuilt/common/app/MarketExt.apk:system/app/MarketExt.apk \
     vendor/mk/prebuilt/common/app/MoKeeMarket.apk:system/app/MoKeeMarket.apk \
-    vendor/mk/prebuilt/common/lib/libbdpush_V1_0.so:system/lib/libbdpush_V1_0.so \
+    vendor/mk/prebuilt/common/lib/libbdpush_V2_0.so:system/lib/libbdpush_V2_0.so \
     vendor/mk/prebuilt/common/lib/libmsc-v7.so:system/lib/libmsc-v7.so \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v7.so:system/lib/libsmartaiwrite-jni-v7.so \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v8.so:system/lib/libsmartaiwrite-jni-v8.so \
