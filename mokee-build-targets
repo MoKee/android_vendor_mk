@@ -68,6 +68,7 @@ mk_p5100-userdebug
 mk_p5110-userdebug
 mk_p880-userdebug
 mk_p930-userdebug
+mk_r950-userdebug
 mk_sc03e-userdebug
 mk_serrano3gxx-userdebug
 mk_serranoltexx-userdebug
