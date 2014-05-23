@@ -284,6 +284,9 @@ else
     MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
 endif
 
+# by default, do not update the recovery with system updates
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
+
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.mk.support=bbs.mfunz.com \
   ro.mk.version=$(MK_VERSION) \
