@@ -12,19 +12,54 @@ Visit http://www.mfunz.com for our home page.
 CHANGELOG (notable new features)
 ---------
 
-### 44.2.0
-* Common: Android 4.4 (Google)
+### 44.2.x
+* Common: Android 4.4.x (Google)
 * Common: KitKat White UI Theme
 * Common: Power Saver Manager
 * Common: Multi-Window
 * Common: Screen Recorder
 * Common: Recent Application Lock
+* Common: Theme Chooser UI Overhaul
+* Common: Calculator app redesign (courtesy Xlythe)
+* Common: Performance Profiles
+* Common: Improved theming performance on low memory devices (~512MB RAM or less)
+* Common: Move Voice+ settings from app drawer to Settings (under Wireless and Networks > ‘More’)
+* Common: Consolidate screen-off animation options (remove checkbox)
+* Common: New Theme Engine
+* Common: Add provider permissions for Blacklist
+* Common: Fix lockscreen custom wallpaper crashes and album art issues
+* Common: Disable elements when in custom lockscreen
+* Common: Address security vulnerability for icons
+* Common: Resolve memory leaks in Frameworks
+* Common: Settings – Show ‘eject card’ action for USB storage
+* Common: Add quick settings options to show smaller tiles; add BT device name to tile; fix tiles layout in landscape mode
+* Common: Fix longpress quiet hours QS tile option
+* Common: Parallel Shutdown – Decrease shutdown time
+* Common: Downloads – Add pause/resume support
+* Common: Additional Prviacy Guard AppOps permissions
+* Common: Additional right-to-left (RTL) layout mirroring support
+* Common: Add 'screen color' support to Settings
+* Common: Fix stylus eraser being disabled by palm rejection
+* Common: Allow NavBar toggling in runtime (requires kernel support)
 * Dialer: Speed Dial
 * Dialer: IP Dial
 * Dialer: Smart T9 Dial
 * Dialer: Direct Dial
+* Dialer: Add Open Source forward/backward/incoming look-up
 * Mms: Direct Dial
 * OTA: OTA Updater
+* MoKeeLauncher: Move settings to new slide-out panel
+* MoKeeLauncher: Consolidate settings for home and drawer options
+* MoKeeLauncher: Hidden apps and labels support
+* MoKeeLauncher: Fix last icon from hotseat disappearing
+* MoKeeLauncher: Fix custom home transition effect
+* Media: Add FFMPEG support (expanded media format support)
+* Bluetooth: Improved support for new car audio systems and docks
+* Various small bugfixes, global and device-specific
+* Bluetooth: Upstream updates and fix issues with audio routing to select car makes/models and disconnect issues
+* MultiSim: Additional support patches (25+) and UI/UX modifications
+* Various small bugfixes, global and device-specific
+* Quick Boot: Enable for supported devices
 
 ### 43.1.0
 * Common: Android 4.3 (Google)
