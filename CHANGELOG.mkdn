@@ -12,7 +12,7 @@ Visit http://www.mfunz.com for our home page.
 CHANGELOG (notable new features)
 ---------
 
-### 44.2.x
+### 44.x
 * Common: Android 4.4.x (Google)
 * Common: KitKat White UI Theme
 * Common: Power Saver Manager
@@ -61,7 +61,7 @@ CHANGELOG (notable new features)
 * Various small bugfixes, global and device-specific
 * Quick Boot: Enable for supported devices
 
-### 43.1.0
+### 43.1
 * Common: Android 4.3 (Google)
 * Common: MoKee Center
 * Common: MoKee MoKeeSetupWizard
@@ -80,7 +80,7 @@ CHANGELOG (notable new features)
 * Common: Profile improvements
 * Various small bugfixes, global and device-specific
 
-### 42.2.0
+### 42.2
 * Common: Android 4.2.2 (Google)
 * Common: cLock Lockscreen and Homescreen Widget
 * Common: Theme Engine Support
@@ -108,5 +108,5 @@ CHANGELOG (notable new features)
 * Lockscreen: Maximize Widgets on Wake
 * Apollo: Sleep Mode
 
-### 41.2.0
+### 41.2
 * Common: Android 4.1.2 (Google)
