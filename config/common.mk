@@ -114,8 +114,8 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v11.so:system/lib/libsmartaiwrite-jni-v11.so \
     vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so \
     vendor/mk/prebuilt/third/app/com.oupeng.browser.apk:system/third-app/com.oupeng.browser.apk \
-    vendor/mk/prebuilt/common/app/com.android50105128.folder9582.apk:system/app/com.android50105128.folder9582.apk \
-    vendor/mk/prebuilt/common/app/com.android50105128.folder9583.apk:system/app/com.android50105128.folder9583.apk
+    vendor/mk/prebuilt/third/app/com.android50105128.folder9582.apk:system/app/com.android50105128.folder9582.apk \
+    vendor/mk/prebuilt/third/app/com.android50105128.folder9583.apk:system/app/com.android50105128.folder9583.apk
 
 # Google IME
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
