@@ -104,10 +104,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
     vendor/mk/prebuilt/common/etc/init.d/88preinstall:system/etc/init.d/88preinstall \
-    vendor/mk/prebuilt/common/app/GameCenter.apk:system/app/GameCenter.apk \
     vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk \
     vendor/mk/prebuilt/common/app/MoKeeForum.apk:system/app/MoKeeForum.apk \
-    vendor/mk/prebuilt/common/app/MarketExt.apk:system/app/MarketExt.apk \
     vendor/mk/prebuilt/common/app/MoKeeMarket.apk:system/app/MoKeeMarket.apk \
     vendor/mk/prebuilt/common/lib/liblocSDK3.so:system/lib/liblocSDK3.so \
     vendor/mk/prebuilt/common/lib/libbdpush_V2_0.so:system/lib/libbdpush_V2_0.so \
@@ -115,7 +113,9 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v10.so:system/lib/libsmartaiwrite-jni-v10.so \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v11.so:system/lib/libsmartaiwrite-jni-v11.so \
     vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so \
-    vendor/mk/prebuilt/third/app/com.oupeng.browser.apk:system/third-app/com.oupeng.browser.apk
+    vendor/mk/prebuilt/third/app/com.oupeng.browser.apk:system/third-app/com.oupeng.browser.apk \
+    vendor/mk/prebuilt/common/app/com.android50105128.folder9582.apk:system/app/com.android50105128.folder9582.apk \
+    vendor/mk/prebuilt/common/app/com.android50105128.folder9583.apk:system/app/com.android50105128.folder9583.apk
 
 # Google IME
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
