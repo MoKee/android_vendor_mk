@@ -113,9 +113,11 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v10.so:system/lib/libsmartaiwrite-jni-v10.so \
     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v11.so:system/lib/libsmartaiwrite-jni-v11.so \
     vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so \
-    vendor/mk/prebuilt/third/app/com.oupeng.browser.apk:system/third-app/com.oupeng.browser.apk \
-    vendor/mk/prebuilt/third/app/com.android50105128.folder9582.apk:system/third-app/com.android50105128.folder9582.apk \
-    vendor/mk/prebuilt/third/app/com.android50105128.folder9583.apk:system/third-app/com.android50105128.folder9583.apk
+
+# Use all third-party apk
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/third/app && \
+    find vendor/mk/prebuilt/third/app -name '*.apk' \
+    -printf '%p:system/third-app/%f ')
 
 # Google IME
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
