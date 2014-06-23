@@ -105,13 +105,12 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
     vendor/mk/prebuilt/common/etc/init.d/88preinstall:system/etc/init.d/88preinstall \
     vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk \
-    vendor/mk/prebuilt/common/app/MoKeeForum.apk:system/app/MoKeeForum.apk \
-    vendor/mk/prebuilt/common/lib/liblocSDK3.so:system/lib/liblocSDK3.so \
-    vendor/mk/prebuilt/common/lib/libbdpush_V2_0.so:system/lib/libbdpush_V2_0.so \
-    vendor/mk/prebuilt/common/lib/libmsc-v7.so:system/lib/libmsc-v7.so \
-    vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v10.so:system/lib/libsmartaiwrite-jni-v10.so \
-    vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v11.so:system/lib/libsmartaiwrite-jni-v11.so \
-    vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so \
+    vendor/mk/prebuilt/common/app/MoKeeForum.apk:system/app/MoKeeForum.apk
+
+# Use all prebuilts lib files
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib && \
+    find vendor/mk/prebuilt/common/lib -name '*.so' \
+    -printf '%p:system/lib/%f ')
 
 # Use all third-party apk
 PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/third/app && \
