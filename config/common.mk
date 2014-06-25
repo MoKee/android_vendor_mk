@@ -252,7 +252,7 @@ PRODUCT_VERSION_MINOR = 4
 PRODUCT_VERSION_MAINTENANCE = 0
 
 # Set MK_BUILDTYPE
-ifneq ($(filter mokee buildbot-0x01 buildbot-0x02 buildserver,$(shell hostname)),)
+ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
 
     ifdef MK_NIGHTLY
         MK_BUILDTYPE := NIGHTLY
