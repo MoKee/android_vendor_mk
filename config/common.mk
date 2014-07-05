@@ -172,6 +172,7 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     LockClock \
     MoKeeHelper \
+    MoKeeHome \
     MoKeeScreenRecorder \
     MoKeeSetupWizard
 
