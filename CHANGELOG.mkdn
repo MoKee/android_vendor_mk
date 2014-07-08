@@ -53,13 +53,16 @@ CHANGELOG (notable new features)
 * MoKeeLauncher: Hidden apps and labels support
 * MoKeeLauncher: Fix last icon from hotseat disappearing
 * MoKeeLauncher: Fix custom home transition effect
+* MoKeeLauncher: Custom Homescreen grid size
+* MoKeeLauncher: Add Protected Apps feature
+* MoKeeLauncher: Add Search Panel (Google Now) option
 * Media: Add FFMPEG support (expanded media format support)
 * Bluetooth: Improved support for new car audio systems and docks
-* Various small bugfixes, global and device-specific
 * Bluetooth: Upstream updates and fix issues with audio routing to select car makes/models and disconnect issues
 * MultiSim: Additional support patches (25+) and UI/UX modifications
-* Various small bugfixes, global and device-specific
 * Quick Boot: Enable for supported devices
+* Futex: Protect against Towelroot
+* Various small bugfixes, global and device-specific
 
 ### 43.1
 * Common: Android 4.3 (Google)
