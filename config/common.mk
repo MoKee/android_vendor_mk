@@ -301,4 +301,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 -include vendor/cm-priv/keys/keys.mk
 
+# disable multithreaded dextop for RELEASE and SNAPSHOT builds
+ifneq ($(filter RELEASE,$(MK_BUILDTYPE)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+  persist.sys.dalvik.multithread=false
+endif
+
 -include $(WORKSPACE)/build-env/image-auto-bits.mk
