@@ -87,6 +87,10 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 endif
 
+# Signature compatibility validation
+PRODUCT_COPY_FILES += \
+    vendor/mk/prebuilt/common/bin/otasigcheck.sh:system/bin/otasigcheck.sh
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
@@ -297,6 +301,7 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.mk.support=bbs.mfunz.com \
   ro.mk.version=$(MK_VERSION) \
+  ro.mk.releasetype=$(MK_BUILDTYPE) \
   ro.modversion=$(MK_VERSION)
 
 -include vendor/cm-priv/keys/keys.mk
