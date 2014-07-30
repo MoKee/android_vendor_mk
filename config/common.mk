@@ -123,8 +123,7 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/third/app && \
 # Google IME
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/app/GoogleIME.apk:system/app/GoogleIME.apk \
-    vendor/mk/prebuilt/common/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so
+    vendor/mk/prebuilt/common/app/GoogleIME.apk:system/app/GoogleIME.apk
 endif
 
 # Bring in camera effects
