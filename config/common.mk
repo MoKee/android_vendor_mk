@@ -306,12 +306,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.mk.releasetype=$(MK_BUILDTYPE) \
   ro.modversion=$(MK_VERSION)
 
--include vendor/cm-priv/keys/keys.mk
+-include vendor/mk-priv/keys/keys.mk
 
-# disable multithreaded dextop for RELEASE builds
-ifneq ($(filter RELEASE,$(MK_BUILDTYPE)),)
-PRODUCT_PROPERTY_OVERRIDES += \
-  persist.sys.dalvik.multithread=false
-endif
 
 -include $(WORKSPACE)/build-env/image-auto-bits.mk
