@@ -58,6 +58,7 @@ mk_mako-userdebug
 mk_mint-userdebug
 mk_mione_plus-userdebug
 mk_moto_msm8960-userdebug
+mk_moto_msm8960_jbbl-userdebug
 mk_moto_msm8960dt-userdebug
 mk_n1-userdebug
 mk_n7000-userdebug
