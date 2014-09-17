@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014 The CyanogenMod Project
+<!-- Copyright (C) 2014 The MoKee OpenSource Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,5 +15,14 @@
 -->
 
 <permissions>
+    <!-- The features listed here should coincide with the various iterations of
+         the MoKee OpenSource theme engine.  New org.mokee.theme.vX features
+         should only be added when the structure of the theme apk format is changed
+     -->
+
+    <!-- This is an alias for org.mokee.theme.v1 -->
     <feature name="org.mokee.theme" />
+
+    <!-- Supports themes using v1 of the theme engine -->
+    <feature name="org.mokee.theme.v1" />
 </permissions>
