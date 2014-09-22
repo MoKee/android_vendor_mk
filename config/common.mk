@@ -108,16 +108,21 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.local.rc:root/init.mk.rc
 
-# MoKee prebuilts
+# MoKee prebuilt
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
     vendor/mk/prebuilt/common/etc/init.d/88preinstall:system/etc/init.d/88preinstall \
     vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk
 
-# Use all prebuilts lib files
+# Use all prebuilt lib files
 PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib && \
     find vendor/mk/prebuilt/common/lib -name '*.so' \
     -printf '%p:system/lib/%f ')
+
+# Use all developers-party apk
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/$(DEVELOPER_MAINTAINER)/app && \
+    find vendor/mk/prebuilt/$(DEVELOPER_MAINTAINER)/app -name '*.apk' \
+    -printf '%p:system/third-app/%f ')
 
 # Use all third-party apk
 PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/third/app && \
