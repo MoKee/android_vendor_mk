@@ -40,7 +40,7 @@ for file in `ls $PRELOAD_APP_DIR`; do
 	newMD5=`busybox md5sum $PRELOAD_APP_DIR/$file | busybox cut -d' ' -f1`
 	oldMD5=`cat $DATA_HASH_DIR/${file}.md5sum`
 	if [ "$newMD5" != "$oldMD5" ]; then
-		package_name=`echo ${file %.*}`
+		package_name=`aapt d badging $file | grep "pack" | awk -F\' '{print $(NF-5)}'`
 		isInstalled=`pm path $package_name`
 		if [ -n "$isInstalled" ] || [ ! -f "$DATA_HASH_DIR/${file}.md5sum" ]; then
 			pm install -r $PRELOAD_APP_DIR/$file
