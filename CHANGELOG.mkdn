@@ -23,77 +23,31 @@ CHANGELOG (notable new features)
 * Common: Calculator app redesign (courtesy Xlythe)
 * Common: Performance Profiles
 * Common: Improved theming performance on low memory devices (~512MB RAM or less)
-* Common: Move Voice+ settings from app drawer to Settings (under Wireless and Networks > ‘More’)
-* Common: Consolidate screen-off animation options (remove checkbox)
-* Common: New Theme Engine
-* Common: Add provider permissions for Blacklist
-* Common: Fix lockscreen custom wallpaper crashes and album art issues
-* Common: Disable elements when in custom lockscreen
-* Common: Address security vulnerability for icons
-* Common: Resolve memory leaks in Frameworks
-* Common: Settings – Show ‘eject card’ action for USB storage
-* Common: Add quick settings options to show smaller tiles; add BT device name to tile; fix tiles layout in landscape mode
-* Common: Fix longpress quiet hours QS tile option
-* Common: Parallel Shutdown – Decrease shutdown time
-* Common: Downloads – Add pause/resume support
-* Common: Additional Prviacy Guard AppOps permissions
-* Common: Additional right-to-left (RTL) layout mirroring support
-* Common: Add 'screen color' support to Settings
-* Common: Fix stylus eraser being disabled by palm rejection
-* Common: Allow NavBar toggling in runtime (requires kernel support)
-* Dialer: Speed Dial
-* Dialer: IP Dial
-* Dialer: Smart T9 Dial
-* Dialer: Direct Dial
-* Dialer: Add Open Source forward/backward/incoming look-up
-* Mms: Direct Dial
-* OTA: OTA Updater
-* MoKeeLauncher: Move settings to new slide-out panel
-* MoKeeLauncher: Consolidate settings for home and drawer options
-* MoKeeLauncher: Hidden apps and labels support
-* MoKeeLauncher: Fix last icon from hotseat disappearing
-* MoKeeLauncher: Fix custom home transition effect
-* MoKeeLauncher: Custom Homescreen grid size
-* MoKeeLauncher: Add Protected Apps feature
-* MoKeeLauncher: Add Search Panel (Google Now) option
-* Media: Add FFMPEG support (expanded media format support)
+* Common: Fix VPN issues related to 4.4.3 merge
+* Common: Enable 'Heads Up' notification mode (Settings > Notifications)
+* Account for Play Services induced wake-locks
 * Bluetooth: Improved support for new car audio systems and docks
-* Bluetooth: Upstream updates and fix issues with audio routing to select car makes/models and disconnect issues
-* MultiSim: Additional support patches (25+) and UI/UX modifications
-* Quick Boot: Enable for supported devices
+* Bluetooth: Add additional A2DP profiles
+* Bluetooth: Disable AVRCP 1.5 by default (fixes various car unit compatibility)
+* Data Usage Info: Add support for CDMA devices without sim cards
+* Dialer: Direct Dial
+* Dialer: add support for Korean and Chinese to smart-dialer
+* Email: Fix saving attachments to storage for POP3 accounts
 * Futex: Protect against Towelroot
-* Various small bugfixes, global and device-specific
-* New Devices: Galaxy S5 Sprint (kltespr)
-* Split out Note 3 into GSM (hlte), Sprint (hltespr) and Verizon (hltevzw)
-* Refactor moto_msm8960dt as 'ghost' for Moto X 2013
-* Drop support for obake, toro, toroplus
-* Theme Engine: Themes support for additional UI elements
-* Frameworks & Core Apps: CAF and other upstream updates
-* Settings: Add scramble pin feature
-* Frameworks: Long press recent apps to switch to last used app
-* Settings: Add soft reboot option
-* Add smart cover support
-* Add glove mode support
-* Add bug reporter and crash log uploader
-* Multisim updates
-* General bug fixes
-* ANT+ Support for various hardware
-* Privacy Guard: Control NFC permissions
-* New Devices: Sony Xperia Z2 Tablets (castor); HTC One (m8)
-* Theme Engine: Themes support for additional UI elements
 * Lockscreen: Allow doubletap to sleep when using secure keyguard
+* Media: Add FFMPEG support (expanded media format support)
+* Mms: Direct Dial
+* OTA: OTA System
+* Settings: 'Interface' replaced by 'Status Bar', 'Notification Drawer', and 'Gestures'
+* Settings: Moved 'Expanded Desktop' to 'Display'
+* Settings: Moved all lock screen related items to 'Lock Screen' and removed duplicates from 'Security'
+* Settings: Moved 'Navigation Bar' layout control to 'Buttons'
 * Settings: Safe Headset Volume – prompt when interfering with 3rd party device (Jawbone, Square, etc)
 * Settings: Center clock support
 * Settings: Proximity Wake-Up support
 * Settings: Spam notification filtering
-* Settings Search: Additional improvements and highlighting
-* Data Usage Info: Add support for CDMA devices without sim cards
-* Bluetooth: Add additional A2DP profiles
-* Bluetooth: Disable AVRCP 1.5 by default (fixes various car unit compatibility)
-* Email: Fix saving attachments to storage for POP3 accounts
-* Account for Play Services induced wake-locks
-* Fix encryption on some LG Devices
-* Dialer: add support for Korean and Chinese to smart-dialer
+* Theme Engine: Themes support for additional UI elements
+* Various small bugfixes, global and device-specific
 
 ### 43.1
 * Common: Android 4.3 (Google)
