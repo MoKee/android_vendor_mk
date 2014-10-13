@@ -82,6 +82,10 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/mk/CHANGELOG.mkdn:system/etc/CHANGELOG-MK.txt
 
+# Copy over the translator to the device
+PRODUCT_COPY_FILES += \
+    vendor/mk/TRANSLATOR.mkdn:system/etc/TRANSLATOR-MK.txt
+
 # Backup Tool
 ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \

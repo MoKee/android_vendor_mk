@@ -1,0 +1,19 @@
+MoKee OpenSource
+===============
+
+Translators:
+------------
+* __Catalan:__ Marc
+* __Chinese Simplified:__ Martincz, Fantasy Syrup
+* __Chinese Traditional, Hong Kong:__ 周府之獬
+* __Dutch:__ Mickyman
+* __English, Australia:__ Ryuinferno
+* __French:__ Kristen Luce
+* __German:__ 1the1, Daniel Buch, Daniel Goletz, Danilo Grigo, Gonzo Bot (BratwurstPanzer)
+* __Italian:__ gabril, Skyline35
+* __Japanese:__ Marc, Hotaka Hitagi
+* __Russian:__ Дани Мербау, Денис Семененко, Игорь Шумейко
+* __Serbian (Cyrillic):__ Srdjan.Jelena.VTZGMOST
+* __Spanish:__ Juan Pablo Gorgati
+* __Turkish:__ Mesut Öztürk
+* __Ukrainian:__ Andriy Poznakhovskyy, Dmitriy Bas
