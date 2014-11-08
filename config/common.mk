@@ -177,6 +177,9 @@ PRODUCT_PACKAGES += \
 
 # Custom MK packages
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.ipcall.enabled=true
+
 # MoKee PhoneLoc Database
 PRODUCT_COPY_FILES +=  \
     vendor/mk/prebuilt/common/media/mokee-phoneloc.dat:system/media/mokee-phoneloc.dat
