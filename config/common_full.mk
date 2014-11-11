@@ -22,4 +22,6 @@ PRODUCT_PACKAGES += \
 
 # Extra tools in MK
 PRODUCT_PACKAGES += \
-    vim
+    vim \
+    zip \
+    unrar
