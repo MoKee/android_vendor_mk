@@ -49,27 +49,27 @@ PRODUCT_COPY_FILES += \
 
 # UI
 PRODUCT_COPY_FILES += \
-    $(UI_PATH)/audio_end.ogg:system/media/audio/ringtones/audio_end.ogg \
-    $(UI_PATH)/audio_initiate.ogg:system/media/audio/ringtones/audio_initiate.ogg \
-    $(UI_PATH)/camera_click.ogg:system/media/audio/ringtones/camera_click.ogg \
-    $(UI_PATH)/camera_focus.ogg:system/media/audio/ringtones/camera_focus.ogg \
-    $(UI_PATH)/Dock.ogg:system/media/audio/ringtones/Dock.ogg \
-    $(UI_PATH)/Effect_Tick.ogg:system/media/audio/ringtones/Effect_Tick.ogg \
-    $(UI_PATH)/KeypressDelete.ogg:system/media/audio/ringtones/KeypressDelete.ogg \
-    $(UI_PATH)/KeypressInvalid.ogg:system/media/audio/ringtones/KeypressInvalid.ogg \
-    $(UI_PATH)/KeypressReturn.ogg:system/media/audio/ringtones/KeypressReturn.ogg \
-    $(UI_PATH)/KeypressSpacebar.ogg:system/media/audio/ringtones/KeypressSpacebar.ogg \
-    $(UI_PATH)/KeypressStandard.ogg:system/media/audio/ringtones/KeypressStandard.ogg \
-    $(UI_PATH)/Lock.ogg:system/media/audio/ringtones/Lock.ogg \
-    $(UI_PATH)/LowBattery.ogg:system/media/audio/ringtones/LowBattery.ogg \
-    $(UI_PATH)/NFCFailure.ogg:system/media/audio/ringtones/NFCFailure.ogg \
-    $(UI_PATH)/NFCInitiated.ogg:system/media/audio/ringtones/NFCInitiated.ogg \
-    $(UI_PATH)/NFCSuccess.ogg:system/media/audio/ringtones/NFCSuccess.ogg \
-    $(UI_PATH)/NFCTransferComplete.ogg:system/media/audio/ringtones/NFCTransferComplete.ogg \
-    $(UI_PATH)/NFCTransferInitiated.ogg:system/media/audio/ringtones/NFCTransferInitiated.ogg \
-    $(UI_PATH)/Trusted.ogg:system/media/audio/ringtones/Trusted.ogg \
-    $(UI_PATH)/Undock.ogg:system/media/audio/ringtones/Undock.ogg \
-    $(UI_PATH)/Unlock.ogg:system/media/audio/ringtones/Unlock.ogg \
-    $(UI_PATH)/VideoRecord.ogg:system/media/audio/ringtones/VideoRecord.ogg \
-    $(UI_PATH)/VideoStop.ogg:system/media/audio/ringtones/VideoStop.ogg \
-    $(UI_PATH)/WirelessChargingStarted.ogg:system/media/audio/ringtones/WirelessChargingStarted.ogg
+    $(UI_PATH)/audio_end.ogg:system/media/audio/ui/audio_end.ogg \
+    $(UI_PATH)/audio_initiate.ogg:system/media/audio/ui/audio_initiate.ogg \
+    $(UI_PATH)/camera_click.ogg:system/media/audio/ui/camera_click.ogg \
+    $(UI_PATH)/camera_focus.ogg:system/media/audio/ui/camera_focus.ogg \
+    $(UI_PATH)/Dock.ogg:system/media/audio/ui/Dock.ogg \
+    $(UI_PATH)/Effect_Tick.ogg:system/media/audio/ui/Effect_Tick.ogg \
+    $(UI_PATH)/KeypressDelete.ogg:system/media/audio/ui/KeypressDelete.ogg \
+    $(UI_PATH)/KeypressInvalid.ogg:system/media/audio/ui/KeypressInvalid.ogg \
+    $(UI_PATH)/KeypressReturn.ogg:system/media/audio/ui/KeypressReturn.ogg \
+    $(UI_PATH)/KeypressSpacebar.ogg:system/media/audio/ui/KeypressSpacebar.ogg \
+    $(UI_PATH)/KeypressStandard.ogg:system/media/audio/ui/KeypressStandard.ogg \
+    $(UI_PATH)/Lock.ogg:system/media/audio/ui/Lock.ogg \
+    $(UI_PATH)/LowBattery.ogg:system/media/audio/ui/LowBattery.ogg \
+    $(UI_PATH)/NFCFailure.ogg:system/media/audio/ui/NFCFailure.ogg \
+    $(UI_PATH)/NFCInitiated.ogg:system/media/audio/ui/NFCInitiated.ogg \
+    $(UI_PATH)/NFCSuccess.ogg:system/media/audio/ui/NFCSuccess.ogg \
+    $(UI_PATH)/NFCTransferComplete.ogg:system/media/audio/ui/NFCTransferComplete.ogg \
+    $(UI_PATH)/NFCTransferInitiated.ogg:system/media/audio/ui/NFCTransferInitiated.ogg \
+    $(UI_PATH)/Trusted.ogg:system/media/audio/ui/Trusted.ogg \
+    $(UI_PATH)/Undock.ogg:system/media/audio/ui/Undock.ogg \
+    $(UI_PATH)/Unlock.ogg:system/media/audio/ui/Unlock.ogg \
+    $(UI_PATH)/VideoRecord.ogg:system/media/audio/ui/VideoRecord.ogg \
+    $(UI_PATH)/VideoStop.ogg:system/media/audio/ui/VideoStop.ogg \
+    $(UI_PATH)/WirelessChargingStarted.ogg:system/media/audio/ui/WirelessChargingStarted.ogg
