@@ -6,8 +6,8 @@ include vendor/mk/config/mk_audio.mk
 
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.notification_sound=Alya.ogg \
-    ro.config.alarm_alert=Alarm_Buzzer.ogg
+    ro.config.notification_sound=Tethys.ogg \
+    ro.config.alarm_alert=Oxygen.ogg
 
 ifeq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
     PRODUCT_COPY_FILES += \
