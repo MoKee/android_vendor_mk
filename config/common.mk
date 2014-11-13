@@ -116,7 +116,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
     vendor/mk/prebuilt/common/etc/init.d/88preinstall:system/etc/init.d/88preinstall \
-    vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk
+    vendor/mk/prebuilt/common/app/iFlyIME/iFlyIME.apk:system/app/iFlyIME/iFlyIME.apk \
+    vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libmsc-v8.so:system/app/iFlyIME/lib/arm/libmsc-v8.so \
+    vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v11.so:system/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v11.so \
+    vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v12.so:system/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v12.so \
+    vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libvadLib-v5.so:system/app/iFlyIME/lib/arm/libvadLib-v5.so
 
 # Use all prebuilt lib files
 PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib && \
@@ -136,7 +140,8 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/third/app && \
 # Google IME
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/app/GoogleIME.apk:system/app/GoogleIME.apk
+    vendor/mk/prebuilt/common/app/GoogleIME/GoogleIME.apk:system/app/GoogleIME/GoogleIME.apk \
+    vendor/mk/prebuilt/common/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so:system/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so
 endif
 
 # Bring in camera effects
