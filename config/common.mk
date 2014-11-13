@@ -78,12 +78,9 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
-# Copy over the changelog to the device
+# Copy over the changelog and translator to the device
 PRODUCT_COPY_FILES += \
-    vendor/mk/CHANGELOG.mkdn:system/etc/CHANGELOG-MK.txt
-
-# Copy over the translator to the device
-PRODUCT_COPY_FILES += \
+    vendor/mk/CHANGELOG.mkdn:system/etc/CHANGELOG-MK.txt \
     vendor/mk/TRANSLATOR.mkdn:system/etc/TRANSLATOR-MK.txt
 
 # Backup Tool
@@ -180,14 +177,8 @@ PRODUCT_PACKAGES += \
     Basic \
     libemoji
 
-# Custom MK packages
-
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.ipcall.enabled=true
-
-# MoKee PhoneLoc Database
-PRODUCT_COPY_FILES +=  \
-    vendor/mk/prebuilt/common/media/mokee-phoneloc.dat:system/media/mokee-phoneloc.dat
 
 PRODUCT_PACKAGES += \
     Launcher3 \
@@ -202,7 +193,8 @@ PRODUCT_PACKAGES += \
     MoKeeHelper \
     MoKeeHome \
     MoKeeScreenRecorder \
-    MoKeeSetupWizard
+    MoKeeSetupWizard \
+    mokee-phonelocation
 
 # MK Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -319,9 +311,6 @@ else
     MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
 endif
 
-# by default, do not update the recovery with system updates
-PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
-
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.mk.support=bbs.mfunz.com \
   ro.mk.version=$(MK_VERSION) \
@@ -329,7 +318,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.modversion=$(MK_VERSION)
 
 -include vendor/mk-priv/keys/keys.mk
-
 
 -include $(WORKSPACE)/build-env/image-auto-bits.mk
 
