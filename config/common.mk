@@ -287,6 +287,9 @@ ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[
     ifdef MK_RELEASE
         MK_BUILDTYPE := RELEASE
     endif
+    ifdef MK_HISTORY
+        MK_BUILDTYPE := HISTORY
+    endif
 endif
 
 ifdef MK_BUILDTYPE
@@ -304,11 +307,11 @@ else
     MK_EXTRAVERSION :=
 endif
 
-ifeq ($(MK_BUILDTYPE), RELEASE)
+ifneq ($(filter RELEASE HISTORY,$(MK_BUILDTYPE)),)
     ifdef MK_BUILD_DATE
-        MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(MK_BUILD_DATE)-RELEASE
+        MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(MK_BUILD_DATE)-$(MK_BUILDTYPE)
     else
-        MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%y%m%d)-RELEASE
+        MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%y%m%d)-$(MK_BUILDTYPE)
     endif
 else
     MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
