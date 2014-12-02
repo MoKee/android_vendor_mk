@@ -267,17 +267,29 @@ ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[
 
     ifdef MK_NIGHTLY
         MK_BUILDTYPE := NIGHTLY
+        ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+        -include prebuilts/chromium/$(MK_BUILD)/deodex/chromium_prebuilt.mk
+        endif
     endif
     ifdef MK_EXPERIMENTAL
         MK_BUILDTYPE := EXPERIMENTAL
+        ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+        -include prebuilts/chromium/$(MK_BUILD)/deodex/chromium_prebuilt.mk
+        endif
     endif
     ifdef MK_RELEASE
         MK_BUILDTYPE := RELEASE
         WITH_DEXPREOPT := true
+        ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+        -include prebuilts/chromium/$(MK_BUILD)/odex/chromium_prebuilt.mk
+        endif
     endif
     ifdef MK_HISTORY
         MK_BUILDTYPE := HISTORY
         WITH_DEXPREOPT := true
+        ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+        -include prebuilts/chromium/$(MK_BUILD)/odex/chromium_prebuilt.mk
+        endif
     endif
 endif
 
@@ -285,6 +297,9 @@ ifdef MK_BUILDTYPE
     ifdef MK_EXTRAVERSION
         # Force build type to EXPERIMENTAL
         MK_BUILDTYPE := EXPERIMENTAL
+        ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+        -include prebuilts/chromium/$(MK_BUILD)/deodex/chromium_prebuilt.mk
+        endif
         # Remove leading dash from MK_EXTRAVERSION
         MK_EXTRAVERSION := $(shell echo $(MK_EXTRAVERSION) | sed 's/-//')
         # Add leading dash to MK_EXTRAVERSION
@@ -293,6 +308,9 @@ ifdef MK_BUILDTYPE
 else
     # If MK_BUILDTYPE is not defined, set to UNOFFICIAL
     MK_BUILDTYPE := UNOFFICIAL
+    ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+    -include prebuilts/chromium/$(MK_BUILD)/deodex/chromium_prebuilt.mk
+    endif
     MK_EXTRAVERSION :=
 endif
 
