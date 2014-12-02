@@ -256,6 +256,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 endif
 
+# Chromium Prebuilt
+ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+-include prebuilts/chromium/$(MK_BUILD)/chromium_prebuilt.mk
+endif
+
 PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
 PRODUCT_VERSION_MAJOR = 50
