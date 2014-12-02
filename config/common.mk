@@ -1,10 +1,5 @@
 PRODUCT_BRAND ?= mokee
 
-# Odex support for official releases 
-ifdef MK_RELEASE
-WITH_DEXPREOPT := true
-endif
-
 SUPERUSER_EMBEDDED := true
 SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
@@ -275,7 +270,7 @@ PRODUCT_VERSION_MAJOR = 44
 PRODUCT_VERSION_MINOR = 4
 PRODUCT_VERSION_MAINTENANCE = 0
 
-# Set MK_BUILDTYPE
+# Set MK_BUILDTYPE and Odex support
 ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
 
     ifdef MK_NIGHTLY
@@ -286,9 +281,11 @@ ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[
     endif
     ifdef MK_RELEASE
         MK_BUILDTYPE := RELEASE
+        WITH_DEXPREOPT := true
     endif
     ifdef MK_HISTORY
         MK_BUILDTYPE := HISTORY
+        WITH_DEXPREOPT := true
     endif
 endif
 
