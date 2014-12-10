@@ -173,16 +173,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     MoKeeLauncher \
-    DSPManager \
-    libcyanogen-dsp \
-    libscreenrecorder \
-    audio_effects.conf \
-    Apollo \
+    AudioFX \
     CMFileManager \
+    Eleven \
     LockClock \
     MoKeeHelper \
     MoKeeHome \
-    MoKeeScreenRecorder \
     MoKeeSetupWizard \
     mokee-phonelocation
 
