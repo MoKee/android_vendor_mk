@@ -232,15 +232,21 @@ PRODUCT_PACKAGES += \
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
+
 PRODUCT_PACKAGES += \
     procmem \
     procrank \
     Superuser \
     su
-endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=1
+else
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
+
+endif
 
 # Chromium Prebuilt
 ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
