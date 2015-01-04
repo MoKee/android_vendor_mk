@@ -161,7 +161,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     VoicePlus \
     Basic \
-    libemoji
+    libemoji \
+    Terminal
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.ipcall.enabled=true
@@ -236,7 +237,6 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PACKAGES += \
     procmem \
     procrank \
-    Superuser \
     su
 
 PRODUCT_PROPERTY_OVERRIDES += \
