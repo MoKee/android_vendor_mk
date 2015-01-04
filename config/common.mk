@@ -328,4 +328,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 -include $(WORKSPACE)/build-env/image-auto-bits.mk
 
-$(call inherit-product-if-exists, vendor/extra/product.mk)
+$(call prepend-product-if-exists, vendor/extra/product.mk)
