@@ -106,8 +106,8 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.d/88preinstall:system/etc/init.d/88preinstall \
     vendor/mk/prebuilt/common/app/iFlyIME/iFlyIME.apk:system/app/iFlyIME/iFlyIME.apk \
     vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libmsc-v8.so:system/app/iFlyIME/lib/arm/libmsc-v8.so \
-    vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v11.so:system/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v11.so \
     vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v12.so:system/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v12.so \
+    vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v13.so:system/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v13.so \
     vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libvadLib-v5.so:system/app/iFlyIME/lib/arm/libvadLib-v5.so
 
 # Use all prebuilt lib files
