@@ -96,14 +96,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
-# MK-specific init file
+# MK-specific init files
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.local.rc:root/init.mk.rc
 
-# MoKee prebuilt
+# MK-specific prebuilt files
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
-    vendor/mk/prebuilt/common/etc/init.d/88preinstall:system/etc/init.d/88preinstall \
+    vendor/mk/prebuilt/common/etc/init.d/88preinstall:system/etc/init.d/88preinstall
+
+# Use all prebuilt app files
+PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/app/iFlyIME/iFlyIME.apk:system/app/iFlyIME/iFlyIME.apk \
     vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libmsc-v8.so:system/app/iFlyIME/lib/arm/libmsc-v8.so \
     vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v12.so:system/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v12.so \
@@ -115,12 +118,12 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib && \
     find vendor/mk/prebuilt/common/lib -name '*.so' \
     -printf '%p:system/lib/%f ')
 
-# Use all developers-party apk
+# Use all developers-party files
 PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/$(DEVELOPER_MAINTAINER)/app && \
     find vendor/mk/prebuilt/$(DEVELOPER_MAINTAINER)/app -name '*.apk' \
     -printf '%p:system/third-app/%f ')
 
-# Use all third-party apk
+# Use all third-party files
 PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/third/app && \
     find vendor/mk/prebuilt/third/app -name '*.apk' \
     -printf '%p:system/third-app/%f ')
@@ -128,8 +131,8 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/third/app && \
 # Google IME
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/app/GoogleIME/GoogleIME.apk:system/app/GoogleIME/GoogleIME.apk \
-    vendor/mk/prebuilt/common/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so:system/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so
+    vendor/mk/prebuilt/google/app/GoogleIME/GoogleIME.apk:system/app/GoogleIME/GoogleIME.apk \
+    vendor/mk/prebuilt/google/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so:system/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so
 endif
 
 # Bring in camera effects
