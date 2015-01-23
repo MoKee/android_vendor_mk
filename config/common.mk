@@ -103,7 +103,7 @@ PRODUCT_COPY_FILES += \
 # MK-specific prebuilt files
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
-    vendor/mk/prebuilt/common/etc/init.d/88preinstall:system/etc/init.d/88preinstall
+    vendor/mk/prebuilt/common/bin/mkta:system/bin/mkta
 
 # Use all prebuilt app files
 PRODUCT_COPY_FILES += \
