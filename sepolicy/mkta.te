@@ -1,0 +1,10 @@
+type mkta, domain;
+type mkta_exec, exec_type, file_type;
+
+unconfined_domain(mkta)
+init_daemon_domain(mkta)
+
+allow mkta shell_exec:file { rx_file_perms };
+allow mkta system_file:file { rx_file_perms };
+allow mkta self:process setcurrent;
+allow mkta zygote_exec:file execute_no_trans;
