@@ -1,0 +1,1 @@
+allow system_server mkta:binder { transfer call };

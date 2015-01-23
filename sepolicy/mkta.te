@@ -1,0 +1,16 @@
+type mkta, domain;
+type mkta_exec, exec_type, file_type;
+
+init_daemon_domain(mkta)
+
+allow mkta mkta_exec:file { execute_no_trans };
+allow mkta self:capability { sys_ptrace };
+allow mkta self:process { ptrace setcurrent };
+allow mkta shell_exec:file { rx_file_perms };
+allow mkta system_file:file { rx_file_perms };
+allow mkta zygote_exec:file { execute execute_no_trans getattr };
+allow mkta dalvikcache_data_file:file { execute };
+allow mkta resourcecache_data_file:dir { search };
+allow mkta system_data_file:dir { read write };
+allow mkta system_data_file:file { read write };
+
