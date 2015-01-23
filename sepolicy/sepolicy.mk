@@ -20,6 +20,7 @@ BOARD_SEPOLICY_UNION += \
     healthd.te \
     hostapd.te \
     installd.te \
+    mkta.te \
     netd.te \
     property.te \
     recovery.te \
