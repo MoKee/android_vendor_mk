@@ -14,6 +14,9 @@ on post-fs-data
     # Run sysinit
     start sysinit
 
+    # Run mkta
+    start mkta
+
 on boot
     # interactive governor
     chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
@@ -116,6 +119,12 @@ on property:service.adb.tcp.port=-1
 
 # sysinit (/system/etc/init.d)
 service sysinit /system/bin/sysinit
+    user root
+    oneshot
+    disabled
+
+# mkta
+service mkta /system/bin/mkta
     user root
     oneshot
     disabled

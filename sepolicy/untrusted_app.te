@@ -1,0 +1,2 @@
+allow untrusted_app mkta_exec:file { getattr };
+

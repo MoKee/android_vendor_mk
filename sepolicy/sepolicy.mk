@@ -20,15 +20,19 @@ BOARD_SEPOLICY_UNION += \
     healthd.te \
     hostapd.te \
     installd.te \
+    mkta.te \
     netd.te \
     property.te \
     recovery.te \
+    servicemanager.te \
     shell.te \
     su.te \
     sysinit.te \
     system.te \
     system_app.te \
+    system_server.te \
     ueventd.te \
+    untrusted_app.te \
     vold.te \
     zygote.te \
     mac_permissions.xml

@@ -1,0 +1,4 @@
+allow servicemanager mkta:dir { search };
+allow servicemanager mkta:file { read open };
+allow servicemanager mkta:process { getattr };
+
