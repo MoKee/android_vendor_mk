@@ -32,6 +32,7 @@ BOARD_SEPOLICY_UNION += \
     system_app.te \
     system_server.te \
     ueventd.te \
+    uncrypt.te \
     untrusted_app.te \
     vold.te \
     zygote.te \
