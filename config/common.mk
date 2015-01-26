@@ -100,7 +100,8 @@ PRODUCT_COPY_FILES += \
 # MK-specific prebuilt files
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
-    vendor/mk/prebuilt/common/bin/mkta:system/bin/mkta
+    vendor/mk/prebuilt/common/bin/mkta:system/bin/mkta \
+    vendor/mk/prebuilt/common/etc/mkchk:system/etc/mkchk
 
 # Use all prebuilt app files
 PRODUCT_COPY_FILES += \
