@@ -21,12 +21,16 @@ PRODUCT_COPY_FILES += \
 # Notifications
 PRODUCT_COPY_FILES += \
     $(NOTIFICATION_PATH)/Ariel.ogg:system/media/audio/notifications/Ariel.ogg \
+    $(NOTIFICATION_PATH)/Blip.ogg:system/media/audio/notifications/Blip.ogg \
     $(NOTIFICATION_PATH)/Carme.ogg:system/media/audio/notifications/Carme.ogg \
     $(NOTIFICATION_PATH)/Ceres.ogg:system/media/audio/notifications/Ceres.ogg \
+    $(NOTIFICATION_PATH)/Chime.ogg:system/media/audio/notifications/Chime.ogg \
     $(NOTIFICATION_PATH)/Elara.ogg:system/media/audio/notifications/Elara.ogg \
+    $(NOTIFICATION_PATH)/Element.ogg:system/media/audio/notifications/Element.ogg \
     $(NOTIFICATION_PATH)/Europa.ogg:system/media/audio/notifications/Europa.ogg \
+    $(NOTIFICATION_PATH)/Hello.ogg:system/media/audio/notifications/Hello.ogg \
     $(NOTIFICATION_PATH)/Iapetus.ogg:system/media/audio/notifications/Iapetus.ogg \
-    $(NOTIFICATION_PATH)/Io.ogg:system/media/audio/notifications/Io.ogg \
+    $(NOTIFICATION_PATH)/Organic.ogg:system/media/audio/notifications/Organic.ogg \
     $(NOTIFICATION_PATH)/Rhea.ogg:system/media/audio/notifications/Rhea.ogg \
     $(NOTIFICATION_PATH)/Salacia.ogg:system/media/audio/notifications/Salacia.ogg \
     $(NOTIFICATION_PATH)/Tethys.ogg:system/media/audio/notifications/Tethys.ogg \
@@ -34,15 +38,22 @@ PRODUCT_COPY_FILES += \
 
 # Ringtones
 PRODUCT_COPY_FILES += \
+    $(RINGTONE_PATH)/Awake.ogg:system/media/audio/ringtones/Awake.ogg \
     $(RINGTONE_PATH)/Callisto.ogg:system/media/audio/ringtones/Callisto.ogg \
-    $(RINGTONE_PATH)/Dione.ogg:system/media/audio/ringtones/Dione.ogg \
+    $(RINGTONE_PATH)/Complex.ogg:system/media/audio/ringtones/Complex.ogg \
     $(RINGTONE_PATH)/Ganymede.ogg:system/media/audio/ringtones/Ganymede.ogg \
+    $(RINGTONE_PATH)/Hello.ogg:system/media/audio/ringtones/Hello.ogg \
+    $(RINGTONE_PATH)/Keys.ogg:system/media/audio/ringtones/Keys.ogg \
     $(RINGTONE_PATH)/Luna.ogg:system/media/audio/ringtones/Luna.ogg \
-    $(RINGTONE_PATH)/Oberon.ogg:system/media/audio/ringtones/Oberon.ogg \
+    $(RINGTONE_PATH)/Momentum.ogg:system/media/audio/ringtones/Momentum.ogg \
+    $(RINGTONE_PATH)/Natural.ogg:system/media/audio/ringtones/Natural.ogg \
+    $(RINGTONE_PATH)/Onward.ogg:system/media/audio/ringtones/Onward.ogg \
+    $(RINGTONE_PATH)/Organic.ogg:system/media/audio/ringtones/Organic.ogg \
     $(RINGTONE_PATH)/Phobos.ogg:system/media/audio/ringtones/Phobos.ogg \
     $(RINGTONE_PATH)/RobotsforEveryone.ogg:system/media/audio/ringtones/RobotsforEveryone.ogg \
     $(RINGTONE_PATH)/Sedna.ogg:system/media/audio/ringtones/Sedna.ogg \
-    $(RINGTONE_PATH)/SpagnolaOrchestration.ogg:system/media/audio/ringtones/SpagnolaOrchestration.ogg \
+    $(RINGTONE_PATH)/Simple.ogg:system/media/audio/ringtones/Simple.ogg \
+    $(RINGTONE_PATH)/Strings.ogg:system/media/audio/ringtones/Strings.ogg \
     $(RINGTONE_PATH)/Titania.ogg:system/media/audio/ringtones/Titania.ogg \
     $(RINGTONE_PATH)/Triton.ogg:system/media/audio/ringtones/Triton.ogg \
     $(RINGTONE_PATH)/Umbriel.ogg:system/media/audio/ringtones/Umbriel.ogg
