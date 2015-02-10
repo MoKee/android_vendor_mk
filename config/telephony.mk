@@ -22,4 +22,4 @@ PRODUCT_PACKAGES += \
 
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Titania.ogg
+    ro.config.ringtone=Hello.ogg
