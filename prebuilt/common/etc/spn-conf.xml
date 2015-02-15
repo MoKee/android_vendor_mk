@@ -20,7 +20,6 @@
   <!-- Taiwan -->
   <spnOverride numeric="46601" spn="遠傳電信" />
   <spnOverride numeric="46688" spn="和信電訊" />
-  <spnOverride numeric="46689" spn="威寶電信" />
   <spnOverride numeric="46692" spn="中華電信" />
   <spnOverride numeric="46693" spn="東信電訊" />
   <spnOverride numeric="46697" spn="台灣大哥大" />
