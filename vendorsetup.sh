@@ -2,3 +2,5 @@ for combo in $(curl -s https://raw.githubusercontent.com/MoKee/android_external_
 do
     add_lunch_combo $combo
 done
+add_lunch_combo mk_l01f-userdebug
+add_lunch_combo mk_i9100-userdebug
