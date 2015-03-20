@@ -102,14 +102,6 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
     vendor/mk/prebuilt/common/bin/mkta:system/bin/mkta
 
-# Use all prebuilt app files
-PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/app/iFlyIME/iFlyIME.apk:system/app/iFlyIME/iFlyIME.apk \
-    vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libmsc-v8.so:system/app/iFlyIME/lib/arm/libmsc-v8.so \
-    vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v12.so:system/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v12.so \
-    vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v13.so:system/app/iFlyIME/lib/arm/libsmartaiwrite-jni-v13.so \
-    vendor/mk/prebuilt/common/app/iFlyIME/lib/arm/libvadLib-v5.so:system/app/iFlyIME/lib/arm/libvadLib-v5.so
-
 # Use all prebuilt lib files
 PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib && \
     find vendor/mk/prebuilt/common/lib -name '*.so' \
@@ -125,12 +117,23 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/third/app && \
     find vendor/mk/prebuilt/third/app -name '*.apk' \
     -printf '%p:system/third-app/%f ')
 
-# Google IME
+# Google Intl
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
-PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/google/app/GoogleIME/GoogleIME.apk:system/app/GoogleIME/GoogleIME.apk \
-    vendor/mk/prebuilt/google/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so:system/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/google/app/GoogleIntl && \
+    find vendor/mk/prebuilt/google/app/GoogleIntl -name '*.apk' \
+    -printf '%p:system/app/GoogleIntl/%f ')
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/google/app/GoogleIntl && \
+    find vendor/mk/prebuilt/google/app/GoogleIntl -name '*.so' \
+    -printf '%p:system/app/GoogleIntl/lib/arm/%f ')
 endif
+
+# Google PinYin
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/google/app/GooglePinYin && \
+    find vendor/mk/prebuilt/google/app/GooglePinYin -name '*.apk' \
+    -printf '%p:system/app/GooglePinYin/%f ')
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/google/app/GooglePinYin && \
+    find vendor/mk/prebuilt/google/app/GooglePinYin -name '*.so' \
+    -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
