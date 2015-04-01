@@ -66,9 +66,8 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
-# Copy over the changelog and translator to the device
+# Copy over the translator to the device
 PRODUCT_COPY_FILES += \
-    vendor/mk/CHANGELOG.mkdn:system/etc/CHANGELOG-MK.txt \
     vendor/mk/TRANSLATOR.mkdn:system/etc/TRANSLATOR-MK.txt
 
 # Backup Tool
@@ -188,7 +187,6 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     MoKeeHelper \
-    MoKeeHome \
     MoKeeSetupWizard \
 
 # MK Hardware Abstraction Framework
@@ -264,7 +262,7 @@ PRODUCT_VERSION_MAJOR = 51
 PRODUCT_VERSION_MINOR = 0
 PRODUCT_VERSION_MAINTENANCE = 0
 
-# Set MK_BUILDTYPE and Odex support
+# Set MK_BUILDTYPE and DEXOPT support
 ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
 
     ifdef MK_NIGHTLY
@@ -316,6 +314,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 -include vendor/mk-priv/keys/keys.mk
 
--include $(WORKSPACE)/build-env/image-auto-bits.mk
+-include $(WORKSPACE)/build_env/image-auto-bits.mk
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
