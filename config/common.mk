@@ -159,11 +159,6 @@ PRODUCT_PACKAGES += \
     mokee-phonelocation \
     libmokee-phonelocation
 
-# Screen recorder
-PRODUCT_PACKAGES += \
-    ScreenRecorder \
-    libscreenrecorder
-
 # Required MK packages
 PRODUCT_PACKAGES += \
     Development \
