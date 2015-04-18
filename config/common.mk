@@ -65,7 +65,6 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
   ifdef MK_EXPERIMENTAL
     # Disable ADB authentication
     ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
-  endif
   else
     # Enable ADB authentication
     ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
