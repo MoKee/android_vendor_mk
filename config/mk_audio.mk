@@ -9,14 +9,35 @@ UI_PATH := vendor/mk/prebuilt/common/media/audio/ui
 
 # Alarms
 PRODUCT_COPY_FILES += \
-    $(ALARM_PATH)/Argon.ogg:system/media/audio/alarms/Argon.ogg \
-    $(ALARM_PATH)/Carbon.ogg:system/media/audio/alarms/Carbon.ogg \
-    $(ALARM_PATH)/Helium.ogg:system/media/audio/alarms/Helium.ogg \
-    $(ALARM_PATH)/Krypton.ogg:system/media/audio/alarms/Krypton.ogg \
-    $(ALARM_PATH)/Neon.ogg:system/media/audio/alarms/Neon.ogg \
-    $(ALARM_PATH)/Osmium.ogg:system/media/audio/alarms/Osmium.ogg \
-    $(ALARM_PATH)/Oxygen.ogg:system/media/audio/alarms/Oxygen.ogg \
-    $(ALARM_PATH)/Platinum.ogg:system/media/audio/alarms/Platinum.ogg
+    $(ALARM_PATH)/angels_harp.ogg:system/media/audio/alarms/angels_harp.ogg \
+    $(ALARM_PATH)/awakening.ogg:system/media/audio/alarms/awakening.ogg \
+    $(ALARM_PATH)/belling.ogg:system/media/audio/alarms/belling.ogg \
+    $(ALARM_PATH)/dong.ogg:system/media/audio/alarms/dong.ogg \
+    $(ALARM_PATH)/dream_is_over.ogg:system/media/audio/alarms/dream_is_over.ogg \
+    $(ALARM_PATH)/get_up.ogg:system/media/audio/alarms/get_up.ogg \
+    $(ALARM_PATH)/glockenspiel_6.ogg:system/media/audio/alarms/glockenspiel_6.ogg \
+    $(ALARM_PATH)/good_morning.ogg:system/media/audio/alarms/good_morning.ogg \
+    $(ALARM_PATH)/hurry.ogg:system/media/audio/alarms/hurry.ogg \
+    $(ALARM_PATH)/keep_it_simple.ogg:system/media/audio/alarms/keep_it_simple.ogg \
+    $(ALARM_PATH)/la_gitar.ogg:system/media/audio/alarms/la_gitar.ogg \
+    $(ALARM_PATH)/live.ogg:system/media/audio/alarms/live.ogg \
+    $(ALARM_PATH)/past_time.ogg:system/media/audio/alarms/past_time.ogg \
+    $(ALARM_PATH)/smart1.ogg:system/media/audio/alarms/smart1.ogg \
+    $(ALARM_PATH)/smart2.ogg:system/media/audio/alarms/smart2.ogg \
+    $(ALARM_PATH)/smart3.ogg:system/media/audio/alarms/smart3.ogg \
+    $(ALARM_PATH)/smartforestcall.ogg:system/media/audio/alarms/smartforestcall.ogg \
+    $(ALARM_PATH)/smartnature.ogg:system/media/audio/alarms/smartnature.ogg \
+    $(ALARM_PATH)/smartnight5.ogg:system/media/audio/alarms/smartnight5.ogg \
+    $(ALARM_PATH)/smartwater2.ogg:system/media/audio/alarms/smartwater2.ogg \
+    $(ALARM_PATH)/still_dreamin.ogg:system/media/audio/alarms/still_dreamin.ogg \
+    $(ALARM_PATH)/summerday.ogg:system/media/audio/alarms/summerday.ogg \
+    $(ALARM_PATH)/sunrise1.ogg:system/media/audio/alarms/sunrise1.ogg \
+    $(ALARM_PATH)/timer_sound.ogg:system/media/audio/alarms/timer_sound.ogg \
+    $(ALARM_PATH)/to_late.ogg:system/media/audio/alarms/to_late.ogg \
+    $(ALARM_PATH)/vib_7.ogg:system/media/audio/alarms/vib_7.ogg \
+    $(ALARM_PATH)/wake_me_soft.ogg:system/media/audio/alarms/wake_me_soft.ogg \
+    $(ALARM_PATH)/wecksong_1.ogg:system/media/audio/alarms/wecksong_1.ogg \
+    $(ALARM_PATH)/xylo_3.ogg:system/media/audio/alarms/xylo_3.ogg \
 
 # Notifications
 PRODUCT_COPY_FILES += \
