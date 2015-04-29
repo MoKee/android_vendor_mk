@@ -4,7 +4,7 @@ $(call inherit-product, vendor/mk/config/common_full.mk)
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Hello.ogg \
-    ro.config.alarm_alert=Helium.ogg
+    ro.config.alarm_alert=angels_harp.ogg
 
 ifeq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
     PRODUCT_COPY_FILES += \
