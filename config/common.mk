@@ -109,9 +109,19 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/mkta:system/bin/mkta
 
 # Use all prebuilt lib files
-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib && \
-    find vendor/mk/prebuilt/common/lib -name '*.so' \
+ifeq ($(TARGET_CPU_ABI),arm64-v8a)
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib/arm64-v8a && \
+    find vendor/mk/prebuilt/common/lib/arm64-v8a -name '*.so' \
     -printf '%p:system/lib/%f ')
+ifeq ($(TARGET_CPU_ABI),armeabi-v7a)
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib/armeabi-v7a && \
+    find vendor/mk/prebuilt/common/lib/armeabi-v7a -name '*.so' \
+    -printf '%p:system/lib/%f ')
+else
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib/armeabi && \
+    find vendor/mk/prebuilt/common/lib/armeabi -name '*.so' \
+    -printf '%p:system/lib/%f ')
+endif
 
 # Use all developers-party files
 PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/$(DEVELOPER_MAINTAINER)/app && \
