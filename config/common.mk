@@ -163,8 +163,7 @@ include vendor/mk/config/themes_common.mk
 
 # Private MK libraries
 PRODUCT_PACKAGES += \
-    mokee-phonelocation \
-    libmokee-phonelocation
+    mokee-phonelocation
 
 # Required MK packages
 PRODUCT_PACKAGES += \
