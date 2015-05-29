@@ -109,8 +109,8 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/mkta:system/bin/mkta
 
 # Use all prebuilt lib files
-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib/$(TARGET_CPU_ABI) && \
-    find vendor/mk/prebuilt/common/lib/$(TARGET_CPU_ABI) -name '*.so' \
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib/$(MK_CPU_ABI) && \
+    find vendor/mk/prebuilt/common/lib/$(MK_CPU_ABI) -name '*.so' \
     -printf '%p:system/lib/%f ')
 
 # Use all developers-party files
