@@ -1,4 +1,4 @@
-#Inherit common MK stuff
+# Inherit common MK stuff
 $(call inherit-product, vendor/mk/config/common.mk)
 
 # Include MK audio files

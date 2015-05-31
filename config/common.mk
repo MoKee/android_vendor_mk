@@ -1,8 +1,5 @@
 PRODUCT_BRAND ?= mokee
 
-MOKEEHELPER_EMBEDDED := true
-MOKEEHELPER_PACKAGE_PREFIX := com.android.settings.mokee.mokeehelper
-
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 # determine the smaller dimension
 TARGET_BOOTANIMATION_SIZE := $(shell \
@@ -103,44 +100,6 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.local.rc:root/init.mk.rc
 
-# MK-specific prebuilt files
-PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/private/$(MK_CPU_ABI)/verifier:system/bin/verifier \
-    vendor/mk/prebuilt/private/$(MK_CPU_ABI)/mkta:system/bin/mkta
-
-# Use all prebuilt lib files
-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib/$(MK_CPU_ABI) && \
-    find vendor/mk/prebuilt/common/lib/$(MK_CPU_ABI) -name '*.so' \
-    -printf '%p:system/lib/%f ')
-
-# Use all developers-party files
-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/$(DEVELOPER_MAINTAINER)/app && \
-    find vendor/mk/prebuilt/$(DEVELOPER_MAINTAINER)/app -name '*.apk' \
-    -printf '%p:system/third-app/%f ')
-
-# Use all third-party files
-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/third/app && \
-    find vendor/mk/prebuilt/third/app -name '*.apk' \
-    -printf '%p:system/third-app/%f ')
-
-# Google Intl
-ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/google/app/GoogleIntl && \
-    find vendor/mk/prebuilt/google/app/GoogleIntl -name '*.apk' \
-    -printf '%p:system/app/GoogleIntl/%f ')
-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/google/app/GoogleIntl && \
-    find vendor/mk/prebuilt/google/app/GoogleIntl -name '*.so' \
-    -printf '%p:system/app/GoogleIntl/lib/arm/%f ')
-endif
-
-# Google PinYin
-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/google/app/GooglePinYin && \
-    find vendor/mk/prebuilt/google/app/GooglePinYin -name '*.apk' \
-    -printf '%p:system/app/GooglePinYin/%f ')
-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/google/app/GooglePinYin && \
-    find vendor/mk/prebuilt/google/app/GooglePinYin -name '*.so' \
-    -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
-
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/mk/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
@@ -161,7 +120,7 @@ PRODUCT_COPY_FILES += \
 # T-Mobile theme engine
 include vendor/mk/config/themes_common.mk
 
-# Private MK libraries
+# Required MK libraries
 PRODUCT_PACKAGES += \
     mokee-phonelocation
 
@@ -178,9 +137,7 @@ PRODUCT_PACKAGES += \
     libemoji \
     Terminal
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.ipcall.enabled=true
-
+# Custom MK packages
 PRODUCT_PACKAGES += \
     Launcher3 \
     MoKeeLauncher \
@@ -254,11 +211,6 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
-# Chromium Prebuilt
-ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
--include prebuilts/chromium/$(MK_BUILD)/chromium_prebuilt.mk
-endif
-
 PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
 PRODUCT_VERSION_MAJOR = 51
@@ -320,5 +272,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 -include vendor/mk-priv/keys/keys.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
+
+-include vendor/mk/config/mk_extra.mk
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
