@@ -105,8 +105,8 @@ PRODUCT_COPY_FILES += \
 
 # MK-specific prebuilt files
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
-    vendor/mk/prebuilt/common/bin/mkta:system/bin/mkta
+    vendor/mk/prebuilt/private/$(MK_CPU_ABI)/verifier:system/bin/verifier \
+    vendor/mk/prebuilt/private/$(MK_CPU_ABI)/mkta:system/bin/mkta
 
 # Use all prebuilt lib files
 PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/lib/$(MK_CPU_ABI) && \
