@@ -40,10 +40,10 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/app/AppStats && 
 # BaiduInput
 PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/app/BaiduInput && \
     find vendor/mk/prebuilt/common/app/BaiduInput -name '*.apk' \
-    -printf '%p:system/app/AppStats/%f ')
+    -printf '%p:system/app/BaiduInput/%f ')
 PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/app/BaiduInput && \
     find vendor/mk/prebuilt/common/app/BaiduInput -name '*.so' \
-    -printf '%p:system/app/AppStats/lib/arm/%f ')
+    -printf '%p:system/app/BaiduInput/lib/arm/%f ')
 
 # Google Intl
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
