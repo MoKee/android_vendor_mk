@@ -37,13 +37,13 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/app/AppStats && 
     find vendor/mk/prebuilt/common/app/AppStats -name '*.so' \
     -printf '%p:system/app/AppStats/lib/arm/%f ')
 
-# SouGouInput
-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/app/SouGouInput && \
-    find vendor/mk/prebuilt/common/app/SouGouInput -name '*.apk' \
-    -printf '%p:system/app/SouGouInput/%f ')
-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/common/app/SouGouInput && \
-    find vendor/mk/prebuilt/common/app/SouGouInput -name '*.so' \
-    -printf '%p:system/app/SouGouInput/lib/arm/%f ')
+# Google PinYin
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/google/app/GooglePinYin && \
+    find vendor/mk/prebuilt/google/app/GooglePinYin -name '*.apk' \
+    -printf '%p:system/app/GooglePinYin/%f ')
+PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/google/app/GooglePinYin && \
+    find vendor/mk/prebuilt/google/app/GooglePinYin -name '*.so' \
+    -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
 
 # Google Intl
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
