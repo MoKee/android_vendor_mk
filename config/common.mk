@@ -219,12 +219,8 @@ PRODUCT_VERSION_MAINTENANCE = 0
 
 # Set MK_BUILDTYPE and WITH_DEXPREOPT support
 ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
-
     ifdef MK_NIGHTLY
         MK_BUILDTYPE := NIGHTLY
-    endif
-    ifdef MK_EXPERIMENTAL
-        MK_BUILDTYPE := EXPERIMENTAL
     endif
     ifdef MK_RELEASE
         MK_BUILDTYPE := RELEASE
@@ -238,19 +234,12 @@ ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[
     endif
 endif
 
-ifdef MK_BUILDTYPE
-    ifdef MK_EXTRAVERSION
-        # Force build type to EXPERIMENTAL
+ifndef MK_BUILDTYPE
+    ifdef MK_EXPERIMENTAL
         MK_BUILDTYPE := EXPERIMENTAL
-        # Remove leading dash from MK_EXTRAVERSION
-        MK_EXTRAVERSION := $(shell echo $(MK_EXTRAVERSION) | sed 's/-//')
-        # Add leading dash to MK_EXTRAVERSION
-        MK_EXTRAVERSION := -$(MK_EXTRAVERSION)
-    endif
-else
-    # If MK_BUILDTYPE is not defined, set to UNOFFICIAL
-    MK_BUILDTYPE := UNOFFICIAL
-    MK_EXTRAVERSION :=
+    else 
+        MK_BUILDTYPE := UNOFFICIAL
+    endif  
 endif
 
 ifneq ($(filter RELEASE HISTORY,$(MK_BUILDTYPE)),)
