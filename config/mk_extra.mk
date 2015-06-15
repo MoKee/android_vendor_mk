@@ -9,8 +9,4 @@ ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 -include prebuilts/chromium/$(MK_BUILD)/chromium_prebuilt.mk
 endif
 
-ifneq ($(shell uname),Darwin)
--include vendor/mk/config/mk_prebuilt_linux.mk
-else
--include vendor/mk/config/mk_prebuilt_darwin.mk
-endif
+-include vendor/mk/config/mk_prebuilt.mk
