@@ -20,6 +20,8 @@
         <item>com.google.android.gms</item>
         <!-- The standard AOSP fused location provider -->
         <item>com.android.location.fused</item>
+        <!-- The AMAP provider -->
+        <item>com.amap.android.locations</item>
     </string-array>
 
     <bool name="config_cellBroadcastAppLinks">true</bool>
