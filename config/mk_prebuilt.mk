@@ -16,16 +16,10 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.apk,vendor/mk/prebuilt/$(DEVELOPER_MAINTAINER)/app,system/third-app)
 endif
 
-# AppStats
+# Use all common apps
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/mk/prebuilt/common/app/AppStats,system/app/AppStats)
+    $(call find-copy-subdir-files,*,vendor/mk/prebuilt/common/app,system/app)
 
-# Google PinYin
+# Google apps
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/mk/prebuilt/google/app/GooglePinYin,system/app/GooglePinYin)
-
-# Google Intl
-ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/mk/prebuilt/google/app/GoogleIntl,system/app/GoogleIntl)
-endif
+    $(call find-copy-subdir-files,*,vendor/mk/prebuilt/google/app,system/app)
