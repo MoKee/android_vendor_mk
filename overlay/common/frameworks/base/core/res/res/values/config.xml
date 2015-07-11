@@ -66,4 +66,9 @@
         <item>users</item>
     </string-array>
 
+    <!-- Defines external services to be started by the SystemServer at boot. The service itself
+         should publish as a binder services in its onStart -->
+    <string-array name="config_externalMKServices">
+        <item>org.mokee.platform.internal.ProfileManagerService</item>
+    </string-array>
 </resources>
