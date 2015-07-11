@@ -149,6 +149,12 @@ PRODUCT_PACKAGES += \
     MoKeePay \
     MoKeeSetupWizard \
 
+# MK Platform Library
+PRODUCT_PACKAGES += \
+    org.mokee.platform-res \
+    org.mokee.platform \
+    org.mokee.platform.xml
+
 # MK Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.mokee.hardware \
