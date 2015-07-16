@@ -6,6 +6,7 @@ PRODUCT_COPY_FILES += \
 ifeq ($(MK_CPU_ABI),arm64-v8a)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/private/lib/$(MK_CPU_ABI),system/lib64)
+    $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/private/lib/armeabi-v7a,system/lib)
 else
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/private/lib/$(MK_CPU_ABI),system/lib)
