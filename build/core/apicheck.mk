@@ -47,7 +47,7 @@ $(eval $(call check-api, \
     checkpublicapi-mk-last, \
     $(MK_SRC_API_DIR)/$(mk_last_released_sdk_version).txt, \
     $(INTERNAL_MK_PLATFORM_API_FILE), \
-    vendor/mksdk/api/mk_removed.txt, \
+    $(FRAMEWORK_MK_PLATFORM_REMOVED_API_FILE), \
     $(INTERNAL_MK_PLATFORM_REMOVED_API_FILE), \
     cat $(BUILD_SYSTEM)/apicheck_msg_last.txt, \
     check-mk-public-api, \
@@ -59,9 +59,9 @@ $(eval $(call check-api, \
 # SDK version.
 $(eval $(call check-api, \
     checkpublicapi-mk-current, \
-    vendor/mksdk/api/mk_current.txt, \
+    $(FRAMEWORK_MK_PLATFORM_API_FILE), \
     $(INTERNAL_MK_PLATFORM_API_FILE), \
-    vendor/mksdk/api/mk_removed.txt, \
+    $(FRAMEWORK_MK_PLATFORM_REMOVED_API_FILE), \
     $(INTERNAL_MK_PLATFORM_REMOVED_API_FILE), \
     cat $(BUILD_SYSTEM)/apicheck_msg_current.txt, \
     check-mk-public-api, \
@@ -71,9 +71,9 @@ $(eval $(call check-api, \
 .PHONY: update-mk-public-api
 update-mk-public-api: $(INTERNAL_MK_PLATFORM_API_FILE) | $(ACP)
 	@echo -e ${CL_GRN}"Copying mk_current.txt"${CL_RST}
-	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_API_FILE) $(TOPDIR)vendor/mksdk/api/mk_current.txt
+	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_API_FILE) $(FRAMEWORK_MK_PLATFORM_API_FILE)
 	@echo -e ${CL_GRN}"Copying mk_removed.txt"${CL_RST}
-	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_REMOVED_API_FILE) $(TOPDIR)vendor/mksdk/api/mk_removed.txt
+	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_REMOVED_API_FILE) $(FRAMEWORK_MK_PLATFORM_REMOVED_API_FILE)
 
 update-mk-api : update-mk-public-api
 
@@ -87,7 +87,7 @@ $(eval $(call check-api, \
     checksystemapi-mk-last, \
     $(MK_SRC_SYSTEM_API_DIR)/$(mk_last_released_sdk_version).txt, \
     $(INTERNAL_MK_PLATFORM_SYSTEM_API_FILE), \
-    vendor/mksdk/system-api/mk_system-removed.txt, \
+    $(FRAMEWORK_MK_PLATFORM_SYSTEM_REMOVED_API_FILE), \
     $(INTERNAL_MK_PLATFORM_SYSTEM_REMOVED_API_FILE), \
     cat $(BUILD_SYSTEM)/apicheck_msg_last.txt, \
     check-mk-system-api, \
@@ -98,9 +98,9 @@ $(eval $(call check-api, \
 # SDK version.
 $(eval $(call check-api, \
     checksystemapi-mk-current, \
-    vendor/mksdk/system-api/mk_system-current.txt, \
+    $(FRAMEWORK_MK_PLATFORM_SYSTEM_API_FILE), \
     $(INTERNAL_MK_PLATFORM_SYSTEM_API_FILE), \
-    vendor/mksdk/system-api/mk_system-removed.txt, \
+    $(FRAMEWORK_MK_PLATFORM_SYSTEM_REMOVED_API_FILE), \
     $(INTERNAL_MK_PLATFORM_SYSTEM_REMOVED_API_FILE), \
     cat $(BUILD_SYSTEM)/apicheck_msg_current.txt, \
     check-mk-system-api, \
@@ -112,8 +112,15 @@ update-mk-api : update-mk-system-api
 
 update-mk-system-api: $(INTERNAL_PLATFORM_MK_SYSTEM_API_FILE) | $(ACP)
 	@echo Copying mk_system-current.txt
-	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_SYSTEM_API_FILE) vendor/mksdk/system-api/mk_system-current.txt
+	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_SYSTEM_API_FILE) $(FRAMEWORK_MK_PLATFORM_SYSTEM_API_FILE)
 	@echo Copying mk_system-removed.txt
-	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_SYSTEM_REMOVED_API_FILE) vendor/mksdk/system-api/mk_system-removed.txt
+	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_SYSTEM_REMOVED_API_FILE) $(FRAMEWORK_MK_PLATFORM_SYSTEM_REMOVED_API_FILE)
+
+.PHONY: update-mk-prebuilts-latest-public-api
+current_sdk_release_text_file := $(MK_SRC_API_DIR)/$(mk_last_released_sdk_version).txt
+
+update-mk-prebuilts-latest-public-api: $(FRAMEWORK_MK_PLATFORM_API_FILE) | $(ACP)
+	@echo -e ${CL_GRN}"Publishing mk_current.txt as latest API release"${CL_RST}
+	$(hide) $(ACP) $(FRAMEWORK_MK_PLATFORM_API_FILE) $(current_sdk_release_text_file)
 
 endif
