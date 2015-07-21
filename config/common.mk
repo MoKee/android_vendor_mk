@@ -224,7 +224,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
 PRODUCT_VERSION_MAJOR = 51
 PRODUCT_VERSION_MINOR = 1
-PRODUCT_VERSION_MAINTENANCE = 0
 
 # Set MK_BUILDTYPE and WITH_DEXPREOPT support
 ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
@@ -268,6 +267,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.modversion=$(MK_VERSION)
 
 -include vendor/mk-priv/keys/keys.mk
+
+ifndef MK_PLATFORM_SDK_VERSION
+  # This is the canonical definition of the SDK version, which defines
+  # the set of APIs and functionality available in the platform.  It
+  # is a single integer that increases monotonically as updates to
+  # the SDK are released.  It should only be incremented when the APIs for
+  # the new release are frozen (so that developers don't write apps against
+  # intermediate builds).
+  MK_PLATFORM_SDK_VERSION := 2
+endif
+
+# MoKee Platform SDK Version
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.mk.build.version.plat.sdk=$(MK_PLATFORM_SDK_VERSION)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
