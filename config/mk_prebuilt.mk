@@ -13,8 +13,10 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Use all third-party files
+ifneq ($(wildcard vendor/mk/prebuilt/third/app),)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.apk,vendor/mk/prebuilt/third/app,system/third-app)
+endif
 
 # Use all developers-party files
 ifneq ($(DEVELOPER_MAINTAINER),)
