@@ -24,10 +24,6 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.apk,vendor/mk/prebuilt/$(DEVELOPER_MAINTAINER)/app,system/third-app)
 endif
 
-# Use all common apps
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/mk/prebuilt/common/app,system/app)
-
 # Google apps
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/mk/prebuilt/google/app,system/app)
