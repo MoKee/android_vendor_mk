@@ -240,6 +240,7 @@ ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[
         WITH_DEXPREOPT := true
         DONT_DEXPREOPT_PREBUILTS := true
     endif
+    MK_SECURITY_VERIFY := true
 endif
 
 ifndef MK_BUILDTYPE
@@ -247,7 +248,8 @@ ifndef MK_BUILDTYPE
         MK_BUILDTYPE := EXPERIMENTAL
     else 
         MK_BUILDTYPE := UNOFFICIAL
-    endif  
+    endif
+    MK_SECURITY_VERIFY := false
 endif
 
 ifneq ($(filter RELEASE HISTORY,$(MK_BUILDTYPE)),)
