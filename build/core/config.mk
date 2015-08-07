@@ -24,3 +24,4 @@ FRAMEWORK_MK_PLATFORM_SYSTEM_API_FILE := $(TOPDIR)vendor/mksdk/system-api/mk_sys
 FRAMEWORK_MK_PLATFORM_SYSTEM_REMOVED_API_FILE := $(TOPDIR)vendor/mksdk/system-api/mk_system-removed.txt
 
 BUILD_MAVEN_PREBUILT := $(TOP)/vendor/mk/build/core/maven_artifact.mk
+PUBLISH_MAVEN_PREBUILT := $(TOP)/vendor/mk/build/core/maven_artifact_publish.mk
