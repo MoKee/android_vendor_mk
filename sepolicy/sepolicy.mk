@@ -1,10 +1,10 @@
 #
 # This policy configuration will be used by all products that
-# inherit from CM
+# inherit from MK
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/cm/sepolicy
+    vendor/mk/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file.te \
@@ -22,9 +22,11 @@ BOARD_SEPOLICY_UNION += \
     hostapd.te \
     installd.te \
     mediaserver.te \
+    mkta.te \
     netd.te \
     property.te \
     recovery.te \
+    servicemanager.te \
     shell.te \
     su.te \
     sysinit.te \
@@ -33,6 +35,7 @@ BOARD_SEPOLICY_UNION += \
     system_server.te \
     ueventd.te \
     uncrypt.te \
+    untrusted_app.te \
     userinit.te \
     vold.te \
     zygote.te \

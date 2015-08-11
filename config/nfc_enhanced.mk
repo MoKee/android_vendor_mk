@@ -1,3 +1,3 @@
-# This device supports CM enhanced NFC
+# This device supports MK enhanced NFC
 PRODUCT_COPY_FILES += \
-    vendor/cm/config/permissions/com.cyanogenmod.nfc.enhanced.xml:system/etc/permissions/com.cyanogenmod.nfc.enhanced.xml
+    vendor/mk/config/permissions/com.mokee.nfc.enhanced.xml:system/etc/permissions/com.mokee.nfc.enhanced.xml

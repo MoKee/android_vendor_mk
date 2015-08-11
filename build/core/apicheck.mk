@@ -1,4 +1,4 @@
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2015 The MoKee OpenSource Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,107 +20,107 @@
 # skip api check for PDK buid
 ifeq (,$(filter true, $(WITHOUT_CHECK_API) $(TARGET_BUILD_PDK)))
 
-.PHONY: checkapi-cm
+.PHONY: checkapi-mk
 
 # Run the checkapi rules by default.
-droidcore: checkapi-cm
+droidcore: checkapi-mk
 
-cm_last_released_sdk_version := $(lastword $(call numerically_sort, \
+mk_last_released_sdk_version := $(lastword $(call numerically_sort, \
             $(filter-out current, \
-                $(patsubst $(CM_SRC_API_DIR)/%.txt,%, $(wildcard $(CM_SRC_API_DIR)/*.txt)) \
+                $(patsubst $(MK_SRC_API_DIR)/%.txt,%, $(wildcard $(MK_SRC_API_DIR)/*.txt)) \
              )\
         ))
 
-.PHONY: check-cm-public-api
-checkapi-cm : check-cm-public-api
+.PHONY: check-mk-public-api
+checkapi-mk : check-mk-public-api
 
-.PHONY: update-cm-api
+.PHONY: update-mk-api
 
-# INTERNAL_CM_PLATFORM_API_FILE is the one build by droiddoc.
-# Note that since INTERNAL_CM_PLATFORM_API_FILE  is the byproduct of api-stubs module,
-# (See vendor/cmsdk/Android.mk)
+# INTERNAL_MK_PLATFORM_API_FILE is the one build by droiddoc.
+# Note that since INTERNAL_MK_PLATFORM_API_FILE  is the byproduct of api-stubs module,
+# (See vendor/mksdk/Android.mk)
 # we need to add api-stubs as additional dependency of the api check.
 
 # Check that the API we're building hasn't broken the last-released
 # SDK version.
 $(eval $(call check-api, \
-    checkpublicapi-cm-last, \
-    $(CM_SRC_API_DIR)/$(cm_last_released_sdk_version).txt, \
-    $(INTERNAL_CM_PLATFORM_API_FILE), \
-    $(FRAMEWORK_CM_PLATFORM_REMOVED_API_FILE), \
-    $(INTERNAL_CM_PLATFORM_REMOVED_API_FILE), \
+    checkpublicapi-mk-last, \
+    $(MK_SRC_API_DIR)/$(mk_last_released_sdk_version).txt, \
+    $(INTERNAL_MK_PLATFORM_API_FILE), \
+    $(FRAMEWORK_MK_PLATFORM_REMOVED_API_FILE), \
+    $(INTERNAL_MK_PLATFORM_REMOVED_API_FILE), \
     cat $(BUILD_SYSTEM)/apicheck_msg_last.txt, \
-    check-cm-public-api, \
-    $(call doc-timestamp-for, cm-api-stubs) \
+    check-mk-public-api, \
+    $(call doc-timestamp-for, mk-api-stubs) \
     ))
 
 
 # Check that the API we're building hasn't changed from the not-yet-released
 # SDK version.
 $(eval $(call check-api, \
-    checkpublicapi-cm-current, \
-    $(FRAMEWORK_CM_PLATFORM_API_FILE), \
-    $(INTERNAL_CM_PLATFORM_API_FILE), \
-    $(FRAMEWORK_CM_PLATFORM_REMOVED_API_FILE), \
-    $(INTERNAL_CM_PLATFORM_REMOVED_API_FILE), \
+    checkpublicapi-mk-current, \
+    $(FRAMEWORK_MK_PLATFORM_API_FILE), \
+    $(INTERNAL_MK_PLATFORM_API_FILE), \
+    $(FRAMEWORK_MK_PLATFORM_REMOVED_API_FILE), \
+    $(INTERNAL_MK_PLATFORM_REMOVED_API_FILE), \
     cat $(BUILD_SYSTEM)/apicheck_msg_current.txt, \
-    check-cm-public-api, \
-    $(call doc-timestamp-for, cm-api-stubs) \
+    check-mk-public-api, \
+    $(call doc-timestamp-for, mk-api-stubs) \
     ))
 
-.PHONY: update-cm-public-api
-update-cm-public-api: $(INTERNAL_CM_PLATFORM_API_FILE) | $(ACP)
-	@echo -e ${CL_GRN}"Copying cm_current.txt"${CL_RST}
-	$(hide) $(ACP) $(INTERNAL_CM_PLATFORM_API_FILE) $(FRAMEWORK_CM_PLATFORM_API_FILE)
-	@echo -e ${CL_GRN}"Copying cm_removed.txt"${CL_RST}
-	$(hide) $(ACP) $(INTERNAL_CM_PLATFORM_REMOVED_API_FILE) $(FRAMEWORK_CM_PLATFORM_REMOVED_API_FILE)
+.PHONY: update-mk-public-api
+update-mk-public-api: $(INTERNAL_MK_PLATFORM_API_FILE) | $(ACP)
+	@echo -e ${CL_GRN}"Copying mk_current.txt"${CL_RST}
+	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_API_FILE) $(FRAMEWORK_MK_PLATFORM_API_FILE)
+	@echo -e ${CL_GRN}"Copying mk_removed.txt"${CL_RST}
+	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_REMOVED_API_FILE) $(FRAMEWORK_MK_PLATFORM_REMOVED_API_FILE)
 
-update-cm-api : update-cm-public-api
+update-mk-api : update-mk-public-api
 
 #####################Check System API#####################
-.PHONY: check-cm-system-api
-checkapi-cm : check-cm-system-api
+.PHONY: check-mk-system-api
+checkapi-mk : check-mk-system-api
 
-# Check that the Cyanogen System API we're building hasn't broken the last-released
+# Check that the MoKee System API we're building hasn't broken the last-released
 # SDK version.
 $(eval $(call check-api, \
-    checksystemapi-cm-last, \
-    $(CM_SRC_SYSTEM_API_DIR)/$(cm_last_released_sdk_version).txt, \
-    $(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE), \
-    $(FRAMEWORK_CM_PLATFORM_SYSTEM_REMOVED_API_FILE), \
-    $(INTERNAL_CM_PLATFORM_SYSTEM_REMOVED_API_FILE), \
+    checksystemapi-mk-last, \
+    $(MK_SRC_SYSTEM_API_DIR)/$(mk_last_released_sdk_version).txt, \
+    $(INTERNAL_MK_PLATFORM_SYSTEM_API_FILE), \
+    $(FRAMEWORK_MK_PLATFORM_SYSTEM_REMOVED_API_FILE), \
+    $(INTERNAL_MK_PLATFORM_SYSTEM_REMOVED_API_FILE), \
     cat $(BUILD_SYSTEM)/apicheck_msg_last.txt, \
-    check-cm-system-api, \
-    $(call doc-timestamp-for, cm-system-api-stubs) \
+    check-mk-system-api, \
+    $(call doc-timestamp-for, mk-system-api-stubs) \
     ))
 
 # Check that the System API we're building hasn't changed from the not-yet-released
 # SDK version.
 $(eval $(call check-api, \
-    checksystemapi-cm-current, \
-    $(FRAMEWORK_CM_PLATFORM_SYSTEM_API_FILE), \
-    $(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE), \
-    $(FRAMEWORK_CM_PLATFORM_SYSTEM_REMOVED_API_FILE), \
-    $(INTERNAL_CM_PLATFORM_SYSTEM_REMOVED_API_FILE), \
+    checksystemapi-mk-current, \
+    $(FRAMEWORK_MK_PLATFORM_SYSTEM_API_FILE), \
+    $(INTERNAL_MK_PLATFORM_SYSTEM_API_FILE), \
+    $(FRAMEWORK_MK_PLATFORM_SYSTEM_REMOVED_API_FILE), \
+    $(INTERNAL_MK_PLATFORM_SYSTEM_REMOVED_API_FILE), \
     cat $(BUILD_SYSTEM)/apicheck_msg_current.txt, \
-    check-cm-system-api, \
-    $(call doc-timestamp-for, cm-system-api-stubs) \
+    check-mk-system-api, \
+    $(call doc-timestamp-for, mk-system-api-stubs) \
     ))
 
-.PHONY: update-cm-system-api
-update-cm-api : update-cm-system-api
+.PHONY: update-mk-system-api
+update-mk-api : update-mk-system-api
 
-update-cm-system-api: $(INTERNAL_PLATFORM_CM_SYSTEM_API_FILE) | $(ACP)
-	@echo Copying cm_system-current.txt
-	$(hide) $(ACP) $(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE) $(FRAMEWORK_CM_PLATFORM_SYSTEM_API_FILE)
-	@echo Copying cm_system-removed.txt
-	$(hide) $(ACP) $(INTERNAL_CM_PLATFORM_SYSTEM_REMOVED_API_FILE) $(FRAMEWORK_CM_PLATFORM_SYSTEM_REMOVED_API_FILE)
+update-mk-system-api: $(INTERNAL_PLATFORM_MK_SYSTEM_API_FILE) | $(ACP)
+	@echo Copying mk_system-current.txt
+	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_SYSTEM_API_FILE) $(FRAMEWORK_MK_PLATFORM_SYSTEM_API_FILE)
+	@echo Copying mk_system-removed.txt
+	$(hide) $(ACP) $(INTERNAL_MK_PLATFORM_SYSTEM_REMOVED_API_FILE) $(FRAMEWORK_MK_PLATFORM_SYSTEM_REMOVED_API_FILE)
 
-.PHONY: update-cm-prebuilts-latest-public-api
-current_sdk_release_text_file := $(CM_SRC_API_DIR)/$(cm_last_released_sdk_version).txt
+.PHONY: update-mk-prebuilts-latest-public-api
+current_sdk_release_text_file := $(MK_SRC_API_DIR)/$(mk_last_released_sdk_version).txt
 
-update-cm-prebuilts-latest-public-api: $(FRAMEWORK_CM_PLATFORM_API_FILE) | $(ACP)
-	@echo -e ${CL_GRN}"Publishing cm_current.txt as latest API release"${CL_RST}
-	$(hide) $(ACP) $(FRAMEWORK_CM_PLATFORM_API_FILE) $(current_sdk_release_text_file)
+update-mk-prebuilts-latest-public-api: $(FRAMEWORK_MK_PLATFORM_API_FILE) | $(ACP)
+	@echo -e ${CL_GRN}"Publishing mk_current.txt as latest API release"${CL_RST}
+	$(hide) $(ACP) $(FRAMEWORK_MK_PLATFORM_API_FILE) $(current_sdk_release_text_file)
 
 endif

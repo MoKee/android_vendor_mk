@@ -1,5 +1,5 @@
 #
-#CM-specific variable clears
+#MK-specific variable clears
 #
 LOCAL_IGNORE_SUBDIR :=
 

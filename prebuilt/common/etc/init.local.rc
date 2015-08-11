@@ -1,4 +1,4 @@
-# CyanogenMod Extras
+# MoKee OpenSource Extras
 import /init.superuser.rc
 
 on init
@@ -11,6 +11,9 @@ on post-fs-data
 
     # Run sysinit
     start sysinit
+
+    # Run mkta
+    start mkta
 
 on boot
     # interactive governor
@@ -123,6 +126,12 @@ on property:persist.radio.noril=1
 
 # sysinit (/system/etc/init.d)
 service sysinit /system/bin/sysinit
+    user root
+    oneshot
+    disabled
+
+# mkta
+service mkta /system/bin/mkta
     user root
     oneshot
     disabled

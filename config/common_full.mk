@@ -1,10 +1,10 @@
-# Inherit common CM stuff
-$(call inherit-product, vendor/cm/config/common.mk)
+# Inherit common MK stuff
+$(call inherit-product, vendor/mk/config/common.mk)
 
-# Include CM audio files
-include vendor/cm/config/cm_audio.mk
+# Include MK audio files
+include vendor/mk/config/mk_audio.mk
 
-# Optional CM packages
+# Optional MK packages
 PRODUCT_PACKAGES += \
     Galaxy4 \
     HoloSpiralWallpaper \
@@ -15,10 +15,9 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     VisualizationWallpapers \
     PhotoTable \
-    SoundRecorder \
-    PhotoPhase
+    SoundRecorder
 
-# Extra tools in CM
+# Extra tools in MK
 PRODUCT_PACKAGES += \
     vim \
     zip \

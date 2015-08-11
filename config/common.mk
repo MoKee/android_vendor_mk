@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= cyanogenmod
+PRODUCT_BRAND ?= mokee
 
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 # determine the smaller dimension
@@ -10,7 +10,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
   fi )
 
 # get a sorted list of the sizes
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/cm/prebuilt/common/bootanimation))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/mk/prebuilt/common/bootanimation))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 # find the appropriate size and set
@@ -27,18 +27,10 @@ endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
 
 ifeq ($(TARGET_BOOTANIMATION_HALF_RES),true)
-PRODUCT_BOOTANIMATION := vendor/cm/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip
+PRODUCT_BOOTANIMATION := vendor/mk/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip
 else
-PRODUCT_BOOTANIMATION := vendor/cm/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip
+PRODUCT_BOOTANIMATION := vendor/mk/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip
 endif
-endif
-
-ifdef CM_NIGHTLY
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmodnightly
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmod
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
@@ -67,46 +59,51 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
 ifneq ($(TARGET_BUILD_VARIANT),eng)
-# Enable ADB authentication
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+  ifdef MK_EXPERIMENTAL
+    # Disable ADB authentication
+    ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
+  else
+    # Enable ADB authentication
+    ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+  endif
 endif
 
-# Copy over the changelog to the device
+# Copy over the translator to the device
 PRODUCT_COPY_FILES += \
-    vendor/cm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
+    vendor/mk/TRANSLATOR.mkdn:system/etc/TRANSLATOR-MK.txt
 
 # Backup Tool
 ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/cm/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/cm/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
-    vendor/cm/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+    vendor/mk/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/mk/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/mk/prebuilt/common/bin/50-mk.sh:system/addon.d/50-mk.sh \
+    vendor/mk/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 endif
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+    vendor/mk/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/mk/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/mk/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/mk/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
-# CM-specific init file
+# MK-specific init files
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.local.rc:root/init.cm.rc
+    vendor/mk/prebuilt/common/etc/init.local.rc:root/init.mk.rc
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/cm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/cm/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/mk/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/mk/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -116,52 +113,54 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# This is CM!
+# This is MK!
 PRODUCT_COPY_FILES += \
-    vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
+    vendor/mk/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml
 
 # T-Mobile theme engine
-include vendor/cm/config/themes_common.mk
+include vendor/mk/config/themes_common.mk
 
-# Required CM packages
+# Required MK libraries
+PRODUCT_PACKAGES += \
+    mokee-phonelocation
+
+# Required MK packages
 PRODUCT_PACKAGES += \
     Development \
     BluetoothExt \
     Profiles
 
-# Optional CM packages
+# Optional MK packages
 PRODUCT_PACKAGES += \
     VoicePlus \
     Basic \
     libemoji \
     Terminal
 
-# Custom CM packages
+# Custom MK packages
 PRODUCT_PACKAGES += \
     Launcher3 \
-    Trebuchet \
+    MoKeeLauncher \
     AudioFX \
-    CMWallpapers \
     CMFileManager \
     Eleven \
     LockClock \
-    CMUpdater \
-    CMAccount \
-    CMHome \
-    CyanogenSetupWizard
+    MoKeeHelper \
+    MoKeePay \
+    MoKeeSetupWizard \
 
-# CM Platform Library
+# MK Platform Library
 PRODUCT_PACKAGES += \
-    org.cyanogenmod.platform-res \
-    org.cyanogenmod.platform \
-    org.cyanogenmod.platform.xml
+    org.mokee.platform-res \
+    org.mokee.platform \
+    org.mokee.platform.xml
 
-# CM Hardware Abstraction Framework
+# MK Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
-    org.cyanogenmod.hardware \
-    org.cyanogenmod.hardware.xml
+    org.mokee.hardware \
+    org.mokee.hardware.xml
 
-# Extra tools in CM
+# Extra tools in MK
 PRODUCT_PACKAGES += \
     libsepol \
     e2fsck \
@@ -221,129 +220,72 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
-PRODUCT_VERSION_MAJOR = 12
+PRODUCT_VERSION_MAJOR = 51
 PRODUCT_VERSION_MINOR = 1
-PRODUCT_VERSION_MAINTENANCE = 0-RC0
 
-# Set CM_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
-
-ifndef CM_BUILDTYPE
-    ifdef RELEASE_TYPE
-        # Starting with "CM_" is optional
-        RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^CM_||g')
-        CM_BUILDTYPE := $(RELEASE_TYPE)
+# Set MK_BUILDTYPE and WITH_DEXPREOPT support
+ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
+    ifdef MK_NIGHTLY
+        MK_BUILDTYPE := NIGHTLY
     endif
+    ifdef MK_RELEASE
+        MK_BUILDTYPE := RELEASE
+        WITH_DEXPREOPT := true
+        DONT_DEXPREOPT_PREBUILTS := true
+    endif
+    ifdef MK_HISTORY
+        MK_BUILDTYPE := HISTORY
+        WITH_DEXPREOPT := true
+        DONT_DEXPREOPT_PREBUILTS := true
+    endif
+    MK_SECURITY_VERIFY := true
 endif
 
-# Filter out random types, so it'll reset to UNOFFICIAL
-ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(CM_BUILDTYPE)),)
-    CM_BUILDTYPE :=
-endif
-
-ifdef CM_BUILDTYPE
-    ifneq ($(CM_BUILDTYPE), SNAPSHOT)
-        ifdef CM_EXTRAVERSION
-            # Force build type to EXPERIMENTAL
-            CM_BUILDTYPE := EXPERIMENTAL
-            # Remove leading dash from CM_EXTRAVERSION
-            CM_EXTRAVERSION := $(shell echo $(CM_EXTRAVERSION) | sed 's/-//')
-            # Add leading dash to CM_EXTRAVERSION
-            CM_EXTRAVERSION := -$(CM_EXTRAVERSION)
-        endif
+ifndef MK_BUILDTYPE
+    ifdef MK_EXPERIMENTAL
+        MK_BUILDTYPE := EXPERIMENTAL
     else
-        ifndef CM_EXTRAVERSION
-            # Force build type to EXPERIMENTAL, SNAPSHOT mandates a tag
-            CM_BUILDTYPE := EXPERIMENTAL
-        else
-            # Remove leading dash from CM_EXTRAVERSION
-            CM_EXTRAVERSION := $(shell echo $(CM_EXTRAVERSION) | sed 's/-//')
-            # Add leading dash to CM_EXTRAVERSION
-            CM_EXTRAVERSION := -$(CM_EXTRAVERSION)
-        endif
+        MK_BUILDTYPE := UNOFFICIAL
+    endif
+    MK_SECURITY_VERIFY := false
+endif
+
+ifneq ($(filter RELEASE HISTORY,$(MK_BUILDTYPE)),)
+    ifdef MK_BUILD_DATE
+        MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(MK_BUILD_DATE)-$(MK_BUILDTYPE)
+    else
+        MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%y%m%d)-$(MK_BUILDTYPE)
     endif
 else
-    # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := UNOFFICIAL
-    CM_EXTRAVERSION :=
-endif
-
-ifeq ($(CM_BUILDTYPE), UNOFFICIAL)
-    ifneq ($(TARGET_UNOFFICIAL_BUILD_ID),)
-        CM_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
-    endif
-endif
-
-ifeq ($(CM_BUILDTYPE), RELEASE)
-    ifndef TARGET_VENDOR_RELEASE_BUILD_ID
-        CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(CM_BUILD)
-    else
-        ifeq ($(TARGET_BUILD_VARIANT),user)
-            CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(CM_BUILD)
-        else
-            CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(CM_BUILD)
-        endif
-    endif
-else
-    ifeq ($(PRODUCT_VERSION_MINOR),0)
-        CM_VERSION := $(PRODUCT_VERSION_MAJOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)$(CM_EXTRAVERSION)-$(CM_BUILD)
-    else
-        CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)$(CM_EXTRAVERSION)-$(CM_BUILD)
-    endif
+    MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.cm.version=$(CM_VERSION) \
-  ro.cm.releasetype=$(CM_BUILDTYPE) \
-  ro.modversion=$(CM_VERSION) \
-  ro.cmlegal.url=https://cyngn.com/legal/privacy-policy
+  ro.mk.support=bbs.mfunz.com \
+  ro.mk.version=$(MK_VERSION) \
+  ro.mk.releasetype=$(MK_BUILDTYPE) \
+  ro.modversion=$(MK_VERSION)
 
--include vendor/cm-priv/keys/keys.mk
+-include vendor/mk-priv/keys/keys.mk
 
-CM_DISPLAY_VERSION := $(CM_VERSION)
-
-ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),)
-ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
-  ifneq ($(CM_BUILDTYPE), UNOFFICIAL)
-    ifndef TARGET_VENDOR_RELEASE_BUILD_ID
-      ifneq ($(CM_EXTRAVERSION),)
-        # Remove leading dash from CM_EXTRAVERSION
-        CM_EXTRAVERSION := $(shell echo $(CM_EXTRAVERSION) | sed 's/-//')
-        TARGET_VENDOR_RELEASE_BUILD_ID := $(CM_EXTRAVERSION)
-      else
-        TARGET_VENDOR_RELEASE_BUILD_ID := $(shell date -u +%Y%m%d)
-      endif
-    else
-      TARGET_VENDOR_RELEASE_BUILD_ID := $(TARGET_VENDOR_RELEASE_BUILD_ID)
-    endif
-    CM_DISPLAY_VERSION=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)
-  endif
-endif
-endif
-
-# by default, do not update the recovery with system updates
-PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
-
-ifndef CM_PLATFORM_SDK_VERSION
+ifndef MK_PLATFORM_SDK_VERSION
   # This is the canonical definition of the SDK version, which defines
   # the set of APIs and functionality available in the platform.  It
   # is a single integer that increases monotonically as updates to
   # the SDK are released.  It should only be incremented when the APIs for
   # the new release are frozen (so that developers don't write apps against
   # intermediate builds).
-  CM_PLATFORM_SDK_VERSION := 2
+  MK_PLATFORM_SDK_VERSION := 2
 endif
 
+# MoKee Platform SDK Version
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.cm.display.version=$(CM_DISPLAY_VERSION)
-
-# CyanogenMod Platform SDK Version
-PRODUCT_PROPERTY_OVERRIDES += \
-  ro.cm.build.version.plat.sdk=$(CM_PLATFORM_SDK_VERSION)
+  ro.mk.build.version.plat.sdk=$(MK_PLATFORM_SDK_VERSION)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
--include vendor/cyngn/product.mk
+-include vendor/mk/config/mk_extra.mk
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)

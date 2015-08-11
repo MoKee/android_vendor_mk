@@ -1,0 +1,19 @@
+MoKee OpenSource
+===============
+
+Translators:
+------------
+ * Catalan: Marc
+ * Chinese Simplified: Martincz, Fantasy Syrup
+ * Chinese Traditional, Hong Kong: 周府之獬
+ * Dutch: Mickyman
+ * English, Australia: Ryuinferno
+ * French: Kristen Luce
+ * German: 1the1, Daniel Buch, Daniel Goletz, Danilo Grigo, Gonzo Bot (BratwurstPanzer)
+ * Italian: gabril, Skyline35
+ * Japanese: Hotaka Hitagi
+ * Russian: Denis Semenenko, Дани Мербау, Игорь Шумейко
+ * Serbian (Cyrillic): Srdjan.Jelena.VTZGMOST
+ * Spanish: Juan Pablo Gorgati
+ * Turkish: Mesut Öztürk
+ * Ukrainian: Andriy Poznakhovskyy, Denis Semenenko, Dmitriy Bas
