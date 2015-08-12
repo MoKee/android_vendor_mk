@@ -280,9 +280,20 @@ ifndef MK_PLATFORM_SDK_VERSION
   MK_PLATFORM_SDK_VERSION := 2
 endif
 
+ifndef MK_PLATFORM_REV
+  # For internal SDK revisions that are hotfixed/patched
+  # Reset after each MK_PLATFORM_SDK_VERSION release
+  # If you are doing a release and this is NOT 0, you are almost certainly doing it wrong
+  MK_PLATFORM_REV := 0
+endif
+
 # MoKee Platform SDK Version
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.mk.build.version.plat.sdk=$(MK_PLATFORM_SDK_VERSION)
+
+# MoKee Platform Internal
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.mk.build.version.plat.rev=$(MK_PLATFORM_REV)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
