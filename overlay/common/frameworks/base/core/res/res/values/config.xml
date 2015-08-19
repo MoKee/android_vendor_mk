@@ -70,5 +70,6 @@
         <item>org.mokee.platform.internal.ProfileManagerService</item>
         <item>org.mokee.platform.internal.SettingsManagerService</item>
         <item>org.mokee.platform.internal.MKTelephonyManagerService</item>
+        <item>org.mokee.platform.internal.MKHardwareService</item>
     </string-array>
 </resources>
