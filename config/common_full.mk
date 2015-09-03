@@ -21,4 +21,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vim \
     zip \
-    unrar
+    unrar \
+    curl
