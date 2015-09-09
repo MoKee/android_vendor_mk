@@ -1,3 +1,7 @@
 allow system_server mkta:binder { transfer call };
 allow system_server recovery_cache_file:dir rw_dir_perms;
 allow system_server recovery_cache_file:file create_file_perms;
+
+# Persistent properties
+allow system_server persist_property_file:dir rw_dir_perms;
+allow system_server persist_property_file:file { create_file_perms unlink };
