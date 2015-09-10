@@ -4,6 +4,6 @@ themes                                    u:object_r:system_server_service:s0
 torch                                     u:object_r:system_server_service:s0
 killswitch                                u:object_r:system_server_service:s0
 profile                                   u:object_r:system_server_service:s0
-mksettings                                u:object_r:system_server_service:s0
+mkpartnerinterface                        u:object_r:system_server_service:s0
 mktelephonymanager                        u:object_r:system_server_service:s0
 mkhardware                                u:object_r:system_server_service:s0
