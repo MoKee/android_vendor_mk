@@ -154,6 +154,7 @@ PRODUCT_PACKAGES += \
     MoKeeHelper \
     MoKeePay \
     MoKeeSetupWizard \
+    MKSettingsProvider
 
 # MK Platform Library
 PRODUCT_PACKAGES += \
