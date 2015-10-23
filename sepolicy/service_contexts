@@ -2,7 +2,7 @@ edgegestureservice                        u:object_r:edge_gesture_service:s0
 themes                                    u:object_r:themes_service:s0
 torch                                     u:object_r:torch_service:s0
 killswitch                                u:object_r:kill_switch_service:s0
-profile                                   u:object_r:cm_profile_service:s0
-mkpartnerinterface                        u:object_r:cm_partner_interface:s0
-mktelephonymanager                        u:object_r:cm_telephony_service:s0
-mkhardware                                u:object_r:cm_hardware_service:s0
+profile                                   u:object_r:mk_profile_service:s0
+mkpartnerinterface                        u:object_r:mk_partner_interface:s0
+mktelephonymanager                        u:object_r:mk_telephony_service:s0
+mkhardware                                u:object_r:mk_hardware_service:s0
