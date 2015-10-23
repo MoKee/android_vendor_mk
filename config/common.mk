@@ -146,7 +146,7 @@ PRODUCT_PACKAGES += \
 # Custom MK packages
 PRODUCT_PACKAGES += \
     Launcher3 \
-    MoKeeLauncher \
+    Nox \
     AudioFX \
     CMFileManager \
     Eleven \
