@@ -216,6 +216,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so
 
+# TCM (TCP Connection Management)
+PRODUCT_PACKAGES += \
+    tcmiface
+
+PRODUCT_BOOT_JARS += \
+    tcmiface
+
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PACKAGES += \
@@ -229,8 +236,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
-PRODUCT_VERSION_MAJOR = 51
-PRODUCT_VERSION_MINOR = 1
+PRODUCT_VERSION_MAJOR = 60
+PRODUCT_VERSION_MINOR = 0
 
 # Set MK_BUILDTYPE and WITH_DEXPREOPT support
 ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
@@ -282,7 +289,7 @@ ifndef MK_PLATFORM_SDK_VERSION
   # the SDK are released.  It should only be incremented when the APIs for
   # the new release are frozen (so that developers don't write apps against
   # intermediate builds).
-  MK_PLATFORM_SDK_VERSION := 3
+  MK_PLATFORM_SDK_VERSION := 4
 endif
 
 ifndef MK_PLATFORM_REV
