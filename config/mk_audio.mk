@@ -71,6 +71,7 @@ PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/Onward.ogg:system/media/audio/ringtones/Onward.ogg \
     $(RINGTONE_PATH)/Organic.ogg:system/media/audio/ringtones/Organic.ogg \
     $(RINGTONE_PATH)/Phobos.ogg:system/media/audio/ringtones/Phobos.ogg \
+    $(RINGTONE_PATH)/Pyxis.ogg:system/media/audio/ringtones/Pyxis.ogg \
     $(RINGTONE_PATH)/RobotsforEveryone.ogg:system/media/audio/ringtones/RobotsforEveryone.ogg \
     $(RINGTONE_PATH)/Sedna.ogg:system/media/audio/ringtones/Sedna.ogg \
     $(RINGTONE_PATH)/Simple.ogg:system/media/audio/ringtones/Simple.ogg \
