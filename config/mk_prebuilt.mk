@@ -12,6 +12,10 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/private/lib/$(MK_CPU_ABI),system/lib)
 endif
 
+# Offline Phone Location Database
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,mokee-phonelocation.dat,vendor/mk/prebuilt/common/media/location,system/media/location)
+
 # Use all third-party files
 ifneq ($(wildcard vendor/mk/prebuilt/third/app),)
 PRODUCT_COPY_FILES += \
