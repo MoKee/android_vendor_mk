@@ -6,3 +6,4 @@ profile                                   u:object_r:mk_profile_service:s0
 mkpartnerinterface                        u:object_r:mk_partner_interface:s0
 mktelephonymanager                        u:object_r:mk_telephony_service:s0
 mkhardware                                u:object_r:mk_hardware_service:s0
+mkperformance                             u:object_r:mk_performance_service:s0

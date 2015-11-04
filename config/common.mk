@@ -102,11 +102,6 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.local.rc:root/init.mk.rc
 
-# Bring in camera effects
-PRODUCT_COPY_FILES +=  \
-    vendor/mk/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/mk/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
-
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
@@ -123,7 +118,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml
 
-# T-Mobile theme engine
+# Theme engine
 include vendor/mk/config/themes_common.mk
 
 # Required MK packages
@@ -134,8 +129,6 @@ PRODUCT_PACKAGES += \
 
 # Optional MK packages
 PRODUCT_PACKAGES += \
-    VoicePlus \
-    Basic \
     libemoji \
     Terminal
 

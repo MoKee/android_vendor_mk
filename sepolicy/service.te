@@ -8,3 +8,4 @@ type mk_partner_interface, system_api_service, system_server_service, service_ma
 type mk_telephony_service, system_api_service, system_server_service, service_manager_type;
 type mk_hardware_service, system_api_service, system_server_service, service_manager_type;
 type mk_app_suggest_service, system_api_service, system_server_service, service_manager_type;
+type mk_performance_service, system_api_service, system_server_service, service_manager_type;
