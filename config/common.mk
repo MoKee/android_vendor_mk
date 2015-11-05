@@ -143,7 +143,8 @@ PRODUCT_PACKAGES += \
     MoKeeHelper \
     MoKeePay \
     MoKeeSetupWizard \
-    MKSettingsProvider
+    MKSettingsProvider \
+    ExactCalculator
 
 # MK Platform Library
 PRODUCT_PACKAGES += \
