@@ -6,4 +6,4 @@ MOKEEHELPER_PACKAGE_PREFIX := com.android.settings.mokee.mokeehelper
 
 BLOCK_BASED_OTA := false
 
--include vendor/mk/config/mk_prebuilt.mk
+-include vendor/private/mk_prebuilt.mk
