@@ -29,5 +29,17 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Google apps
+ifeq ($(MK_CPU_ABI),arm64-v8a)
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/mk/prebuilt/google/app,system/app)
+    $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/google/app/GooglePinYin/lib/$(MK_CPU_ABI),system/lib64) \
+    $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/google/app/GooglePinYin/lib/armeabi-v7a,system/lib) \
+    $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/google/app/GoogleIntl/lib/$(MK_CPU_ABI),system/lib64) \
+    $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/google/app/GoogleIntl/lib/armeabi-v7a,system/lib)
+else
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/google/app/GooglePinYin/lib/$(MK_CPU_ABI),system/lib) \
+    $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/google/app/GoogleIntl/lib/$(MK_CPU_ABI),system/lib)
+endif
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*.apk,vendor/mk/prebuilt/google/app/GooglePinYin,system/app/GooglePinYin) \
+    $(call find-copy-subdir-files,*.apk,vendor/mk/prebuilt/google/app/GoogleIntl,system/app/GoogleIntl)
