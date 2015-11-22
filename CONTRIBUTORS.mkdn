@@ -45,10 +45,12 @@ Maintainers (MoKee OpenSource 60.0):
 * __LG G2 (Canada) (D803):__ arcee, Rashed97, Shelnutt2
 * __LG G2 (Sprint) (LS980):__ arcee, Rashed97, Shelnutt2
 * __LG G2 (Verizon) (VS980):__ arcee, Rashed97, Shelnutt2
-* __LG G3 (AT&T) (D850):__ AndroidUser00110001
-* __LG G3 (T-Mobile) (D851):__ savoca
-* __LG G3 (Canada) (D852):__ AndroidUser00110001
+* __LG G3 (AT&T) (D850):__
+* __LG G3 (T-Mobile) (D851):__ bryan2894
+* __LG G3 (Canada) (D852):__ cuzz1369
 * __LG G3 (International) (D855):__ finnq
+* __LG G3 (Korea) (F400):__ TheNoFace
+* __LG G3 (Sprint) (LS990):__
 * __LG G3 (Verizon) (VS985):__ invisiblek
 * __LG G4 (T-Mobile) (H811):__ codeworkx, genesixxbf3
 * __LG G4 (International) (H815):__ codeworkx, genesixxbf3
@@ -131,7 +133,7 @@ Maintainers (MoKee OpenSource 60.0):
 * __Sony Xperia L (taoshan):__ varunchitre15, FreeXperia Team
 * __Sony Xperia M (nicki):__ RonG, FreeXperia Team
 * __Sony Xperia M2 (eagle):__ FreeXperia Team
-* __Sony Xperia SP (huashan):__ FreeXperia Team, uberlaggydarwin, Mrcl1450
+* __Sony Xperia SP (huashan):__ Mrcl1450
 * __Sony Xperia T (mint):__ FreeXperia Team, tilal6991, uberlaggydarwin
 * __Sony Xperia T2 Ultra  (tianchi):__ FreeXperia Team
 * __Sony Xperia T3  (seagull):__ FreeXperia Team
