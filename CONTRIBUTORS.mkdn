@@ -1,7 +1,7 @@
-MoKee OpenSource
+MoKee Open Source
 ===========
 
-Maintainers (MoKee OpenSource 60.0):
+Maintainers (MoKee Open Source 60.0):
 -----------------------------
 * __Acer A700:__ pawitp
 * __Amazon Kindle Fire 1st Edition:__ Hashcode, FuZZ__

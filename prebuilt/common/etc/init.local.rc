@@ -1,4 +1,4 @@
-# MoKee OpenSource Extras
+# MoKee Open Source Extras
 import /init.superuser.rc
 
 on init
