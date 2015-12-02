@@ -132,6 +132,10 @@ PRODUCT_PACKAGES += \
     libemoji \
     Terminal
 
+# Include librsjni explicitly to workaround GMS issue
+PRODUCT_PACKAGES += \
+    librsjni
+
 # Custom MK packages
 PRODUCT_PACKAGES += \
     Launcher3 \
