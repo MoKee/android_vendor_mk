@@ -14,7 +14,8 @@ PRODUCT_PACKAGES += \
     NoiseField \
     PhaseBeam \
     PhotoTable \
-    SoundRecorder
+    SoundRecorder \
+    Screencast
 
 # Extra tools in MK
 PRODUCT_PACKAGES += \
