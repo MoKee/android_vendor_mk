@@ -145,7 +145,6 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     MoKeeHelper \
-    MoKeePay \
     MoKeeSetupWizard \
     MKSettingsProvider \
     ExactCalculator
