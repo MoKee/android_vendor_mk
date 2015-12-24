@@ -118,9 +118,12 @@ update-mk-system-api: $(INTERNAL_PLATFORM_MK_SYSTEM_API_FILE) | $(ACP)
 
 .PHONY: update-mk-prebuilts-latest-public-api
 current_sdk_release_text_file := $(MK_SRC_API_DIR)/$(mk_last_released_sdk_version).txt
+current_system_api_release_text_file := $(MK_SRC_SYSTEM_API_DIR)/$(mk_last_released_sdk_version).txt
 
 update-mk-prebuilts-latest-public-api: $(FRAMEWORK_MK_PLATFORM_API_FILE) | $(ACP)
 	@echo -e ${CL_GRN}"Publishing mk_current.txt as latest API release"${CL_RST}
 	$(hide) $(ACP) $(FRAMEWORK_MK_PLATFORM_API_FILE) $(current_sdk_release_text_file)
+	@echo -e ${CL_GRN}"Publishing mk_current.txt as latest system API release"${CL_RST}
+	$(hide) $(ACP) $(FRAMEWORK_MK_PLATFORM_SYSTEM_API_FILE) $(current_system_api_release_text_file)
 
 endif
