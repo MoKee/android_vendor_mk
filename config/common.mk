@@ -118,6 +118,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml
 
+# Live lockscreen
+PRODUCT_COPY_FILES += \
+    vendor/mk/config/permissions/org.cyanogenmod.livelockscreen.xml:system/etc/permissions/org.cyanogenmod.livelockscreen.xml
+
 # Theme engine
 include vendor/mk/config/themes_common.mk
 
