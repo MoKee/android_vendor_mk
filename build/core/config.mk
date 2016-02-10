@@ -22,6 +22,7 @@ FRAMEWORK_MK_PLATFORM_API_FILE := $(TOPDIR)vendor/mksdk/api/mk_current.txt
 FRAMEWORK_MK_PLATFORM_REMOVED_API_FILE := $(TOPDIR)vendor/mksdk/api/mk_removed.txt
 FRAMEWORK_MK_PLATFORM_SYSTEM_API_FILE := $(TOPDIR)vendor/mksdk/system-api/mk_system-current.txt
 FRAMEWORK_MK_PLATFORM_SYSTEM_REMOVED_API_FILE := $(TOPDIR)vendor/mksdk/system-api/mk_system-removed.txt
+FRAMEWORK_MK_API_NEEDS_UPDATE_TEXT := $(TOPDIR)vendor/mk/build/core/apicheck_msg_current.txt
 
 BUILD_MAVEN_PREBUILT := $(TOP)/vendor/mk/build/core/maven_artifact.mk
 PUBLISH_MAVEN_PREBUILT := $(TOP)/vendor/mk/build/core/maven_artifact_publish.mk
