@@ -41,6 +41,8 @@ checkapi-mk : check-mk-public-api
 # (See vendor/mksdk/Android.mk)
 # we need to add api-stubs as additional dependency of the api check.
 
+$(INTERNAL_MK_PLATFORM_API_FILE): mk-api-stubs-docs
+
 # Check that the API we're building hasn't broken the last-released
 # SDK version.
 $(eval $(call check-api, \
@@ -86,6 +88,8 @@ update-mk-api : update-mk-public-api
 #####################Check System API#####################
 .PHONY: check-mk-system-api
 checkapi-mk : check-mk-system-api
+
+$(INTERNAL_MK_PLATFORM_SYSTEM_API_FILE): mk-system-api-stubs-docs
 
 # Check that the System API we're building hasn't broken the last-released
 # SDK version.
