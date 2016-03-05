@@ -63,5 +63,7 @@
         <item>org.mokee.platform.internal.MKTelephonyManagerService</item>
         <item>org.mokee.platform.internal.MKHardwareService</item>
         <item>org.mokee.platform.internal.PerformanceManagerService</item>
+        <item>org.mokee.platform.internal.ThemeManagerService</item>
+        <item>org.mokee.platform.internal.IconCacheManagerService</item>
     </string-array>
 </resources>
