@@ -13,6 +13,7 @@ Maintainers (MoKee Open Source 60.0):
 * __Asus EeePad Transformer Pad TF701T:__ pershoot
 * __Asus Zenfone 2 ZE550ML (Z008):__ crpalmer, jrior001
 * __Asus Zenfone 2 ZE551ML (Z00A):__ crpalmer, jrior001
+* __Asus Zenfone 2 ZE551KL/ZD551KL (Z00T):__ LuK1337, luca020400
 * __B&N NookColor (encore):__ eyeballer, fattire, keyodi, krylon360, sluo (NookieDevs)
 * __B&N Nook Tablet (acclaim):__  chrmhoffmann
 * __Google Android One:__ varunchitre15
@@ -57,7 +58,7 @@ Maintainers (MoKee Open Source 60.0):
 * __LG G3 (Canada) (D852):__ cuzz1369
 * __LG G3 (International) (D855):__ finnq
 * __LG G3 (Korea) (F400):__ TheNoFace
-* __LG G3 (Sprint) (LS990):__
+* __LG G3 (Sprint) (LS990):__ Kasual
 * __LG G3 (Verizon) (VS985):__ invisiblek
 * __LG G4 (T-Mobile) (H811):__ codeworkx, genesixxbf3
 * __LG G4 (International) (H815):__ codeworkx, genesixxbf3
