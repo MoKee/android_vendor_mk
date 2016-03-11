@@ -25,11 +25,8 @@ ifeq (,$(filter true, $(WITHOUT_CHECK_API) $(TARGET_BUILD_PDK)))
 # Run the checkapi rules by default.
 droidcore: checkapi-mk
 
-mk_last_released_sdk_version := $(lastword $(call numerically_sort, \
-            $(filter-out current, \
-                $(patsubst $(MK_SRC_API_DIR)/%.txt,%, $(wildcard $(MK_SRC_API_DIR)/*.txt)) \
-             )\
-        ))
+# Validate against current platform sdk version api text within prebuilts
+mk_last_released_sdk_version := $(MK_PLATFORM_SDK_VERSION)
 
 .PHONY: check-mk-public-api
 checkapi-mk : check-mk-public-api
