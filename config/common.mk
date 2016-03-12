@@ -225,7 +225,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/common
+DEVICE_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
 PRODUCT_VERSION_MAJOR = 60
 PRODUCT_VERSION_MINOR = 1
