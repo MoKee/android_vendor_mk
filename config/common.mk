@@ -153,6 +153,10 @@ PRODUCT_PACKAGES += \
     MKSettingsProvider \
     ExactCalculator
 
+# Exchange support
+PRODUCT_PACKAGES += \
+    Exchange2
+
 # MK Platform Library
 PRODUCT_PACKAGES += \
     org.mokee.platform-res \
