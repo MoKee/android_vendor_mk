@@ -53,17 +53,4 @@
         <item>bugreport</item>
         <item>users</item>
     </string-array>
-
-    <!-- Defines external services to be started by the SystemServer at boot. The service itself
-         should publish as a binder services in its onStart -->
-    <string-array name="config_externalMKServices">
-        <item>org.mokee.platform.internal.MKStatusBarManagerService</item>
-        <item>org.mokee.platform.internal.ProfileManagerService</item>
-        <item>org.mokee.platform.internal.PartnerInterfaceService</item>
-        <item>org.mokee.platform.internal.MKTelephonyManagerService</item>
-        <item>org.mokee.platform.internal.MKHardwareService</item>
-        <item>org.mokee.platform.internal.PerformanceManagerService</item>
-        <item>org.mokee.platform.internal.ThemeManagerService</item>
-        <item>org.mokee.platform.internal.IconCacheManagerService</item>
-    </string-array>
 </resources>
