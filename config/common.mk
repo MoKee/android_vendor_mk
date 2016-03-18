@@ -160,6 +160,11 @@ PRODUCT_PACKAGES += \
     AudioFX
 endif
 
+ifeq ($(filter armeabi armeabi-v7a,$(MK_CPU_ABI)),)
+PRODUCT_PACKAGES += \
+    AudioFX
+endif
+
 # MK Platform Library
 PRODUCT_PACKAGES += \
     org.mokee.platform-res \
