@@ -147,7 +147,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     MoKeeLauncher \
-    AudioFX \
     CMFileManager \
     Eleven \
     LockClock \
@@ -155,6 +154,11 @@ PRODUCT_PACKAGES += \
     MoKeePay \
     MoKeeSetupWizard \
     MKSettingsProvider
+
+ifeq ($(filter armeabi armeabi-v7a,$(MK_CPU_ABI)),)
+PRODUCT_PACKAGES += \
+    AudioFX
+endif
 
 # MK Platform Library
 PRODUCT_PACKAGES += \
