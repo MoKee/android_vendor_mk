@@ -295,7 +295,7 @@ ifndef MK_PLATFORM_REV
   # For internal SDK revisions that are hotfixed/patched
   # Reset after each MK_PLATFORM_SDK_VERSION release
   # If you are doing a release and this is NOT 0, you are almost certainly doing it wrong
-  MK_PLATFORM_REV := 0
+  MK_PLATFORM_REV := 1
 endif
 
 # MoKee Platform SDK Version
