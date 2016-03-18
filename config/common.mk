@@ -141,6 +141,7 @@ PRODUCT_PACKAGES += \
 
 # Custom MK packages
 PRODUCT_PACKAGES += \
+    Aegis \
     Launcher3 \
     Nox \
     AudioFX \
