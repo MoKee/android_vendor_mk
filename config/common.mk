@@ -144,7 +144,6 @@ PRODUCT_PACKAGES += \
     Aegis \
     Launcher3 \
     Nox \
-    AudioFX \
     CMFileManager \
     Eleven \
     LockClock \
@@ -152,6 +151,11 @@ PRODUCT_PACKAGES += \
     MoKeeSetupWizard \
     MKSettingsProvider \
     ExactCalculator
+
+ifeq ($(filter armeabi armeabi-v7a,$(MK_CPU_ABI)),)
+PRODUCT_PACKAGES += \
+    AudioFX
+endif
 
 # Exchange support
 PRODUCT_PACKAGES += \
