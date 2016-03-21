@@ -150,6 +150,7 @@ PRODUCT_PACKAGES += \
     MoKeeHelper \
     MoKeeSetupWizard \
     MKSettingsProvider \
+    ViPER4Android \
     ExactCalculator
 
 ifeq ($(filter armeabi armeabi-v7a,$(MK_CPU_ABI)),)
