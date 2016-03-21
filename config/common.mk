@@ -156,8 +156,13 @@ ifeq ($(filter armeabi armeabi-v7a,$(MK_CPU_ABI)),)
 PRODUCT_PACKAGES += \
     AudioFX
 else
+ifneq ($(filter shamu victara victara_retcn, $(TARGET_DEVICE)),)
+PRODUCT_PACKAGES += \
+    AudioFX
+else
 PRODUCT_PACKAGES += \
     ViPER4Android
+endif
 endif
 
 # Exchange support
