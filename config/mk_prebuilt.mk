@@ -25,8 +25,13 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Google apps
+ifneq ($(filter armeabi armeabi-v7a arm64-v8a,$(MK_CPU_ABI)),)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/mk/prebuilt/google/app,system/app)
+else
+PRODUCT_PACKAGES += \
+    LatinIME
+endif
 
 # ViPER4Android
 ifneq ($(filter armeabi armeabi-v7a,$(MK_CPU_ABI)),)
