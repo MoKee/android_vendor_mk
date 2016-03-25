@@ -156,7 +156,7 @@ ifeq ($(filter armeabi armeabi-v7a,$(MK_CPU_ABI)),)
 PRODUCT_PACKAGES += \
     AudioFX
 else
-ifneq ($(filter shamu victara victara_retcn, $(TARGET_DEVICE)),)
+ifneq ($(filter shamu victara victara_retcn, $(MK_BUILD)),)
 PRODUCT_PACKAGES += \
     AudioFX
 else
