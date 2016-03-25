@@ -1,7 +1,9 @@
 # Permissions for mksdk services
 PRODUCT_COPY_FILES += \
-    vendor/mk/config/permissions/org.cyanogenmod.theme.xml:system/etc/permissions/org.cyanogenmod.theme.xml \
     vendor/mk/config/permissions/org.mokee.theme.xml:system/etc/permissions/org.mokee.theme.xml \
+    vendor/mk/config/permissions/org.mokee.statusbar.xml:system/etc/permissions/org.mokee.statusbar.xml \
+    vendor/mk/config/permissions/org.mokee.profiles.xml:system/etc/permissions/org.mokee.profiles.xml \
+    vendor/mk/config/permissions/org.cyanogenmod.theme.xml:system/etc/permissions/org.cyanogenmod.theme.xml \
     vendor/mk/config/permissions/org.cyanogenmod.livelockscreen.xml:system/etc/permissions/org.cyanogenmod.livelockscreen.xml
 
 # MK Platform Library
