@@ -34,8 +34,8 @@ PRODUCT_PACKAGES += \
 endif
 
 # ViPER4Android
-ifneq ($(filter armeabi armeabi-v7a,$(MK_CPU_ABI)),)
+ifneq ($(filter armeabi armeabi-v7a x86,$(MK_CPU_ABI)),)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/mk/prebuilt/viper/app,system/priv-app) \
-    $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/viper/lib/armeabi-v7a/soundfx,system/lib/soundfx)
+    $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/viper/lib/$(MK_CPU_ABI)/soundfx,system/lib/soundfx)
 endif
