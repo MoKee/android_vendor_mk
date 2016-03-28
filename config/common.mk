@@ -152,7 +152,7 @@ PRODUCT_PACKAGES += \
     MKSettingsProvider \
     ExactCalculator
 
-ifeq ($(filter armeabi armeabi-v7a,$(MK_CPU_ABI)),)
+ifeq ($(filter armeabi armeabi-v7a x86,$(MK_CPU_ABI)),)
 PRODUCT_PACKAGES += \
     AudioFX
 else
