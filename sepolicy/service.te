@@ -10,3 +10,4 @@ type mk_hardware_service, system_api_service, system_server_service, service_man
 type mk_performance_service, system_api_service, system_server_service, service_manager_type;
 type mk_themes_service, system_api_service, system_server_service, service_manager_type;
 type mk_iconcache_service, system_api_service, system_server_service, service_manager_type;
+type mk_livelockscreen_service, system_api_service, system_server_service, service_manager_type;

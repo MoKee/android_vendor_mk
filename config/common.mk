@@ -150,7 +150,8 @@ PRODUCT_PACKAGES += \
     MoKeeHelper \
     MoKeeSetupWizard \
     MKSettingsProvider \
-    ExactCalculator
+    ExactCalculator \
+    LiveLockScreenService
 
 ifeq ($(filter armeabi armeabi-v7a x86,$(MK_CPU_ABI)),)
 PRODUCT_PACKAGES += \
