@@ -6,8 +6,9 @@ To make these errors go away, you have two choices:
    1) You can add "@hide" javadoc comments to the methods, etc. listed in the
       errors above.
 
-   2) You can update current.txt by executing the following command:
+   2) You can update current.txt (locally) by executing the following command:
          make update-mk-api
+         make update-mk-prebuilts-latest-public-api
 
       To submit the revised current.txt to the main MoKee Open Source repository,
       you will need approval.
