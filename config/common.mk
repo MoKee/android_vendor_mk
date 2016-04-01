@@ -151,7 +151,8 @@ PRODUCT_PACKAGES += \
     MoKeeSetupWizard \
     MKSettingsProvider \
     ExactCalculator \
-    LiveLockScreenService
+    LiveLockScreenService \
+    WeatherProvider
 
 ifeq ($(filter armeabi armeabi-v7a x86,$(MK_CPU_ABI)),)
 PRODUCT_PACKAGES += \

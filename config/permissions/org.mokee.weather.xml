@@ -15,6 +15,5 @@
 -->
 
 <permissions>
-    <feature name="org.mokee.livelockscreen" />
+    <feature name="org.mokee.weather" />
 </permissions>
-

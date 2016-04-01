@@ -11,3 +11,4 @@ type mk_performance_service, system_api_service, system_server_service, service_
 type mk_themes_service, system_api_service, system_server_service, service_manager_type;
 type mk_iconcache_service, system_api_service, system_server_service, service_manager_type;
 type mk_livelockscreen_service, system_api_service, system_server_service, service_manager_type;
+type mk_weather_service, system_api_service, system_server_service, service_manager_type;

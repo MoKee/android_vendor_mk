@@ -7,7 +7,8 @@ PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/org.mokee.profiles.xml:system/etc/permissions/org.mokee.profiles.xml \
     vendor/mk/config/permissions/org.mokee.telephony.xml:system/etc/permissions/org.mokee.telephony.xml \
     vendor/mk/config/permissions/org.mokee.performance.xml:system/etc/permissions/org.mokee.performance.xml \
-    vendor/mk/config/permissions/org.mokee.partner.xml:system/etc/permissions/org.mokee.partner.xml
+    vendor/mk/config/permissions/org.mokee.partner.xml:system/etc/permissions/org.mokee.partner.xml \
+    vendor/mk/config/permissions/org.mokee.weather.xml:system/etc/permissions/org.mokee.weather.xml
 
 # MK Platform Library
 PRODUCT_PACKAGES += \
