@@ -154,19 +154,6 @@ PRODUCT_PACKAGES += \
     LiveLockScreenService \
     WeatherProvider
 
-ifeq ($(filter armeabi armeabi-v7a x86,$(MK_CPU_ABI)),)
-PRODUCT_PACKAGES += \
-    AudioFX
-else
-ifneq ($(filter shamu victara victara_retcn, $(MK_BUILD)),)
-PRODUCT_PACKAGES += \
-    AudioFX
-else
-PRODUCT_PACKAGES += \
-    ViPER4Android
-endif
-endif
-
 # Exchange support
 PRODUCT_PACKAGES += \
     Exchange2
