@@ -39,3 +39,17 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/mk/prebuilt/viper/app,system/priv-app) \
     $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/viper/lib/$(MK_CPU_ABI)/soundfx,system/lib/soundfx)
 endif
+
+# YuBrowser apps
+ifeq ($(filter armeabi armeabi-v7a arm64-v8a,$(MK_CPU_ABI)),)
+PRODUCT_PACKAGES += \
+    Browser
+else
+ifeq (true,$(BOARD_USE_OUR_OWN_BROWSER))
+PRODUCT_PACKAGES += \
+    YuBrowser
+else
+PRODUCT_PACKAGES += \
+    Browser
+endif
+endif
