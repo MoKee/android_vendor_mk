@@ -45,11 +45,6 @@ ifeq ($(filter armeabi armeabi-v7a arm64-v8a,$(MK_CPU_ABI)),)
 PRODUCT_PACKAGES += \
     Browser
 else
-ifeq ($(TARGET_USES_OUR_OWN_BROWSER),true)
 PRODUCT_PACKAGES += \
     YuBrowser
-else
-PRODUCT_PACKAGES += \
-    Browser
-endif
 endif
