@@ -45,6 +45,11 @@ ifeq ($(filter armeabi armeabi-v7a arm64-v8a,$(MK_CPU_ABI)),)
 PRODUCT_PACKAGES += \
     Browser
 else
+ifneq ($(filter cancro, $(MK_BUILD)),)
+PRODUCT_PACKAGES += \
+    Browser
+else
 PRODUCT_PACKAGES += \
     YuBrowser
+endif
 endif
