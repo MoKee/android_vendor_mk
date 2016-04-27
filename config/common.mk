@@ -152,7 +152,8 @@ PRODUCT_PACKAGES += \
     MKSettingsProvider \
     ExactCalculator \
     LiveLockScreenService \
-    WeatherProvider
+    WeatherProvider \
+    OpenWeatherMapProvider
 
 # Exchange support
 PRODUCT_PACKAGES += \
