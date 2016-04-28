@@ -13,3 +13,4 @@ mkiconcache                               u:object_r:mk_iconcache_service:s0
 mklivelockscreen                          u:object_r:mk_livelockscreen_service:s0
 mkweather                                 u:object_r:mk_weather_service:s0
 mklivedisplay                             u:object_r:mk_livedisplay_service:s0               
+mkaudio                                   u:object_r:mk_audio_service:s0

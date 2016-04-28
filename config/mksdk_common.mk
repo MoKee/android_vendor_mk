@@ -1,6 +1,7 @@
 # Permissions for mksdk services
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/org.cyanogenmod.theme.xml:system/etc/permissions/org.cyanogenmod.theme.xml \
+    vendor/mk/config/permissions/org.mokee.audio.xml:system/etc/permissions/org.mokee.audio.xml \
     vendor/mk/config/permissions/org.mokee.livedisplay.xml:system/etc/permissions/org.mokee.livedisplay.xml \
     vendor/mk/config/permissions/org.mokee.livelockscreen.xml:system/etc/permissions/org.mokee.livelockscreen.xml \
     vendor/mk/config/permissions/org.mokee.partner.xml:system/etc/permissions/org.mokee.partner.xml \
@@ -21,6 +22,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     org.mokee.hardware \
     org.mokee.hardware.xml
+
+# JNI Libraries
+PRODUCT_PACKAGES += \
+    libmksdk_platform_jni
 
 ifndef MK_PLATFORM_SDK_VERSION
   # This is the canonical definition of the SDK version, which defines
