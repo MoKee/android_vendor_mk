@@ -153,6 +153,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     LiveLockScreenService \
     WeatherProvider \
+    DataUsageProvider \
     MoKeeWeatherProvider \
     YahooWeatherProvider
 
