@@ -154,8 +154,7 @@ PRODUCT_PACKAGES += \
     LiveLockScreenService \
     WeatherProvider \
     DataUsageProvider \
-    MoKeeWeatherProvider \
-    YahooWeatherProvider
+    MoKeeWeatherProvider
 
 # Exchange support
 PRODUCT_PACKAGES += \
