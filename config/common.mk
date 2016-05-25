@@ -75,7 +75,7 @@ PRODUCT_COPY_FILES += \
     vendor/mk/TRANSLATOR.mkdn:system/etc/TRANSLATOR-MK.txt
 
 # Backup Tool
-ifneq (,$(filter true, $(EXTERNAL_CLEAN_TARGET)))
+ifeq (,$(filter true, $(EXTERNAL_CLEAN_TARGET)))
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/mk/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
