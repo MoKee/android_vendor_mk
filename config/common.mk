@@ -75,13 +75,11 @@ PRODUCT_COPY_FILES += \
     vendor/mk/TRANSLATOR.mkdn:system/etc/TRANSLATOR-MK.txt
 
 # Backup Tool
-ifeq (,$(filter true, $(EXTERNAL_CLEAN_TARGET)))
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/mk/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/mk/prebuilt/common/bin/50-mk.sh:system/addon.d/50-mk.sh \
     vendor/mk/prebuilt/common/bin/blacklist:system/addon.d/blacklist
-endif
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
