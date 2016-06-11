@@ -1,6 +1,8 @@
 # Inherit common MK stuff
 $(call inherit-product, vendor/mk/config/common.mk)
 
+PRODUCT_SIZE := full
+
 # Include MK audio files
 include vendor/mk/config/mk_audio.mk
 
