@@ -18,7 +18,7 @@
 # Makefile for producing mksdk coverage reports.
 # Run "make mksdk-test-coverage" in the $ANDROID_BUILD_TOP directory.
 
-cts_api_coverage_exe := $(HOST_OUT_EXECUTABLES)/cts-api-coverage
+mksdk_api_coverage_exe := $(HOST_OUT_EXECUTABLES)/mksdk-api-coverage
 dexdeps_exe := $(HOST_OUT_EXECUTABLES)/dexdeps
 
 coverage_out := $(HOST_OUT)/mksdk-api-coverage
@@ -33,10 +33,10 @@ $(api_xml_description) : $(api_text_description) $(APICHECK)
 mksdk-test-coverage-report := $(coverage_out)/test-coverage.html
 
 mksdk_tests_apk := $(call intermediates-dir-for,APPS,MKPlatformTests)/package.apk
-mksdk_api_coverage_dependencies := $(cts_api_coverage_exe) $(dexdeps_exe) $(api_xml_description)
+mksdk_api_coverage_dependencies := $(mksdk_api_coverage_exe) $(dexdeps_exe) $(api_xml_description)
 
 $(mksdk-test-coverage-report): PRIVATE_TEST_CASES := $(mksdk_tests_apk)
-$(mksdk-test-coverage-report): PRIVATE_CTS_API_COVERAGE_EXE := $(cts_api_coverage_exe)
+$(mksdk-test-coverage-report): PRIVATE_MKSDK_API_COVERAGE_EXE := $(mksdk_api_coverage_exe)
 $(mksdk-test-coverage-report): PRIVATE_DEXDEPS_EXE := $(dexdeps_exe)
 $(mksdk-test-coverage-report): PRIVATE_API_XML_DESC := $(api_xml_description)
 $(mksdk-test-coverage-report): $(mksdk_tests_apk) $(mksdk_api_coverage_dependencies) | $(ACP)
@@ -57,7 +57,7 @@ endif
 #  3 - Format of the report
 define generate-mk-coverage-report
 	$(hide) mkdir -p $(dir $@)
-	$(hide) $(PRIVATE_CTS_API_COVERAGE_EXE) -d $(PRIVATE_DEXDEPS_EXE) -a $(PRIVATE_API_XML_DESC) -f $(3) -o $@ $(2) -mk
+	$(hide) $(PRIVATE_MKSDK_API_COVERAGE_EXE) -d $(PRIVATE_DEXDEPS_EXE) -a $(PRIVATE_API_XML_DESC) -f $(3) -o $@ $(2) -mk
 	@ echo $(1): file://$(ANDROID_BUILD_TOP)/$@
 endef
 
