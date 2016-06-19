@@ -152,6 +152,7 @@ PRODUCT_PACKAGES += \
     LiveLockScreenService \
     WeatherProvider \
     DataUsageProvider \
+    WallpaperPicker \
     MoKeeWeatherProvider
 
 # Exchange support
