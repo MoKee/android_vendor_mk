@@ -128,6 +128,7 @@ include vendor/mk/config/mksdk_common.mk
 
 # Required MK packages
 PRODUCT_PACKAGES += \
+    MKAudioService \
     Development \
     BluetoothExt \
     Profiles
