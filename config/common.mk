@@ -131,7 +131,8 @@ PRODUCT_PACKAGES += \
     MKAudioService \
     Development \
     BluetoothExt \
-    Profiles
+    Profiles \
+    ThemeManagerService
 
 # Optional MK packages
 PRODUCT_PACKAGES += \
