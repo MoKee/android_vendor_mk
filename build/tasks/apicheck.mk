@@ -26,7 +26,7 @@ ifeq (,$(filter true, $(WITHOUT_CHECK_API) $(TARGET_BUILD_PDK)))
 droidcore: checkapi-mk
 
 # Validate against previous release platform sdk version api text within prebuilts
-mk_last_released_sdk_version := $(shell echo ${MK_PLATFORM_SDK_VERSION}-1 | bc)
+mk_last_released_sdk_version := $(MK_PLATFORM_SDK_VERSION)
 
 .PHONY: check-mk-public-api
 checkapi-mk : check-mk-public-api
