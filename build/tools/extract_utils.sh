@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2016 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -282,6 +282,9 @@ function write_packages() {
         fi
         printf 'LOCAL_MODULE_TAGS := optional\n'
         printf 'LOCAL_MODULE_CLASS := %s\n' "$CLASS"
+        if [ "$CLASS" = "APPS" ]; then
+            printf 'LOCAL_DEX_PREOPT := false\n'
+        fi
         if [ ! -z "$EXTENSION" ]; then
             printf 'LOCAL_MODULE_SUFFIX := .%s\n' "$EXTENSION"
         fi
@@ -496,8 +499,7 @@ EOF
 # Return success if adb is up and not in recovery
 function _adb_connected {
     {
-        if [[ "$(adb get-state)" == device &&
-              "$(adb shell test -e /sbin/recovery; echo $?)" == 0 ]]
+        if [[ "$(adb get-state)" == device ]]
         then
             return 0
         fi
@@ -826,7 +828,7 @@ function extract() {
 
         # Check pinned files
         local HASH="${HASHLIST[$i-1]}"
-        if [ ! -z "$HASH" ] && [ "$HASH" != "x" ]; then
+        if [ "$DISABLE_PINNING" != "1" ] && [ ! -z "$HASH" ] && [ "$HASH" != "x" ]; then
             local KEEP=""
             local TMP="$TMP_DIR/$FROM"
             if [ -f "$TMP" ]; then

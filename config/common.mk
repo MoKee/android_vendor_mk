@@ -3,7 +3,7 @@ PRODUCT_BRAND ?= mokee
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 # determine the smaller dimension
 TARGET_BOOTANIMATION_SIZE := $(shell \
-  if [ $(TARGET_SCREEN_WIDTH) -lt $(TARGET_SCREEN_HEIGHT) ]; then \
+  if [ "$(TARGET_SCREEN_WIDTH)" -lt "$(TARGET_SCREEN_HEIGHT)" ]; then \
     echo $(TARGET_SCREEN_WIDTH); \
   else \
     echo $(TARGET_SCREEN_HEIGHT); \
@@ -17,7 +17,7 @@ bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_siz
 define check_and_set_bootanimation
 $(eval TARGET_BOOTANIMATION_NAME := $(shell \
   if [ -z "$(TARGET_BOOTANIMATION_NAME)" ]; then
-    if [ $(1) -le $(TARGET_BOOTANIMATION_SIZE) ]; then \
+    if [ "$(1)" -le "$(TARGET_BOOTANIMATION_SIZE)" ]; then \
       echo $(1); \
       exit 0; \
     fi;
@@ -123,16 +123,18 @@ PRODUCT_COPY_FILES += \
 # Theme engine
 include vendor/mk/config/themes_common.mk
 
+ifneq ($(TARGET_DISABLE_MKSDK), true)
 # MKSDK
 include vendor/mk/config/mksdk_common.mk
+endif
 
 # Required MK packages
 PRODUCT_PACKAGES += \
-    MKAudioService \
-    Development \
     BluetoothExt \
+    MKAudioService \
+    CMParts \
+    Development \
     Profiles \
-    ThemeManagerService \
     WeatherManagerService
 
 # Optional MK packages
@@ -158,8 +160,6 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     LiveLockScreenService \
     WeatherProvider \
-    DataUsageProvider \
-    WallpaperPicker \
     MoKeeWeatherProvider
 
 # Exchange support
@@ -217,14 +217,14 @@ PRODUCT_PACKAGES += \
     rsync
 
 # Stagefright FFMPEG plugin
-PRODUCT_PACKAGES += \
-    libffmpeg_extractor \
-    libffmpeg_omx \
-    media_codecs_ffmpeg.xml
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.sf.omx-plugin=libffmpeg_omx.so \
-    media.sf.extractor-plugin=libffmpeg_extractor.so
+#PRODUCT_PACKAGES += \
+#    libffmpeg_extractor \
+#    libffmpeg_omx \
+#    media_codecs_ffmpeg.xml
+#
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    media.sf.omx-plugin=libffmpeg_omx.so \
+#    media.sf.extractor-plugin=libffmpeg_extractor.so
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
@@ -239,8 +239,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 DEVICE_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
-PRODUCT_VERSION_MAJOR = 60
-PRODUCT_VERSION_MINOR = 1
+PRODUCT_VERSION_MAJOR = 70
+PRODUCT_VERSION_MINOR = 0
 
 # Set MK_BUILDTYPE and WITH_DEXPREOPT support
 ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
@@ -287,7 +287,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
-
+-include vendor/mk/config/partner_gms.mk
 -include vendor/mk/config/mk_extra.mk
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)

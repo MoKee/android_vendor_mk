@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2010 The Android Open Source Project
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2016 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ $(mksdk-test-coverage-report): PRIVATE_MKSDK_API_COVERAGE_EXE := $(mksdk_api_cov
 $(mksdk-test-coverage-report): PRIVATE_DEXDEPS_EXE := $(dexdeps_exe)
 $(mksdk-test-coverage-report): PRIVATE_API_XML_DESC := $(api_xml_description)
 $(mksdk-test-coverage-report): $(mksdk_tests_apk) $(mksdk_api_coverage_dependencies) | $(ACP)
-	$(call generate-mk-coverage-report,"mksdk API Coverage Report",\
+	$(call generate-mk-coverage-report,"MKSDK API Coverage Report",\
 			$(PRIVATE_TEST_CASES),html)
 
 .PHONY: mksdk-test-coverage

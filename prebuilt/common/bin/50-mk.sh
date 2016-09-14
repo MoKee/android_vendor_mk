@@ -1,7 +1,7 @@
 #!/sbin/sh
 # 
 # /system/addon.d/50-mk.sh
-# During a MK60 upgrade, this script backs up /system/etc/hosts,
+# During a MK70 upgrade, this script backs up /system/etc/hosts,
 # /system is formatted and reinstalled, then the file is restored.
 #
 
