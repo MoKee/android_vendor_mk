@@ -430,7 +430,7 @@ function write_header() {
     [ "$COMMON" -eq 1 ] && local DEVICE="$DEVICE_COMMON"
 
     cat << EOF > $1
-# Copyright (C) $YEAR The CyanogenMod Project
+# Copyright (C) $YEAR The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

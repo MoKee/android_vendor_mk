@@ -306,6 +306,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.mk.releasetype=$(MK_BUILDTYPE) \
   ro.modversion=$(MK_VERSION)
 
+ifeq ($(OTA_PACKAGE_SIGNING_KEY),)
+    PRODUCT_EXTRA_RECOVERY_KEYS += \
+        vendor/mk/build/target/product/security/mk \
+        vendor/mk/build/target/product/security/mk-devkey
+endif
+
 -include vendor/mk-priv/keys/keys.mk
 
 
