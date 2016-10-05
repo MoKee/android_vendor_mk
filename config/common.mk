@@ -140,7 +140,7 @@ endif
 PRODUCT_PACKAGES += \
     BluetoothExt \
     MKAudioService \
-    CMParts \
+    MKParts \
     Development \
     Profiles \
     WeatherManagerService
