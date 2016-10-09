@@ -1,0 +1,1 @@
+allow untrusted_app mk_weather_service:service_manager find;
