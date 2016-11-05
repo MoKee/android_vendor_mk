@@ -939,6 +939,13 @@ function fixup_common_out_dir() {
     fi
 }
 
+# Enable SD-LLVM if available
+if [ -d $(gettop)/prebuilts/snapdragon-llvm/toolchains ]; then
+    export SDCLANG=true
+    export SDCLANG_PATH=$(gettop)/prebuilts/snapdragon-llvm/toolchains/llvm-Snapdragon_LLVM_for_Android_3.8/prebuilt/linux-x86_64/bin
+    export SDCLANG_LTO_DEFS=$(gettop)/device/qcom/common/sdllvm-lto-defs.mk
+fi
+
 # Alternative Changelog Tool
 function chglog() {
     $ANDROID_BUILD_TOP/build/tools/chglog.py $ANDROID_BUILD_TOP $1 $2
