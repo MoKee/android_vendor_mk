@@ -4,6 +4,7 @@ MoKee Open Source
 Maintainers (MoKee Open Source 71.0):
 -----------------------------
 * __Acer A700:__ pawitp
+* __Alcatel Idol 3:__ c457
 * __Amazon Kindle Fire 1st Edition:__ Hashcode, FuZZ__
 * __Amazon Kindle Fire 2nd Edition:__ Hashcode, FuZZ__
 * __Asus EeePad Transformer (TF101):__ Bumble-Bee, EnJens
@@ -18,6 +19,8 @@ Maintainers (MoKee Open Source 71.0):
 * __Asus ZenPad 8.0 Z380KL:__ vm03
 * __B&N NookColor (encore):__ eyeballer, fattire, keyodi, krylon360, sluo (NookieDevs)
 * __B&N Nook Tablet (acclaim):__  chrmhoffmann
+* __BQ Aquaris E5 4G/E5 S (vegetalte):__  cmorlok, eloimuns, Kra1o5, stucki (bq-dev)
+* __BQ Aquaris M5 (piccolo):__  cmorlok, eloimuns, Kra1o5, stucki (bq-dev)
 * __Google Android One:__ varunchitre15
 * __Google Galaxy Nexus:__ Ziyan, musical_chairs
 * __Google Nexus S:__ burnsra, KalimochoAz, klusark
