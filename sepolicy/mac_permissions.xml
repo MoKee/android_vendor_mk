@@ -15,6 +15,13 @@
     <seinfo value="release" />
   </signer>
 
+  <!-- MKCenter -->
+  <signer signature="@RELEASE" >
+    <package name="com.mokee.center" >
+      <seinfo value="mkcenter" />
+    </package>
+  </signer>
+
   <!-- ThemeManagerService -->
   <signer signature="@RELEASE" >
     <package name="org.mokee.themeservice" >
