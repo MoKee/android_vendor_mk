@@ -165,6 +165,7 @@ PRODUCT_PACKAGES += \
     LiveLockScreenService \
     LockClock \
     MKSettingsProvider \
+    MKCenter \
     MoKeeSetupWizard \
     MoKeeWeatherProvider \
     Nox \
