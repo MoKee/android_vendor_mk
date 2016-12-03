@@ -25,11 +25,11 @@ RESOLUTION=""$IMAGE_WIDTH_SIZE"x"$IMAGE_HEIGHT_SIZE""
 
 for part_cnt in 0 1 2
 do
-    mkdir -p $ANDROID_PRODUCT_OUT/obj/BOOTANIMATION/bootanimation/part$part_cnt
+    mkdir -p $OUT/bootanimation/part$part_cnt
 done
 tar xfp "vendor/mk/bootanimation/bootanimation.tar" --to-command="convert - -resize '$RESOLUTION' \"$OUT/bootanimation/\$TAR_FILENAME\""
 
-RESOLUTION=`identify -ping -format '%w %h' $ANDROID_PRODUCT_OUT/obj/BOOTANIMATION/bootanimation/part0/HIMOKEE0001.jpg`
+RESOLUTION=$(identify -ping -format '%w %h' $(ls $OUT/bootanimation/part0 | head -1))
 
 # Create desc.txt
 echo "$RESOLUTION" 30 > "$OUT/bootanimation/desc.txt"
