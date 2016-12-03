@@ -27,7 +27,7 @@ for part_cnt in 0 1 2
 do
     mkdir -p $ANDROID_PRODUCT_OUT/obj/BOOTANIMATION/bootanimation/part$part_cnt
 done
-tar xfp "vendor/mk/bootanimation/bootanimation.tar" --to-command="convert - -resize '$RESOLUTION' \"png8:$OUT/bootanimation/\$TAR_FILENAME\""
+tar xfp "vendor/mk/bootanimation/bootanimation.tar" --to-command="convert - -resize '$RESOLUTION' \"$OUT/bootanimation/\$TAR_FILENAME\""
 
 # Create desc.txt
 echo "$WIDTH_SIZE" "$HEIGHT_SIZE" 30 > "$OUT/bootanimation/desc.txt"
