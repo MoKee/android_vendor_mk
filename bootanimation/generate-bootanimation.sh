@@ -29,8 +29,10 @@ do
 done
 tar xfp "vendor/mk/bootanimation/bootanimation.tar" --to-command="convert - -resize '$RESOLUTION' \"$OUT/bootanimation/\$TAR_FILENAME\""
 
+RESOLUTION=`identify -ping -format '%w %h' $ANDROID_PRODUCT_OUT/obj/BOOTANIMATION/bootanimation/part0/HIMOKEE0001.jpg`
+
 # Create desc.txt
-echo "$WIDTH_SIZE" "$HEIGHT_SIZE" 30 > "$OUT/bootanimation/desc.txt"
+echo "$RESOLUTION" 30 > "$OUT/bootanimation/desc.txt"
 cat "vendor/mk/bootanimation/desc.txt" >> "$OUT/bootanimation/desc.txt"
 
 # Create bootanimation.zip
