@@ -29,7 +29,7 @@ do
 done
 tar xfp "vendor/mk/bootanimation/bootanimation.tar" --to-command="convert - -resize '$RESOLUTION' \"$OUT/bootanimation/\$TAR_FILENAME\""
 
-RESOLUTION=$(identify -ping -format '%w %h' $(ls $OUT/bootanimation/part0 | head -1))
+RESOLUTION=$(identify -ping -format '%w %h' $OUT/bootanimation/part0/$(ls $OUT/bootanimation/part0 | head -1))
 
 # Create desc.txt
 echo "$RESOLUTION" 30 > "$OUT/bootanimation/desc.txt"
