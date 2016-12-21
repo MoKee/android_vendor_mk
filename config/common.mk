@@ -172,7 +172,7 @@ PRODUCT_PACKAGES += \
     MoKeeWeatherProvider \
     SoundRecorder \
     Screencast \
-    OneStep
+    Sidebar
 
 # Exchange support
 PRODUCT_PACKAGES += \
