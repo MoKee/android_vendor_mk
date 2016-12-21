@@ -171,7 +171,8 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     MoKeeWeatherProvider \
     SoundRecorder \
-    Screencast
+    Screencast \
+    Sidebar
 
 # Exchange support
 PRODUCT_PACKAGES += \
