@@ -134,7 +134,6 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     Eleven \
     ExactCalculator \
-    Launcher3 \
     LiveLockScreenService \
     LockClock \
     MKSettingsProvider \
