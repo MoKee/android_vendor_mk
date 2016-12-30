@@ -1,0 +1,2 @@
+type substratum_app, domain;
+allow substratum_app su_exec:file {execute};
