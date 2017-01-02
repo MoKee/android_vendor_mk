@@ -1,4 +1,6 @@
-# Copyright (C) 2015-2016 The MoKee Open Source Project
+# Copyright (C) 2015-2017 The MoKee Open Source Project
+# Copyright (C) 2015 The CyanogenMod Project
+#           (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,3 +23,5 @@ FRAMEWORK_MK_API_NEEDS_UPDATE_TEXT := $(TOPDIR)vendor/mk/build/core/apicheck_msg
 
 BUILD_MAVEN_PREBUILT := $(TOP)/vendor/mk/build/core/maven_artifact.mk
 PUBLISH_MAVEN_PREBUILT := $(TOP)/vendor/mk/build/core/maven_artifact_publish.mk
+
+BUILD_HTTP_PREBUILT := $(TOP)/vendor/mk/build/core/http_prebuilt.mk
