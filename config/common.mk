@@ -287,8 +287,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ifeq ($(OTA_PACKAGE_SIGNING_KEY),)
     PRODUCT_EXTRA_RECOVERY_KEYS += \
-        vendor/mk/build/target/product/security/mk \
-        vendor/mk/build/target/product/security/mk-devkey
+        vendor/mk/build/target/product/security/mk
 endif
 
 -include vendor/mk-priv/keys/keys.mk
