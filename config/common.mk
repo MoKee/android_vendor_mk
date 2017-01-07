@@ -101,9 +101,6 @@ include vendor/mk/config/themes_common.mk
 # MKSDK
 include vendor/mk/config/mksdk_common.mk
 
-# STSDK
-include vendor/mk/config/stsdk_common.mk
-
 # Bootanimation
 PRODUCT_PACKAGES += \
     bootanimation.zip
