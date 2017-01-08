@@ -143,6 +143,7 @@ PRODUCT_PACKAGES += \
     Nox \
     Screencast \
     SoundRecorder \
+    Venus \
     WallpaperPicker \
     WeatherProvider
 
