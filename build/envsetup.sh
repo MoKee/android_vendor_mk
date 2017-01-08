@@ -94,29 +94,28 @@ function eat()
             done
             echo "Device Found.."
         fi
-    if (adb shell getprop ro.mk.device | grep -q "$MK_BUILD");
-    then
-        # if adbd isn't root we can't write to /cache/recovery/
-        adb root
-        sleep 1
-        adb wait-for-device
-        cat << EOF > /tmp/command
+        if (adb shell getprop ro.mk.device | grep -q "$MK_BUILD"); then
+            # if adbd isn't root we can't write to /cache/recovery/
+            adb root
+            sleep 1
+            adb wait-for-device
+            cat << EOF > /tmp/command
 --sideload_auto_reboot
 EOF
-        if adb push /tmp/command /cache/recovery/ ; then
-            echo "Rebooting into recovery for sideload installation"
-            adb reboot recovery
-            adb wait-for-sideload
-            adb sideload $ZIPPATH
+            if adb push /tmp/command /cache/recovery/ ; then
+                echo "Rebooting into recovery for sideload installation"
+                adb reboot recovery
+                adb wait-for-sideload
+                adb sideload $ZIPPATH
+            fi
+            rm /tmp/command
+        else
+            echo "The connected device does not appear to be $MK_BUILD, run away!"
         fi
-        rm /tmp/command
+        return $?
     else
         echo "Nothing to eat"
         return 1
-    fi
-    return $?
-    else
-        echo "The connected device does not appear to be $MK_BUILD, run away!"
     fi
 }
 
@@ -284,7 +283,7 @@ function cafremote()
     then
         PFX="platform/"
     fi
-    git remote add caf git://codeaurora.org/$PFX$PROJECT
+    git remote add caf https://source.codeaurora.org/quic/la/$PFX$PROJECT
     echo "Remote 'caf' created"
 }
 
