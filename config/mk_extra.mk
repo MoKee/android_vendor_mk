@@ -5,4 +5,4 @@ WITH_SU := true
 
 BLOCK_BASED_OTA := false
 
--include vendor/private/mk_prebuilt.mk
+-include vendor/private/mk_private.mk
