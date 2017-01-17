@@ -1,1 +1,2 @@
 allow untrusted_app mk_weather_service:service_manager find;
+allow untrusted_app mk_status_bar_service:service_manager find;
