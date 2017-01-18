@@ -16,8 +16,8 @@ else
 fi
 
 if [ "$HALF_RES" = "true" ]; then
-    IMAGE_WIDTH_SIZE=$(expr $WIDTH_SIZE / 3)
-    IMAGE_HEIGHT_SIZE=$(expr $HEIGHT_SIZE / 3)
+    IMAGE_WIDTH_SIZE=$(expr $WIDTH_SIZE / 2)
+    IMAGE_HEIGHT_SIZE=$(expr $HEIGHT_SIZE / 2)
 else
     IMAGE_WIDTH_SIZE="$WIDTH_SIZE"
     IMAGE_HEIGHT_SIZE="$HEIGHT_SIZE"
