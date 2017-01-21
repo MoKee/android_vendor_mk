@@ -125,7 +125,7 @@ PRODUCT_PACKAGES += \
 # Custom MK packages
 PRODUCT_PACKAGES += \
     Aegis \
-    CMFileManager \
+    AmazeFileManager \
     Eleven \
     ExactCalculator \
     LiveLockScreenService \
