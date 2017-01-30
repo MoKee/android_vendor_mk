@@ -135,8 +135,6 @@ PRODUCT_PACKAGES += \
     MoKeeSetupWizard \
     MoKeeWeatherProvider \
     Nox \
-    Screencast \
-    SoundRecorder \
     Venus \
     WallpaperPicker \
     WeatherProvider
