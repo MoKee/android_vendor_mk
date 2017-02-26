@@ -1,2 +1,5 @@
 allow untrusted_app mk_weather_service:service_manager find;
 allow untrusted_app mk_status_bar_service:service_manager find;
+
+# Allow AOPT to call module_request
+allow untrusted_app kernel:system module_request;

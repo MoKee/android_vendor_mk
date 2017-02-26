@@ -3,6 +3,7 @@ allow file_type rootfs:filesystem associate;
 
 # Themes
 type themeservice_app_data_file, file_type, data_file_type;
+
 type theme_data_file, file_type, data_file_type;
 
 # Performance settings

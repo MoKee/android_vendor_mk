@@ -15,3 +15,4 @@ mkweather                                 u:object_r:mk_weather_service:s0
 mklivedisplay                             u:object_r:mk_livedisplay_service:s0
 mkaudio                                   u:object_r:mk_audio_service:s0
 overlay                                   u:object_r:overlay_service:s0
+masquerade                                u:object_r:masquerade_service:s0
