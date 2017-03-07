@@ -15,4 +15,4 @@ type mk_weather_service, system_api_service, system_server_service, service_mana
 type mk_livedisplay_service, system_api_service, system_server_service, service_manager_type;
 type mk_audio_service, system_api_service, system_server_service, service_manager_type;
 type overlay_service, app_api_service, system_server_service, service_manager_type;
-type masquerade_service, app_api_service, system_server_service, service_manager_type;
+type interfacer_service, app_api_service, system_server_service, service_manager_type;
