@@ -44,4 +44,5 @@ echo "$RESOLUTION" 30 > "$OUT/bootanimation/desc.txt"
 cat "$SRC/desc.txt" >> "$OUT/bootanimation/desc.txt"
 
 # Create bootanimation.zip
-zip -qr0 "$OUT/bootanimation.zip" .
+zip -qrX0 "$OUT/bootanimation.zip" .
+$ANDROID_HOST_OUT/bin/ziptime "$OUT/bootanimation.zip"
