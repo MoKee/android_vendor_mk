@@ -45,4 +45,12 @@ cat "$SRC/desc.txt" >> "$OUT/bootanimation/desc.txt"
 
 # Create bootanimation.zip
 zip -qrX0 "$OUT/bootanimation.zip" .
-$ANDROID_HOST_OUT/bin/ziptime "$OUT/bootanimation.zip"
+if [ -f $ANDROID_HOST_OUT/bin/ziptime ];then
+    $ANDROID_HOST_OUT/bin/ziptime "$OUT/bootanimation.zip"
+else
+    if [ "$(uname -s)" == "Linux" ];then
+        $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/linux-x86/ziptime "$OUT/bootanimation.zip"
+    else
+        $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/darwin-x86/ziptime "$OUT/bootanimation.zip"
+    fi
+fi
