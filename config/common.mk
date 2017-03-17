@@ -125,6 +125,7 @@ PRODUCT_PACKAGES += \
 # Custom MK packages
 PRODUCT_PACKAGES += \
     Aegis \
+    CustomTiles \
     AmazeFileManager \
     Eleven \
     ExactCalculator \
