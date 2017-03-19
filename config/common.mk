@@ -86,9 +86,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml
 
-# Include MK audio files
-include vendor/mk/config/mk_audio.mk
-
 # Theme engine
 include vendor/mk/config/themes_common.mk
 
@@ -167,7 +164,6 @@ PRODUCT_PACKAGES += \
     tune2fs \
     unrar \
     unzip \
-    vim \
     wget \
     zip
 
