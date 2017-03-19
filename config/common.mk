@@ -18,8 +18,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.notification_sound=Hello.ogg \
-    ro.config.alarm_alert=AngelsHarp.ogg
+    ro.config.notification_sound=Tethys.ogg \
+    ro.config.alarm_alert=Platinum.ogg
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # Thank you, please drive thru!
@@ -167,7 +167,6 @@ PRODUCT_PACKAGES += \
     tune2fs \
     unrar \
     unzip \
-    vim \
     wget \
     zip
 
