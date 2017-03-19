@@ -167,7 +167,6 @@ PRODUCT_PACKAGES += \
     tune2fs \
     unrar \
     unzip \
-    vim \
     wget \
     zip
 
