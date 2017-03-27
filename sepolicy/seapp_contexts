@@ -1,4 +1,3 @@
-user=_app seinfo=platform name=org.mokee.filemanager domain=untrusted_app type=app_data_file
 user=_app seinfo=substratum name=projekt.substratum domain=untrusted_app type=app_data_file
 #user=theme_man domain=system_app type=system_data_file
 #user=_app seinfo=mkcenter name=com.mokee.center domain=system_app type=system_app_data_file
