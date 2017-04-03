@@ -283,6 +283,8 @@ endif
 -include vendor/mk-priv/keys/keys.mk
 
 
+PRODUCT_PACKAGES += Br0Zip
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/mk/config/partner_gms.mk
 -include vendor/mk/config/mk_extra.mk
