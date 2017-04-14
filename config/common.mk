@@ -232,7 +232,7 @@ endif
 DEVICE_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
 PRODUCT_VERSION_MAJOR = 71
-PRODUCT_VERSION_MINOR = 1
+PRODUCT_VERSION_MINOR = 2
 
 # Set MK_BUILDTYPE and WITH_DEXPREOPT support
 ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
