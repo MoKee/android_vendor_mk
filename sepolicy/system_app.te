@@ -13,6 +13,3 @@ get_prop(system_app, adbsecure_prop)
 # Themes
 allow system_app theme_data_file:dir create_dir_perms;
 allow system_app theme_data_file:file create_file_perms;
-
-# MKCenter
-allow system_app app_data_file:dir search;
