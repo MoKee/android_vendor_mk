@@ -7,3 +7,6 @@ allow untrusted_app kernel:system module_request;
 
 # Allow file and type transition for contexts
 allow untrusted_app system_app_data_file:dir getattr;
+
+# Allow ThemeInterfacer to search app_data_file
+allow untrusted_app app_data_file:dir r_dir_perms;
