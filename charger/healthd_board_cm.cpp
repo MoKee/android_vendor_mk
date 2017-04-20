@@ -62,6 +62,10 @@ static struct animation anim = {
     .num_frames = 0,
 };
 
+#ifdef USE_LEGACY_MINUI_TEXT_API
+static bool font_inited;
+#endif
+
 static int draw_surface_centered(GRSurface* surface)
 {
     int w, h, x, y;
@@ -83,14 +87,26 @@ static void draw_capacity(int capacity)
 
     struct frame *f = &anim.frames[0];
     int font_x, font_y;
+#ifdef USE_LEGACY_MINUI_TEXT_API
+    gr_font_size(&font_x, &font_y);
+#else
     gr_font_size(gr_sys_font(), &font_x, &font_y);
+#endif
+#ifdef USE_LEGACY_MINUI_TEXT_API
+    int w = gr_measure(cap_str);
+#else
     int w = gr_measure(gr_sys_font(), cap_str);
+#endif
     int h = gr_get_height(f->surface);
     int x = (gr_fb_width() - w) / 2;
     int y = (gr_fb_height() + h) / 2;
 
     gr_color(255, 255, 255, 255);
+#ifdef USE_LEGACY_MINUI_TEXT_API
+    gr_text(x, y + font_y / 2, cap_str, 0);
+#else
     gr_text(gr_sys_font(), x, y + font_y / 2, cap_str, 0);
+#endif
 }
 
 #ifdef QCOM_HARDWARE
@@ -334,6 +350,13 @@ void healthd_board_mode_charger_draw_battery(
 {
     int start_frame = 0;
     int capacity = -1;
+
+#ifdef USE_LEGACY_MINUI_TEXT_API
+    if (!font_inited) {
+        gr_set_font("log");
+        font_inited = true;
+    }
+#endif
 
     if (batt_prop && batt_prop->batteryLevel >= 0) {
         capacity = batt_prop->batteryLevel;
