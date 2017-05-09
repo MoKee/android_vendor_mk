@@ -14,6 +14,7 @@ get_prop(system_server, adbsecure_prop)
 
 # theme property
 get_prop(system_server, theme_prop)
+set_prop(system_server, theme_prop)
 
 # Allow system_server to relabel newly created theme directory for
 # use by the proxied theme service
