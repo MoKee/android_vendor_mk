@@ -165,7 +165,8 @@ PRODUCT_PACKAGES += \
     unrar \
     unzip \
     wget \
-    zip
+    zip \
+    mkchecker
 
 # Custom off-mode charger
 ifneq ($(WITH_CM_CHARGER),false)
