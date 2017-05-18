@@ -1,3 +1,4 @@
+user=_app seinfo=platform name=com.mokee.updateverification domain=untrusted_app type=app_data_file levelFrom=user
 user=_app seinfo=platform name=org.mokee.filemanager domain=untrusted_app type=app_data_file levelFrom=user
 user=_app seinfo=substratum name=projekt.substratum domain=untrusted_app type=app_data_file levelFrom=user
 user=_app seinfo=themeservice name=org.mokee.themeservice domain=themeservice_app type=themeservice_app_data_file
