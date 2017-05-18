@@ -122,14 +122,15 @@ PRODUCT_PACKAGES += \
 # Custom MK packages
 PRODUCT_PACKAGES += \
     Aegis \
-    CustomTiles \
     AmazeFileManager \
+    CustomTiles \
     Eleven \
     ExactCalculator \
     LiveLockScreenService \
     LockClock \
-    MKSettingsProvider \
     MKCenter \
+    MKSettingsProvider \
+    MKUpdateVerification \
     MoKeeSetupWizard \
     MoKeeWeatherProvider \
     Nox \
