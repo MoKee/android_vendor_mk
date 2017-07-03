@@ -123,7 +123,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aegis \
     AmazeFileManager \
-    CustomTiles \
     Eleven \
     ExactCalculator \
     LiveLockScreenService \
