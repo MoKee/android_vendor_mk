@@ -685,7 +685,7 @@ function oat2dex() {
         echo "Checking if system is odexed and locating boot.oats..."
         for ARCH in "arm64" "arm" "x86_64" "x86"; do
             mkdir -p "$TMPDIR/system/framework/$ARCH"
-            if get_file "system/framework/$ARCH/" "$TMPDIR/system/framework/" "$SRC"; then
+            if get_file "system/framework/$ARCH/" "$TMPDIR/system/framework/$ARCH/" "$SRC"; then
                 ARCHES+="$ARCH "
             else
                 rmdir "$TMPDIR/system/framework/$ARCH"
@@ -771,7 +771,7 @@ function fix_xml() {
     grep -a '^<?xml version' "$XML" > "$TEMP_XML"
     grep -av '^<?xml version' "$XML" >> "$TEMP_XML"
 
-    mv "$TEMP_XML" "$XML"
+    cp "$TEMP_XML" "$XML"
 }
 
 #
