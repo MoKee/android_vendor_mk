@@ -57,6 +57,7 @@ allow interfacer media_rw_data_file:file rw_file_perms;
 # Services
 allow interfacer activity_service:service_manager find;
 allow interfacer connectivity_service:service_manager find;
+allow interfacer content_service:service_manager find;
 allow interfacer display_service:service_manager find;
 allow interfacer mount_service:service_manager find;
 allow interfacer network_management_service:service_manager find;
