@@ -977,7 +977,7 @@ function clog() {
 
 # OTA Script
 function ota_all() {
-    $ANDROID_BUILD_TOP/build/tools/mk_ota_script/gen_ota $1 $2
+    $ANDROID_BUILD_TOP/build/tools/mk_ota_script/$(uname -s)/gen_ota $1 $2
 }
 
 export MK_BUILDER=True
