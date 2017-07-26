@@ -132,6 +132,7 @@ PRODUCT_PACKAGES += \
     MKUpdateVerification \
     MoKeeSetupWizard \
     MoKeeWeatherProvider \
+    Nox2 \
     Venus \
     WallpaperPicker \
     WeatherProvider
