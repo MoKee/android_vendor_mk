@@ -77,4 +77,10 @@
 
     <!-- Flag indicating whether round icons should be parsed from the application manifest. -->
     <bool name="config_useRoundIcon">true</bool>
+
+    <!-- Control the behavior when the user panic presses the back button.
+            0 - Nothing
+            1 - Go to home
+    -->
+    <integer name="config_backPanicBehavior">1</integer>
 </resources>
