@@ -94,6 +94,11 @@ ifneq ($(TARGET_DISABLE_MKSDK), true)
 include vendor/mk/config/mksdk_common.mk
 endif
 
+# TWRP
+ifeq ($(WITH_TWRP),true)
+include vendor/mk/config/twrp.mk
+endif
+
 # Bootanimation
 PRODUCT_PACKAGES += \
     bootanimation.zip
