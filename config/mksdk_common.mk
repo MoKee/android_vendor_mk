@@ -52,3 +52,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.mk.build.version.plat.rev=$(MK_PLATFORM_REV)
 
+# MoKee Cloud SDK Version
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.mk.build.version.cloud.sdk=1
