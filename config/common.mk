@@ -135,7 +135,6 @@ PRODUCT_PACKAGES += \
     Eleven \
     ExactCalculator \
     Jelly \
-    LiveLockScreenService \
     LockClock \
     MKCenter \
     MKSettingsProvider \
