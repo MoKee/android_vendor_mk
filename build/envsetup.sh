@@ -320,12 +320,15 @@ function installboot()
     if (adb shell getprop ro.mk.device | grep -q "$MK_BUILD");
     then
         adb push $OUT/boot.img /cache/
-        for i in $OUT/system/lib/modules/*;
-        do
-            adb push $i /system/lib/modules/
-        done
+        if [ -e "$OUT/system/lib/modules/*" ];
+        then
+            for i in $OUT/system/lib/modules/*;
+            do
+                adb push $i /system/lib/modules/
+            done
+            adb shell chmod 644 /system/lib/modules/*
+        fi
         adb shell dd if=/cache/boot.img of=$PARTITION
-        adb shell chmod 644 /system/lib/modules/*
         echo "Installation complete."
     else
         echo "The connected device does not appear to be $MK_BUILD, run away!"
