@@ -46,7 +46,7 @@ Commit your patches in a single commit. Squash multiple commits using this comma
 
     git rebase -i HEAD~<# of commits>
 
-To view the status of your and others' patches, visit [MoKee Code Review](http://review.mfunz.com/)
+To view the status of your and others' patches, visit [MoKee Code Review](https://review.mfunz.com/)
 
 
 Getting Started
