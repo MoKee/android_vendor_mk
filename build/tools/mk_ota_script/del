@@ -1,0 +1,2 @@
+#!/sbin/sh
+/sbin/find /system -depth -type d -print0 | /sbin/xargs -0 /sbin/rmdir 2>/dev/null

@@ -980,7 +980,17 @@ function clog() {
 
 # OTA Script
 function ota_all() {
-    $ANDROID_BUILD_TOP/build/tools/mk_ota_script/$(uname -s)/gen_ota $1 $2
+    case `uname -s` in
+        Linux)
+            $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/linux-x86/gen_ota $1 $2
+            ;;
+        Darwin)
+            $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/darwin-x86/gen_ota $1 $2
+            ;;
+        *)
+            echo `uname -s` is not supported yet
+            ;;
+    esac
 }
 
 export MK_BUILDER=True
