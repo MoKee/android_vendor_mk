@@ -83,6 +83,3 @@ MMM+++++++++++++++~MM~~M $O,NM88MOMMZ$$MM$$$+++++++++MM777777777MMMM
       To submit the revised current.txt to the main MoKee Open Source repository,
       you will need approval.
 ******************************
-
-
-

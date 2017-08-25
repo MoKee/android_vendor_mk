@@ -1,5 +1,5 @@
 #
-# MoKee OpenSource Audio Files
+# MoKee Open Source Audio Files
 #
 
 ALARM_PATH := vendor/mk/prebuilt/common/media/audio/alarms

@@ -29,16 +29,20 @@ endif
 ifneq ($(TARGET_BUILD_VARIANT),eng)
   ifdef MK_EXPERIMENTAL
     # Disable ADB authentication
-    ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
+    PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=0
   else
     # Enable ADB authentication
-    ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+    PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
   endif
 endif
 
-# Copy over the translator to the device
-PRODUCT_COPY_FILES += \
-    vendor/mk/TRANSLATOR.mkdn:system/etc/TRANSLATOR-MK.txt
+ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)
+  PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.device.cache_dir=/data/cache
+else
+  PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.device.cache_dir=/cache
+endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -66,7 +70,7 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
-# MK-specific init files
+# MK-specific init file
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.local.rc:root/init.mk.rc
 
@@ -172,12 +176,12 @@ PRODUCT_PACKAGES += \
     mkchecker
 
 # Custom off-mode charger
-ifneq ($(WITH_CM_CHARGER),false)
+ifneq ($(WITH_LINEAGE_CHARGER),false)
 PRODUCT_PACKAGES += \
     charger_res_images \
-    cm_charger_res_images \
+    lineage_charger_res_images \
     font_log.png \
-    libhealthd.cm
+    libhealthd.lineage
 endif
 
 # ExFAT support
@@ -235,8 +239,8 @@ endif
 
 DEVICE_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
-PRODUCT_VERSION_MAJOR = 71
-PRODUCT_VERSION_MINOR = 2
+PRODUCT_VERSION_MAJOR = 80
+PRODUCT_VERSION_MINOR = 0
 
 # Set MK_BUILDTYPE and WITH_DEXPREOPT support
 ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)

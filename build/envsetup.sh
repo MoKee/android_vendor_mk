@@ -1,15 +1,13 @@
-function __print_mk_functions_help() {
+function __print_mokee_functions_help() {
 cat <<EOF
 Additional MoKee Open Source functions:
 - cout:            Changes directory to out.
 - mmp:             Builds all of the modules in the current directory and pushes them to the device.
 - mmap:            Builds all of the modules in the current directory and its dependencies, then pushes the package to the device.
 - mmmp:            Builds all of the modules in the supplied directories and pushes them to the device.
-- mms:             Short circuit builder. Quickly re-build the kernel, rootfs, boot and system images
-                   without deep dependencies. Requires the full build to have run before.
-- mkgerrit:        A Git wrapper that fetches/pushes patch from/to MK Gerrit Review.
-- mkrebase:        Rebase a Gerrit change and push it again.
-- mkremote:        Add git remote for MK Gerrit Review.
+- mkgerrit:   A Git wrapper that fetches/pushes patch from/to MoKee Gerrit Review.
+- mkrebase:   Rebase a Gerrit change and push it again.
+- mkremote:   Add git remote for MoKee Gerrit Review.
 - aospremote:      Add git remote for matching AOSP repository.
 - cafremote:       Add git remote for matching CodeAurora repository.
 - mka:             Builds using SCHED_BATCH on all processors.
@@ -26,6 +24,35 @@ Additional MoKee Open Source functions:
 - clearout: Cleans out directory
 - clog:     Tool to generate changelog.
 EOF
+}
+
+function mk_timer()
+{
+    local start_time=$(date +"%s")
+    $@
+    local ret=$?
+    local end_time=$(date +"%s")
+    local tdiff=$(($end_time-$start_time))
+    local hours=$(($tdiff / 3600 ))
+    local mins=$((($tdiff % 3600) / 60))
+    local secs=$(($tdiff % 60))
+    local ncolors=$(tput colors 2>/dev/null)
+    echo
+    if [ $ret -eq 0 ] ; then
+        echo -n "#### make completed successfully "
+    else
+        echo -n "#### make failed to build some targets "
+    fi
+    if [ $hours -gt 0 ] ; then
+        printf "(%02g:%02g:%02g (hh:mm:ss))" $hours $mins $secs
+    elif [ $mins -gt 0 ] ; then
+        printf "(%02g:%02g (mm:ss))" $mins $secs
+    elif [ $secs -gt 0 ] ; then
+        printf "(%s seconds)" $secs
+    fi
+    echo " ####"
+    echo
+    return $ret
 }
 
 function brunch()
@@ -67,6 +94,7 @@ function breakfast()
             if [ -z "$variant" ]; then
                 variant="userdebug"
             fi
+
             lunch mk_$target-$variant
         fi
     fi
@@ -243,12 +271,12 @@ function mkremote()
     fi
     git remote rm mkremote 2> /dev/null
     GERRIT_REMOTE=$(git config --get remote.github.projectname)
-    MKUSER=$(git config --get review.review.mfunz.com.username)
-    if [ -z "$MKUSER" ]
+    MK_USER=$(git config --get review.review.mfunz.com.username)
+    if [ -z "$MK_USER" ]
     then
         git remote add mkremote ssh://review.mfunz.com:29418/$GERRIT_REMOTE
     else
-        git remote add mkremote ssh://$MKUSER@review.mfunz.com:29418/$GERRIT_REMOTE
+        git remote add mkremote ssh://$MK_USER@review.mfunz.com:29418/$GERRIT_REMOTE
     fi
     echo "Remote 'mkremote' created"
 }
@@ -677,20 +705,7 @@ function mkrebase() {
 }
 
 function mka() {
-    local T=$(gettop)
-    if [ "$T" ]; then
-        case `uname -s` in
-            Darwin)
-                make -C $T -j `sysctl hw.ncpu|cut -d" " -f2` "$@"
-                ;;
-            *)
-                mk_timer schedtool -B -n 10 -e ionice -n 7 make -C $T -j$(grep "^processor" /proc/cpuinfo | wc -l) "$@"
-                ;;
-        esac
-
-    else
-        echo "Couldn't locate the top of the tree.  Try setting TOP."
-    fi
+    m -j "$@"
 }
 
 function mkka() {
@@ -713,29 +728,6 @@ function mkka() {
     fi
 }
 
-function mms() {
-    local T=$(gettop)
-    if [ -z "$T" ]
-    then
-        echo "Couldn't locate the top of the tree.  Try setting TOP."
-        return 1
-    fi
-
-    case `uname -s` in
-        Darwin)
-            local NUM_CPUS=$(sysctl hw.ncpu|cut -d" " -f2)
-            ONE_SHOT_MAKEFILE="__none__" \
-                make -C $T -j $NUM_CPUS "$@"
-            ;;
-        *)
-            local NUM_CPUS=$(grep "^processor" /proc/cpuinfo | wc -l)
-            ONE_SHOT_MAKEFILE="__none__" \
-                mk_timer schedtool -B -n 1 -e ionice -n 1 \
-                make -C $T -j $NUM_CPUS "$@"
-            ;;
-    esac
-}
-
 function repolastsync() {
     RLSPATH="$ANDROID_BUILD_TOP/.repo/.repo_fetchtimes.json"
     RLSLOCAL=$(date -d "$(stat -c %z $RLSPATH)" +"%e %b %Y, %T %Z")
@@ -744,14 +736,7 @@ function repolastsync() {
 }
 
 function reposync() {
-    case `uname -s` in
-        Darwin)
-            repo sync -j 4 "$@"
-            ;;
-        *)
-            schedtool -B -n 1 -e ionice -n 1 `which repo` sync -j 4 "$@"
-            ;;
-    esac
+    repo sync -j 4 "$@"
 }
 
 function repodiff() {
