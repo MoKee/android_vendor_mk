@@ -134,6 +134,7 @@ PRODUCT_PACKAGES += \
     AudioFX \
     Eleven \
     ExactCalculator \
+    Jelly \
     LiveLockScreenService \
     LockClock \
     MKCenter \
