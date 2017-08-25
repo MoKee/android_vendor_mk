@@ -22,3 +22,4 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(MK_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(MK_TARGET_PACKAGE) | cut -f1 -d' ' > $(MK_TARGET_PACKAGE).md5sum
 	@echo "Package Complete: $(MK_TARGET_PACKAGE)" >&2
+	@echo "Package Size: `ls -lh $(MK_TARGET_PACKAGE) | cut -d ' ' -f 5`" >&2
