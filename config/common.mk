@@ -131,6 +131,7 @@ PRODUCT_PACKAGES += \
 # Custom MK packages
 PRODUCT_PACKAGES += \
     Aegis \
+    AudioFX \
     Eleven \
     ExactCalculator \
     LiveLockScreenService \
