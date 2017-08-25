@@ -20,5 +20,5 @@ MK_TARGET_PACKAGE := $(PRODUCT_OUT)/$(MK_VERSION).zip
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(MK_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(MK_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(MK_TARGET_PACKAGE).md5sum
+	$(hide) $(MD5SUM) $(MK_TARGET_PACKAGE) | cut -f1 -d' ' > $(MK_TARGET_PACKAGE).md5sum
 	@echo "Package Complete: $(MK_TARGET_PACKAGE)" >&2
