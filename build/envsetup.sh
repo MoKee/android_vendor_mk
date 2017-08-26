@@ -950,7 +950,7 @@ fi
 
 # Alternative Changelog Tool
 function chglog() {
-    $ANDROID_BUILD_TOP/build/tools/chglog.py $ANDROID_BUILD_TOP $1 $2
+    $ANDROID_BUILD_TOP/vendor/mk/build/tools/chglog.py $ANDROID_BUILD_TOP $1 $2
 }
 
 # Cleans out directory
@@ -960,7 +960,7 @@ function clearout() {
 
 # Changelog Tool
 function clog() {
-    $ANDROID_BUILD_TOP/build/tools/clog $1
+    $ANDROID_BUILD_TOP/vendor/mk/build/tools/clog $1
 }
 
 # OTA Script

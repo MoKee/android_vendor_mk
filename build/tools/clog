@@ -1,0 +1,84 @@
+#!/bin/bash
+#
+# Copyright (C) 2013-2017 The MoKee Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+sdate=${1}
+edate=${2}
+if [ -z "$edate" ]; then
+    edate=`date +"%m/%d/%Y"`
+    cdate=`date +"%y%m%d"`
+else
+    cdate=`echo ${sdate:8}${sdate::2}${sdate:3:2}-${edate:8}${edate::2}${edate:3:2}`
+fi
+rdir=`pwd`
+logdir=$MK_CHANGELOG_PATH
+if ["$MK_CHANGELOG_PATH" == ""]; then
+logdir=`pwd`
+fi
+logfile=Changelog_$cdate.log
+
+rm -f "$logdir"/"$logfile"
+
+clear
+
+# Check the date start range is set
+if [ -z "$sdate" ]; then
+    echo ""
+    echo "----------------------- ATTENTION: Start date not defined -----------------------"
+    echo ""
+    echo "             >>> Please define a start date in mm/dd/yyyy format <<<             "
+    echo ""
+    echo "---------------------------------------------------------------------------------"
+    exit
+fi
+
+# Find the directories to log
+echo "MoKee Open Source Changelog Generating -------------------"
+echo ""
+# Log starter
+echo "MoKee Open Source Changelog from $sdate" - "$edate" >> "$logdir"/"$logfile"
+echo "---------------------------------------------------------------" >> "$logdir"/"$logfile"
+echo "" >> "$logdir"/"$logfile"
+find -name .git | sed 's/\/.git//g' | sed 'N;$!P;$!D;$d' | while read line
+do
+cd $line
+    # Test to see if the repo needs to have a changelog written.
+    if [ -z "$edate" ]; then
+        log=$(git log --pretty="%an - %s" --no-merges --since=$sdate --date-order)
+    else
+        log=$(git log --pretty="%an - %s" --no-merges --since=$sdate --until=$edate --date-order)
+    fi
+    # Forgive my bad script :P
+    project=${line#*/}
+    if [ ! -z "$log" ] && echo $project | grep -vq repo; then
+        # Write the changelog
+        echo " >>> Changelog is updated and written for $project ..."
+        echo "Project: $project" >> "$logdir"/"$logfile"
+        echo "$log" | while read line
+        do
+        echo " $line" >> "$logdir"/"$logfile"
+        done
+        echo "" >> "$logdir"/"$logfile"
+    fi
+cd $ANDROID_BUILD_TOP
+done
+count=`grep -c "" "$logdir"/"$logfile"`
+if [ "$count" == "3" ]; then
+    echo "No changes, maybe we delayed commit." >> "$logdir"/"$logfile"
+    echo "" >> "$logdir"/"$logfile"
+fi
+echo "---------------------------------------------------------------" >> "$logdir"/"$logfile"
+echo "You can see more changelog from http://changelog.mokeedev.com" >> "$logdir"/"$logfile"
