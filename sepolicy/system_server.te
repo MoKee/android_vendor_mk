@@ -18,8 +18,6 @@ set_prop(system_server, theme_prop)
 
 # Allow system_server to relabel newly created theme directory for
 # use by the proxied theme service
-
-allow system_server themeservice_app_data_file:dir relabelto;
 allow system_server interfacer_service:service_manager find;
 allow system_server overlay_service:service_manager find;
 
