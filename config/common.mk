@@ -129,7 +129,6 @@ PRODUCT_PACKAGES += \
     Aegis \
     Eleven \
     ExactCalculator \
-    LiveLockScreenService \
     LockClock \
     MKCenter \
     MKSettingsProvider \
