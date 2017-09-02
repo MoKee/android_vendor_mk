@@ -1,13 +1,11 @@
 # Permissions for mksdk services
 PRODUCT_COPY_FILES += \
-    vendor/mk/config/permissions/org.cyanogenmod.theme.xml:system/etc/permissions/org.cyanogenmod.theme.xml \
     vendor/mk/config/permissions/org.mokee.audio.xml:system/etc/permissions/org.mokee.audio.xml \
     vendor/mk/config/permissions/org.mokee.livedisplay.xml:system/etc/permissions/org.mokee.livedisplay.xml \
     vendor/mk/config/permissions/org.mokee.performance.xml:system/etc/permissions/org.mokee.performance.xml \
     vendor/mk/config/permissions/org.mokee.profiles.xml:system/etc/permissions/org.mokee.profiles.xml \
     vendor/mk/config/permissions/org.mokee.statusbar.xml:system/etc/permissions/org.mokee.statusbar.xml \
     vendor/mk/config/permissions/org.mokee.telephony.xml:system/etc/permissions/org.mokee.telephony.xml \
-    vendor/mk/config/permissions/org.mokee.theme.xml:system/etc/permissions/org.mokee.theme.xml \
     vendor/mk/config/permissions/org.mokee.weather.xml:system/etc/permissions/org.mokee.weather.xml
 
 # MK Platform Library
