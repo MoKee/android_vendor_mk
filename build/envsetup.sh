@@ -243,12 +243,12 @@ function mkremote()
     fi
     git remote rm mkremote 2> /dev/null
     GERRIT_REMOTE=$(git config --get remote.github.projectname)
-    MKUSER=$(git config --get review.review.mfunz.com.username)
+    MKUSER=$(git config --get review.mokeedev.review.username)
     if [ -z "$MKUSER" ]
     then
-        git remote add mkremote ssh://review.mfunz.com:29418/$GERRIT_REMOTE
+        git remote add mkremote ssh://mokeedev.review:29418/$GERRIT_REMOTE
     else
-        git remote add mkremote ssh://$MKUSER@review.mfunz.com:29418/$GERRIT_REMOTE
+        git remote add mkremote ssh://$MKUSER@mokeedev.review:29418/$GERRIT_REMOTE
     fi
     echo "Remote 'mkremote' created"
 }
@@ -407,7 +407,7 @@ function mkgerrit() {
         $FUNCNAME help
         return 1
     fi
-    local user=`git config --get review.review.mfunz.com.username`
+    local user=`git config --get review.mokeedev.review.username`
     local review=`git config --get remote.github.review`
     local project=`git config --get remote.github.projectname`
     local command=$1
@@ -664,7 +664,7 @@ function mkrebase() {
     echo "Bringing it up to date..."
     repo sync .
     echo "Fetching change..."
-    git fetch "https://review.mfunz.com/p/$repo" "refs/changes/$refs" && git cherry-pick FETCH_HEAD
+    git fetch "https://mokeedev.review/p/$repo" "refs/changes/$refs" && git cherry-pick FETCH_HEAD
     if [ "$?" != "0" ]; then
         echo "Error cherry-picking. Not uploading!"
         return
