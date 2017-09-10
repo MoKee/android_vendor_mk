@@ -276,12 +276,12 @@ function mkremote()
         local GERRIT_REMOTE=$(git config --get remote.aosp.projectname | sed s#platform/#android/#g | sed s#/#_#g)
         local PFX="MoKee/"
     fi
-    local MK_USER=$(git config --get review.review.mfunz.com.username)
+    local MK_USER=$(git config --get review.mokeedev.review.username)
     if [ -z "$MK_USER" ]
     then
-        git remote add mkremote ssh://review.mfunz.com:29418/$PFX$GERRIT_REMOTE
+        git remote add mkremote ssh://mokeedev.review:29418/$PFX$GERRIT_REMOTE
     else
-        git remote add mkremote ssh://$MK_USER@review.mfunz.com:29418/$PFX$GERRIT_REMOTE
+        git remote add mkremote ssh://$MK_USER@mokeedev.review:29418/$PFX$GERRIT_REMOTE
     fi
     echo "Remote 'mkremote' created"
 }
@@ -440,7 +440,7 @@ function mkgerrit() {
         $FUNCNAME help
         return 1
     fi
-    local user=`git config --get review.review.mfunz.com.username`
+    local user=`git config --get review.mokeedev.review.username`
     local review=`git config --get remote.github.review`
     local project=`git config --get remote.github.projectname`
     local command=$1
@@ -697,7 +697,7 @@ function mkrebase() {
     echo "Bringing it up to date..."
     repo sync .
     echo "Fetching change..."
-    git fetch "https://review.mfunz.com/p/$repo" "refs/changes/$refs" && git cherry-pick FETCH_HEAD
+    git fetch "https://mokeedev.review/p/$repo" "refs/changes/$refs" && git cherry-pick FETCH_HEAD
     if [ "$?" != "0" ]; then
         echo "Error cherry-picking. Not uploading!"
         return
