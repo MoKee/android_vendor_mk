@@ -242,13 +242,18 @@ function mkremote()
         return 1
     fi
     git remote rm mkremote 2> /dev/null
-    GERRIT_REMOTE=$(git config --get remote.github.projectname)
-    MKUSER=$(git config --get review.mokeedev.review.username)
+    local GERRIT_REMOTE=$(git config --get remote.github.projectname)
+    if [ -z "$GERRIT_REMOTE" ]
+    then
+        local GERRIT_REMOTE=$(git config --get remote.aosp.projectname | sed s#platform/#android/#g | sed s#/#_#g)
+        local PFX="MoKee/"
+    fi
+    local MKUSER=$(git config --get review.mokeedev.review.username)
     if [ -z "$MKUSER" ]
     then
-        git remote add mkremote ssh://mokeedev.review:29418/$GERRIT_REMOTE
+        git remote add mkremote ssh://mokeedev.review:29418/$PFX$GERRIT_REMOTE
     else
-        git remote add mkremote ssh://$MKUSER@mokeedev.review:29418/$GERRIT_REMOTE
+        git remote add mkremote ssh://$MKUSER@mokeedev.review:29418/$PFX$GERRIT_REMOTE
     fi
     echo "Remote 'mkremote' created"
 }
@@ -261,10 +266,10 @@ function aospremote()
         return 1
     fi
     git remote rm aosp 2> /dev/null
-    PROJECT=$(pwd -P | sed -e "s#$ANDROID_BUILD_TOP\/##; s#-caf.*##; s#\/default##")
+    local PROJECT=$(pwd -P | sed -e "s#$ANDROID_BUILD_TOP\/##; s#-caf.*##; s#\/default##")
     if (echo $PROJECT | grep -qv "^device")
     then
-        PFX="platform/"
+        local PFX="platform/"
     fi
     git remote add aosp https://android.googlesource.com/$PFX$PROJECT
     echo "Remote 'aosp' created"
@@ -278,10 +283,10 @@ function cafremote()
         return 1
     fi
     git remote rm caf 2> /dev/null
-    PROJECT=$(pwd -P | sed -e "s#$ANDROID_BUILD_TOP\/##; s#-caf.*##; s#\/default##")
+    local PROJECT=$(pwd -P | sed -e "s#$ANDROID_BUILD_TOP\/##; s#-caf.*##; s#\/default##")
     if (echo $PROJECT | grep -qv "^device")
     then
-        PFX="platform/"
+        local PFX="platform/"
     fi
     git remote add caf https://source.codeaurora.org/quic/la/$PFX$PROJECT
     echo "Remote 'caf' created"
