@@ -48,9 +48,12 @@ zip -qrX0 "$OUT/bootanimation.zip" .
 if [ -f $ANDROID_HOST_OUT/bin/ziptime ];then
     $ANDROID_HOST_OUT/bin/ziptime "$OUT/bootanimation.zip"
 else
-    if [ "$(uname -s)" == "Linux" ];then
-        $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/linux-x86/ziptime "$OUT/bootanimation.zip"
-    else
-        $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/darwin-x86/ziptime "$OUT/bootanimation.zip"
-    fi
+    case `uname -s` in
+        Darwin)
+            $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/darwin-x86/ziptime "$OUT/bootanimation.zip"
+            ;;
+        *)
+            $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/linux-x86/ziptime "$OUT/bootanimation.zip"
+            ;;
+    esac
 fi
