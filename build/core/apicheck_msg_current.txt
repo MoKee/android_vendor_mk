@@ -7,7 +7,7 @@ To make these errors go away, you have two choices:
       errors above.
 
    2) You can update current.txt (locally) by executing the following command:
-         make update-mk-api
+         make update-mokee-api
 
       ^^^^^^^^^^^^^^^^^^
       CONGRATS YOU EARNED A QUAIL STAR!

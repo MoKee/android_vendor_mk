@@ -1,4 +1,4 @@
-# Insert new variables inside the Lineage structure
+# Insert new variables inside the MoKee structure
 mokee_soong:
 	$(hide) mkdir -p $(dir $@)
 	$(hide) (\

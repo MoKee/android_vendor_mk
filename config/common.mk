@@ -70,9 +70,9 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
-# MK-specific init file
-PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/etc/init.local.rc:root/init.mk.rc
+# Copy all MK-specific init rc files
+$(foreach f,$(wildcard vendor/mk/prebuilt/common/etc/init/*.rc),\
+	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
@@ -93,9 +93,9 @@ PRODUCT_COPY_FILES += \
 # Theme engine
 include vendor/mk/config/themes_common.mk
 
-ifneq ($(TARGET_DISABLE_MKSDK), true)
-# MKSDK
-include vendor/mk/config/mksdk_common.mk
+ifneq ($(TARGET_DISABLE_MOKEE_SDK), true)
+# MoKee SDK
+include vendor/mk/config/mokee_sdk_common.mk
 endif
 
 # TWRP
