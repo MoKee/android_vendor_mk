@@ -55,6 +55,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
+# MK-specific broadcast actions whitelist
+PRODUCT_COPY_FILES += \
+    vendor/mk/config/permissions/mokee-sysconfig.xml:system/etc/sysconfig/mokee-sysconfig.xml
+
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
