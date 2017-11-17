@@ -1,4 +1,5 @@
 user=_app seinfo=platform name=com.mokee.updateverification domain=untrusted_app type=app_data_file levelFrom=user
+user=_app seinfo=platform name=de.robv.android.xposed.installer domain=untrusted_app type=app_data_file levelFrom=user
 user=_app seinfo=platform name=org.mokee.filemanager domain=untrusted_app type=app_data_file levelFrom=user
 user=_app seinfo=substratum name=projekt.substratum domain=untrusted_app type=app_data_file levelFrom=user
 user=system seinfo=platform name=com.mokee.center domain=system_app type=system_app_data_file levelFrom=user isPrivApp=true
