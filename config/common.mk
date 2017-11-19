@@ -92,7 +92,8 @@ PRODUCT_COPY_FILES += \
 
 # This is MK!
 PRODUCT_COPY_FILES += \
-    vendor/mk/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml
+    vendor/mk/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml \
+    vendor/mk/config/permissions/privapp-permissions-mokee.xml:system/etc/permissions/privapp-permissions-mokee.xml
 
 # Theme engine
 include vendor/mk/config/themes_common.mk
