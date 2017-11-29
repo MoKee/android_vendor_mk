@@ -969,6 +969,7 @@ function chglog() {
 # Cleans out directory
 function clearout() {
     rm -rf $ANDROID_BUILD_TOP/out/target/product
+    rm -rf $ANDROID_BUILD_TOP/out/target/OTA
 }
 
 # Changelog Tool
