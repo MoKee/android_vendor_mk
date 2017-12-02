@@ -241,13 +241,11 @@ PRODUCT_VERSION_MINOR = 2
 ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
     ifdef MK_NIGHTLY
         MK_BUILDTYPE := NIGHTLY
-    endif
-    ifdef MK_RELEASE
+    else ifdef MK_RELEASE
         MK_BUILDTYPE := RELEASE
         WITH_DEXPREOPT := true
         DONT_DEXPREOPT_PREBUILTS := true
-    endif
-    ifdef MK_HISTORY
+    else ifdef MK_HISTORY
         MK_BUILDTYPE := HISTORY
         WITH_DEXPREOPT := true
         DONT_DEXPREOPT_PREBUILTS := true
