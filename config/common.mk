@@ -106,6 +106,7 @@ PRODUCT_PACKAGES += \
 # Required MK packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
+    libbt-logClient \
     MKAudioService \
     MKParts \
     Development \
