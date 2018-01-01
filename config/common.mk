@@ -115,11 +115,9 @@ PRODUCT_PACKAGES += \
 # Required MK packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
-    MKAudioService \
     MKParts \
     Development \
-    Profiles \
-    WeatherManagerService
+    Profiles
 
 # Optional MK packages
 PRODUCT_PACKAGES += \
