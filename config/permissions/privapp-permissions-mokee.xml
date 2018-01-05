@@ -36,7 +36,7 @@
         <permission name="android.permission.MANAGE_USERS"/>
     </privapp-permissions>
 
-    <privapp-permissions package="org.lineageos.recorder">
+    <privapp-permissions package="org.mokee.recorder">
         <permission name="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT"/>
         <permission name="android.permission.CAPTURE_VIDEO_OUTPUT"/>
     </privapp-permissions>
