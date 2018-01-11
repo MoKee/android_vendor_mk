@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
  *               2017 The LineageOS Project
+ *               2017 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -290,10 +291,10 @@ void healthd_board_init(struct healthd_config*)
     char value[PROP_VALUE_MAX];
     int rc = 0, scale_count = 0, i;
     GRSurface **scale_frames;
-    int scale_fps;  // Not in use (charger/lineage_battery_scale doesn't have FPS text
+    int scale_fps;  // Not in use (charger/mokee_battery_scale doesn't have FPS text
                     // chunk). We are using hard-coded frame.disp_time instead.
 
-    rc = res_create_multi_display_surface("charger/lineage_battery_scale",
+    rc = res_create_multi_display_surface("charger/mokee_battery_scale",
             &scale_count, &scale_fps, &scale_frames);
     if (rc < 0) {
         LOGE("%s: Unable to load battery scale image", __func__);

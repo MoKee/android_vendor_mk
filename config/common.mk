@@ -180,12 +180,12 @@ PRODUCT_PACKAGES += \
     mkchecker
 
 # Custom off-mode charger
-ifneq ($(WITH_LINEAGE_CHARGER),false)
+ifneq ($(WITH_MOKEE_CHARGER),false)
 PRODUCT_PACKAGES += \
     charger_res_images \
-    lineage_charger_res_images \
+    mokee_charger_res_images \
     font_log.png \
-    libhealthd.lineage
+    libhealthd.mokee
 endif
 
 # ExFAT support
