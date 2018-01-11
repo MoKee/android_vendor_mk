@@ -19,3 +19,8 @@ PRODUCT_PACKAGES += \
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Hello.ogg
+
+# Tethering - allow without requiring a provisioning app
+# (for devices that check this)
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tethering.noprovisioning=true
