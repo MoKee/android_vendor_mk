@@ -1,4 +1,4 @@
 # Theme engine
-PRODUCT_PACKAGES += \
-    Substratum \
-    ThemeInterfacer
+# PRODUCT_PACKAGES += \
+#     Substratum \
+#     ThemeInterfacer
