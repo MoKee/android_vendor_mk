@@ -25,6 +25,11 @@
         <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
     </privapp-permissions>
 
+    <privapp-permissions package="org.mokee.lawnchair">
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    </privapp-permissions>
+
     <privapp-permissions package="org.mokee.mkparts">
         <permission name="android.permission.CHANGE_CONFIGURATION"/>
         <permission name="android.permission.READ_SEARCH_INDEXABLES"/>
