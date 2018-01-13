@@ -66,6 +66,7 @@ PRODUCT_COPY_FILES += \
     $(UI_PATH)/camera_focus.ogg:system/media/audio/ui/camera_focus.ogg \
     $(UI_PATH)/Dock.ogg:system/media/audio/ui/Dock.ogg \
     $(UI_PATH)/Effect_Tick.ogg:system/media/audio/ui/Effect_Tick.ogg \
+    $(UI_PATH)/InCallNotification.ogg:system/media/audio/ui/InCallNotification.ogg \
     $(UI_PATH)/KeypressDelete.ogg:system/media/audio/ui/KeypressDelete.ogg \
     $(UI_PATH)/KeypressInvalid.ogg:system/media/audio/ui/KeypressInvalid.ogg \
     $(UI_PATH)/KeypressReturn.ogg:system/media/audio/ui/KeypressReturn.ogg \
