@@ -179,10 +179,13 @@ PRODUCT_PACKAGES += \
     zip \
     mkchecker
 
-# Custom off-mode charger
-ifneq ($(WITH_MOKEE_CHARGER),false)
+# Charger
 PRODUCT_PACKAGES += \
-    charger_res_images \
+    charger_res_images
+
+# Custom off-mode charger
+ifeq ($(WITH_MOKEE_CHARGER),true)
+PRODUCT_PACKAGES += \
     mokee_charger_res_images \
     font_log.png \
     libhealthd.mokee
