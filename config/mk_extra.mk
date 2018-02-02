@@ -7,4 +7,6 @@ else
   BLOCK_BASED_OTA := false
 endif
 
+WITH_SU := true
+
 -include vendor/private/mk_private.mk
