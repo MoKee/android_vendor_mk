@@ -23,3 +23,10 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) $(MD5SUM) $(MK_TARGET_PACKAGE) | cut -f1 -d' ' > $(MK_TARGET_PACKAGE).md5sum
 	@echo "Package Complete: $(MK_TARGET_PACKAGE)" >&2
 	@echo "Package Size: `ls -lh $(MK_TARGET_PACKAGE) | cut -d ' ' -f 5`" >&2
+	$(hide) # Create Release, History, Nightly and Experimental folder Start
+ifdef MK_BUILD_PATH
+	$(hide) mkdir -p $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/md5
+	$(hide) cp $(MK_TARGET_PACKAGE) $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)
+	$(hide) cp $(MK_TARGET_PACKAGE).md5sum $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/md5
+endif
+	$(hide) # Create Release, History, Nightly and Experimental folder End
