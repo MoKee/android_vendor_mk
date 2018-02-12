@@ -39,13 +39,13 @@ ifndef MOKEE_PLATFORM_REV
 endif
 
 # MoKee Platform SDK Version
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
   ro.mk.build.version.plat.sdk=$(MOKEE_PLATFORM_SDK_VERSION)
 
 # MoKee Platform Internal
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
   ro.mk.build.version.plat.rev=$(MOKEE_PLATFORM_REV)
 
 # MoKee Cloud SDK Version
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
   ro.mk.build.version.cloud.sdk=2

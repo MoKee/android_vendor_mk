@@ -1,4 +1,4 @@
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
     ro.opa.eligible_device=true
 
 -include vendor/private/mk_private.mk
