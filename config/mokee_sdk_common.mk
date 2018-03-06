@@ -4,6 +4,7 @@ PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/org.mokee.livedisplay.xml:system/etc/permissions/org.mokee.livedisplay.xml \
     vendor/mk/config/permissions/org.mokee.performance.xml:system/etc/permissions/org.mokee.performance.xml \
     vendor/mk/config/permissions/org.mokee.profiles.xml:system/etc/permissions/org.mokee.profiles.xml \
+    vendor/mk/config/permissions/org.mokee.style.xml:system/etc/permissions/org.mokee.style.xml \
     vendor/mk/config/permissions/org.mokee.weather.xml:system/etc/permissions/org.mokee.weather.xml
 
 # MK Platform Library
