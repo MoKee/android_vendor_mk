@@ -158,6 +158,7 @@ PRODUCT_PACKAGES += \
     MoKeeBlackAccent \
     MoKeeBlueAccent \
     MoKeeBrownAccent \
+    MoKeeCyanAccent \
     MoKeeGreenAccent \
     MoKeeOrangeAccent \
     MoKeePinkAccent \
