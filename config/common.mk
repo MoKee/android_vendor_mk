@@ -146,8 +146,7 @@ PRODUCT_PACKAGES += \
     MoKeeWeatherProvider \
     Venus \
     WallpaperPicker \
-    WeatherProvider \
-    LOSCoins
+    WeatherProvider
 
 # Exchange support
 PRODUCT_PACKAGES += \
