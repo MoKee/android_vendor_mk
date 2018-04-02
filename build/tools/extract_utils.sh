@@ -737,7 +737,7 @@ function oat2dex() {
     fi
 
     if [ -z "$VDEXEXTRACTOR" ]; then
-        export VDEXEXTRACTOR="$LINEAGE_ROOT"/vendor/mk/build/tools/"$HOST"/vdexExtractor
+        export VDEXEXTRACTOR="$MK_ROOT"/vendor/mk/build/tools/"$HOST"/vdexExtractor
     fi
 
     # Extract existing boot.oats to the temp folder
