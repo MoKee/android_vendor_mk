@@ -949,7 +949,7 @@ function fixup_common_out_dir() {
 }
 
 # Enable SD-LLVM if available
-if [ -d $(gettop)/prebuilts/snapdragon/llvm-3.8 ]; then
+if [ -d $(gettop)/prebuilts/snapdragon-llvm/llvm-4.0 ]; then
     case `uname -s` in
         Darwin)
             # Darwin is not supported yet
