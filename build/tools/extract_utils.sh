@@ -18,6 +18,7 @@
 PRODUCT_COPY_FILES_LIST=()
 PRODUCT_COPY_FILES_HASHES=()
 PRODUCT_PACKAGES_LIST=()
+PRODUCT_PACKAGES_TARGETS=()
 PRODUCT_PACKAGES_HASHES=()
 PACKAGE_LIST=()
 VENDOR_STATE=-1
@@ -148,7 +149,7 @@ function target_args() {
 #
 function prefix_match() {
     local PREFIX="$1"
-    for FILE in "${PRODUCT_PACKAGES_LIST[@]}"; do
+    for FILE in "${PRODUCT_PACKAGES_TARGETS[@]}"; do
         if [[ "$FILE" =~ ^"$PREFIX" ]]; then
             printf '%s\n' "${FILE#$PREFIX}"
         fi
@@ -621,6 +622,7 @@ function parse_file_list() {
 
 
     PRODUCT_PACKAGES_LIST=()
+    PRODUCT_PACKAGES_TARGETS=()
     PRODUCT_PACKAGES_HASHES=()
     PRODUCT_COPY_FILES_LIST=()
     PRODUCT_COPY_FILES_HASHES=()
@@ -641,8 +643,9 @@ function parse_file_list() {
 
         # if line starts with a dash, it needs to be packaged
         if [[ "$SPEC" =~ ^- ]]; then
-            SPEC=$(echo "${SPEC}" | sed 's/[^"]*://')
+            TARGET=$(echo "${SPEC#-}" | sed 's/[^"]*://')
             PRODUCT_PACKAGES_LIST+=("${SPEC#-}")
+            PRODUCT_PACKAGES_TARGETS+=("$TARGET")
             PRODUCT_PACKAGES_HASHES+=("$HASH")
         else
             PRODUCT_COPY_FILES_LIST+=("$SPEC")
