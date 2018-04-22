@@ -268,18 +268,33 @@ function mkremote()
         return 1
     fi
     git remote rm mkremote 2> /dev/null
-    local GERRIT_REMOTE=$(git config --get remote.github.projectname)
-    if [ -z "$GERRIT_REMOTE" ]
+    local REMOTE=$(git config --get remote.github.projectname)
+    local MOKEE="true"
+    if [ -z "$REMOTE" ]
     then
-        local GERRIT_REMOTE=$(git config --get remote.aosp.projectname | sed s#platform/#android/#g | sed s#/#_#g)
-        local PFX="MoKee/"
+        REMOTE=$(git config --get remote.aosp.projectname)
+        MOKEE="false"
     fi
+    if [ -z "$REMOTE" ]
+    then
+        REMOTE=$(git config --get remote.caf.projectname)
+        MOKEE="false"
+    fi
+
+    if [ $MOKEE = "false" ]
+    then
+        local PROJECT=$(echo $REMOTE | sed -e "s#platform/#android/#g; s#/#_#g")
+        local PFX="MoKee/"
+    else
+        local PROJECT=$REMOTE
+    fi
+
     local MK_USER=$(git config --get review.mokeedev.review.username)
     if [ -z "$MK_USER" ]
     then
-        git remote add mkremote ssh://mokeedev.review:29418/$PFX$GERRIT_REMOTE
+        git remote add mkremote ssh://mokeedev.review:29418/$PFX$PROJECT
     else
-        git remote add mkremote ssh://$MK_USER@mokeedev.review:29418/$PFX$GERRIT_REMOTE
+        git remote add mkremote ssh://$MK_USER@mokeedev.review:29418/$PFX$PROJECT
     fi
     echo "Remote 'mkremote' created"
 }
