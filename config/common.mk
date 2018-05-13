@@ -137,14 +137,12 @@ PRODUCT_PACKAGES += \
     AudioFX \
     Eleven \
     ExactCalculator \
-    Jelly \
     LockClock \
     MKCenter \
     MKSettingsProvider \
     MKUpdateVerification \
     MoKeeSetupWizard \
     MoKeeWeatherProvider \
-    Venus \
     WallpaperPicker \
     WeatherProvider
 
