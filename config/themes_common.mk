@@ -1,4 +1,6 @@
 # Theme engine
-# PRODUCT_PACKAGES += \
-#     Substratum \
-#     ThemeInterfacer
+PRODUCT_PACKAGES += \
+    SubstratumService
+
+PRODUCT_SYSTEM_SERVER_APPS += \
+    SubstratumService
