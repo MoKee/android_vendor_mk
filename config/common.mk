@@ -135,7 +135,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aegis \
     AudioFX \
-    Eleven \
     ExactCalculator \
     LockClock \
     MKCenter \
