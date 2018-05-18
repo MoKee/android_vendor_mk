@@ -281,12 +281,6 @@ else
     MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
 endif
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.mk.support=bbs.mfunz.com \
-  ro.mk.version=$(MK_VERSION) \
-  ro.mk.releasetype=$(MK_BUILDTYPE) \
-  ro.modversion=$(MK_VERSION)
-
 ifeq ($(OTA_PACKAGE_SIGNING_KEY),)
     PRODUCT_EXTRA_RECOVERY_KEYS += \
         vendor/mk/build/target/product/security/mokee

@@ -38,15 +38,3 @@ ifndef MOKEE_PLATFORM_REV
   # If you are doing a release and this is NOT 0, you are almost certainly doing it wrong
   MOKEE_PLATFORM_REV := 0
 endif
-
-# MoKee Platform SDK Version
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.mk.build.version.plat.sdk=$(MOKEE_PLATFORM_SDK_VERSION)
-
-# MoKee Platform Internal
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.mk.build.version.plat.rev=$(MOKEE_PLATFORM_REV)
-
-# MoKee Cloud SDK Version
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.mk.build.version.cloud.sdk=2
