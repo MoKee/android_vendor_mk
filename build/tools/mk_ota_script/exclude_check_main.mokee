@@ -19,8 +19,6 @@
 export EXCLUDE_CHECK_MAIN="otasigcheck.sh
 Aegis.apk
 Aegis.odex
-AmazeFileManager.apk
-AmazeFileManager.odex
 AudioFX.apk
 AudioFX.odex
 Browser.apk
@@ -35,8 +33,6 @@ DeskClock.apk
 DeskClock.odex
 Dialer.apk
 Dialer.odex
-Eleven.apk
-Eleven.odex
 Email.apk
 Email.odex
 ExactCalculator.apk
@@ -49,20 +45,16 @@ FMRadio.apk
 FMRadio.odex
 GoogleIntl.apk
 GoogleIntl.odex
-GooglePinYin.apk
-GooglePinYin.odex
-GoogleWallpaperPicker.apk
-GoogleWallpaperPicker.odex
-Jelly.apk
-Jelly.odex
 Lawnchair.apk
 Lawnchair.odex
+LawnFeed.apk
+LawnFeed.odex
+LeafPic.apk
+LeafPic.odex
 LockClock.apk
 LockClock.odex
 messaging.apk
 messaging.odex
-Nox.apk
-Nox.odex
 OneTimeInitializer.apk
 OneTimeInitializer.odex
 PackageInstaller.apk
@@ -71,8 +63,6 @@ Phonograph.apk
 Phonograph.odex
 PicoTts.apk
 PicoTts.odex
-PixelLauncher.apk
-PixelLauncher.odex
 PrintRecommendationService.apk
 PrintRecommendationService.odex
 Provision.apk
@@ -87,14 +77,10 @@ Substratum.apk
 Substratum.odex
 Tag.apk
 Tag.odex
-Venus.apk
-Venus.odex
 webview.apk
 webview.odex
 ViaBrowser.apk
 ViaBrowser.odex
-YuBrowser.apk
-YuBrowser.odex
 libttscompat.so
 libttspico.so
 libwebviewchromium.so
