@@ -21,9 +21,6 @@ FRAMEWORK_MOKEE_PLATFORM_API_FILE := $(TOPDIR)mokee-sdk/api/mk_current.txt
 FRAMEWORK_MOKEE_PLATFORM_REMOVED_API_FILE := $(TOPDIR)mokee-sdk/api/mk_removed.txt
 FRAMEWORK_MOKEE_API_NEEDS_UPDATE_TEXT := $(TOPDIR)vendor/mk/build/core/apicheck_msg_current.txt
 
-BUILD_MAVEN_PREBUILT := $(TOP)/vendor/mk/build/core/maven_artifact.mk
-PUBLISH_MAVEN_PREBUILT := $(TOP)/vendor/mk/build/core/maven_artifact_publish.mk
-
 BUILD_HTTP_PREBUILT := $(TOP)/vendor/mk/build/core/http_prebuilt.mk
 
 BUILD_RRO_SYSTEM_PACKAGE := $(TOP)/vendor/mk/build/core/system_rro.mk
