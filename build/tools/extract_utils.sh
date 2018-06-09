@@ -505,7 +505,7 @@ function write_header() {
     [ "$COMMON" -eq 1 ] && local DEVICE="$DEVICE_COMMON"
 
     NUM_REGEX='^[0-9]+$'
-    if [[ $INITIAL_COPYRIGHT_YEAR =~ $NUM_REGEX ]] && [ $INITIAL_COPYRIGHT_YEAR -le $YEAR ]; then
+    if [[ $INITIAL_COPYRIGHT_YEAR =~ $NUM_REGEX ]] && [ $INITIAL_COPYRIGHT_YEAR -lt $YEAR ]; then
         printf "# Copyright (C) $INITIAL_COPYRIGHT_YEAR-$YEAR The MoKee Open Source Project\n" >> $1
     else
         printf "# Copyright (C) $YEAR The MoKee Open Source Project\n" > $1
