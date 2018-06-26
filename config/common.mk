@@ -29,10 +29,10 @@ endif
 ifneq ($(TARGET_BUILD_VARIANT),eng)
   ifdef MK_EXPERIMENTAL
     # Disable ADB authentication
-    PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=0
+    PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
   else
     # Enable ADB authentication
-    PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
+    PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
   endif
 endif
 
