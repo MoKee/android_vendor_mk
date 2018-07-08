@@ -158,6 +158,7 @@ PRODUCT_PACKAGES += \
 
 # Berry styles
 PRODUCT_PACKAGES += \
+    MoKeeBlackTheme \
     MoKeeDarkTheme \
     MoKeeBlackAccent \
     MoKeeBlueAccent \
