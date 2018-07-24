@@ -32,5 +32,6 @@ endif
 ifdef MK_OTA_TARGET_PATH
 	$(hide) mkdir -p $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)
 	$(hide) cp $(BUILT_TARGET_FILES_PACKAGE) $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/$(MK_VERSION).zip
+	$(hide) zip -d $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/$(MK_VERSION).zip RECOVERY/* BOOT/* DATA/* IMAGES/system* IMAGES/userdata* IMAGES/recovery* IMAGES/cache*
 endif
 	$(hide) # Create Release, History, Nightly and Experimental folder End
