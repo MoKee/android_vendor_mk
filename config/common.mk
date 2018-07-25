@@ -121,7 +121,6 @@ PRODUCT_PACKAGES += \
 
 # Required MK packages
 PRODUCT_PACKAGES += \
-    BluetoothExt \
     MKParts \
     Development \
     Profiles
