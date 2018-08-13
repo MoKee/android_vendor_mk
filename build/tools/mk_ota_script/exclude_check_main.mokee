@@ -19,6 +19,8 @@
 export EXCLUDE_CHECK_MAIN="otasigcheck.sh
 Aegis.apk
 Aegis.odex
+BookmarkProvider.apk
+BookmarkProvider.odex
 AudioFX.apk
 AudioFX.odex
 Calendar.apk
