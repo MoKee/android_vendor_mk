@@ -242,6 +242,7 @@ PRODUCT_PACKAGES += \
 endif
 endif
 
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/mk/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 
 PRODUCT_VERSION_MAJOR = 90
