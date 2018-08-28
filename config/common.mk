@@ -293,4 +293,4 @@ endif
 -include vendor/mk/config/partner_gms.mk
 -include vendor/mk/config/mk_extra.mk
 
-$(call prepend-product-if-exists, vendor/extra/product.mk)
+$(call inherit-product-if-exists, vendor/extra/product.mk)
