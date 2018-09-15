@@ -9,7 +9,7 @@ ADDITIONAL_BUILD_PROPERTIES += \
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.mk.build.version.plat.sdk=$(MOKEE_PLATFORM_SDK_VERSION)
 
-# MoKee Platform Internal
+# MoKee Platform Internal Version
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.mk.build.version.plat.rev=$(MOKEE_PLATFORM_REV)
 

@@ -44,7 +44,7 @@ trap cleanup 0
 #
 # $1: device name
 # $2: vendor name
-# $3: MK root directory
+# $3: MoKee root directory
 # $4: is common device - optional, default to false
 # $5: cleanup - optional, default to true
 # $6: custom vendor makefile name - optional, default to false
@@ -1023,7 +1023,7 @@ function extract() {
             printf '    + (keeping pinned file with hash %s)\n' "$HASH"
         else
             FOUND=false
-            # Try MK target first.
+            # Try MoKee target first.
             # Also try to search for files stripped of
             # the "/system" prefix, if we're actually extracting
             # from a system image.

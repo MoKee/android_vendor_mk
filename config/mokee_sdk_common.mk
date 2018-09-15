@@ -9,13 +9,13 @@ PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/org.mokee.trust.xml:system/etc/permissions/org.mokee.trust.xml \
     vendor/mk/config/permissions/org.mokee.weather.xml:system/etc/permissions/org.mokee.weather.xml
 
-# MK Platform Library
+# MoKee Platform Library
 PRODUCT_PACKAGES += \
     org.mokee.platform-res \
     org.mokee.platform \
     org.mokee.platform.xml
 
-# MK Hardware Abstraction Framework
+# MoKee Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.mokee.hardware \
     org.mokee.hardware.xml

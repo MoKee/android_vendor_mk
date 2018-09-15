@@ -1,4 +1,4 @@
 #
-#MK-specific variable clears
+#MoKee-specific variable clears
 #
 LOCAL_IGNORE_SUBDIR :=

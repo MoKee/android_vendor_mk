@@ -78,7 +78,7 @@ MMM+++++++++++++++~MM~~M $O,NM88MOMMZ$$MM$$$+++++++++MM777777777MMMM
 
 
       NO. NO. STOP BEING LAZY. SERIOUSLY.
-      DO NOT DO THIS in MK. THIS IS A LIE. IT WILL BREAK THINGS.
+      DO NOT DO THIS in MoKee. THIS IS A LIE. IT WILL BREAK THINGS.
 
       To submit the revised current.txt to the main MoKee Open Source repository,
       you will need approval.

@@ -62,7 +62,7 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
-# MK-specific broadcast actions whitelist
+# MoKee-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/mokee-sysconfig.xml:system/etc/sysconfig/mokee-sysconfig.xml
 
@@ -77,7 +77,7 @@ PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
-# Copy all MK-specific init rc files
+# Copy all MoKee-specific init rc files
 $(foreach f,$(wildcard vendor/mk/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
@@ -93,7 +93,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# This is MK!
+# This is MoKee!
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml \
     vendor/mk/config/permissions/privapp-permissions-mokee.xml:system/etc/permissions/privapp-permissions-mokee.xml
@@ -119,13 +119,13 @@ endif
 PRODUCT_PACKAGES += \
     bootanimation.zip
 
-# Required MK packages
+# Required MoKee packages
 PRODUCT_PACKAGES += \
     MKParts \
     Development \
     Profiles
 
-# Optional MK packages
+# Optional MoKee packages
 PRODUCT_PACKAGES += \
     libemoji \
     LiveWallpapersPicker \
@@ -137,7 +137,7 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
 
-# Custom MK packages
+# Custom MoKee packages
 PRODUCT_PACKAGES += \
     Aegis \
     AudioFX \
@@ -170,7 +170,7 @@ PRODUCT_PACKAGES += \
     MoKeeRedAccent \
     MoKeeYellowAccent
 
-# Extra tools in MK
+# Extra tools in MoKee
 PRODUCT_PACKAGES += \
     7z \
     awk \
@@ -285,16 +285,14 @@ else
     MK_VERSION := MK$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(MK_BUILD)-$(shell date +%Y%m%d%H%M)-$(MK_BUILDTYPE)
 endif
 
-ifeq ($(OTA_PACKAGE_SIGNING_KEY),)
-    PRODUCT_EXTRA_RECOVERY_KEYS += \
-        vendor/mk/build/target/product/security/mokee
-endif
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    vendor/mk/build/target/product/security/mokee
 
 -include vendor/mk-priv/keys/keys.mk
 
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/mk/config/partner_gms.mk
--include vendor/mk/config/mk_extra.mk
+-include vendor/mk/config/mokee_extra.mk
 
 $(call inherit-product-if-exists, vendor/extra/product.mk)
