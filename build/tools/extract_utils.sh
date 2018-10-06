@@ -961,7 +961,8 @@ function extract() {
             if [[ "$FULLY_DEODEXED" -ne "1" && "$DEST" =~ .(apk|jar)$ ]]; then
                 oat2dex "$DEST" "$FILE" "$SRC"
                 if [ -f "$TMPDIR/classes.dex" ]; then
-                    zip -gjq "$DEST" "$TMPDIR/classes.dex"
+                    touch -t 200901010000 "$TMPDIR/classes.dex"
+                    zip -gjqX "$DEST" "$TMPDIR/classes.dex"
                     rm "$TMPDIR/classes.dex"
                     printf '    (updated %s from odex files)\n' "/$FILE"
                 fi
