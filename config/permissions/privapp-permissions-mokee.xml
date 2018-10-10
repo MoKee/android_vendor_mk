@@ -105,4 +105,9 @@
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
     </privapp-permissions>
 
+    <privapp-permissions package="com.simplemobiletools.calendar">
+        <permission name="android.permission.READ_CALENDAR"/>
+        <permission name="android.permission.WRITE_CALENDAR"/>
+    </privapp-permissions>
+
 </permissions>
