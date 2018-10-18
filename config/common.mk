@@ -135,7 +135,6 @@ PRODUCT_PACKAGES += \
     MKUpdateVerification \
     MoKeeSetupWizard \
     MoKeeWeatherProvider \
-    Venus \
     WallpaperPicker \
     WeatherProvider
 
