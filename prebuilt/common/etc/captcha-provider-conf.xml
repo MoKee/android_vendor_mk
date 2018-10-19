@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<providers>
+  <!-- China -->
+  <provider number="10000"  name="中国电信" />
+  <provider number="10010"  name="中国联通" />
+  <provider number="10086"  name="中国移动" />
+</providers>
