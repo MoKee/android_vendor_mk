@@ -7,4 +7,4 @@ else
   BLOCK_BASED_OTA := false
 endif
 
--include vendor/private/config/mk_private.mk
+-include vendor/mk-priv/config/mk_private.mk
