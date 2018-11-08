@@ -1,3 +1,6 @@
+# Allow vendor/extra to override any property by setting it first
+$(call inherit-product-if-exists, vendor/extra/product.mk)
+
 PRODUCT_BRAND ?= mokee
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
@@ -297,5 +300,3 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/mk/config/partner_gms.mk
 -include vendor/mk/config/mokee_extra.mk
-
-$(call inherit-product-if-exists, vendor/extra/product.mk)
