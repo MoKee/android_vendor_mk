@@ -64,11 +64,6 @@
         <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
     </privapp-permissions>
 
-    <privapp-permissions package="org.mokee.lawnchair">
-        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" />
-        <permission name="android.permission.ACCESS_FINE_LOCATION" />
-    </privapp-permissions>
-
     <privapp-permissions package="org.mokee.mkparts">
         <permission name="android.permission.CHANGE_CONFIGURATION"/>
         <permission name="android.permission.READ_SEARCH_INDEXABLES"/>
@@ -103,11 +98,6 @@
         <permission name="android.permission.PREVENT_POWER_KEY"/>
         <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
-    </privapp-permissions>
-
-    <privapp-permissions package="com.simplemobiletools.calendar.pro">
-        <permission name="android.permission.READ_CALENDAR"/>
-        <permission name="android.permission.WRITE_CALENDAR"/>
     </privapp-permissions>
 
 </permissions>
