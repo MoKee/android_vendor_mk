@@ -89,4 +89,5 @@ libwebviewchromium.so
 com.google.widevine.software.drm.jar
 bootanimation.zip
 recovery-resource.dat
+install-recovery.sh
 "
