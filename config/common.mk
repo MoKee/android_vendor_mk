@@ -194,6 +194,11 @@ PRODUCT_PACKAGES += \
     zip \
     mkchecker
 
+# Extra OTA tools in MoKee
+PRODUCT_PACKAGES += \
+    getcap \
+    setcap
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
