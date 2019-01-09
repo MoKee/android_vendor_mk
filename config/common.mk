@@ -165,6 +165,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     MoKeeBlackTheme \
     MoKeeBlackAccent \
+    MoKeeBlueAccent \
     MoKeeBrownAccent \
     MoKeeCyanAccent \
     MoKeeDarkTheme \
