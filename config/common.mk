@@ -165,6 +165,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     MoKeeBlackTheme \
     MoKeeBlackAccent \
+    MoKeeBlueAccent \
     MoKeeBrownAccent \
     MoKeeCyanAccent \
     MoKeeDarkTheme \
@@ -174,6 +175,7 @@ PRODUCT_PACKAGES += \
     MoKeePinkAccent \
     MoKeePurpleAccent \
     MoKeeRedAccent \
+    MoKeeTealAccent \
     MoKeeYellowAccent
 
 # Extra tools in MoKee
