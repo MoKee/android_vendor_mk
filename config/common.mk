@@ -42,14 +42,6 @@ else
   endif
 endif
 
-ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)
-  PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.device.cache_dir=/data/cache
-else
-  PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.device.cache_dir=/cache
-endif
-
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
@@ -121,6 +113,14 @@ ifeq ($(WITH_TWRP),true)
 include vendor/mk/config/twrp.mk
 endif
 
+# Do not include art debug targets
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+
+# Strip the local variable table and the local variable type table to reduce
+# the size of the system image. This has no bearing on stack traces, but will
+# leave less information available via JDWP.
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+
 # Bootanimation
 PRODUCT_PACKAGES += \
     bootanimation.zip
@@ -133,15 +133,9 @@ PRODUCT_PACKAGES += \
 
 # Optional MoKee packages
 PRODUCT_PACKAGES += \
-    libemoji \
     LiveWallpapersPicker \
     PhotoTable \
     Terminal
-
-# Include explicitly to work around GMS issues
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full \
-    librsjni
 
 # Custom MoKee packages
 PRODUCT_PACKAGES += \
