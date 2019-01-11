@@ -100,6 +100,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/mokee-hiddenapi-package-whitelist.xml:system/etc/permissions/mokee-hiddenapi-package-whitelist.xml
 
+# Power whitelist
+PRODUCT_COPY_FILES += \
+    vendor/mk/config/permissions/mokee-power-whitelist.xml:system/etc/sysconfig/mokee-power-whitelist.xml
+
 # Theme engine
 include vendor/mk/config/themes_common.mk
 
