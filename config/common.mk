@@ -100,7 +100,7 @@ PRODUCT_COPY_FILES += \
 # Hidden API whitelist
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml \
-    vendor/mk/config/permissions/mokee-hiddenapi-package-whitelist.xml:system/etc/permissions/mokee-hiddenapi-package-whitelist.xml
+    vendor/mk/config/permissions/mokee-hiddenapi-package-whitelist.xml:system/etc/sysconfig/mokee-hiddenapi-package-whitelist.xml
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
