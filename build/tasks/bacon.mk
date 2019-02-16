@@ -32,6 +32,8 @@ endif
 ifdef MK_OTA_TARGET_PATH
 	$(hide) mkdir -p $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)
 	$(hide) cp $(BUILT_TARGET_FILES_PACKAGE) $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/$(MK_VERSION).zip
+ifneq ($(AB_OTA_UPDATER),true)
 	$(hide) zip -dq $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/$(MK_VERSION).zip BOOT/* DATA/* IMAGES/system* IMAGES/vendor* IMAGES/userdata* IMAGES/recovery* IMAGES/cache*
+endif
 endif
 	$(hide) # Create Release, History, Nightly and Experimental folder End
