@@ -281,10 +281,10 @@ ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[
 endif
 
 ifndef MK_BUILDTYPE
-    ifdef MK_EXPERIMENTAL
-        MK_BUILDTYPE := EXPERIMENTAL
+    ifdef MK_PREMIUM
+        MK_BUILDTYPE := PREMIUM
     else
-        MK_BUILDTYPE := UNOFFICIAL
+        MK_BUILDTYPE := EXPERIMENTAL
     endif
 endif
 
