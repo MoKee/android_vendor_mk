@@ -30,9 +30,9 @@ ifdef MK_BUILD_PATH
 	$(hide) cp $(MK_TARGET_PACKAGE).md5sum $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/md5
 endif
 ifdef MK_OTA_TARGET_PATH
+ifneq ($(AB_OTA_UPDATER),true)
 	$(hide) mkdir -p $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)
 	$(hide) cp $(BUILT_TARGET_FILES_PACKAGE) $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/$(MK_VERSION).zip
-ifneq ($(AB_OTA_UPDATER),true)
 	$(hide) zip -dq $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/$(MK_VERSION).zip BOOT/* DATA/* IMAGES/system* IMAGES/vendor* IMAGES/userdata* IMAGES/recovery* IMAGES/cache*
 endif
 endif
