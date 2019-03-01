@@ -33,10 +33,7 @@ ifeq ($(TARGET_BUILD_VARIANT),eng)
 # Disable ADB authentication
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
 else
-  ifdef MK_EXPERIMENTAL
-    # Disable ADB authentication
-    PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
-  else
+  ifneq ($(filter true,$(MK_RELEASE) $(MK_HISTORY) $(MK_NIGHTLY) $(MK_PREMIUM)),)
     # Enable ADB authentication
     PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
   endif
