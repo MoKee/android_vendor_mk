@@ -1,6 +1,7 @@
 # Permissions for mokee sdk services
 PRODUCT_COPY_FILES += \
     vendor/mk/config/permissions/org.mokee.audio.xml:system/etc/permissions/org.mokee.audio.xml \
+    vendor/mk/config/permissions/org.mokee.license.xml:system/etc/permissions/org.mokee.license.xml \
     vendor/mk/config/permissions/org.mokee.livedisplay.xml:system/etc/permissions/org.mokee.livedisplay.xml \
     vendor/mk/config/permissions/org.mokee.performance.xml:system/etc/permissions/org.mokee.performance.xml \
     vendor/mk/config/permissions/org.mokee.profiles.xml:system/etc/permissions/org.mokee.profiles.xml \
