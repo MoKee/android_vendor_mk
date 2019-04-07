@@ -3,37 +3,57 @@
 WIDTH="$1"
 HEIGHT="$2"
 HALF_RES="$3"
+
+SRC="$ANDROID_BUILD_TOP/vendor/mk/bootanimation"
 OUT="$ANDROID_PRODUCT_OUT/obj/BOOTANIMATION"
 
 if [ "$HEIGHT" -lt "$WIDTH" ]; then
-    IMAGEWIDTH="$HEIGHT"
+    WIDTH_SIZE="$HEIGHT"
+    HEIGHT_SIZE="$WIDTH"
 else
-    IMAGEWIDTH="$WIDTH"
+    WIDTH_SIZE="$WIDTH"
+    HEIGHT_SIZE="$HEIGHT"
 fi
-
-IMAGESCALEWIDTH="$IMAGEWIDTH"
-IMAGESCALEHEIGHT=$(expr $IMAGESCALEWIDTH / 3)
 
 if [ "$HALF_RES" = "true" ]; then
-    IMAGEWIDTH=$(expr $IMAGEWIDTH / 2)
+    IMAGE_WIDTH_SIZE=$(expr $WIDTH_SIZE / 2)
+    IMAGE_HEIGHT_SIZE=$(expr $HEIGHT_SIZE / 2)
+else
+    IMAGE_WIDTH_SIZE="$WIDTH_SIZE"
+    IMAGE_HEIGHT_SIZE="$HEIGHT_SIZE"
 fi
 
-IMAGEHEIGHT=$(expr $IMAGEWIDTH / 3)
+RESOLUTION=""$IMAGE_WIDTH_SIZE"x"$IMAGE_HEIGHT_SIZE""
 
-RESOLUTION=""$IMAGEWIDTH"x"$IMAGEHEIGHT""
-
-for part_cnt in 0 1 2 3 4
-do
-    mkdir -p $ANDROID_PRODUCT_OUT/obj/BOOTANIMATION/bootanimation/part$part_cnt
-done
-tar xfp "vendor/lineage/bootanimation/bootanimation.tar" -C "$OUT/bootanimation/"
-mogrify -resize $RESOLUTION -colors 250 "$OUT/bootanimation/"*"/"*".png"
-
-# Create desc.txt
-echo "$IMAGESCALEWIDTH $IMAGESCALEHEIGHT" 60 > "$OUT/bootanimation/desc.txt"
-cat "vendor/lineage/bootanimation/desc.txt" >> "$OUT/bootanimation/desc.txt"
-
-# Create bootanimation.zip
+# Create working dir
+mkdir -p "$OUT/bootanimation"
 cd "$OUT/bootanimation"
 
-zip -qr0 "$OUT/bootanimation.zip" .
+# Extract source frames
+tar xfp "$SRC/bootanimation.tar"
+
+# Resize
+for frame in $OUT/bootanimation/part*/*
+do
+    convert "$frame" -resize "$RESOLUTION" "$frame"
+done
+
+# Create desc.txt
+RESOLUTION=$(identify -ping -format '%w %h' $OUT/bootanimation/part0/$(ls $OUT/bootanimation/part0 | head -1))
+echo "$RESOLUTION" 30 > "$OUT/bootanimation/desc.txt"
+cat "$SRC/desc.txt" >> "$OUT/bootanimation/desc.txt"
+
+# Create bootanimation.zip
+zip -qrX0 "$OUT/bootanimation.zip" .
+if [ -f $ANDROID_HOST_OUT/bin/ziptime ];then
+    $ANDROID_HOST_OUT/bin/ziptime "$OUT/bootanimation.zip"
+else
+    case `uname -s` in
+        Darwin)
+            $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/darwin-x86/ziptime "$OUT/bootanimation.zip"
+            ;;
+        *)
+            $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/linux-x86/ziptime "$OUT/bootanimation.zip"
+            ;;
+    esac
+fi

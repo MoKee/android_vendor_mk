@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<spnOverrides>
+  <!-- China -->
+  <spnOverride numeric="46001"  spn="中国联通" />
+  <spnOverride numeric="46006"  spn="中国联通" />
+  <spnOverride numeric="46000"  spn="中国移动" />
+  <spnOverride numeric="46002"  spn="中国移动" />
+  <spnOverride numeric="46007"  spn="中国移动" />
+  <spnOverride numeric="46003"  spn="中国电信" />
+  <spnOverride numeric="46005"  spn="中国电信" />
+  <spnOverride numeric="46011"  spn="中国电信" />
+  <spnOverride numeric="46012"  spn="中国电信" />
+  <spnOverride numeric="46013"  spn="中国电信" />
+  <spnOverride numeric="46099"  spn="中国电信" />
+  <spnOverride numeric="46020"  spn="中国铁通" />
+</spnOverrides>

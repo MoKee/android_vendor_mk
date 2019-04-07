@@ -1,8 +1,8 @@
-# Inherit full common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full.mk)
+# Inherit full common MoKee stuff
+$(call inherit-product, vendor/mk/config/common_full.mk)
 
 PRODUCT_PACKAGES += \
     AppDrawer \
-    LineageCustomizer
+    MoKeeCustomizer
 
-DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/tv
+DEVICE_PACKAGE_OVERLAYS += vendor/mk/overlay/tv

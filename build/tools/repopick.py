@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #
 # Copyright (C) 2013-15 The CyanogenMod Project
+#           (C) 2013-17 The MoKee Open Source Project
 #           (C) 2017    The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -147,12 +148,12 @@ def fetch_query(remote_url, query):
         raise Exception('Gerrit URL should be in the form http[s]://hostname/ or ssh://[user@]host[:port]')
 
 if __name__ == '__main__':
-    # Default to LineageOS Gerrit
-    default_gerrit = 'https://review.lineageos.org'
+    # Default to MoKee Open Source Gerrit
+    default_gerrit = 'https://mokeedev.review'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking
-        patches from LineageOS's Gerrit instance (or any gerrit instance of your choosing)
+        patches from MoKee Open Source's Gerrit instance (or any gerrit instance of your choosing)
 
         Given a list of change numbers, repopick will cd into the project path
         and cherry pick the latest patch available.

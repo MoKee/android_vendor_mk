@@ -1,4 +1,4 @@
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2017 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,75 +18,75 @@
 #
 
 # skip api check for PDK buid
-ifeq (,$(filter true, $(WITHOUT_CHECK_API) $(TARGET_BUILD_PDK) $(TARGET_DISABLE_LINEAGE_SDK)))
+ifeq (,$(filter true, $(WITHOUT_CHECK_API) $(TARGET_BUILD_PDK) $(TARGET_DISABLE_MOKEE_SDK)))
 
-.PHONY: checkapi-lineage
+.PHONY: checkapi-mokee
 
 # Run the checkapi rules by default.
-droidcore: checkapi-lineage
+droidcore: checkapi-mokee
 
 # Validate against previous release platform sdk version api text within prebuilts
-lineage_last_released_sdk_version := $(LINEAGE_PLATFORM_SDK_VERSION)
+mokee_last_released_sdk_version := $(MOKEE_PLATFORM_SDK_VERSION)
 
-.PHONY: check-lineage-public-api
-checkapi-lineage : check-lineage-public-api
+.PHONY: check-mokee-public-api
+checkapi-mokee : check-mokee-public-api
 
-.PHONY: update-lineage-api
+.PHONY: update-mokee-api
 
-# INTERNAL_LINEAGE_PLATFORM_API_FILE is the one build by droiddoc.
-# Note that since INTERNAL_LINEAGE_PLATFORM_API_FILE  is the byproduct of api-stubs module,
-# (See lineage-sdk/Android.mk)
+# INTERNAL_MOKEE_PLATFORM_API_FILE is the one build by droiddoc.
+# Note that since INTERNAL_MOKEE_PLATFORM_API_FILE  is the byproduct of api-stubs module,
+# (See mokee-sdk/Android.mk)
 # we need to add api-stubs as additional dependency of the api check.
 
-$(INTERNAL_LINEAGE_PLATFORM_API_FILE): lineage-api-stubs-docs
+$(INTERNAL_MOKEE_PLATFORM_API_FILE): mokee-api-stubs-docs
 
 # Check that the API we're building hasn't broken the last-released
 # SDK version.
 $(eval $(call check-api, \
-    checkpublicapi-lineage-last, \
-    $(LINEAGE_SRC_API_DIR)/$(lineage_last_released_sdk_version).txt, \
-    $(INTERNAL_LINEAGE_PLATFORM_API_FILE), \
-    $(FRAMEWORK_LINEAGE_PLATFORM_REMOVED_API_FILE), \
-    $(INTERNAL_LINEAGE_PLATFORM_REMOVED_API_FILE), \
+    checkpublicapi-mokee-last, \
+    $(MOKEE_SRC_API_DIR)/$(mokee_last_released_sdk_version).txt, \
+    $(INTERNAL_MOKEE_PLATFORM_API_FILE), \
+    $(FRAMEWORK_MOKEE_PLATFORM_REMOVED_API_FILE), \
+    $(INTERNAL_MOKEE_PLATFORM_REMOVED_API_FILE), \
     -hide 2 -hide 3 -hide 4 -hide 5 -hide 6 -hide 24 -hide 25 -hide 26 -hide 27 \
     -error 7 -error 8 -error 9 -error 10 -error 11 -error 12 -error 13 -error 14 -error 15 \
     -error 16 -error 17 -error 18 , \
-    cat $(FRAMEWORK_LINEAGE_API_NEEDS_UPDATE_TEXT), \
-    check-lineage-public-api, \
-    $(call doc-timestamp-for,lineage-api-stubs) \
+    cat $(FRAMEWORK_MOKEE_API_NEEDS_UPDATE_TEXT), \
+    check-mokee-public-api, \
+    $(call doc-timestamp-for,mokee-api-stubs) \
     ))
 
 # Check that the API we're building hasn't changed from the not-yet-released
 # SDK version.
 $(eval $(call check-api, \
-    checkpublicapi-lineage-current, \
-    $(FRAMEWORK_LINEAGE_PLATFORM_API_FILE), \
-    $(INTERNAL_LINEAGE_PLATFORM_API_FILE), \
-    $(FRAMEWORK_LINEAGE_PLATFORM_REMOVED_API_FILE), \
-    $(INTERNAL_LINEAGE_PLATFORM_REMOVED_API_FILE), \
+    checkpublicapi-mokee-current, \
+    $(FRAMEWORK_MOKEE_PLATFORM_API_FILE), \
+    $(INTERNAL_MOKEE_PLATFORM_API_FILE), \
+    $(FRAMEWORK_MOKEE_PLATFORM_REMOVED_API_FILE), \
+    $(INTERNAL_MOKEE_PLATFORM_REMOVED_API_FILE), \
     -error 2 -error 3 -error 4 -error 5 -error 6 \
     -error 7 -error 8 -error 9 -error 10 -error 11 -error 12 -error 13 -error 14 -error 15 \
     -error 16 -error 17 -error 18 -error 19 -error 20 -error 21 -error 23 -error 24 \
     -error 25 -error 26 -error 27, \
-    cat $(FRAMEWORK_LINEAGE_API_NEEDS_UPDATE_TEXT), \
-    check-lineage-public-api, \
-    $(call doc-timestamp-for,lineage-api-stubs) \
+    cat $(FRAMEWORK_MOKEE_API_NEEDS_UPDATE_TEXT), \
+    check-mokee-public-api, \
+    $(call doc-timestamp-for,mokee-api-stubs) \
     ))
 
-.PHONY: update-lineage-public-api
-update-lineage-public-api: $(INTERNAL_LINEAGE_PLATFORM_API_FILE) | $(ACP)
-	@echo "Copying lineage_current.txt"
-	$(hide) $(ACP) $(INTERNAL_LINEAGE_PLATFORM_API_FILE) $(FRAMEWORK_LINEAGE_PLATFORM_API_FILE)
-	@echo "Copying lineage_removed.txt"
-	$(hide) $(ACP) $(INTERNAL_LINEAGE_PLATFORM_REMOVED_API_FILE) $(FRAMEWORK_LINEAGE_PLATFORM_REMOVED_API_FILE)
+.PHONY: update-mokee-public-api
+update-mokee-public-api: $(INTERNAL_MOKEE_PLATFORM_API_FILE) | $(ACP)
+	@echo "Copying mk_current.txt"
+	$(hide) $(ACP) $(INTERNAL_MOKEE_PLATFORM_API_FILE) $(FRAMEWORK_MOKEE_PLATFORM_API_FILE)
+	@echo "Copying mk_removed.txt"
+	$(hide) $(ACP) $(INTERNAL_MOKEE_PLATFORM_REMOVED_API_FILE) $(FRAMEWORK_MOKEE_PLATFORM_REMOVED_API_FILE)
 
-update-lineage-api : update-lineage-public-api
+update-mokee-api : update-mokee-public-api
 
-.PHONY: update-lineage-prebuilts-latest-public-api
-current_sdk_release_text_file := $(LINEAGE_SRC_API_DIR)/$(lineage_last_released_sdk_version).txt
+.PHONY: update-mokee-prebuilts-latest-public-api
+current_sdk_release_text_file := $(MOKEE_SRC_API_DIR)/$(mokee_last_released_sdk_version).txt
 
-update-lineage-prebuilts-latest-public-api: $(FRAMEWORK_LINEAGE_PLATFORM_API_FILE) | $(ACP)
-	@echo "Publishing lineage_current.txt as latest API release"
-	$(hide) $(ACP) $(FRAMEWORK_LINEAGE_PLATFORM_API_FILE) $(current_sdk_release_text_file)
+update-mokee-prebuilts-latest-public-api: $(FRAMEWORK_MOKEE_PLATFORM_API_FILE) | $(ACP)
+	@echo "Publishing mk_current.txt as latest API release"
+	$(hide) $(ACP) $(FRAMEWORK_MOKEE_PLATFORM_API_FILE) $(current_sdk_release_text_file)
 
 endif
