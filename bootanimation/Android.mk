@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
-#               2017 The LineageOS Project
+# Copyright (C) 2016-2017 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,7 +24,7 @@ ifeq ($(TARGET_SCREEN_HEIGHT),)
 endif
 
 define build-bootanimation
-    sh vendor/lineage/bootanimation/generate-bootanimation.sh \
+    sh vendor/mk/bootanimation/generate-bootanimation.sh \
     $(TARGET_SCREEN_WIDTH) \
     $(TARGET_SCREEN_HEIGHT) \
     $(TARGET_BOOTANIMATION_HALF_RES)
@@ -38,7 +37,7 @@ $(TARGET_GENERATED_BOOTANIMATION):
 
 ifeq ($(TARGET_BOOTANIMATION),)
     TARGET_BOOTANIMATION := $(TARGET_GENERATED_BOOTANIMATION)
-    ifeq ($(shell command -v mogrify),)
+    ifeq ($(shell command -v convert),)
         $(info **********************************************)
         $(info The boot animation could not be generated as)
         $(info ImageMagick is not installed in your system.)

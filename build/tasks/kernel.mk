@@ -1,5 +1,4 @@
-# Copyright (C) 2012 The CyanogenMod Project
-#           (C) 2017 The LineageOS Project
+# Copyright (C) 2012-2017 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -335,7 +334,7 @@ TARGET_KERNEL_BINARIES: $(KERNEL_CONFIG)
 		fi
 
 .PHONY: INSTALLED_KERNEL_MODULES
-INSTALLED_KERNEL_MODULES: depmod-host
+INSTALLED_KERNEL_MODULES: $(DEPMOD)
 	$(hide) if grep -q '^CONFIG_MODULES=y' $(KERNEL_CONFIG); then \
 			echo "Installing Kernel Modules"; \
 			$(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) INSTALL_MOD_PATH=../../$(KERNEL_MODULES_INSTALL) modules_install && \

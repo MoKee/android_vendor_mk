@@ -1,5 +1,4 @@
-# Copyright (C) 2017 Unlegacy-Android
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,12 +13,27 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Lineage OTA update package
+# MoKee OTA update package
 
-LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/lineage-$(LINEAGE_VERSION).zip
+MK_TARGET_PACKAGE := $(PRODUCT_OUT)/$(MK_VERSION).zip
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(LINEAGE_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(MK_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(MK_TARGET_PACKAGE) | cut -f1 -d' ' > $(MK_TARGET_PACKAGE).md5sum
+	@echo "Package Complete: $(MK_TARGET_PACKAGE)" >&2
+	@echo "Package Size: `ls -lh $(MK_TARGET_PACKAGE) | cut -d ' ' -f 5`" >&2
+	$(hide) # Create Release, History, Nightly and Experimental folder Start
+ifdef MK_BUILD_PATH
+	$(hide) mkdir -p $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/md5
+	$(hide) cp $(MK_TARGET_PACKAGE) $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)
+	$(hide) cp $(MK_TARGET_PACKAGE).md5sum $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/md5
+endif
+ifdef MK_OTA_TARGET_PATH
+	$(hide) mkdir -p $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)
+	$(hide) cp $(BUILT_TARGET_FILES_PACKAGE) $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/$(MK_VERSION).zip
+ifneq ($(AB_OTA_UPDATER),true)
+	$(hide) zip -dq $(MK_OTA_TARGET_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/$(MK_VERSION).zip BOOT/* DATA/* IMAGES/system* IMAGES/vendor* IMAGES/userdata* IMAGES/recovery* IMAGES/cache*
+endif
+endif
+	$(hide) # Create Release, History, Nightly and Experimental folder End

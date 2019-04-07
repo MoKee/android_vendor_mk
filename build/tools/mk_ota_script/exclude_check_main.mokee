@@ -1,0 +1,93 @@
+#!/bin/bash
+#
+# Copyright (C) 2013-2018 The MoKee Open Source Project
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+export EXCLUDE_CHECK_MAIN="otasigcheck.sh
+Aegis.apk
+Aegis.odex
+BookmarkProvider.apk
+BookmarkProvider.odex
+AudioFX.apk
+AudioFX.odex
+Calendar.apk
+Calendar.odex
+Camera2.apk
+Camera2.odex
+Contacts.apk
+Contacts.odex
+DeskClock.apk
+DeskClock.odex
+Dialer.apk
+Dialer.odex
+Email.apk
+Email.odex
+ExactCalculator.apk
+ExactCalculator.odex
+Exchange2.apk
+Exchange2.odex
+ExtShared.apk
+ExtShared.odex
+ExtServices.apk
+ExtServices.odex
+FMRadio.apk
+FMRadio.odex
+Gallery2.apk
+Gallery2.odex
+Gboard.apk
+Gboard.odex
+Lawnchair.apk
+Lawnchair.odex
+LawnFeed.apk
+LawnFeed.odex
+LockClock.apk
+LockClock.odex
+messaging.apk
+messaging.odex
+OneTimeInitializer.apk
+OneTimeInitializer.odex
+PackageInstaller.apk
+PackageInstaller.odex
+Phonograph.apk
+Phonograph.odex
+PicoTts.apk
+PicoTts.odex
+PrintRecommendationService.apk
+PrintRecommendationService.odex
+Provision.apk
+Provision.odex
+Recorder.apk
+Recorder.odex
+Snap.apk
+Snap.odex
+StorageManager.apk
+StorageManager.odex
+Substratum.apk
+Substratum.odex
+Tag.apk
+Tag.odex
+ViaBrowser.apk
+ViaBrowser.odex
+webview.apk
+webview.odex
+libttscompat.so
+libttspico.so
+libwebviewchromium.so
+com.google.widevine.software.drm.jar
+bootanimation.zip
+recovery-resource.dat
+install-recovery.sh
+"
