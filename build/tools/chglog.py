@@ -216,7 +216,7 @@ def main():
         else:
             outputToFile(logfile, LOGS)
         logfile.write('---------------------------------------------------------------\n')
-        logfile.write('You can see more changelog from http://changelog.mokeedev.com')
+        logfile.write('You can see more changelog from https://changelog.mokeedev.com')
 
 if __name__ == "__main__":
     main()

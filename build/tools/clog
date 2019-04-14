@@ -81,4 +81,4 @@ if [ "$count" == "3" ]; then
     echo "" >> "$logdir"/"$logfile"
 fi
 echo "---------------------------------------------------------------" >> "$logdir"/"$logfile"
-echo "You can see more changelog from http://changelog.mokeedev.com" >> "$logdir"/"$logfile"
+echo "You can see more changelog from https://changelog.mokeedev.com" >> "$logdir"/"$logfile"
