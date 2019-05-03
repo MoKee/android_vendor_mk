@@ -1027,9 +1027,6 @@ function ota_all() {
         Linux)
             $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/linux-x86/gen_ota $1 $2
             ;;
-        Darwin)
-            $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/darwin-x86/gen_ota $1 $2
-            ;;
         *)
             echo `uname -s` is not supported yet
             ;;
