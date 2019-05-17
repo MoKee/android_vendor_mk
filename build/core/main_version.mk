@@ -2,6 +2,7 @@
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.mk.support=bbs.mfunz.com \
     ro.mk.version=$(MK_VERSION) \
+    ro.mk.version.id=$(shell echo -n $(MK_VERSION)|sha1sum| cut -f1 -d' ')
     ro.mk.releasetype=$(MK_BUILDTYPE) \
     ro.modversion=$(MK_VERSION)
 
