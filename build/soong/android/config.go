@@ -9,5 +9,6 @@ var MokeeConfig = struct {
 	// JavaSourceOverlayModuleWhitelist
 	[]string{
 		"org.mokee.hardware",
+		"framework",
 	},
 }
