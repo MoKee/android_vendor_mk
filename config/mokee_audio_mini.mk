@@ -5,7 +5,7 @@
 ALARM_PATH := vendor/mk/prebuilt/common/media/audio/alarms
 NOTIFICATION_PATH := vendor/mk/prebuilt/common/media/audio/notifications
 RINGTONE_PATH := vendor/mk/prebuilt/common/media/audio/ringtones
-EFFECT_PATH := vendor/mk/prebuilt/common/media/audio/ui
+UI_PATH := vendor/mk/prebuilt/common/media/audio/ui
 
 # Alarms
 PRODUCT_COPY_FILES += \
@@ -58,30 +58,15 @@ PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/Triton.ogg:system/media/audio/ringtones/Triton.ogg \
     $(RINGTONE_PATH)/Umbriel.ogg:system/media/audio/ringtones/Umbriel.ogg
 
-# Effects
-PRODUCT_COPY_FILES += \
-    $(EFFECT_PATH)/audio_end.ogg:system/media/audio/ui/audio_end.ogg \
-    $(EFFECT_PATH)/audio_initiate.ogg:system/media/audio/ui/audio_initiate.ogg \
-    $(EFFECT_PATH)/camera_click.ogg:system/media/audio/ui/camera_click.ogg \
-    $(EFFECT_PATH)/camera_focus.ogg:system/media/audio/ui/camera_focus.ogg \
-    $(EFFECT_PATH)/Dock.ogg:system/media/audio/ui/Dock.ogg \
-    $(EFFECT_PATH)/Effect_Tick.ogg:system/media/audio/ui/Effect_Tick.ogg \
-    $(EFFECT_PATH)/InCallNotification.ogg:system/media/audio/ui/InCallNotification.ogg \
-    $(EFFECT_PATH)/KeypressDelete.ogg:system/media/audio/ui/KeypressDelete.ogg \
-    $(EFFECT_PATH)/KeypressInvalid.ogg:system/media/audio/ui/KeypressInvalid.ogg \
-    $(EFFECT_PATH)/KeypressReturn.ogg:system/media/audio/ui/KeypressReturn.ogg \
-    $(EFFECT_PATH)/KeypressSpacebar.ogg:system/media/audio/ui/KeypressSpacebar.ogg \
-    $(EFFECT_PATH)/KeypressStandard.ogg:system/media/audio/ui/KeypressStandard.ogg \
-    $(EFFECT_PATH)/Lock.ogg:system/media/audio/ui/Lock.ogg \
-    $(EFFECT_PATH)/LowBattery.ogg:system/media/audio/ui/LowBattery.ogg \
-    $(EFFECT_PATH)/NFCFailure.ogg:system/media/audio/ui/NFCFailure.ogg \
-    $(EFFECT_PATH)/NFCInitiated.ogg:system/media/audio/ui/NFCInitiated.ogg \
-    $(EFFECT_PATH)/NFCSuccess.ogg:system/media/audio/ui/NFCSuccess.ogg \
-    $(EFFECT_PATH)/NFCTransferComplete.ogg:system/media/audio/ui/NFCTransferComplete.ogg \
-    $(EFFECT_PATH)/NFCTransferInitiated.ogg:system/media/audio/ui/NFCTransferInitiated.ogg \
-    $(EFFECT_PATH)/Trusted.ogg:system/media/audio/ui/Trusted.ogg \
-    $(EFFECT_PATH)/Undock.ogg:system/media/audio/ui/Undock.ogg \
-    $(EFFECT_PATH)/Unlock.ogg:system/media/audio/ui/Unlock.ogg \
-    $(EFFECT_PATH)/VideoRecord.ogg:system/media/audio/ui/VideoRecord.ogg \
-    $(EFFECT_PATH)/VideoStop.ogg:system/media/audio/ui/VideoStop.ogg \
-    $(EFFECT_PATH)/WirelessChargingStarted.ogg:system/media/audio/ui/WirelessChargingStarted.ogg
+EFFECT_FILES := Effect_Tick KeypressReturn KeypressInvalid KeypressDelete KeypressSpacebar KeypressStandard \
+	camera_focus Dock Undock Lock Unlock Trusted ChargingStarted InCallNotification \
+	NFCFailure NFCInitiated NFCSuccess NFCTransferComplete NFCTransferInitiated
+MATERIAL_EFFECT_FILES := camera_click VideoRecord WirelessChargingStarted LowBattery VideoStop
+PIXEL_EFFECT_FILES := audio_end audio_initiate
+
+PRODUCT_COPY_FILES += $(foreach fn,$(EFFECT_FILES),\
+	$(UI_PATH)/$(fn).ogg:system/media/audio/ui/$(fn).ogg)
+PRODUCT_COPY_FILES += $(foreach fn,$(MATERIAL_EFFECT_FILES),\
+	$(UI_PATH)/$(fn).ogg:system/media/audio/ui/$(fn).ogg)
+PRODUCT_COPY_FILES += $(foreach fn,$(PIXEL_EFFECT_FILES),\
+	$(UI_PATH)/$(fn).ogg:system/media/audio/ui/$(fn).ogg)
