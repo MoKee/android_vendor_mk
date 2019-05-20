@@ -77,7 +77,7 @@ ifeq ($(call is-board-platform-in-list, $(UM_4_4_FAMILY)),true)
 else
 ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY)),true)
     MSM_VIDC_TARGET_LIST := $(UM_4_9_FAMILY)
-    QCOM_HARDWARE_VARIANT := sdm845
+    QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)
 else
     MSM_VIDC_TARGET_LIST := $(TARGET_BOARD_PLATFORM)
     QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)
