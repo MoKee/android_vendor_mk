@@ -22,12 +22,16 @@ ifeq ($(TARGET_SCREEN_HEIGHT),)
     $(warning TARGET_SCREEN_HEIGHT is not set, using default value: 1920)
     TARGET_SCREEN_HEIGHT := 1920
 endif
+ifeq ($(TARGET_BOOTANIMATION_HALF_RES),)
+    TARGET_BOOTANIMATION_HALF_RES := false
+endif
 
 define build-bootanimation
     sh vendor/mk/bootanimation/generate-bootanimation.sh \
     $(TARGET_SCREEN_WIDTH) \
     $(TARGET_SCREEN_HEIGHT) \
-    $(TARGET_BOOTANIMATION_HALF_RES)
+    $(TARGET_BOOTANIMATION_HALF_RES) \
+    $(TARGET_BOOTANIMATION_INTRO)
 endef
 
 TARGET_GENERATED_BOOTANIMATION := $(TARGET_OUT_INTERMEDIATES)/BOOTANIMATION/bootanimation.zip
