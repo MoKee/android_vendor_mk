@@ -3,6 +3,7 @@
 WIDTH="$1"
 HEIGHT="$2"
 HALF_RES="$3"
+INTRO="$4"
 
 SRC="$ANDROID_BUILD_TOP/vendor/mk/bootanimation"
 OUT="$ANDROID_PRODUCT_OUT/obj/BOOTANIMATION"
@@ -38,9 +39,17 @@ do
     convert "$frame" -resize "$RESOLUTION" "$frame"
 done
 
+if [ -d "$INTRO" ]; then
+    rm -rf "$OUT/bootanimation/intro"
+    cp -Rf "$INTRO" "$OUT/bootanimation/intro"
+fi
+
 # Create desc.txt
 RESOLUTION=$(identify -ping -format '%w %h' $OUT/bootanimation/part0/$(ls $OUT/bootanimation/part0 | head -1))
 echo "$RESOLUTION" 30 > "$OUT/bootanimation/desc.txt"
+if [ -d "$INTRO" ]; then
+    echo "c 1 0 intro" >> "$OUT/bootanimation/desc.txt"
+fi
 cat "$SRC/desc.txt" >> "$OUT/bootanimation/desc.txt"
 
 # Create bootanimation.zip
