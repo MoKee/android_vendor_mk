@@ -163,6 +163,7 @@ PRODUCT_PACKAGES += \
     MoKeeBrownAccent \
     MoKeeCyanAccent \
     MoKeeDarkTheme \
+    MoKeeFaceLockDark \
     MoKeeGrayAccent \
     MoKeeGreenAccent \
     MoKeeOrangeAccent \
