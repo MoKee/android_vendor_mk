@@ -141,6 +141,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aegis \
     AudioFX \
+    Backgrounds \
     ExactCalculator \
     LockClock \
     MKCenter \
@@ -148,7 +149,6 @@ PRODUCT_PACKAGES += \
     MKUpdateVerification \
     MoKeeSetupWizard \
     MoKeeWeatherProvider \
-    WallpaperPicker \
     WeatherProvider
 
 # Exchange support
