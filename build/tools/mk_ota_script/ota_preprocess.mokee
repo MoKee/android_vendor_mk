@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-FILES=("system/xbin/zip")
+FILES=("system/xbin/zip" "system/system/xbin/zip")
 
 for i in "${FILES[@]}"; do
 	parent=$(dirname $i)
