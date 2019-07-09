@@ -1,12 +1,13 @@
 #!/bin/bash
 
-WIDTH="$1"
-HEIGHT="$2"
-HALF_RES="$3"
-INTRO="$4"
+PRODUCT_OUT="$1"
+WIDTH="$2"
+HEIGHT="$3"
+HALF_RES="$4"
+INTRO="$5"
 
 SRC="$ANDROID_BUILD_TOP/vendor/mk/bootanimation"
-OUT="$ANDROID_PRODUCT_OUT/obj/BOOTANIMATION"
+OUT="$PRODUCT_OUT/obj/BOOTANIMATION"
 
 if [ "$HEIGHT" -lt "$WIDTH" ]; then
     WIDTH_SIZE="$HEIGHT"
