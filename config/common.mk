@@ -179,11 +179,13 @@ PRODUCT_PACKAGES += \
     bash \
     bzip2 \
     curl \
+    getcap \
     htop \
     lib7z \
     libsepol \
     pigz \
     powertop \
+    setcap \
     unrar \
     unzip \
     wget \
