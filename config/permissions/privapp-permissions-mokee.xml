@@ -75,6 +75,7 @@
     </privapp-permissions>
 
     <privapp-permissions package="org.mokee.eleven">
+        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
     </privapp-permissions>
 
