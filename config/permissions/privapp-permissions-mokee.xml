@@ -40,9 +40,12 @@
     <privapp-permissions package="com.android.systemui">
         <permission name="android.permission.MODIFY_DAY_NIGHT_MODE"/>
         <permission name="android.permission.MANAGE_FINGERPRINT"/>
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.mokee.aegis">
+        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
+        <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
     </privapp-permissions>
 
@@ -75,7 +78,6 @@
     </privapp-permissions>
 
     <privapp-permissions package="org.mokee.eleven">
-        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
     </privapp-permissions>
 
