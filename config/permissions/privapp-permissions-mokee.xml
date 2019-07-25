@@ -44,6 +44,7 @@
     </privapp-permissions>
 
     <privapp-permissions package="com.mokee.aegis">
+        <permission name="android.permission.CHANGE_APP_IDLE_STATE"/>
         <permission name="android.permission.FORCE_STOP_PACKAGES"/>
         <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
