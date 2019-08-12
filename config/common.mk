@@ -36,6 +36,10 @@ else
   endif
 endif
 
+# Long screenshot
+PRODUCT_PACKAGES += \
+    Longshot
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
