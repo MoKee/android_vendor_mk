@@ -47,10 +47,8 @@ FMRadio.apk
 FMRadio.odex
 Gallery2.apk
 Gallery2.odex
-GooglePinyinIME.apk
-GooglePinyinIME.odex
-LatinIMEGooglePrebuilt.apk
-LatinIMEGooglePrebuilt.odex
+Gboard.apk
+Gboard.odex
 Lawnchair.apk
 Lawnchair.odex
 Lawnfeed.apk
@@ -67,6 +65,8 @@ Phonograph.apk
 Phonograph.odex
 PicoTts.apk
 PicoTts.odex
+Pinyin.apk
+Pinyin.odex
 PrintRecommendationService.apk
 PrintRecommendationService.odex
 Provision.apk
