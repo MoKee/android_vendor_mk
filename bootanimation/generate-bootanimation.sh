@@ -10,22 +10,19 @@ SRC="$ANDROID_BUILD_TOP/vendor/mk/bootanimation"
 OUT="$PRODUCT_OUT/obj/BOOTANIMATION"
 
 if [ "$HEIGHT" -lt "$WIDTH" ]; then
-    WIDTH_SIZE="$HEIGHT"
-    HEIGHT_SIZE="$WIDTH"
+    IMAGEWIDTH="$HEIGHT"
+    IMAGEHEIGHT="$WIDTH"
 else
-    WIDTH_SIZE="$WIDTH"
-    HEIGHT_SIZE="$HEIGHT"
+    IMAGEWIDTH="$WIDTH"
+    IMAGEHEIGHT="$HEIGHT"
 fi
 
 if [ "$HALF_RES" = "true" ]; then
-    IMAGE_WIDTH_SIZE=$(expr $WIDTH_SIZE / 2)
-    IMAGE_HEIGHT_SIZE=$(expr $HEIGHT_SIZE / 2)
-else
-    IMAGE_WIDTH_SIZE="$WIDTH_SIZE"
-    IMAGE_HEIGHT_SIZE="$HEIGHT_SIZE"
+    IMAGEWIDTH=$(expr $IMAGEWIDTH / 2)
+    IMAGEHEIGHT=$(expr $IMAGEHEIGHT / 2)
 fi
 
-RESOLUTION=""$IMAGE_WIDTH_SIZE"x"$IMAGE_HEIGHT_SIZE""
+RESOLUTION=""$IMAGEWIDTH"x"$IMAGEHEIGHT""
 
 if [ -n "$INTRO" ]; then
     INTRO="$ANDROID_BUILD_TOP/$INTRO"
@@ -50,8 +47,15 @@ if [ -d "$INTRO" ]; then
 fi
 
 # Create desc.txt
-RESOLUTION=$(identify -ping -format '%w %h' $OUT/bootanimation/part0/$(ls $OUT/bootanimation/part0 | head -1))
-echo "$RESOLUTION" 30 > "$OUT/bootanimation/desc.txt"
+IMAGESCALEWIDTH=$(identify -ping -format '%w' $OUT/bootanimation/part0/$(ls $OUT/bootanimation/part0 | head -1))
+IMAGESCALEHEIGHT=$(identify -ping -format '%h' $OUT/bootanimation/part0/$(ls $OUT/bootanimation/part0 | head -1))
+
+if [ "$HALF_RES" = "true" ]; then
+    IMAGESCALEWIDTH=$(expr $IMAGESCALEWIDTH \* 2)
+    IMAGESCALEHEIGHT=$(expr $IMAGESCALEHEIGHT \* 2)
+fi
+
+echo "$IMAGESCALEWIDTH $IMAGESCALEHEIGHT" 30 > "$OUT/bootanimation/desc.txt"
 if [ -d "$INTRO" ]; then
     echo "c 1 0 intro" >> "$OUT/bootanimation/desc.txt"
 fi
