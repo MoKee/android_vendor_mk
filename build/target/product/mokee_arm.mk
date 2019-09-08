@@ -1,4 +1,4 @@
-# Copyright (C) 2018 The MoKee Open Source Project
+# Copyright (C) 2018-2019 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,10 +13,8 @@
 # limitations under the License.
 
 $(call inherit-product, build/target/product/aosp_arm.mk)
-$(call inherit-product, vendor/mk/config/common.mk)
 
-# Allow building otatools
-TARGET_FORCE_OTA_PACKAGE := true
+include vendor/mk/build/target/product/mokee_generic_target.mk
 
 TARGET_USES_64_BIT_BINDER := true
 
