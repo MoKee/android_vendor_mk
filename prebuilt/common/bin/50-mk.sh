@@ -3,7 +3,7 @@
 # ADDOND_VERSION=2
 #
 # /system/addon.d/50-mk.sh
-# During a mkp upgrade, this script backs up /system/etc/hosts,
+# During a MoKee 100.0 upgrade, this script backs up /system/etc/hosts,
 # /system is formatted and reinstalled, then the file is restored.
 #
 

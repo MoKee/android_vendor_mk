@@ -5,7 +5,7 @@
 
 export S=/system
 export C=/postinstall/tmp/backupdir
-export V=MK90
+export V=MK100
 
 export ADDOND_VERSION=2
 
