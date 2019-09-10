@@ -38,7 +38,7 @@ checkapi-mokee : check-mokee-public-api
 # (See mokee-sdk/Android.mk)
 # we need to add api-stubs as additional dependency of the api check.
 
-$(INTERNAL_MOKEE_PLATFORM_API_FILE): mokee-api-stubs-docs
+$(INTERNAL_MOKEE_PLATFORM_API_FILE):
 
 # Check that the API we're building hasn't broken the last-released
 # SDK version.
