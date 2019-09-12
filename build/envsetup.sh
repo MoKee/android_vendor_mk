@@ -75,7 +75,7 @@ function breakfast()
     MK_DEVICES_ONLY="true"
     unset LUNCH_MENU_CHOICES
     add_lunch_combo full-eng
-    for f in `/bin/ls vendor/mk/vendorsetup.sh 2> /dev/null`
+    for f in `/bin/ls vendor/mokee/vendorsetup.sh 2> /dev/null`
         do
             echo "including $f"
             . $f
@@ -964,7 +964,7 @@ alias mkkap='dopush mkka'
 
 function repopick() {
     T=$(gettop)
-    $T/vendor/mk/build/tools/repopick.py $@
+    $T/vendor/mokee/build/tools/repopick.py $@
 }
 
 function fixup_common_out_dir() {
@@ -995,7 +995,7 @@ if [ -d $(gettop)/prebuilts/snapdragon-llvm/toolchains ]; then
             export SDCLANG=true
             export SDCLANG_PATH=$(gettop)/prebuilts/snapdragon-llvm/toolchains/llvm-Snapdragon_LLVM_for_Android_4.0/prebuilt/linux-x86_64/bin
             export SDCLANG_PATH_2=$(gettop)/prebuilts/snapdragon-llvm/toolchains/llvm-Snapdragon_LLVM_for_Android_4.0/prebuilt/linux-x86_64/bin
-            export SDCLANG_LTO_DEFS=$(gettop)/vendor/mk/build/core/sdllvm-lto-defs.mk
+            export SDCLANG_LTO_DEFS=$(gettop)/vendor/mokee/build/core/sdllvm-lto-defs.mk
             ;;
     esac
 fi
@@ -1007,7 +1007,7 @@ fi
 
 # Alternative Changelog Tool
 function chglog() {
-    $ANDROID_BUILD_TOP/vendor/mk/build/tools/chglog.py $ANDROID_BUILD_TOP $1 $2
+    $ANDROID_BUILD_TOP/vendor/mokee/build/tools/chglog.py $ANDROID_BUILD_TOP $1 $2
 }
 
 # Cleans out directory
@@ -1018,14 +1018,14 @@ function clearout() {
 
 # Changelog Tool
 function clog() {
-    $ANDROID_BUILD_TOP/vendor/mk/build/tools/clog $1
+    $ANDROID_BUILD_TOP/vendor/mokee/build/tools/clog $1
 }
 
 # OTA Script
 function ota_all() {
     case `uname -s` in
         Linux)
-            $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/linux-x86/gen_ota $1 $2
+            $ANDROID_BUILD_TOP/vendor/mokee/prebuilt/host/linux-x86/gen_ota $1 $2
             ;;
         *)
             echo `uname -s` is not supported yet

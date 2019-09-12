@@ -38,44 +38,44 @@ endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/mk/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/mk/prebuilt/common/bin/50-mk.sh:system/addon.d/50-mk.sh \
-    vendor/mk/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+    vendor/mokee/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/mokee/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/mokee/prebuilt/common/bin/50-mk.sh:system/addon.d/50-mk.sh \
+    vendor/mokee/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/mk/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/mk/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+    vendor/mokee/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/mokee/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/mokee/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
 endif
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/mk/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/mokee/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
 # MoKee-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
-    vendor/mk/config/permissions/mokee-sysconfig.xml:system/etc/sysconfig/mokee-sysconfig.xml
+    vendor/mokee/config/permissions/mokee-sysconfig.xml:system/etc/sysconfig/mokee-sysconfig.xml
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/mk/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/mokee/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/mokee/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/mokee/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
 # Copy all MoKee-specific init rc files
-$(foreach f,$(wildcard vendor/mk/prebuilt/common/etc/init/*.rc),\
+$(foreach f,$(wildcard vendor/mokee/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    vendor/mokee/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -87,9 +87,9 @@ PRODUCT_COPY_FILES += \
 
 # This is MoKee!
 PRODUCT_COPY_FILES += \
-    vendor/mk/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml \
-    vendor/mk/config/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
-    vendor/mk/config/permissions/privapp-permissions-mokee.xml:system/etc/permissions/privapp-permissions-mokee.xml
+    vendor/mokee/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml \
+    vendor/mokee/config/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
+    vendor/mokee/config/permissions/privapp-permissions-mokee.xml:system/etc/permissions/privapp-permissions-mokee.xml
 
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -97,24 +97,24 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Hidden API whitelist
 PRODUCT_COPY_FILES += \
-    vendor/mk/config/permissions/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml \
-    vendor/mk/config/permissions/mokee-hiddenapi-package-whitelist.xml:system/etc/sysconfig/mokee-hiddenapi-package-whitelist.xml
+    vendor/mokee/config/permissions/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml \
+    vendor/mokee/config/permissions/mokee-hiddenapi-package-whitelist.xml:system/etc/sysconfig/mokee-hiddenapi-package-whitelist.xml
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
-    vendor/mk/config/permissions/mokee-power-whitelist.xml:system/etc/sysconfig/mokee-power-whitelist.xml
+    vendor/mokee/config/permissions/mokee-power-whitelist.xml:system/etc/sysconfig/mokee-power-whitelist.xml
 
 # Theme engine
-include vendor/mk/config/themes_common.mk
+include vendor/mokee/config/themes_common.mk
 
 ifneq ($(TARGET_DISABLE_MOKEE_SDK), true)
 # MoKee SDK
-include vendor/mk/config/mokee_sdk_common.mk
+include vendor/mokee/config/mokee_sdk_common.mk
 endif
 
 # TWRP
 ifeq ($(WITH_TWRP),true)
-include vendor/mk/config/twrp.mk
+include vendor/mokee/config/twrp.mk
 endif
 
 # Do not include art debug targets
@@ -253,8 +253,8 @@ PRODUCT_PACKAGES += \
 endif
 endif
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/mk/overlay
-DEVICE_PACKAGE_OVERLAYS += vendor/mk/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/mokee/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/mokee/overlay/common
 
 PRODUCT_VERSION_MAJOR = 100
 PRODUCT_VERSION_MINOR = 0
@@ -293,11 +293,11 @@ else
 endif
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    vendor/mk/build/target/product/security/mokee
+    vendor/mokee/build/target/product/security/mokee
 
--include vendor/mk-priv/keys/keys.mk
+-include vendor/mokee-priv/keys/keys.mk
 
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
--include vendor/mk/config/partner_gms.mk
--include vendor/mk/config/mokee_extra.mk
+-include vendor/mokee/config/partner_gms.mk
+-include vendor/mokee/config/mokee_extra.mk

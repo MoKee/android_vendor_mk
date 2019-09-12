@@ -2,10 +2,10 @@
 # MoKee Open Source Audio Files (minified)
 #
 
-ALARM_PATH := vendor/mk/prebuilt/common/media/audio/alarms
-NOTIFICATION_PATH := vendor/mk/prebuilt/common/media/audio/notifications
-RINGTONE_PATH := vendor/mk/prebuilt/common/media/audio/ringtones
-UI_PATH := vendor/mk/prebuilt/common/media/audio/ui
+ALARM_PATH := vendor/mokee/prebuilt/common/media/audio/alarms
+NOTIFICATION_PATH := vendor/mokee/prebuilt/common/media/audio/notifications
+RINGTONE_PATH := vendor/mokee/prebuilt/common/media/audio/ringtones
+UI_PATH := vendor/mokee/prebuilt/common/media/audio/ui
 
 # Alarms
 PRODUCT_COPY_FILES += \

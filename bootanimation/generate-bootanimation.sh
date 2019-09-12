@@ -6,7 +6,7 @@ HEIGHT="$3"
 HALF_RES="$4"
 INTRO="$5"
 
-SRC="$ANDROID_BUILD_TOP/vendor/mk/bootanimation"
+SRC="$ANDROID_BUILD_TOP/vendor/mokee/bootanimation"
 OUT="$PRODUCT_OUT/obj/BOOTANIMATION"
 
 if [ "$HEIGHT" -lt "$WIDTH" ]; then
@@ -68,10 +68,10 @@ if [ -f $ANDROID_HOST_OUT/bin/ziptime ];then
 else
     case `uname -s` in
         Darwin)
-            $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/darwin-x86/ziptime "$OUT/bootanimation.zip"
+            $ANDROID_BUILD_TOP/vendor/mokee/prebuilt/host/darwin-x86/ziptime "$OUT/bootanimation.zip"
             ;;
         *)
-            $ANDROID_BUILD_TOP/vendor/mk/prebuilt/host/linux-x86/ziptime "$OUT/bootanimation.zip"
+            $ANDROID_BUILD_TOP/vendor/mokee/prebuilt/host/linux-x86/ziptime "$OUT/bootanimation.zip"
             ;;
     esac
 fi

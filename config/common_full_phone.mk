@@ -1,7 +1,7 @@
 # Inherit full common MoKee stuff
-$(call inherit-product, vendor/mk/config/common_full.mk)
+$(call inherit-product, vendor/mokee/config/common_full.mk)
 
 # Include MoKee LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/mk/overlay/dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/mokee/overlay/dictionaries
 
-$(call inherit-product, vendor/mk/config/telephony.mk)
+$(call inherit-product, vendor/mokee/config/telephony.mk)

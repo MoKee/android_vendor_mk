@@ -801,16 +801,16 @@ function oat2dex() {
     local HOST="$(uname)"
 
     if [ -z "$BAKSMALIJAR" ] || [ -z "$SMALIJAR" ]; then
-        export BAKSMALIJAR="$MK_ROOT"/vendor/mk/build/tools/smali/baksmali.jar
-        export SMALIJAR="$MK_ROOT"/vendor/mk/build/tools/smali/smali.jar
+        export BAKSMALIJAR="$MK_ROOT"/vendor/mokee/build/tools/smali/baksmali.jar
+        export SMALIJAR="$MK_ROOT"/vendor/mokee/build/tools/smali/smali.jar
     fi
 
     if [ -z "$VDEXEXTRACTOR" ]; then
-        export VDEXEXTRACTOR="$MK_ROOT"/vendor/mk/build/tools/"$HOST"/vdexExtractor
+        export VDEXEXTRACTOR="$MK_ROOT"/vendor/mokee/build/tools/"$HOST"/vdexExtractor
     fi
 
     if [ -z "$CDEXCONVERTER" ]; then
-        export CDEXCONVERTER="$MK_ROOT"/vendor/mk/build/tools/"$HOST"/compact_dex_converter
+        export CDEXCONVERTER="$MK_ROOT"/vendor/mokee/build/tools/"$HOST"/compact_dex_converter
     fi
 
     # Extract existing boot.oats to the temp folder
@@ -1085,7 +1085,7 @@ function extract() {
             # If OTA is block based, extract it.
             elif [ -a "$DUMPDIR"/system.new.dat ]; then
                 echo "Converting system.new.dat to system.img"
-                python "$MK_ROOT"/vendor/mk/build/tools/sdat2img.py "$DUMPDIR"/system.transfer.list "$DUMPDIR"/system.new.dat "$DUMPDIR"/system.img 2>&1
+                python "$MK_ROOT"/vendor/mokee/build/tools/sdat2img.py "$DUMPDIR"/system.transfer.list "$DUMPDIR"/system.new.dat "$DUMPDIR"/system.img 2>&1
                 rm -rf "$DUMPDIR"/system.new.dat "$DUMPDIR"/system
                 mkdir "$DUMPDIR"/system "$DUMPDIR"/tmp
                 echo "Requesting sudo access to mount the system.img"

@@ -27,7 +27,7 @@ ifeq ($(TARGET_BOOTANIMATION_HALF_RES),)
 endif
 
 define build-bootanimation
-    $(shell) vendor/mk/bootanimation/generate-bootanimation.sh \
+    $(shell) vendor/mokee/bootanimation/generate-bootanimation.sh \
     $(PRODUCT_OUT) \
     $(TARGET_SCREEN_WIDTH) \
     $(TARGET_SCREEN_HEIGHT) \

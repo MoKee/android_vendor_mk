@@ -1,2 +1,2 @@
 # Include MoKee versions
-include $(TOPDIR)vendor/mk/build/core/main_version.mk
+include $(TOPDIR)vendor/mokee/build/core/main_version.mk

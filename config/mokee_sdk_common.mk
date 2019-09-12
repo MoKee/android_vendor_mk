@@ -1,14 +1,14 @@
 # Permissions for mokee sdk services
 PRODUCT_COPY_FILES += \
-    vendor/mk/config/permissions/org.mokee.audio.xml:system/etc/permissions/org.mokee.audio.xml \
-    vendor/mk/config/permissions/org.mokee.license.xml:system/etc/permissions/org.mokee.license.xml \
-    vendor/mk/config/permissions/org.mokee.livedisplay.xml:system/etc/permissions/org.mokee.livedisplay.xml \
-    vendor/mk/config/permissions/org.mokee.performance.xml:system/etc/permissions/org.mokee.performance.xml \
-    vendor/mk/config/permissions/org.mokee.profiles.xml:system/etc/permissions/org.mokee.profiles.xml \
-    vendor/mk/config/permissions/org.mokee.settings.xml:system/etc/permissions/org.mokee.settings.xml \
-    vendor/mk/config/permissions/org.mokee.style.xml:system/etc/permissions/org.mokee.style.xml \
-    vendor/mk/config/permissions/org.mokee.trust.xml:system/etc/permissions/org.mokee.trust.xml \
-    vendor/mk/config/permissions/org.mokee.weather.xml:system/etc/permissions/org.mokee.weather.xml
+    vendor/mokee/config/permissions/org.mokee.audio.xml:system/etc/permissions/org.mokee.audio.xml \
+    vendor/mokee/config/permissions/org.mokee.license.xml:system/etc/permissions/org.mokee.license.xml \
+    vendor/mokee/config/permissions/org.mokee.livedisplay.xml:system/etc/permissions/org.mokee.livedisplay.xml \
+    vendor/mokee/config/permissions/org.mokee.performance.xml:system/etc/permissions/org.mokee.performance.xml \
+    vendor/mokee/config/permissions/org.mokee.profiles.xml:system/etc/permissions/org.mokee.profiles.xml \
+    vendor/mokee/config/permissions/org.mokee.settings.xml:system/etc/permissions/org.mokee.settings.xml \
+    vendor/mokee/config/permissions/org.mokee.style.xml:system/etc/permissions/org.mokee.style.xml \
+    vendor/mokee/config/permissions/org.mokee.trust.xml:system/etc/permissions/org.mokee.trust.xml \
+    vendor/mokee/config/permissions/org.mokee.weather.xml:system/etc/permissions/org.mokee.weather.xml
 
 # MoKee Platform Library
 PRODUCT_PACKAGES += \

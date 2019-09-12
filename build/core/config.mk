@@ -19,9 +19,9 @@ INTERNAL_MOKEE_PLATFORM_API_FILE := $(TARGET_OUT_COMMON_INTERMEDIATES)/PACKAGING
 INTERNAL_MOKEE_PLATFORM_REMOVED_API_FILE := $(TARGET_OUT_COMMON_INTERMEDIATES)/PACKAGING/mk_removed.txt
 FRAMEWORK_MOKEE_PLATFORM_API_FILE := $(TOPDIR)mokee-sdk/api/mk_current.txt
 FRAMEWORK_MOKEE_PLATFORM_REMOVED_API_FILE := $(TOPDIR)mokee-sdk/api/mk_removed.txt
-FRAMEWORK_MOKEE_API_NEEDS_UPDATE_TEXT := $(TOPDIR)vendor/mk/build/core/apicheck_msg_current.txt
+FRAMEWORK_MOKEE_API_NEEDS_UPDATE_TEXT := $(TOPDIR)vendor/mokee/build/core/apicheck_msg_current.txt
 
-BUILD_RRO_SYSTEM_PACKAGE := $(TOPDIR)vendor/mk/build/core/system_rro.mk
+BUILD_RRO_SYSTEM_PACKAGE := $(TOPDIR)vendor/mokee/build/core/system_rro.mk
 
 # Rules for QCOM targets
-include $(TOPDIR)vendor/mk/build/core/qcom_target.mk
+include $(TOPDIR)vendor/mokee/build/core/qcom_target.mk
