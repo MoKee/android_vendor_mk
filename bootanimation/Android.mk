@@ -46,7 +46,7 @@ $(TARGET_GENERATED_BOOTANIMATION): $(SOONG_ZIP)
 	RESOLUTION="$$IMAGEWIDTH"x"$$IMAGEHEIGHT"; \
 
 	for frame in $(INTERMEDIATES)/part*/*; do \
-	    convert $$frame -resize $$RESOLUTION $$frame; \
+	    prebuilts/tools-lineage/${HOST_OS}-x86/bin/convert $$frame -resize $$RESOLUTION $$frame; \
 	done; \
 
 	IMAGESCALEWIDTH="$$(identify -ping -format '%w' $$INTERMEDIATES/part0/$$(ls $$INTERMEDIATES/part0 | head -1));"
@@ -63,16 +63,6 @@ $(TARGET_GENERATED_BOOTANIMATION): $(SOONG_ZIP)
 
 ifeq ($(TARGET_BOOTANIMATION),)
     TARGET_BOOTANIMATION := $(TARGET_GENERATED_BOOTANIMATION)
-    ifeq ($(shell command -v convert),)
-        $(info **********************************************)
-        $(info The boot animation could not be generated as)
-        $(info ImageMagick is not installed in your system.)
-        $(info $(space))
-        $(info Please install ImageMagick from this website:)
-        $(info https://imagemagick.org/script/binary-releases.php)
-        $(info **********************************************)
-        $(error stop)
-    endif
 endif
 
 include $(CLEAR_VARS)

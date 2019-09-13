@@ -72,15 +72,6 @@ function breakfast()
 {
     target=$1
     local variant=$2
-    MK_DEVICES_ONLY="true"
-    unset LUNCH_MENU_CHOICES
-    add_lunch_combo full-eng
-    for f in `/bin/ls vendor/mokee/vendorsetup.sh 2> /dev/null`
-        do
-            echo "including $f"
-            . $f
-        done
-    unset f
 
     if [ $# -eq 0 ]; then
         # No arguments, so let's have the full menu
@@ -970,40 +961,22 @@ function repopick() {
 function fixup_common_out_dir() {
     common_out_dir=$(get_build_var OUT_DIR)/target/common
     target_device=$(get_build_var TARGET_DEVICE)
+    common_target_out=common-${target_device}
     if [ ! -z $MK_FIXUP_COMMON_OUT ]; then
         if [ -d ${common_out_dir} ] && [ ! -L ${common_out_dir} ]; then
             mv ${common_out_dir} ${common_out_dir}-${target_device}
-            ln -s ${common_out_dir}-${target_device} ${common_out_dir}
+            ln -s ${common_target_out} ${common_out_dir}
         else
             [ -L ${common_out_dir} ] && rm ${common_out_dir}
             mkdir -p ${common_out_dir}-${target_device}
-            ln -s ${common_out_dir}-${target_device} ${common_out_dir}
+            ln -s ${common_target_out} ${common_out_dir}
         fi
     else
         [ -L ${common_out_dir} ] && rm ${common_out_dir}
         mkdir -p ${common_out_dir}
     fi
 }
-
-# Enable SD-LLVM if available
-if [ -d $(gettop)/prebuilts/snapdragon-llvm/toolchains ]; then
-    case `uname -s` in
-        Darwin)
-            # Darwin is not supported yet
-            ;;
-        *)
-            export SDCLANG=true
-            export SDCLANG_PATH=$(gettop)/prebuilts/snapdragon-llvm/toolchains/llvm-Snapdragon_LLVM_for_Android_4.0/prebuilt/linux-x86_64/bin
-            export SDCLANG_PATH_2=$(gettop)/prebuilts/snapdragon-llvm/toolchains/llvm-Snapdragon_LLVM_for_Android_4.0/prebuilt/linux-x86_64/bin
             export SDCLANG_LTO_DEFS=$(gettop)/vendor/mokee/build/core/sdllvm-lto-defs.mk
-            ;;
-    esac
-fi
-
-# Android specific JACK args
-if [ -n "$JACK_SERVER_VM_ARGUMENTS" ] && [ -z "$ANDROID_JACK_VM_ARGS" ]; then
-    export ANDROID_JACK_VM_ARGS=$JACK_SERVER_VM_ARGUMENTS
-fi
 
 # Alternative Changelog Tool
 function chglog() {
