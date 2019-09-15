@@ -1,3 +1,9 @@
+# Build fingerprint
+ifneq ($(BUILD_FINGERPRINT),)
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+endif
+
 # MoKee System Version
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.mk.support=bbs.mfunz.com \
