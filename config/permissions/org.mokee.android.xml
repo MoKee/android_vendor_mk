@@ -16,6 +16,6 @@
 
 <!-- This feature shows that this is MoKee Open Source -->
 <permissions>
-    <feature name="com.mokee.android" />
+    <feature name="org.mokee.android" />
 </permissions>
 

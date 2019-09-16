@@ -15,19 +15,19 @@
 # -----------------------------------------------------------------
 # MoKee OTA update package
 
-MK_TARGET_PACKAGE := $(PRODUCT_OUT)/$(MK_VERSION).zip
+MOKEE_TARGET_PACKAGE := $(PRODUCT_OUT)/$(MK_VERSION).zip
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(MK_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(MK_TARGET_PACKAGE) | cut -f1 -d' ' > $(MK_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(MK_TARGET_PACKAGE)" >&2
-	@echo "Package Size: `ls -lh $(MK_TARGET_PACKAGE) | cut -d ' ' -f 5`" >&2
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(MOKEE_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(MOKEE_TARGET_PACKAGE) | cut -f1 -d' ' > $(MOKEE_TARGET_PACKAGE).md5sum
+	@echo "Package Complete: $(MOKEE_TARGET_PACKAGE)" >&2
+	@echo "Package Size: `ls -lh $(MOKEE_TARGET_PACKAGE) | cut -d ' ' -f 5`" >&2
 	$(hide) # Create Release, History, Nightly and Experimental folder Start
 ifdef MK_BUILD_PATH
 	$(hide) mkdir -p $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/md5
-	$(hide) cp $(MK_TARGET_PACKAGE) $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)
-	$(hide) cp $(MK_TARGET_PACKAGE).md5sum $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/md5
+	$(hide) cp $(MOKEE_TARGET_PACKAGE) $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)
+	$(hide) cp $(MOKEE_TARGET_PACKAGE).md5sum $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/md5
 endif
 ifdef MK_OTA_INPUT
 	$(hide) mkdir -p $(MK_OTA_INPUT)/$(MK_BUILDTYPE)/$(MK_BUILD)

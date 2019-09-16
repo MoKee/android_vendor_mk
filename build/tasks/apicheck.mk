@@ -75,9 +75,9 @@ $(eval $(call check-api, \
 
 .PHONY: update-mokee-public-api
 update-mokee-public-api: $(INTERNAL_MOKEE_PLATFORM_API_FILE) | $(ACP)
-	@echo "Copying mk_current.txt"
+	@echo "Copying mokee_current.txt"
 	$(hide) $(ACP) $(INTERNAL_MOKEE_PLATFORM_API_FILE) $(FRAMEWORK_MOKEE_PLATFORM_API_FILE)
-	@echo "Copying mk_removed.txt"
+	@echo "Copying mokee_removed.txt"
 	$(hide) $(ACP) $(INTERNAL_MOKEE_PLATFORM_REMOVED_API_FILE) $(FRAMEWORK_MOKEE_PLATFORM_REMOVED_API_FILE)
 
 update-mokee-api : update-mokee-public-api
@@ -86,7 +86,7 @@ update-mokee-api : update-mokee-public-api
 current_sdk_release_text_file := $(MOKEE_SRC_API_DIR)/$(mokee_last_released_sdk_version).txt
 
 update-mokee-prebuilts-latest-public-api: $(FRAMEWORK_MOKEE_PLATFORM_API_FILE) | $(ACP)
-	@echo "Publishing mk_current.txt as latest API release"
+	@echo "Publishing mokee_current.txt as latest API release"
 	$(hide) $(ACP) $(FRAMEWORK_MOKEE_PLATFORM_API_FILE) $(current_sdk_release_text_file)
 
 endif

@@ -5,15 +5,15 @@ Additional MoKee Open Source functions:
 - mmp:             Builds all of the modules in the current directory and pushes them to the device.
 - mmap:            Builds all of the modules in the current directory and its dependencies, then pushes the package to the device.
 - mmmp:            Builds all of the modules in the supplied directories and pushes them to the device.
-- mkgerrit:   A Git wrapper that fetches/pushes patch from/to MoKee Gerrit Review.
-- mkrebase:   Rebase a Gerrit change and push it again.
-- mkremote:   Add git remote for MoKee Gerrit Review.
+- mokeegerrit:   A Git wrapper that fetches/pushes patch from/to MoKee Gerrit Review.
+- mokeerebase:   Rebase a Gerrit change and push it again.
+- mokeeremote:   Add git remote for MoKee Gerrit Review.
 - aospremote:      Add git remote for matching AOSP repository.
 - cafremote:       Add git remote for matching CodeAurora repository.
 - githubremote:    Add git remote for MoKee Github.
 - mka:             Builds using SCHED_BATCH on all processors.
 - mkap:            Builds the module(s) using mka and pushes them to the device.
-- mkka:            Cleans and builds using mka.
+- cmka:            Cleans and builds using mka.
 - repodiff:        Diff 2 different branches or tags within the same repo
 - repolastsync:    Prints date and time of last repo sync.
 - reposync:        Parallel repo sync using ionice and SCHED_BATCH.
@@ -82,12 +82,12 @@ function breakfast()
             # A buildtype was specified, assume a full device name
             lunch $target
         else
-            # This is probably just the MK model name
+            # This is probably just the MoKee model name
             if [ -z "$variant" ]; then
                 variant="userdebug"
             fi
 
-            lunch mk_$target-$variant
+            lunch mokee_$target-$variant
         fi
     fi
     return $?
@@ -252,14 +252,14 @@ function dddclient()
    fi
 }
 
-function mkremote()
+function mokeeremote()
 {
     if ! git rev-parse --git-dir &> /dev/null
     then
         echo ".git directory not found. Please run this from the root directory of the Android repository you wish to set up."
         return 1
     fi
-    git remote rm mkremote 2> /dev/null
+    git remote rm mokee 2> /dev/null
     local REMOTE=$(git config --get remote.github.projectname)
     local MOKEE="true"
     if [ -z "$REMOTE" ]
@@ -281,14 +281,14 @@ function mkremote()
         local PROJECT=$REMOTE
     fi
 
-    local MK_USER=$(git config --get review.mokeedev.review.username)
-    if [ -z "$MK_USER" ]
+    local MOKEE_USER=$(git config --get review.mokeedev.review.username)
+    if [ -z "$MOKEE_USER" ]
     then
-        git remote add mkremote ssh://mokeedev.review:29418/$PFX$PROJECT
+        git remote add mokee ssh://mokeedev.review:29418/$PFX$PROJECT
     else
-        git remote add mkremote ssh://$MK_USER@mokeedev.review:29418/$PFX$PROJECT
+        git remote add mokee ssh://$MOKEE_USER@mokeedev.review:29418/$PFX$PROJECT
     fi
-    echo "Remote 'mkremote' created"
+    echo "Remote 'mokee' created"
 }
 
 function aospremote()
@@ -466,13 +466,13 @@ function makerecipe() {
     if [ "$REPO_REMOTE" = "mokee" ]
     then
         pwd
-        mkremote
-        git push mkremote HEAD:refs/heads/'$1'
+        mokeeremote
+        git push mokee HEAD:refs/heads/'$1'
     fi
     '
 }
 
-function mkgerrit() {
+function mokeegerrit() {
     if [ "$(__detect_shell)" = "zsh" ]; then
         # zsh does not define FUNCNAME, derive from funcstack
         local FUNCNAME=$funcstack[1]
@@ -518,7 +518,7 @@ EOF
             case $1 in
                 __cmg_*) echo "For internal use only." ;;
                 changes|for)
-                    if [ "$FUNCNAME" = "mkgerrit" ]; then
+                    if [ "$FUNCNAME" = "mokeegerrit" ]; then
                         echo "'$FUNCNAME $1' is deprecated."
                     fi
                     ;;
@@ -611,7 +611,7 @@ EOF
                 $local_branch:refs/for/$remote_branch || return 1
             ;;
         changes|for)
-            if [ "$FUNCNAME" = "mkgerrit" ]; then
+            if [ "$FUNCNAME" = "mokeegerrit" ]; then
                 echo >&2 "'$FUNCNAME $command' is deprecated."
             fi
             ;;
@@ -710,7 +710,7 @@ EOF
     esac
 }
 
-function mkrebase() {
+function mokeerebase() {
     local repo=$1
     local refs=$2
     local pwd="$(pwd)"
@@ -718,7 +718,7 @@ function mkrebase() {
 
     if [ -z $repo ] || [ -z $refs ]; then
         echo "MoKee Gerrit Rebase Usage: "
-        echo "      mkrebase <path to project> <patch IDs on Gerrit>"
+        echo "      mokeerebase <path to project> <patch IDs on Gerrit>"
         echo "      The patch IDs appear on the Gerrit commands that are offered."
         echo "      They consist on a series of numbers and slashes, after the text"
         echo "      refs/changes. For example, the ID in the following command is 26/8126/2"
@@ -755,7 +755,7 @@ function mka() {
     m -j "$@"
 }
 
-function mkka() {
+function cmka() {
     if [ ! -z "$1" ]; then
         for i in "$@"; do
             case $i in
@@ -951,7 +951,7 @@ alias mmmp='dopush mmm'
 alias mmap='dopush mma'
 alias mmmap='dopush mmma'
 alias mkap='dopush mka'
-alias mkkap='dopush mkka'
+alias cmkap='dopush cmka'
 
 function repopick() {
     T=$(gettop)
@@ -962,7 +962,7 @@ function fixup_common_out_dir() {
     common_out_dir=$(get_build_var OUT_DIR)/target/common
     target_device=$(get_build_var TARGET_DEVICE)
     common_target_out=common-${target_device}
-    if [ ! -z $MK_FIXUP_COMMON_OUT ]; then
+    if [ ! -z $MOKEE_FIXUP_COMMON_OUT ]; then
         if [ -d ${common_out_dir} ] && [ ! -L ${common_out_dir} ]; then
             mv ${common_out_dir} ${common_out_dir}-${target_device}
             ln -s ${common_target_out} ${common_out_dir}
@@ -976,7 +976,6 @@ function fixup_common_out_dir() {
         mkdir -p ${common_out_dir}
     fi
 }
-            export SDCLANG_LTO_DEFS=$(gettop)/vendor/mokee/build/core/sdllvm-lto-defs.mk
 
 # Alternative Changelog Tool
 function chglog() {
@@ -1006,4 +1005,4 @@ function ota_all() {
     esac
 }
 
-export MK_BUILDER=True
+export MOKEE_BUILDER=True

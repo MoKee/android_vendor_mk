@@ -10,7 +10,7 @@ Patches are always welcomed!  Please submit your patches via MoKee Gerrit! You c
     (Go to repo you are patching, make your changes and commit)
     mkgerrit <for(new)/changes(patch set)> <branch/change-id>
 
-    repo start mkp .
+    repo start mkq .
     (Make your changes and commit)
     repo upload .
     or

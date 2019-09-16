@@ -13,9 +13,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.build.selinux=1
-
 # Default notification/alarm sounds
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.config.notification_sound=Hello.ogg \
@@ -40,7 +37,7 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/mokee/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/mokee/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/mokee/prebuilt/common/bin/50-mk.sh:system/addon.d/50-mk.sh \
+    vendor/mokee/prebuilt/common/bin/50-mokee.sh:system/addon.d/50-mokee.sh \
     vendor/mokee/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 ifeq ($(AB_OTA_UPDATER),true)
@@ -87,7 +84,7 @@ PRODUCT_COPY_FILES += \
 
 # This is MoKee!
 PRODUCT_COPY_FILES += \
-    vendor/mokee/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml \
+    vendor/mokee/config/permissions/org.mokee.android.xml:system/etc/permissions/org.mokee.android.xml \
     vendor/mokee/config/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
     vendor/mokee/config/permissions/privapp-permissions-mokee.xml:system/etc/permissions/privapp-permissions-mokee.xml
 
@@ -103,9 +100,6 @@ PRODUCT_COPY_FILES += \
 # Power whitelist
 PRODUCT_COPY_FILES += \
     vendor/mokee/config/permissions/mokee-power-whitelist.xml:system/etc/sysconfig/mokee-power-whitelist.xml
-
-# Theme engine
-include vendor/mokee/config/themes_common.mk
 
 ifneq ($(TARGET_DISABLE_MOKEE_SDK), true)
 # MoKee SDK
@@ -129,35 +123,24 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 PRODUCT_PACKAGES += \
     bootanimation.zip
 
-# Required MoKee packages
+# AOSP packages
 PRODUCT_PACKAGES += \
-    MKParts \
-    Development \
-    Profiles
-
-# Optional MoKee packages
-PRODUCT_PACKAGES += \
-    LiveWallpapersPicker \
-    PhotoTable \
+    ExactCalculator \
+    Exchange2 \
     Terminal
 
-# Custom MoKee packages
+# MoKee packages
 PRODUCT_PACKAGES += \
     Aegis \
     AudioFX \
     Backgrounds \
-    ExactCalculator \
     LockClock \
     MKCenter \
+    MKParts \
     MKSettingsProvider \
-    MKUpdateVerification \
     MoKeeSetupWizard \
-    MoKeeWeatherProvider \
+    Profiles \
     WeatherProvider
-
-# Exchange support
-PRODUCT_PACKAGES += \
-    Exchange2
 
 # Berry styles
 PRODUCT_PACKAGES += \

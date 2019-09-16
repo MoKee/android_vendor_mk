@@ -67,15 +67,15 @@ function setup_vendor() {
         exit 1
     fi
 
-    export MK_ROOT="$3"
-    if [ ! -d "$MK_ROOT" ]; then
-        echo "\$MK_ROOT must be set and valid before including this script!"
+    export MOKEE_ROOT="$3"
+    if [ ! -d "$MOKEE_ROOT" ]; then
+        echo "\$MOKEE_ROOT must be set and valid before including this script!"
         exit 1
     fi
 
     export OUTDIR=vendor/"$VENDOR"/"$DEVICE"
-    if [ ! -d "$MK_ROOT/$OUTDIR" ]; then
-        mkdir -p "$MK_ROOT/$OUTDIR"
+    if [ ! -d "$MOKEE_ROOT/$OUTDIR" ]; then
+        mkdir -p "$MOKEE_ROOT/$OUTDIR"
     fi
 
     VNDNAME="$6"
@@ -83,9 +83,9 @@ function setup_vendor() {
         VNDNAME="$DEVICE"
     fi
 
-    export PRODUCTMK="$MK_ROOT"/"$OUTDIR"/"$VNDNAME"-vendor.mk
-    export ANDROIDMK="$MK_ROOT"/"$OUTDIR"/Android.mk
-    export BOARDMK="$MK_ROOT"/"$OUTDIR"/BoardConfigVendor.mk
+    export PRODUCTMK="$MOKEE_ROOT"/"$OUTDIR"/"$VNDNAME"-vendor.mk
+    export ANDROIDMK="$MOKEE_ROOT"/"$OUTDIR"/Android.mk
+    export BOARDMK="$MOKEE_ROOT"/"$OUTDIR"/BoardConfigVendor.mk
 
     if [ "$4" == "true" ] || [ "$4" == "1" ]; then
         COMMON=1
@@ -837,7 +837,7 @@ function get_file() {
 # Convert apk|jar .odex in the corresposing classes.dex
 #
 function oat2dex() {
-    local MK_TARGET="$1"
+    local MOKEE_TARGET="$1"
     local OEM_TARGET="$2"
     local SRC="$3"
     local TARGET=
@@ -845,16 +845,16 @@ function oat2dex() {
     local HOST="$(uname)"
 
     if [ -z "$BAKSMALIJAR" ] || [ -z "$SMALIJAR" ]; then
-        export BAKSMALIJAR="$MK_ROOT"/vendor/mokee/build/tools/smali/baksmali.jar
-        export SMALIJAR="$MK_ROOT"/vendor/mokee/build/tools/smali/smali.jar
+        export BAKSMALIJAR="$MOKEE_ROOT"/vendor/mokee/build/tools/smali/baksmali.jar
+        export SMALIJAR="$MOKEE_ROOT"/vendor/mokee/build/tools/smali/smali.jar
     fi
 
     if [ -z "$VDEXEXTRACTOR" ]; then
-        export VDEXEXTRACTOR="$MK_ROOT"/vendor/mokee/build/tools/"$HOST"/vdexExtractor
+        export VDEXEXTRACTOR="$MOKEE_ROOT"/vendor/mokee/build/tools/"$HOST"/vdexExtractor
     fi
 
     if [ -z "$CDEXCONVERTER" ]; then
-        export CDEXCONVERTER="$MK_ROOT"/vendor/mokee/build/tools/"$HOST"/compact_dex_converter
+        export CDEXCONVERTER="$MOKEE_ROOT"/vendor/mokee/build/tools/"$HOST"/compact_dex_converter
     fi
 
     # Extract existing boot.oats to the temp folder
@@ -874,11 +874,11 @@ function oat2dex() {
         FULLY_DEODEXED=1 && return 0 # system is fully deodexed, return
     fi
 
-    if [ ! -f "$MK_TARGET" ]; then
+    if [ ! -f "$MOKEE_TARGET" ]; then
         return;
     fi
 
-    if grep "classes.dex" "$MK_TARGET" >/dev/null; then
+    if grep "classes.dex" "$MOKEE_TARGET" >/dev/null; then
         return 0 # target apk|jar is already odexed, return
     fi
 
@@ -906,7 +906,7 @@ function oat2dex() {
                 java -jar "$BAKSMALIJAR" deodex -o "$TMPDIR/dexout" -b "$BOOTOAT" -d "$TMPDIR" "$TMPDIR/$(basename "$OAT")"
                 java -jar "$SMALIJAR" assemble "$TMPDIR/dexout" -o "$TMPDIR/classes.dex"
             fi
-        elif [[ "$MK_TARGET" =~ .jar$ ]]; then
+        elif [[ "$MOKEE_TARGET" =~ .jar$ ]]; then
             JAROAT="$TMPDIR/system/framework/$ARCH/boot-$(basename ${OEM_TARGET%.*}).oat"
             JARVDEX="/system/framework/boot-$(basename ${OEM_TARGET%.*}).vdex"
             if [ ! -f "$JAROAT" ]; then
@@ -1101,7 +1101,7 @@ function extract() {
     local FIXUP_HASHLIST=( ${PRODUCT_COPY_FILES_FIXUP_HASHES[@]} ${PRODUCT_PACKAGES_FIXUP_HASHES[@]} )
     local PRODUCT_COPY_FILES_COUNT=${#PRODUCT_COPY_FILES_LIST[@]}
     local COUNT=${#FILELIST[@]}
-    local OUTPUT_ROOT="$MK_ROOT"/"$OUTDIR"/proprietary
+    local OUTPUT_ROOT="$MOKEE_ROOT"/"$OUTDIR"/proprietary
     local OUTPUT_TMP="$TMPDIR"/"$OUTDIR"/proprietary
 
     if [ "$SRC" = "adb" ]; then
@@ -1129,7 +1129,7 @@ function extract() {
             # If OTA is block based, extract it.
             elif [ -a "$DUMPDIR"/system.new.dat ]; then
                 echo "Converting system.new.dat to system.img"
-                python "$MK_ROOT"/vendor/mokee/build/tools/sdat2img.py "$DUMPDIR"/system.transfer.list "$DUMPDIR"/system.new.dat "$DUMPDIR"/system.img 2>&1
+                python "$MOKEE_ROOT"/vendor/mokee/build/tools/sdat2img.py "$DUMPDIR"/system.transfer.list "$DUMPDIR"/system.new.dat "$DUMPDIR"/system.img 2>&1
                 rm -rf "$DUMPDIR"/system.new.dat "$DUMPDIR"/system
                 mkdir "$DUMPDIR"/system "$DUMPDIR"/tmp
                 echo "Requesting sudo access to mount the system.img"
@@ -1306,7 +1306,7 @@ function extract_firmware() {
     local FILELIST=( ${PRODUCT_COPY_FILES_LIST[@]} )
     local COUNT=${#FILELIST[@]}
     local SRC="$2"
-    local OUTPUT_DIR="$MK_ROOT"/"$OUTDIR"/radio
+    local OUTPUT_DIR="$MOKEE_ROOT"/"$OUTDIR"/radio
 
     if [ "$VENDOR_RADIO_STATE" -eq "0" ]; then
         echo "Cleaning firmware output directory ($OUTPUT_DIR).."

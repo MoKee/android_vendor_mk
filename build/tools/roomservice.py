@@ -202,7 +202,7 @@ def add_to_manifest(repositories, fallback_branch = None):
 
 def fetch_dependencies(repo_path, fallback_branch = None):
     print('Looking for dependencies in %s' % repo_path)
-    dependencies_path = repo_path + '/mk.dependencies'
+    dependencies_path = repo_path + '/mokee.dependencies'
     syncable_repos = []
     verify_repos = []
 

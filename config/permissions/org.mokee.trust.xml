@@ -16,7 +16,7 @@
 
 <permissions>
     <!-- The feature listed here coincides with the TrustInterfaceService declared as
-        part of the external mk service init in SystemServer. If this xml isn't present
+        part of the external mokee service init in SystemServer. If this xml isn't present
         on the device, the service will not be published as a binder service!
     -->
     <feature name="org.mokee.trust" />
