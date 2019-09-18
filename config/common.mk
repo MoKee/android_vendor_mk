@@ -37,56 +37,56 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/mokee/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/mokee/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/mokee/prebuilt/common/bin/50-mokee.sh:system/addon.d/50-mokee.sh \
-    vendor/mokee/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+    vendor/mokee/prebuilt/common/bin/50-mokee.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-mokee.sh \
+    vendor/mokee/prebuilt/common/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/mokee/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/mokee/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/mokee/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+    vendor/mokee/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/mokee/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/mokee/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/mokee/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/mokee/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
 
 # MoKee-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
-    vendor/mokee/config/permissions/mokee-sysconfig.xml:system/etc/sysconfig/mokee-sysconfig.xml
+    vendor/mokee/config/permissions/mokee-sysconfig.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/mokee-sysconfig.xml
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/mokee/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/mokee/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/mokee/prebuilt/common/etc/init.d/00banner:$(TARGET_COPY_OUT_SYSTEM)/etc/init.d/00banner \
+    vendor/mokee/prebuilt/common/bin/sysinit:$(TARGET_COPY_OUT_SYSTEM)/bin/sysinit
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/mokee/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/mokee/prebuilt/common/etc/init.d/90userinit:$(TARGET_COPY_OUT_SYSTEM)/etc/init.d/90userinit
 endif
 
 # Copy all MoKee-specific init rc files
 $(foreach f,$(wildcard vendor/mokee/prebuilt/common/etc/init/*.rc),\
-	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
+	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/mokee/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    vendor/mokee/prebuilt/common/lib/content-types.properties:$(TARGET_COPY_OUT_SYSTEM)/lib/content-types.properties
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml
 
 # Enable wireless Xbox 360 controller support
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
+    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/Vendor_045e_Product_0719.kl
 
 # This is MoKee!
 PRODUCT_COPY_FILES += \
-    vendor/mokee/config/permissions/org.mokee.android.xml:system/etc/permissions/org.mokee.android.xml \
-    vendor/mokee/config/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
-    vendor/mokee/config/permissions/privapp-permissions-mokee-system.xml:system/etc/permissions/privapp-permissions-mokee.xml \
+    vendor/mokee/config/permissions/org.mokee.android.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.android.xml \
+    vendor/mokee/config/permissions/privapp-permissions-lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lawnchair.xml \
+    vendor/mokee/config/permissions/privapp-permissions-mokee-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mokee.xml \
     vendor/mokee/config/permissions/privapp-permissions-mokee-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-mokee.xml
 
 # Enforce privapp-permissions whitelist
@@ -95,12 +95,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Hidden API whitelist
 PRODUCT_COPY_FILES += \
-    vendor/mokee/config/permissions/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml \
-    vendor/mokee/config/permissions/mokee-hiddenapi-package-whitelist.xml:system/etc/sysconfig/mokee-hiddenapi-package-whitelist.xml
+    vendor/mokee/config/permissions/lawnchair-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/lawnchair-hiddenapi-package-whitelist.xml \
+    vendor/mokee/config/permissions/mokee-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/mokee-hiddenapi-package-whitelist.xml
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
-    vendor/mokee/config/permissions/mokee-power-whitelist.xml:system/etc/sysconfig/mokee-power-whitelist.xml
+    vendor/mokee/config/permissions/mokee-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/mokee-power-whitelist.xml
 
 ifneq ($(TARGET_DISABLE_MOKEE_SDK), true)
 # MoKee SDK
