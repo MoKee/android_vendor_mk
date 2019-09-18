@@ -46,7 +46,7 @@ $(TARGET_GENERATED_BOOTANIMATION): $(SOONG_ZIP)
 	RESOLUTION="$$IMAGEWIDTH"x"$$IMAGEHEIGHT"; \
 
 	for frame in $(INTERMEDIATES)/part*/*; do \
-	    prebuilts/tools-lineage/${HOST_OS}-x86/bin/convert $$frame -resize $$RESOLUTION $$frame; \
+	    prebuilts/tools-mokee/${HOST_OS}-x86/bin/convert $$frame -resize $$RESOLUTION $$frame; \
 	done; \
 
 	IMAGESCALEWIDTH="$$(identify -ping -format '%w' $$INTERMEDIATES/part0/$$(ls $$INTERMEDIATES/part0 | head -1));"
