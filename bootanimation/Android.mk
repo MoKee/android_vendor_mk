@@ -37,26 +37,20 @@ $(TARGET_GENERATED_BOOTANIMATION): $(SOONG_ZIP)
 	    IMAGEWIDTH=$(TARGET_SCREEN_WIDTH); \
 	    IMAGEHEIGHT=$(TARGET_SCREEN_HEIGHT); \
 	fi; \
-
 	if [ "$(TARGET_BOOTANIMATION_HALF_RES)" = "true" ]; then \
 	    IMAGEWIDTH="$$(expr "$$IMAGEWIDTH" / 2)"; \
 	    IMAGEHEIGHT="$$(expr "$$IMAGEHEIGHT" / 2)"; \
 	fi; \
-
 	RESOLUTION="$$IMAGEWIDTH"x"$$IMAGEHEIGHT"; \
-
 	for frame in $(INTERMEDIATES)/part*/*; do \
-	    prebuilts/tools-mokee/${HOST_OS}-x86/bin/convert $$frame -resize $$RESOLUTION $$frame; \
+	    prebuilts/tools-mokee/${HOST_OS}-x86/bin/mogrify -resize $$RESOLUTION $$frame; \
 	done; \
-
-	IMAGESCALEWIDTH="$$(identify -ping -format '%w' $$INTERMEDIATES/part0/$$(ls $$INTERMEDIATES/part0 | head -1));"
-	IMAGESCALEHEIGHT="$$(identify -ping -format '%h' $$INTERMEDIATES/part0/$$(ls $$INTERMEDIATES/part0 | head -1));"
-
+	IMAGESCALEWIDTH="$$(prebuilts/tools-mokee/${HOST_OS}-x86/bin/identify -ping -format '%w' ${INTERMEDIATES}/part0/$$(ls ${INTERMEDIATES}/part0 | head -1));"
+	IMAGESCALEHEIGHT="$$(prebuilts/tools-mokee/${HOST_OS}-x86/bin/identify -ping -format '%h' ${INTERMEDIATES}/part0/$$(ls ${INTERMEDIATES}/part0 | head -1));"
 	if [ "$(TARGET_BOOTANIMATION_HALF_RES)" = "true" ]; then \
 	    IMAGESCALEWIDTH="$$(expr "$$IMAGESCALEWIDTH" / 2)"; \
 	    IMAGESCALEHEIGHT="$$(expr "$$IMAGESCALEHEIGHT" / 2)"; \
 	fi
-
 	echo "$$IMAGESCALEWIDTH $$IMAGESCALEHEIGHT 30" > $(INTERMEDIATES)/desc.txt; \
 	cat vendor/mokee/bootanimation/desc.txt >> $(INTERMEDIATES)/desc.txt
 	$(hide) $(SOONG_ZIP) -L 0 -o $(TARGET_GENERATED_BOOTANIMATION) -C $(INTERMEDIATES) -D $(INTERMEDIATES)
