@@ -86,7 +86,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mokee/config/permissions/org.mokee.android.xml:system/etc/permissions/org.mokee.android.xml \
     vendor/mokee/config/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
-    vendor/mokee/config/permissions/privapp-permissions-mokee.xml:system/etc/permissions/privapp-permissions-mokee.xml
+    vendor/mokee/config/permissions/privapp-permissions-mokee-system.xml:system/etc/permissions/privapp-permissions-mokee.xml \
+    vendor/mokee/config/permissions/privapp-permissions-mokee-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-mokee.xml
 
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
