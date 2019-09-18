@@ -16,11 +16,6 @@ PRODUCT_PACKAGES += \
     org.mokee.platform \
     org.mokee.platform.xml
 
-# MoKee Hardware Abstraction Framework
-PRODUCT_PACKAGES += \
-    org.mokee.hardware \
-    org.mokee.hardware.xml
-
 # JNI Libraries
 PRODUCT_PACKAGES += \
     libmokee-sdk_platform_jni
