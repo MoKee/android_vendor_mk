@@ -31,11 +31,4 @@
         <permission name="android.permission.STATUS_BAR"/>
     </privapp-permissions>
 
-    <!-- Additional permissions on top of privapp-permissions-platform.xml -->
-    <privapp-permissions package="com.android.systemui">
-        <permission name="android.permission.MODIFY_DAY_NIGHT_MODE"/>
-        <permission name="android.permission.MANAGE_FINGERPRINT"/>
-        <permission name="android.permission.WRITE_APN_SETTINGS"/>
-    </privapp-permissions>
-
 </permissions>
