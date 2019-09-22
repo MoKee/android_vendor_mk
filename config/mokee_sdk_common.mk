@@ -1,6 +1,7 @@
 # Permissions for mokee sdk services
 PRODUCT_COPY_FILES += \
     vendor/mokee/config/permissions/org.mokee.audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.audio.xml \
+    vendor/mokee/config/permissions/org.mokee.hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.hardware.xml \
     vendor/mokee/config/permissions/org.mokee.license.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.license.xml \
     vendor/mokee/config/permissions/org.mokee.livedisplay.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.livedisplay.xml \
     vendor/mokee/config/permissions/org.mokee.performance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.performance.xml \
