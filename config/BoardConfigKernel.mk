@@ -121,9 +121,29 @@ ifeq ($(HOST_OS),darwin)
 else
   KERNEL_MAKE_FLAGS += C_INCLUDE_PATH=$(BUILD_TOP)/prebuilts/openssl/$(HOST_OS)-x86/1.1.1/include
 endif
+
+macSdkRoot := $(shell xcrun --show-sdk-path)
+macMinVersion := 10.8
+
+darwinCflags := \
+  -fPIC \
+  -funwind-tables \
+  -D__STDC_FORMAT_MACROS \
+  -D__STDC_CONSTANT_MACROS \
+  -isysroot $(macSdkRoot) \
+  -mmacosx-version-min=$(macMinVersion) \
+  -DMACOSX_DEPLOYMENT_TARGET=$(macMinVersion) \
+  -m64
+
+darwinLdflags := \
+  -isysroot $(macSdkRoot) \
+  -Wl,-syslibroot,$(macSdkRoot) \
+  -mmacosx-version-min=$(macMinVersion) \
+  -m64
+
 KERNEL_MAKE_FLAGS += LIBRARY_PATH=$(BUILD_TOP)/prebuilts/openssl/$(HOST_OS)-x86/1.1.1/lib
-KERNEL_MAKE_FLAGS += HOSTCFLAGS="-L $(BUILD_TOP)/prebuilts/openssl/$(HOST_OS)-x86/1.1.1/lib"
-KERNEL_MAKE_FLAGS += HOSTLDFLAGS="-L $(BUILD_TOP)/prebuilts/openssl/$(HOST_OS)-x86/1.1.1/lib"
+KERNEL_MAKE_FLAGS += HOSTCFLAGS="-L $(BUILD_TOP)/prebuilts/openssl/$(HOST_OS)-x86/1.1.1/lib $(darwinCflags)"
+KERNEL_MAKE_FLAGS += HOSTLDFLAGS="-L $(BUILD_TOP)/prebuilts/openssl/$(HOST_OS)-x86/1.1.1/lib $(darwinLdflags)"
 
 ifneq ($(TARGET_KERNEL_ADDITIONAL_FLAGS),)
   KERNEL_MAKE_FLAGS += $(TARGET_KERNEL_ADDITIONAL_FLAGS)
@@ -152,6 +172,12 @@ KERNEL_HOST_TOOLCHAIN_ROOT := $(GCC_PREBUILTS)/host/x86_64-linux-glibc2.17-4.8/b
 endif
 KERNEL_MAKE_FLAGS += HOSTCC=$(KERNEL_HOST_TOOLCHAIN_ROOT)gcc
 KERNEL_MAKE_FLAGS += HOSTCXX=$(KERNEL_HOST_TOOLCHAIN_ROOT)g++
+KERNEL_MAKE_FLAGS += HOSTAR=$(KERNEL_HOST_TOOLCHAIN_ROOT)ar
+KERNEL_MAKE_FLAGS += HOSTAS=$(KERNEL_HOST_TOOLCHAIN_ROOT)as
+KERNEL_MAKE_FLAGS += HOSTLD=$(KERNEL_HOST_TOOLCHAIN_ROOT)ld
+KERNEL_MAKE_FLAGS += HOSTNM=$(KERNEL_HOST_TOOLCHAIN_ROOT)nm
+KERNEL_MAKE_FLAGS += HOSTRANLIB=$(KERNEL_HOST_TOOLCHAIN_ROOT)ranlib
+KERNEL_MAKE_FLAGS += HOSTSTRIP=$(KERNEL_HOST_TOOLCHAIN_ROOT)strip
 
 # Set the out dir for the kernel's O= arg
 # This needs to be an absolute path, so only set this if the standard out dir isn't used
