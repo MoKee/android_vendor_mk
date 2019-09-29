@@ -8,11 +8,11 @@ PRODUCT_PACKAGES += \
 
 # Captcha Provider list
 PRODUCT_COPY_FILES += \
-    vendor/mokee/prebuilt/common/etc/captcha-provider-conf.xml:system/etc/captcha-provider-conf.xml
+    vendor/mokee/prebuilt/common/etc/captcha-provider-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/captcha-provider-conf.xml
 
 # Selective SPN list for operator number who has the problem.
 PRODUCT_COPY_FILES += \
-    vendor/mokee/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+    vendor/mokee/prebuilt/common/etc/selective-spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/selective-spn-conf.xml
 
 # Telephony packages
 PRODUCT_PACKAGES += \
