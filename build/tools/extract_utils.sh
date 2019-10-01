@@ -1,4 +1,4 @@
-/#!/bin/bash
+#!/bin/bash
 #
 # Copyright (C) 2016-2019 The MoKee Open Source Project
 # Copyright (C) 2017-2019 The LineageOS Project
