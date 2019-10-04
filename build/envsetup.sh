@@ -997,7 +997,7 @@ function clog() {
 function ota_all() {
     case `uname -s` in
         Linux)
-            $ANDROID_BUILD_TOP/vendor/mokee/prebuilt/host/linux-x86/gen_ota $1 $2
+            $ANDROID_BUILD_TOP/prebuilts/tools-mokee/linux-x86/bin/gen_ota $1 $2
             ;;
         *)
             echo `uname -s` is not supported yet
