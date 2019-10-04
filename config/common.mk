@@ -148,9 +148,8 @@ PRODUCT_PACKAGES += \
     Backgrounds \
     ExactCalculator \
     LockClock \
-    MKCenter \
+    MoKeeCenter \
     MKSettingsProvider \
-    MKUpdateVerification \
     MoKeeSetupWizard \
     MoKeeWeatherProvider \
     WeatherProvider
