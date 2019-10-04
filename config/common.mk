@@ -139,7 +139,7 @@ PRODUCT_PACKAGES += \
     AudioFX \
     Backgrounds \
     LockClock \
-    MKCenter \
+    MoKeeCenter \
     MKParts \
     MKSettingsProvider \
     MoKeeSetupWizard \
