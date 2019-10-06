@@ -16,8 +16,7 @@ PRODUCT_COPY_FILES += \
     $(ALARM_PATH)/Awakening.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Awakening.ogg \
     $(ALARM_PATH)/Beep.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Beep.ogg \
     $(ALARM_PATH)/Carina.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Carina.ogg \
-    $(ALARM_PATH)/Church.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Church.ogg \
-    $(ALARM_PATH)/Crescendo.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Crescendo.ogg \
+    $(ALARM_PATH)/Cuckoo.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Cuckoo.ogg \
     $(ALARM_PATH)/Dalia.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Dalia.ogg \
     $(ALARM_PATH)/DeepOcean.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/DeepOcean.ogg \
     $(ALARM_PATH)/GentleNight.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/GentleNight.ogg \
@@ -51,6 +50,8 @@ PRODUCT_COPY_FILES += \
     $(NOTIFICATION_PATH)/Europa.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Europa.ogg \
     $(NOTIFICATION_PATH)/Hello.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Hello.ogg \
     $(NOTIFICATION_PATH)/Iapetus.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Iapetus.ogg \
+    $(NOTIFICATION_PATH)/Mallet.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Mallet.ogg \
+    $(NOTIFICATION_PATH)/Pipes.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Pipes.ogg \
     $(NOTIFICATION_PATH)/Organic.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Organic.ogg \
     $(NOTIFICATION_PATH)/Rhea.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Rhea.ogg \
     $(NOTIFICATION_PATH)/Salacia.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Salacia.ogg \
@@ -67,18 +68,14 @@ PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/Keys.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Keys.ogg \
     $(RINGTONE_PATH)/Luna.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Luna.ogg \
     $(RINGTONE_PATH)/Momentum.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Momentum.ogg \
-    $(RINGTONE_PATH)/Natural.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Natural.ogg \
-    $(RINGTONE_PATH)/Onward.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Onward.ogg \
     $(RINGTONE_PATH)/Organic.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Organic.ogg \
     $(RINGTONE_PATH)/Phobos.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Phobos.ogg \
     $(RINGTONE_PATH)/Pyxis.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Pyxis.ogg \
     $(RINGTONE_PATH)/RobotsforEveryone.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/RobotsforEveryone.ogg \
     $(RINGTONE_PATH)/Sedna.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Sedna.ogg \
-    $(RINGTONE_PATH)/Simple.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Simple.ogg \
-    $(RINGTONE_PATH)/Strings.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Strings.ogg \
+    $(RINGTONE_PATH)/TheBigAdventure.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/TheBigAdventure.ogg \
     $(RINGTONE_PATH)/Titania.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Titania.ogg \
-    $(RINGTONE_PATH)/Triton.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Triton.ogg \
-    $(RINGTONE_PATH)/Umbriel.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Umbriel.ogg
+    $(RINGTONE_PATH)/Triton.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Triton.ogg
 
 EFFECT_FILES := Effect_Tick KeypressReturn KeypressInvalid KeypressDelete KeypressSpacebar KeypressStandard \
 	camera_focus Dock Undock Lock Unlock Trusted ChargingStarted InCallNotification \
