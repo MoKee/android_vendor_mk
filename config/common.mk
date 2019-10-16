@@ -102,7 +102,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/mokee/config/permissions/mokee-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/mokee-power-whitelist.xml
 
-ifneq ($(TARGET_DISABLE_MOKEE_SDK), true)
+ifneq ($(TARGET_DISABLE_MOKEE_SDK),true)
 # MoKee SDK
 include vendor/mokee/config/mokee_sdk_common.mk
 endif
