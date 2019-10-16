@@ -107,7 +107,7 @@ PRODUCT_COPY_FILES += \
 # Theme engine
 include vendor/mk/config/themes_common.mk
 
-ifneq ($(TARGET_DISABLE_MOKEE_SDK), true)
+ifneq ($(TARGET_DISABLE_MOKEE_SDK),true)
 # MoKee SDK
 include vendor/mk/config/mokee_sdk_common.mk
 endif
