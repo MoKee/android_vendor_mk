@@ -258,18 +258,13 @@ DEVICE_PACKAGE_OVERLAYS += vendor/mk/overlay/common
 PRODUCT_VERSION_MAJOR = 90
 PRODUCT_VERSION_MINOR = 0
 
-# Set MK_BUILDTYPE and WITH_DEXPREOPT support
 ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
     ifdef MK_NIGHTLY
         MK_BUILDTYPE := NIGHTLY
     else ifdef MK_RELEASE
         MK_BUILDTYPE := RELEASE
-        WITH_DEXPREOPT := true
-        DONT_DEXPREOPT_PREBUILTS := true
     else ifdef MK_HISTORY
         MK_BUILDTYPE := HISTORY
-        WITH_DEXPREOPT := true
-        DONT_DEXPREOPT_PREBUILTS := true
     endif
 endif
 
