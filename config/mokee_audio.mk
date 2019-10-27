@@ -61,19 +61,19 @@ PRODUCT_COPY_FILES += \
 # Ringtones
 PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/Awake.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Awake.ogg \
-    $(RINGTONE_PATH)/Callisto.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Callisto.ogg \
     $(RINGTONE_PATH)/Complex.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Complex.ogg \
+    $(RINGTONE_PATH)/Flipped.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Flipped.ogg \
     $(RINGTONE_PATH)/Ganymede.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Ganymede.ogg \
     $(RINGTONE_PATH)/Hello.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Hello.ogg \
-    $(RINGTONE_PATH)/Keys.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Keys.ogg \
     $(RINGTONE_PATH)/Luna.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Luna.ogg \
     $(RINGTONE_PATH)/Momentum.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Momentum.ogg \
     $(RINGTONE_PATH)/Organic.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Organic.ogg \
     $(RINGTONE_PATH)/Phobos.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Phobos.ogg \
+    $(RINGTONE_PATH)/Polonaise.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Polonaise.ogg \
     $(RINGTONE_PATH)/Pyxis.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Pyxis.ogg \
-    $(RINGTONE_PATH)/RobotsforEveryone.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/RobotsforEveryone.ogg \
+    $(RINGTONE_PATH)/Sailing.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Sailing.ogg \
     $(RINGTONE_PATH)/Sedna.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Sedna.ogg \
-    $(RINGTONE_PATH)/TheBigAdventure.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/TheBigAdventure.ogg \
+    $(RINGTONE_PATH)/Suite.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Suite.ogg \
     $(RINGTONE_PATH)/Titania.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Titania.ogg \
     $(RINGTONE_PATH)/Triton.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Triton.ogg
 

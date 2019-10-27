@@ -22,7 +22,7 @@ PRODUCT_PACKAGES += \
 
 # Default ringtone
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.ringtone=Hello.ogg
+    ro.config.ringtone=Flipped.ogg
 
 # Tethering - allow without requiring a provisioning app
 # (for devices that check this)
