@@ -9,11 +9,11 @@ UI_PATH := vendor/mokee/prebuilt/common/media/audio/ui
 
 # Alarms
 PRODUCT_COPY_FILES += \
+    $(ALARM_PATH)/Aegean_Sea.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Aegean_Sea.ogg \
     $(ALARM_PATH)/AngelsHarp.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/AngelsHarp.ogg \
     $(ALARM_PATH)/Awakening.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Awakening.ogg \
     $(ALARM_PATH)/Beep.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Beep.ogg \
     $(ALARM_PATH)/Carina.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Carina.ogg \
-    $(ALARM_PATH)/Cuckoo.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Cuckoo.ogg \
     $(ALARM_PATH)/Dalia.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Dalia.ogg \
     $(ALARM_PATH)/DeepOcean.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/DeepOcean.ogg \
     $(ALARM_PATH)/Happy.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Happy.ogg \
@@ -23,6 +23,7 @@ PRODUCT_COPY_FILES += \
     $(ALARM_PATH)/Lyra.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Lyra.ogg \
     $(ALARM_PATH)/Playful.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Playful.ogg \
     $(ALARM_PATH)/Primus.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Primus.ogg \
+    $(ALARM_PATH)/Sakura_Drop.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Sakura_Drop.ogg \
     $(ALARM_PATH)/Sky.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Sky.ogg \
     $(ALARM_PATH)/Spica.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Spica.ogg \
     $(ALARM_PATH)/SummerDay.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/SummerDay.ogg \
@@ -31,6 +32,7 @@ PRODUCT_COPY_FILES += \
 # Notifications
 PRODUCT_COPY_FILES += \
     $(NOTIFICATION_PATH)/Ariel.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Ariel.ogg \
+    $(NOTIFICATION_PATH)/Bongo.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Bongo.ogg \
     $(NOTIFICATION_PATH)/Carme.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Carme.ogg \
     $(NOTIFICATION_PATH)/Ceres.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Ceres.ogg \
     $(NOTIFICATION_PATH)/Chime.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Chime.ogg \
@@ -38,8 +40,6 @@ PRODUCT_COPY_FILES += \
     $(NOTIFICATION_PATH)/Europa.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Europa.ogg \
     $(NOTIFICATION_PATH)/Hello.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Hello.ogg \
     $(NOTIFICATION_PATH)/Iapetus.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Iapetus.ogg \
-    $(NOTIFICATION_PATH)/Mallet.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Mallet.ogg \
-    $(NOTIFICATION_PATH)/Pipes.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Pipes.ogg \
     $(NOTIFICATION_PATH)/Rhea.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Rhea.ogg \
     $(NOTIFICATION_PATH)/Salacia.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Salacia.ogg \
     $(NOTIFICATION_PATH)/Tethys.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Tethys.ogg \

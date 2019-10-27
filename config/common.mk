@@ -15,7 +15,7 @@ endif
 
 # Default notification/alarm sounds
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.notification_sound=Pipes.ogg \
+    ro.config.notification_sound=Bongo.ogg \
     ro.config.alarm_alert=AngelsHarp.ogg
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
