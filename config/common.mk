@@ -74,7 +74,6 @@ PRODUCT_COPY_FILES += \
 # This is MoKee!
 PRODUCT_COPY_FILES += \
     vendor/mokee/config/permissions/org.mokee.android.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.android.xml \
-    vendor/mokee/config/permissions/privapp-permissions-lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lawnchair.xml \
     vendor/mokee/config/permissions/privapp-permissions-mokee-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mokee.xml \
     vendor/mokee/config/permissions/privapp-permissions-mokee-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-mokee.xml
 
