@@ -84,7 +84,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Hidden API whitelist
 PRODUCT_COPY_FILES += \
-    vendor/mokee/config/permissions/lawnchair-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/lawnchair-hiddenapi-package-whitelist.xml \
     vendor/mokee/config/permissions/mokee-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/mokee-hiddenapi-package-whitelist.xml
 
 # Power whitelist
