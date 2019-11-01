@@ -144,7 +144,7 @@ PRODUCT_PACKAGES += \
     AudioFX \
     ExactCalculator \
     LockClock \
-    MKCenter \
+    MoKeeCenter \
     MKSettingsProvider \
     MKUpdateVerification \
     MoKeeSetupWizard \
