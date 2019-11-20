@@ -96,3 +96,13 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom/audio-caf/$(QCOM_HARDWARE_VARIANT) \
     hardware/qcom/display-caf/$(QCOM_HARDWARE_VARIANT) \
     hardware/qcom/media-caf/$(QCOM_HARDWARE_VARIANT)
+
+ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
+    ifneq ($(filter $(UM_4_14_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+        PRODUCT_SOONG_NAMESPACES += \
+            vendor/nxp-8150/opensource
+    else
+        PRODUCT_SOONG_NAMESPACES += \
+            vendor/nxp/opensource
+    endif
+endif
