@@ -137,7 +137,7 @@ PRODUCT_PACKAGES += \
     Profiles \
     WeatherProvider
 
-# Themes
+# Accents
 PRODUCT_PACKAGES += \
     MoKeeBlackTheme \
     MoKeeBlackAccent \
@@ -152,7 +152,11 @@ PRODUCT_PACKAGES += \
     MoKeePurpleAccent \
     MoKeeRedAccent \
     MoKeeTealAccent \
-    MoKeeYellowAccent \
+    MoKeeYellowAccent
+
+# Themes
+PRODUCT_PACKAGES += \
+    MoKeeThemesStub \
     ThemePicker
 
 # Extra tools in MoKee
