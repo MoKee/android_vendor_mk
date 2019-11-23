@@ -21,7 +21,5 @@ FRAMEWORK_MOKEE_PLATFORM_API_FILE := $(TOPDIR)mokee-sdk/api/mokee_current.txt
 FRAMEWORK_MOKEE_PLATFORM_REMOVED_API_FILE := $(TOPDIR)mokee-sdk/api/mokee_removed.txt
 FRAMEWORK_MOKEE_API_NEEDS_UPDATE_TEXT := $(TOPDIR)vendor/mokee/build/core/apicheck_msg_current.txt
 
-BUILD_RRO_SYSTEM_PACKAGE := $(TOPDIR)vendor/mokee/build/core/system_rro.mk
-
 # Rules for QCOM targets
 include $(TOPDIR)vendor/mokee/build/core/qcom_target.mk
