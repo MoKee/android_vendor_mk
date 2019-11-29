@@ -242,22 +242,17 @@ DEVICE_PACKAGE_OVERLAYS += vendor/mokee/overlay/common
 PRODUCT_VERSION_MAJOR = 100
 PRODUCT_VERSION_MINOR = 0
 
-ifneq ($(filter mokee buildbot-0x,$(MK_HOSTNAME)),)
-    ifdef MK_NIGHTLY
-        MK_BUILDTYPE := NIGHTLY
-    else ifdef MK_RELEASE
-        MK_BUILDTYPE := RELEASE
-    else ifdef MK_HISTORY
-        MK_BUILDTYPE := HISTORY
+# Filter out random types, so it'll reset to EXPERIMENTAL
+ifeq ($(filter EXPERIMENTAL HISTORY NIGHTLY PREMIUM RELEASE,$(MK_BUILDTYPE)),)
+    MK_BUILDTYPE :=
+else ifneq ($(filter HISTORY NIGHTLY RELEASE,$(MK_BUILDTYPE)),)
+    ifeq ($(filter mokee buildbot-0x,$(MK_HOSTNAME)),)
+        MK_BUILDTYPE :=
     endif
 endif
 
 ifndef MK_BUILDTYPE
-    ifdef MK_PREMIUM
-        MK_BUILDTYPE := PREMIUM
-    else
-        MK_BUILDTYPE := EXPERIMENTAL
-    endif
+    MK_BUILDTYPE := EXPERIMENTAL
 endif
 
 ifndef MK_BUILD_DATE
