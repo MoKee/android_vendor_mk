@@ -242,7 +242,7 @@ DEVICE_PACKAGE_OVERLAYS += vendor/mokee/overlay/common
 PRODUCT_VERSION_MAJOR = 100
 PRODUCT_VERSION_MINOR = 0
 
-ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
+ifneq ($(filter mokee buildbot-0x,$(MK_HOSTNAME)),)
     ifdef MK_NIGHTLY
         MK_BUILDTYPE := NIGHTLY
     else ifdef MK_RELEASE
