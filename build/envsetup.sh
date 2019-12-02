@@ -999,6 +999,9 @@ function ota_all() {
         Linux)
             $ANDROID_BUILD_TOP/prebuilts/tools-mokee/linux-x86/bin/gen_ota $1 $2
             ;;
+        Darwin)
+            $ANDROID_BUILD_TOP/prebuilts/tools-mokee/darwin-x86/bin/gen_ota $1 $2
+            ;;
         *)
             echo `uname -s` is not supported yet
             ;;
