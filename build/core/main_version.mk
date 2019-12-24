@@ -1,6 +1,6 @@
 # MoKee System Version
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.mk.support=bbs.mfunz.com \
+    ro.mk.support=bbs.mokeedev.com \
     ro.mk.version=$(MK_VERSION) \
     ro.mk.releasetype=$(MK_BUILDTYPE) \
     ro.modversion=$(MK_VERSION)
