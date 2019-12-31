@@ -1011,4 +1011,4 @@ function ota_all() {
 }
 
 export MOKEE_BUILDER=True
-export MK_HOSTNAME=$(python -c 'import os;print os.uname()[1][:11]')
+export MK_HOSTNAME=`uname -n | cut -c -11`
