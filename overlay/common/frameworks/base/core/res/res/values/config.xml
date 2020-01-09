@@ -81,10 +81,16 @@
     <!-- Whether or not we should show the option to show battery percentage -->
     <bool name="config_battery_percentage_setting_available">false</bool>
 
+    <!-- The package name for the default wellbeing app.
+         This package must be trusted, as it has the permissions to control other applications
+         on the device.
+         Example: "com.android.wellbeing"
+     -->
+    <string name="config_defaultWellbeingPackage">com.google.android.apps.wellbeing</string>
+
     <!-- Component name for the activity that will be presenting the Recents UI, which will receive special permissions for API related
           to fetching and presenting recent tasks. The default configuration uses Launcehr3QuickStep as default launcher and points to
           the corresponding recents component. When using a different default launcher, change this appropriately or use the default
           systemui implementation: com.android.systemui/.recents.RecentsActivity -->
     <string name="config_recentsComponentName" translatable="false">ch.deletescape.lawnchair.ci/com.android.quickstep.RecentsActivity</string>
-
 </resources>
