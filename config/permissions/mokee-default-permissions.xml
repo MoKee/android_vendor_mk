@@ -36,4 +36,23 @@
         <permission name="android.permission.READ_PHONE_STATE" fixed="false"/>
         <permission name="com.android.email.permission.READ_ATTACHMENT" fixed="false"/>
     </exception>
+
+    <exception package="com.mokee.center">
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="true"/>
+        <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="true"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="true"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="true"/>
+        <permission name="android.permission.READ_PHONE_STATE" fixed="true"/>
+    </exception>
+
+    <exception package="com.mokee.pay">
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="true"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="true"/>
+        <permission name="android.permission.READ_PHONE_STATE" fixed="true"/>
+    </exception>
+
+    <exception package="org.mokee.warpshare">
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="true"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="true"/>
+    </exception>
 </exceptions>
