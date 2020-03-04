@@ -32,8 +32,7 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/mokee/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/mokee/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/mokee/prebuilt/common/bin/50-mokee.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-mokee.sh \
-    vendor/mokee/prebuilt/common/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist
+    vendor/mokee/prebuilt/common/bin/50-mokee.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-mokee.sh
 
 ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_COPY_FILES += \
