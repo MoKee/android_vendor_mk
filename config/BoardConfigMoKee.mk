@@ -1,8 +1,3 @@
-# APEX
-ifneq ($(filter RELEASE NIGHTLY HISTORY EXPERIMENTAL PREMIUM,$(MK_BUILDTYPE)),)
-    TARGET_FLATTEN_APEX := true
-endif
-
 # Charger
 ifeq ($(WITH_MOKEE_CHARGER),true)
     BOARD_HAL_STATIC_LIBRARIES := libhealthd.mokee
