@@ -1,14 +1,4 @@
-# Exclude AudioFX
-TARGET_EXCLUDES_AUDIOFX := true
+# This config is for legacy purposes, there are no atv product size variants
 
-# Inherit full common MoKee stuff
-$(call inherit-product, vendor/mokee/config/common_full.mk)
-
-# Inherit MoKee atv device tree
-$(call inherit-product, device/mokee/atv/mokee_atv.mk)
-
-PRODUCT_PACKAGES += \
-    AppDrawer \
-    MoKeeCustomizer
-
-DEVICE_PACKAGE_OVERLAYS += vendor/mokee/overlay/tv
+# Inherit common atv MoKee stuff
+$(call inherit-product, vendor/mokee/config/common_tv.mk)
