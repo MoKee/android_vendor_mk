@@ -16,16 +16,6 @@ endif
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.selinux=1
 
-# Default notification/alarm sounds
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.notification_sound=Hello.ogg \
-    ro.config.alarm_alert=AngelsHarp.ogg
-
-ifneq ($(TARGET_BUILD_VARIANT),user)
-# Thank you, please drive thru!
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
-endif
-
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 # Disable ADB authentication
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
@@ -137,43 +127,14 @@ PRODUCT_PACKAGES += \
 
 # Optional MoKee packages
 PRODUCT_PACKAGES += \
-    LiveWallpapersPicker \
-    PhotoTable \
     Terminal
 
 # Custom MoKee packages
 PRODUCT_PACKAGES += \
     Aegis \
-    AudioFX \
-    Backgrounds \
-    ExactCalculator \
-    LockClock \
     MoKeeCenter \
     MKSettingsProvider \
-    MoKeeSetupWizard \
-    MoKeeWeatherProvider \
-    WeatherProvider
-
-# Exchange support
-PRODUCT_PACKAGES += \
-    Exchange2
-
-# Berry styles
-PRODUCT_PACKAGES += \
-    MoKeeBlackTheme \
-    MoKeeBlackAccent \
-    MoKeeBlueAccent \
-    MoKeeBrownAccent \
-    MoKeeCyanAccent \
-    MoKeeDarkTheme \
-    MoKeeGrayAccent \
-    MoKeeGreenAccent \
-    MoKeeOrangeAccent \
-    MoKeePinkAccent \
-    MoKeePurpleAccent \
-    MoKeeRedAccent \
-    MoKeeTealAccent \
-    MoKeeYellowAccent
+    MoKeeSetupWizard
 
 # Extra tools in MoKee
 PRODUCT_PACKAGES += \
@@ -193,18 +154,6 @@ PRODUCT_PACKAGES += \
     unzip \
     wget \
     zip
-
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
-# Custom off-mode charger
-ifeq ($(WITH_MOKEE_CHARGER),true)
-PRODUCT_PACKAGES += \
-    mokee_charger_res_images \
-    font_log.png \
-    libhealthd.mokee
-endif
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
@@ -232,10 +181,6 @@ PRODUCT_PACKAGES += \
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
-
-# Media
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    media.recorder.show_manufacturer_and_model=true
 
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \
