@@ -4,6 +4,11 @@ $(call inherit-product, vendor/mokee/config/common.mk)
 # Inherit MoKee atv device tree
 $(call inherit-product, device/mokee/atv/mokee_atv.mk)
 
+# AOSP packages
+PRODUCT_PACKAGES += \
+    LeanbackIME
+
+# MoKee packages
 PRODUCT_PACKAGES += \
     AppDrawer
 
