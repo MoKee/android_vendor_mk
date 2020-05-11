@@ -71,8 +71,6 @@ PRODUCT_COPY_FILES += \
 # This is MoKee!
 PRODUCT_COPY_FILES += \
     vendor/mokee/config/permissions/org.mokee.android.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.android.xml \
-    vendor/mokee/config/permissions/privapp-permissions-mokee-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mokee.xml \
-    vendor/mokee/config/permissions/privapp-permissions-mokee-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-mokee.xml
 
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -81,14 +79,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Hidden API whitelist
 PRODUCT_COPY_FILES += \
     vendor/mokee/config/permissions/mokee-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/mokee-hiddenapi-package-whitelist.xml
-
-# Power whitelist
-PRODUCT_COPY_FILES += \
-    vendor/mokee/config/permissions/mokee-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/mokee-power-whitelist.xml
-
-# Pre-granted permissions
-PRODUCT_COPY_FILES += \
-    vendor/mokee/config/permissions/mokee-default-permissions.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/mokee-default-permissions.xml
 
 ifneq ($(TARGET_DISABLE_MOKEE_SDK),true)
 # MoKee SDK

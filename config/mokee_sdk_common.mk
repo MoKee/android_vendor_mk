@@ -7,8 +7,7 @@ PRODUCT_COPY_FILES += \
     vendor/mokee/config/permissions/org.mokee.performance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.performance.xml \
     vendor/mokee/config/permissions/org.mokee.profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.profiles.xml \
     vendor/mokee/config/permissions/org.mokee.settings.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.settings.xml \
-    vendor/mokee/config/permissions/org.mokee.trust.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.trust.xml \
-    vendor/mokee/config/permissions/org.mokee.weather.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.weather.xml
+    vendor/mokee/config/permissions/org.mokee.trust.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.mokee.trust.xml
 
 # MoKee Platform Library
 PRODUCT_PACKAGES += \
