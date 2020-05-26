@@ -26,7 +26,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AudioFX \
     Backgrounds \
-    Etar \
     LockClock \
     Profiles \
     WeatherProvider
