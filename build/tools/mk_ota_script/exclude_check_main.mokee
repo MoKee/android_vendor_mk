@@ -53,6 +53,5 @@ libttspico.so
 libwebviewchromium.so
 bootanimation.zip
 com.google.widevine.software.drm.jar
-install-recovery.sh
 recovery-resource.dat
 "
