@@ -21,7 +21,7 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiver
 
 # Default ringtone
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.ringtone=Flipped.ogg
 
 # Tethering - allow without requiring a provisioning app

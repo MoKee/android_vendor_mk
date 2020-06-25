@@ -2,7 +2,7 @@
 $(call inherit-product, vendor/mokee/config/common.mk)
 
 # Default notification/alarm sounds
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.notification_sound=Bongo.ogg \
     ro.config.alarm_alert=AngelsHarp.ogg
 
