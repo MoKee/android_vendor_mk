@@ -30,8 +30,7 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/mk/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/mk/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/mk/prebuilt/common/bin/50-mk.sh:system/addon.d/50-mk.sh \
-    vendor/mk/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+    vendor/mk/prebuilt/common/bin/50-mk.sh:system/addon.d/50-mk.sh
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
