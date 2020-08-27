@@ -42,6 +42,8 @@
 #
 #   BOARD_DTBO_CFG                     = Path to a mkdtboimg.py config file
 #
+#   BOARD_CUSTOM_DTBOIMG_MK            = Path to a custom dtboimage makefile
+#
 #   KERNEL_CC                          = The C Compiler used. This is automatically set based
 #                                          on whether the clang version is set, optional.
 #   KERNEL_LD                          = The Linker used. This is automatically set based
@@ -211,8 +213,6 @@ PATH_OVERRIDE += $(TOOLS_PATH_OVERRIDE)
 
 KERNEL_ADDITIONAL_CONFIG_OUT := $(KERNEL_OUT)/.additional_config
 
-KERNEL_MAKE_FLAGS += DTC=$(KERNEL_BUILD_OUT_PREFIX)$(DTC)
-
 # Internal implementation of make-kernel-target
 # $(1): output path (The value passed to O=)
 # $(2): target to build (eg. defconfig, modules, dtbo.img)
@@ -298,6 +298,9 @@ alldefconfig: $(KERNEL_OUT)
 		 $(call make-kernel-target,alldefconfig)
 
 ifeq (true,$(filter true, $(TARGET_NEEDS_DTBOIMAGE) $(BOARD_KERNEL_SEPARATED_DTBO)))
+ifneq ($(BOARD_CUSTOM_DTBOIMG_MK),)
+include $(BOARD_CUSTOM_DTBOIMG_MK)
+else
 MKDTIMG := $(HOST_OUT_EXECUTABLES)/mkdtimg$(HOST_EXECUTABLE_SUFFIX)
 MKDTBOIMG := $(HOST_OUT_EXECUTABLES)/mkdtboimg.py$(HOST_EXECUTABLE_SUFFIX)
 $(BOARD_PREBUILT_DTBOIMAGE): $(DTC) $(MKDTIMG) $(MKDTBOIMG)
@@ -317,6 +320,7 @@ $(BOARD_PREBUILT_DTBOIMAGE):
 	$(call make-dtbo-target,$(KERNEL_DEFCONFIG))
 	$(call make-dtbo-target,dtbo.img)
 endif # BOARD_KERNEL_SEPARATED_DTBO
+endif # BOARD_CUSTOM_DTBOIMG_MK
 endif # TARGET_NEEDS_DTBOIMAGE/BOARD_KERNEL_SEPARATED_DTBO
 
 ifeq ($(BOARD_INCLUDE_DTB_IN_BOOTIMG),true)
