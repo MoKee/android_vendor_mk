@@ -113,7 +113,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aegis \
     MoKeeCenter \
-    MKParts \
+    MoKeeParts \
     MKSettingsProvider \
     MoKeeSetupWizard
 
