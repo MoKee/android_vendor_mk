@@ -17,10 +17,12 @@
 
 MOKEE_TARGET_PACKAGE := $(PRODUCT_OUT)/$(MK_VERSION).zip
 
+MD5 := prebuilts/build-tools/path/$(HOST_OS)-x86/md5sum
+
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(MOKEE_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(MOKEE_TARGET_PACKAGE) | cut -f1 -d' ' > $(MOKEE_TARGET_PACKAGE).md5sum
+	$(hide) $(MD5) $(MOKEE_TARGET_PACKAGE) | cut -f1 -d' ' > $(MOKEE_TARGET_PACKAGE).md5sum
 	@echo "Package Complete: $(MOKEE_TARGET_PACKAGE)" >&2
 	@echo "Package Size: `ls -lh $(MOKEE_TARGET_PACKAGE) | cut -d ' ' -f 5`" >&2
 	$(hide) # Create Release, History, Nightly and Experimental folder Start
