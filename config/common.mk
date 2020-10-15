@@ -114,7 +114,7 @@ PRODUCT_PACKAGES += \
     Aegis \
     MoKeeCenter \
     MoKeeParts \
-    MKSettingsProvider \
+    MoKeeSettingsProvider \
     MoKeeSetupWizard
 
 # Themes
