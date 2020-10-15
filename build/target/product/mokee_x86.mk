@@ -1,4 +1,4 @@
-# Copyright (C) 2018-2019 The MoKee Open Source Project
+# Copyright (C) 2018-2020 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,3 +19,6 @@ include vendor/mokee/build/target/product/mokee_generic_target.mk
 TARGET_USES_64_BIT_BINDER := true
 
 PRODUCT_NAME := mokee_x86
+
+PRODUCT_SDK_ADDON_NAME := mokee
+PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties
