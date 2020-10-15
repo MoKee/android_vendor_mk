@@ -1,4 +1,4 @@
-# Copyright (C) 2017 The MoKee Open Source Project
+# Copyright (C) 2017-2020 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 
 MOKEE_TARGET_PACKAGE := $(PRODUCT_OUT)/$(MK_VERSION).zip
 
-MD5 := prebuilts/build-tools/path/$(HOST_OS)-x86/md5sum
+MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
