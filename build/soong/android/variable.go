@@ -78,7 +78,6 @@ type ProductVariables struct {
 	Apply_msm8974_1440p_egl_workaround  *bool `json:",omitempty"`
 	Bootloader_message_offset  *int `json:",omitempty"`
 	Has_legacy_camera_hal1  *bool `json:",omitempty"`
-	Java_Source_Overlays *string `json:",omitempty"`
 	Qcom_um_soong_namespace  *string `json:",omitempty"`
 	Should_wait_for_qsee  *bool `json:",omitempty"`
 	Specific_camera_parameter_library  *string `json:",omitempty"`
