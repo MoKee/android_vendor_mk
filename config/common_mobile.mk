@@ -61,7 +61,8 @@ endif
 
 # Customizations
 PRODUCT_PACKAGES += \
-    MoKeeNavigationBarNoHint
+    MoKeeNavigationBarNoHint \
+    NavigationBarMode2ButtonOverlay
 
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
