@@ -51,14 +51,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Custom off-mode charger
-ifeq ($(WITH_MOKEE_CHARGER),true)
-PRODUCT_PACKAGES += \
-    mokee_charger_res_images \
-    font_log.png \
-    libhealthd.mokee
-endif
-
 # Customizations
 PRODUCT_PACKAGES += \
     MoKeeNavigationBarNoHint \
