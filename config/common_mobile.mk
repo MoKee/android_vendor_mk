@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
     Backgrounds \
     LockClock \
     Profiles \
+    Seedvault \
     WeatherProvider
 
 # Accents
