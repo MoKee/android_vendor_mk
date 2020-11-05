@@ -26,10 +26,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AudioFX \
     Backgrounds \
-    LockClock \
     Profiles \
-    TrebuchetQuickStep \
-    WeatherProvider
+    Seedvault \
+    TrebuchetQuickStep
 
 # Accents
 PRODUCT_PACKAGES += \
@@ -54,6 +53,7 @@ PRODUCT_PACKAGES += \
 
 # Customizations
 PRODUCT_PACKAGES += \
+    IconShapeSquareOverlay \
     MoKeeNavigationBarNoHint \
     NavigationBarMode2ButtonOverlay
 
