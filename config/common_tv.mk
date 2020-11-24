@@ -8,8 +8,5 @@ $(call inherit-product, device/mokee/atv/mokee_atv.mk)
 PRODUCT_PACKAGES += \
     LeanbackIME
 
-# MoKee packages
-PRODUCT_PACKAGES += \
-    AppDrawer
 
 DEVICE_PACKAGE_OVERLAYS += vendor/mokee/overlay/tv
