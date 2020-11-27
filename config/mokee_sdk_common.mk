@@ -12,8 +12,7 @@ PRODUCT_COPY_FILES += \
 # MoKee Platform Library
 PRODUCT_PACKAGES += \
     org.mokee.platform-res \
-    org.mokee.platform \
-    org.mokee.platform.xml
+    org.mokee.platform
 
 # JNI Libraries
 PRODUCT_PACKAGES += \

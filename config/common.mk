@@ -135,10 +135,8 @@ PRODUCT_PACKAGES += \
     libsepol \
     nano \
     pigz \
-    powertop \
     setcap \
     unrar \
-    unzip \
     wget \
     zip
 

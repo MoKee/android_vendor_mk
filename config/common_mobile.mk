@@ -33,7 +33,6 @@ PRODUCT_PACKAGES += \
 # Accents
 PRODUCT_PACKAGES += \
     MoKeeBlackTheme \
-    MoKeeDarkTheme \
     MoKeeBlackAccent \
     MoKeeBlueAccent \
     MoKeeBrownAccent \
