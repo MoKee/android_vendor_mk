@@ -28,7 +28,6 @@ PRODUCT_PACKAGES += \
     Backgrounds \
     Profiles \
     Seedvault \
-    TrebuchetQuickStep
 
 # Accents
 PRODUCT_PACKAGES += \
