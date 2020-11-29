@@ -111,7 +111,6 @@ PRODUCT_PACKAGES += \
 
 # MoKee packages
 PRODUCT_PACKAGES += \
-    Aegis \
     MoKeeCenter \
     MoKeeParts \
     MoKeeSettingsProvider \
