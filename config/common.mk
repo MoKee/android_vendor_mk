@@ -184,7 +184,7 @@ endif
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
-    Lawnchair
+    TrebuchetQuickStep
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/mokee/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/mokee/overlay/common
