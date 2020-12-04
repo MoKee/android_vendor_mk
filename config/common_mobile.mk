@@ -11,11 +11,6 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 endif
 
-# Optional packages
-PRODUCT_PACKAGES += \
-    LiveWallpapersPicker \
-    PhotoTable
-
 # AOSP packages
 PRODUCT_PACKAGES += \
     Email \
@@ -27,8 +22,21 @@ PRODUCT_PACKAGES += \
     AudioFX \
     Backgrounds \
     Profiles \
-    Seedvault \
+    Seedvault
+
+ifeq ($(PRODUCT_TYPE), go)
+PRODUCT_PACKAGES += \
+    TrebuchetQuickStepGo
+
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    TrebuchetQuickStepGo
+else
+PRODUCT_PACKAGES += \
     TrebuchetQuickStep
+
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    TrebuchetQuickStep
+endif
 
 # Accents
 PRODUCT_PACKAGES += \
