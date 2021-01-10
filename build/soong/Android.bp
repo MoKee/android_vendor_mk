@@ -241,6 +241,23 @@ camera_in_mediaserver {
 }
 
 soong_config_module_type {
+    name: "has_memfd_backport",
+    module_type: "cc_defaults",
+    config_namespace: "mokeeGlobalVars",
+    bool_variables: ["has_memfd_backport"],
+    properties: ["cppflags"],
+}
+
+has_memfd_backport {
+    name: "has_memfd_backport_defaults",
+    soong_config_variables: {
+        has_memfd_backport: {
+            cppflags: ["-DHAS_MEMFD_BACKPORT"],
+        },
+    },
+}
+
+soong_config_module_type {
     name: "bootloader_message_offset",
     module_type: "cc_defaults",
     config_namespace: "mokeeGlobalVars",
@@ -417,7 +434,7 @@ soong_config_module_type {
     name: "surfaceflinger_qcom_extensions",
     module_type: "cc_defaults",
     config_namespace: "mokeeQcomVars",
-    value_variables: ["qcom_soong_namespace"],
+    value_variables: ["qcom_display_headers_namespace"],
     properties: [
         "cppflags",
         "header_libs",
@@ -427,9 +444,9 @@ soong_config_module_type {
 surfaceflinger_qcom_extensions {
     name: "surfaceflinger_qcom_ext_defaults",
     soong_config_variables: {
-        qcom_soong_namespace: {
+        qcom_display_headers_namespace: {
             cppflags: ["-DQCOM_UM_FAMILY"],
-            header_libs: ["//%s/display:display_intf_headers"],
+            header_libs: ["//%s:display_intf_headers"],
         },
     },
 }

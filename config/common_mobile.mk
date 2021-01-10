@@ -19,10 +19,14 @@ PRODUCT_PACKAGES += \
 
 # MoKee packages
 PRODUCT_PACKAGES += \
-    AudioFX \
     Backgrounds \
     Profiles \
     Seedvault
+
+ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
+PRODUCT_PACKAGES += \
+    AudioFX
+endif
 
 ifeq ($(PRODUCT_TYPE), go)
 PRODUCT_PACKAGES += \
@@ -67,3 +71,7 @@ PRODUCT_PACKAGES += \
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
+
+# SystemUI plugins
+PRODUCT_PACKAGES += \
+    QuickAccessWallet

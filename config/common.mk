@@ -52,10 +52,6 @@ PRODUCT_COPY_FILES += \
 $(foreach f,$(wildcard vendor/mokee/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
-# Copy over added mimetype supported in libcore.net.MimeUtils
-PRODUCT_COPY_FILES += \
-    vendor/mokee/prebuilt/common/lib/content-types.properties:$(TARGET_COPY_OUT_SYSTEM)/lib/content-types.properties
-
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
     vendor/mokee/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
@@ -120,6 +116,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     MoKeeThemesStub \
     ThemePicker
+
+# Config
+PRODUCT_PACKAGES += \
+    SimpleDeviceConfig
 
 # Extra tools in MoKee
 PRODUCT_PACKAGES += \
@@ -187,7 +187,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/mokee/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/mokee/overlay/common
 
-PRODUCT_VERSION_MAJOR = 110
+PRODUCT_VERSION_MAJOR = 111
 PRODUCT_VERSION_MINOR = 0
 
 # Filter out random types, so it'll reset to EXPERIMENTAL
