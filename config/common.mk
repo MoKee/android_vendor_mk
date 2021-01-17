@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
     vendor/mokee/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/mokee/prebuilt/common/bin/50-mokee.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-mokee.sh
 
-ifneq ($(AB_OTA_PARTITIONS),)
+ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
 PRODUCT_COPY_FILES += \
     vendor/mokee/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
     vendor/mokee/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
@@ -187,8 +187,8 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/mokee/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/mokee/overlay/common
 
-PRODUCT_VERSION_MAJOR = 111
-PRODUCT_VERSION_MINOR = 0
+PRODUCT_VERSION_MAJOR = 110
+PRODUCT_VERSION_MINOR = 1
 
 # Filter out random types, so it'll reset to EXPERIMENTAL
 ifeq ($(filter EXPERIMENTAL HISTORY NIGHTLY PREMIUM RELEASE,$(MK_BUILDTYPE)),)
