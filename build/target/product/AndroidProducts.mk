@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2019 The MoKee Open Source Project
+# Copyright (C) 2018-2021 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,10 +18,18 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/mokee_arm.mk \
     $(LOCAL_DIR)/mokee_arm64.mk \
     $(LOCAL_DIR)/mokee_x86.mk \
-    $(LOCAL_DIR)/mokee_x86_64.mk
+    $(LOCAL_DIR)/mokee_x86_64.mk \
+    $(LOCAL_DIR)/mokee_tv_arm.mk \
+    $(LOCAL_DIR)/mokee_tv_arm64.mk \
+    $(LOCAL_DIR)/mokee_tv_x86.mk \
+    $(LOCAL_DIR)/mokee_tv_x86_64.mk
 
 COMMON_LUNCH_CHOICES := \
     mokee_arm-userdebug \
     mokee_arm64-userdebug \
     mokee_x86-userdebug \
-    mokee_x86_64-userdebug
+    mokee_x86_64-userdebug \
+    mokee_tv_arm-userdebug \
+    mokee_tv_arm64-userdebug \
+    mokee_tv_x86-userdebug \
+    mokee_tv_x86_64-userdebug
