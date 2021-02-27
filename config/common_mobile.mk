@@ -25,16 +25,20 @@ endif
 
 ifeq ($(PRODUCT_TYPE), go)
 PRODUCT_PACKAGES += \
-    TrebuchetQuickStepGo
+    TrebuchetQuickStepGo \
+    Lawnchair
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    TrebuchetQuickStepGo
+    TrebuchetQuickStepGo \
+    Lawnchair
 else
 PRODUCT_PACKAGES += \
-    TrebuchetQuickStep
+    TrebuchetQuickStep \
+    Lawnchair
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    TrebuchetQuickStep
+    TrebuchetQuickStep \
+    Lawnchair
 endif
 
 # Accents
