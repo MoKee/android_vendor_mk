@@ -19,6 +19,10 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/mokee_arm64.mk \
     $(LOCAL_DIR)/mokee_x86.mk \
     $(LOCAL_DIR)/mokee_x86_64.mk \
+    $(LOCAL_DIR)/mokee_arm_ab.mk \
+    $(LOCAL_DIR)/mokee_arm64_ab.mk \
+    $(LOCAL_DIR)/mokee_x86_ab.mk \
+    $(LOCAL_DIR)/mokee_x86_64_ab.mk \
     $(LOCAL_DIR)/mokee_tv_arm.mk \
     $(LOCAL_DIR)/mokee_tv_arm64.mk \
     $(LOCAL_DIR)/mokee_tv_x86.mk \
@@ -29,6 +33,10 @@ COMMON_LUNCH_CHOICES := \
     mokee_arm64-userdebug \
     mokee_x86-userdebug \
     mokee_x86_64-userdebug \
+    mokee_arm_ab-userdebug \
+    mokee_arm64_ab-userdebug \
+    mokee_x86_ab-userdebug \
+    mokee_x86_64_ab-userdebug \
     mokee_tv_arm-userdebug \
     mokee_tv_arm64-userdebug \
     mokee_tv_x86-userdebug \

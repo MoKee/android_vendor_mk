@@ -12,12 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/google/atv/products/aosp_tv_arm64.mk)
-
-include vendor/mokee/build/target/product/mokee_generic_tv_target.mk
+$(call inherit-product, build/target/product/aosp_arm_ab.mk)
+include vendor/mokee/build/target/product/mokee_generic_target.mk
 
 TARGET_NO_KERNEL_OVERRIDE := true
+TARGET_USES_64_BIT_BINDER := true
 
-PRODUCT_NAME := mokee_tv_arm64
-
-PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS :=
+PRODUCT_NAME := mokee_arm_ab

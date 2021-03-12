@@ -13,6 +13,7 @@
 # limitations under the License.
 
 $(call inherit-product, build/target/product/aosp_x86.mk)
+$(call inherit-product, build/target/product/gsi_release.mk)
 
 include vendor/mokee/build/target/product/mokee_generic_target.mk
 
