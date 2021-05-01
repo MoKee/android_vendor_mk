@@ -442,7 +442,7 @@ function makerecipe() {
 }
 
 function mokeegerrit() {
-    if [ "$(__detect_shell)" = "zsh" ]; then
+    if [ "$(basename $SHELL)" = "zsh" ]; then
         # zsh does not define FUNCNAME, derive from funcstack
         local FUNCNAME=$funcstack[1]
     fi
@@ -577,7 +577,7 @@ EOF
             esac
             shift
             git push $@ ssh://$user@$review:29418/$project \
-                $local_branch:refs/for/$remote_branch || return 1
+                ${local_branch}:refs/for/$remote_branch || return 1
             ;;
         changes|for)
             if [ "$FUNCNAME" = "mokeegerrit" ]; then
