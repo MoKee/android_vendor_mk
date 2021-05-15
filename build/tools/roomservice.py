@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-# Copyright (C) 2012-2017, The MoKee Open Source Project
+# Copyright (C) 2012-2021, The MoKee Open Source Project
+#           (C) 2017-2018,2020-2021, The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -77,10 +78,10 @@ if not depsonly:
         result = json.loads(urllib.request.urlopen(githubreq).read().decode())
     except urllib.error.URLError:
         print("Failed to search GitHub")
-        sys.exit()
+        sys.exit(1)
     except ValueError:
         print("Failed to parse return data from GitHub")
-        sys.exit()
+        sys.exit(1)
     for res in result.get('items', []):
         repositories.append(res)
 
