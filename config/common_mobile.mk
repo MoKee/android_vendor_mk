@@ -1,6 +1,13 @@
 # Inherit common mobile MoKee stuff
 $(call inherit-product, vendor/mokee/config/common.mk)
 
+ifneq ($(TARGET_EXCLUDES_BLUR),true)
+# Blur
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.blurs_are_expensive=1 \
+    ro.surface_flinger.supports_background_blur=1
+endif
+
 # Default notification/alarm sounds
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.notification_sound=Bongo.ogg \
