@@ -22,7 +22,7 @@ platform cert need to be included, as apps signed with the platform cert are exe
 -->
 
 <config>
-  <hidden-api-whitelisted-app package="ch.deletescape.lawnchair.ci" />
+  <hidden-api-whitelisted-app package="app.lawnchair" />
   <hidden-api-whitelisted-app package="com.android.calendar" />
   <hidden-api-whitelisted-app package="com.android.contacts" />
   <hidden-api-whitelisted-app package="com.mokee.center" />

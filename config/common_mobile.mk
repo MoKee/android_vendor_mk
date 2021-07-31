@@ -23,24 +23,6 @@ PRODUCT_PACKAGES += \
     AudioFX
 endif
 
-ifeq ($(PRODUCT_TYPE), go)
-PRODUCT_PACKAGES += \
-    TrebuchetQuickStepGo \
-    Lawnchair
-
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    TrebuchetQuickStepGo \
-    Lawnchair
-else
-PRODUCT_PACKAGES += \
-    TrebuchetQuickStep \
-    Lawnchair
-
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    TrebuchetQuickStep \
-    Lawnchair
-endif
-
 # Accents
 PRODUCT_PACKAGES += \
     MoKeeBlackTheme \
