@@ -43,6 +43,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
+ifneq ($(WITH_MOKEE_CHARGER),false)
+PRODUCT_PACKAGES += \
+    mokee_charger_animation
+endif
+
 # Customizations
 PRODUCT_PACKAGES += \
     IconShapeSquareOverlay \

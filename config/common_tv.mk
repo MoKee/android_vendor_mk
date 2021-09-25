@@ -9,4 +9,4 @@ PRODUCT_PACKAGES += \
     LeanbackIME
 
 
-DEVICE_PACKAGE_OVERLAYS += vendor/mokee/overlay/tv
+PRODUCT_PACKAGE_OVERLAYS += vendor/mokee/overlay/tv
