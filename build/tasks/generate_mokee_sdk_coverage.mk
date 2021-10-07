@@ -33,7 +33,7 @@ $(api_xml_description) : $(api_text_description) $(APICHECK)
 
 mokee-sdk-test-coverage-report := $(coverage_out)/mokee-sdk-test-coverage.html
 
-mokee_sdk_tests_apk := $(call intermediates-dir-for,APPS,MKPlatformTests)/package.apk
+mokee_sdk_tests_apk := $(call intermediates-dir-for,APPS,MoKeePlatformTests)/package.apk
 mokee_sdk_api_coverage_dependencies := $(mokee_sdk_api_coverage_exe) $(dexdeps_exe) $(api_xml_description)
 
 $(mokee-sdk-test-coverage-report): PRIVATE_TEST_CASES := $(mokee_sdk_tests_apk)
