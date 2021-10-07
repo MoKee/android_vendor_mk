@@ -123,7 +123,7 @@
     </hal>
     <!-- Trust -->
     <hal format="hidl" optional="true">
-        <name>vendor..trust</name>
+        <name>vendor.mokee.trust</name>
         <version>1.0</version>
         <interface>
             <name>IUsbRestrict</name>
