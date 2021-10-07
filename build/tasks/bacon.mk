@@ -17,19 +17,19 @@
 
 MOKEE_TARGET_PACKAGE := $(PRODUCT_OUT)/$(MK_VERSION).zip
 
-SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
+MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(MOKEE_TARGET_PACKAGE)
-	$(hide) $(SHA256) $(MOKEE_TARGET_PACKAGE) | cut -f1 -d' ' > $(MOKEE_TARGET_PACKAGE).sha256sum
+	$(hide) $(MD5) $(MOKEE_TARGET_PACKAGE) | cut -f1 -d' ' > $(MOKEE_TARGET_PACKAGE).md5sum
 	@echo "Package Complete: $(MOKEE_TARGET_PACKAGE)" >&2
 	@echo "Package Size: `ls -lh $(MOKEE_TARGET_PACKAGE) | cut -d ' ' -f 5`" >&2
 	$(hide) # Create Release, History, Nightly and Experimental folder Start
 ifdef MK_BUILD_PATH
-	$(hide) mkdir -p $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/sha256
+	$(hide) mkdir -p $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/md5
 	$(hide) cp $(MOKEE_TARGET_PACKAGE) $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)
-	$(hide) cp $(MOKEE_TARGET_PACKAGE).sha256sum $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/sha256
+	$(hide) cp $(MOKEE_TARGET_PACKAGE).md5sum $(MK_BUILD_PATH)/$(MK_BUILDTYPE)/$(MK_BUILD)/md5
 endif
 ifdef MK_OTA_INPUT
 	$(hide) mkdir -p $(MK_OTA_INPUT)/$(MK_BUILDTYPE)/$(MK_BUILD)
