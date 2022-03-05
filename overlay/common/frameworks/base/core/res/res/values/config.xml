@@ -49,6 +49,7 @@
         <item>com.android.vending/com.google.android.finsky.systemupdate.SystemUpdateSettingsContentProvider</item>
         <item>com.android.vending/com.google.android.finsky.systemupdateactivity.SettingsSecurityEntryPoint</item>
         <item>com.android.vending/com.google.android.finsky.systemupdateactivity.SystemUpdateActivity</item>
+        <item>com.google.android.gms/com.google.android.gms.update.OtaSuggestionSummaryProvider</item>
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateActivity</item>
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateGcmTaskService</item>
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService</item>
@@ -108,6 +109,11 @@
           the corresponding recents component. When using a different default launcher, change this appropriately or use the default
           systemui implementation: com.android.systemui/.recents.RecentsActivity -->
     <string name="config_recentsComponentName" translatable="false">app.lawnchair/com.android.quickstep.RecentsActivity</string>
+
+    <!-- The component name for the default profile supervisor, which can be set as a profile owner
+    even after user setup is complete. The defined component should be used for supervision purposes
+    only. The component must be part of a system app. -->
+    <string name="config_defaultSupervisionProfileOwnerComponent" translatable="false">com.google.android.gms/.kids.account.receiver.ProfileOwnerReceiver</string>
 
     <!-- List of packages that can use the Conversation space for their category messages
     notifications until they target R -->
