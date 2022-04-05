@@ -145,7 +145,7 @@ KERNEL_MAKE_CMD := $(BUILD_TOP)/prebuilts/build-tools/$(HOST_OS)-x86/bin/make
 
 # Set the full path to the gcc command
 ifeq ($(HOST_OS),darwin)
-KERNEL_HOST_TOOLCHAIN_ROOT := $(GCC_PREBUILTS)/host/x86_64-apple-darwin-9.2.0/bin/x86_64-apple-darwin19-
+KERNEL_HOST_TOOLCHAIN_ROOT := $(GCC_PREBUILTS)/host/x86_64-apple-darwin-9.2.0/bin/x86_64-apple-darwin18-
 KERNEL_MAKE_FLAGS += HOSTCC=$(KERNEL_HOST_TOOLCHAIN_ROOT)gcc-9
 KERNEL_MAKE_FLAGS += HOSTCXX=$(KERNEL_HOST_TOOLCHAIN_ROOT)g++-9
 else
