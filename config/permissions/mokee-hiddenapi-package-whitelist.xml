@@ -26,6 +26,7 @@ platform cert need to be included, as apps signed with the platform cert are exe
   <hidden-api-whitelisted-app package="com.android.calendar" />
   <hidden-api-whitelisted-app package="com.android.contacts" />
   <hidden-api-whitelisted-app package="com.android.dialer" />
+  <hidden-api-whitelisted-app package="com.android.messaging" />
   <hidden-api-whitelisted-app package="com.mokee.center" />
   <hidden-api-whitelisted-app package="com.mokee.pay" />
   <hidden-api-whitelisted-app package="org.mokee.longshot" />
